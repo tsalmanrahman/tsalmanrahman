@@ -1,97 +1,67 @@
-<svg width="850" height="260" viewBox="0 0 850 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="850" height="200" viewBox="0 0 850 200" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Background Gradients -->
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#070c18" />
-      <stop offset="50%" stop-color="#0b1528" />
-      <stop offset="100%" stop-color="#06131c" />
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#09090b" />
+      <stop offset="50%" stop-color="#0c0d12" />
+      <stop offset="100%" stop-color="#09090b" />
     </linearGradient>
-
-    <!-- Border Gradient -->
-    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1e293b" />
-      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.6" />
-      <stop offset="100%" stop-color="#10b981" stop-opacity="0.6" />
+    <linearGradient id="border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#27272a" />
+      <stop offset="40%" stop-color="#3f3f46" />
+      <stop offset="80%" stop-color="#10b981" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#27272a" />
     </linearGradient>
-
-    <!-- Text Accent Gradient -->
-    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38bdf8" />
-      <stop offset="50%" stop-color="#2dd4bf" />
-      <stop offset="100%" stop-color="#34d399" />
-    </linearGradient>
-
-    <!-- Radial Glows -->
-    <radialGradient id="glowCyan" cx="90%" cy="10%" r="50%">
-      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.18" />
-      <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0" />
-    </radialGradient>
-    <radialGradient id="glowEmerald" cx="10%" cy="90%" r="50%">
-      <stop offset="0%" stop-color="#10b981" stop-opacity="0.15" />
+    <radialGradient id="ambient" cx="85%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.08" />
       <stop offset="100%" stop-color="#10b981" stop-opacity="0" />
     </radialGradient>
-
-    <!-- Grid Pattern -->
-    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
-      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#334155" stroke-width="0.6" stroke-opacity="0.25" />
-    </pattern>
   </defs>
 
   <style>
-    .title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-weight: 800; font-size: 32px; fill: #ffffff; letter-spacing: 1.5px; }
-    .subtitle { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-weight: 700; font-size: 17px; fill: url(#textGrad); letter-spacing: 0.5px; }
-    .desc { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-weight: 400; font-size: 13px; fill: #94a3b8; }
-    .badge-text { font-family: "JetBrains Mono", Menlo, Monaco, Consolas, monospace; font-size: 10px; font-weight: 600; fill: #38bdf8; letter-spacing: 0.8px; }
-    .cred-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 11px; font-weight: 600; fill: #cbd5e1; }
+    .name { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif; font-weight: 700; font-size: 28px; fill: #fafafa; letter-spacing: -0.5px; }
+    .title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif; font-weight: 500; font-size: 15px; fill: #a1a1aa; }
+    .subtitle { font-family: "JetBrains Mono", Menlo, Consolas, monospace; font-size: 12px; fill: #10b981; }
+    .tag { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 500; fill: #71717a; }
+    .cursor { fill: #10b981; animation: blink 1s step-start infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
   </style>
 
-  <!-- Background Rect -->
-  <rect width="850" height="260" rx="14" fill="url(#bgGrad)" />
-  <rect width="850" height="260" rx="14" fill="url(#grid)" />
-  <rect width="850" height="260" rx="14" fill="url(#glowCyan)" />
-  <rect width="850" height="260" rx="14" fill="url(#glowEmerald)" />
-  <rect x="0.5" y="0.5" width="849" height="259" rx="13.5" fill="none" stroke="url(#borderGrad)" stroke-width="1.2" />
+  <!-- Background Base -->
+  <rect width="850" height="200" rx="12" fill="url(#bg)" />
+  <rect width="850" height="200" rx="12" fill="url(#ambient)" />
+  <rect x="0.5" y="0.5" width="849" height="199" rx="11.5" stroke="url(#border)" stroke-width="1" />
 
-  <!-- Status Pill -->
-  <g transform="translate(48, 36)">
-    <rect width="260" height="24" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
-    <circle cx="12" cy="12" r="4" fill="#34d399">
-      <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite" />
+  <!-- Live Status Beacon -->
+  <g transform="translate(42, 32)">
+    <circle cx="5" cy="5" r="4" fill="#10b981">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2.5s" repeatCount="indefinite" />
     </circle>
-    <text x="24" y="15.5" class="badge-text">OPEN TO DATA &amp; DEV ROLES</text>
+    <text x="16" y="8.5" class="subtitle">AVAILABLE FOR IMPACT ROLES</text>
   </g>
 
-  <!-- Main Headline -->
-  <text x="48" y="100" class="title">SALMAN RAHMAN</text>
+  <!-- Name -->
+  <text x="42" y="82" class="name">Salman Rahman</text>
 
-  <!-- Dual Title -->
-  <text x="48" y="128" class="subtitle">Software Engineer &amp; Data Analyst</text>
+  <!-- Title & Dynamic Cursor -->
+  <g transform="translate(42, 110)">
+    <text x="0" y="0" class="title">Software Engineer &amp; Data Analyst</text>
+    <rect x="268" y="-12" width="2" height="15" class="cursor" />
+  </g>
 
-  <!-- Description -->
-  <text x="48" y="158" class="desc">Bridging full-stack software architecture with high-impact data analytics &amp; machine learning.</text>
-  <text x="48" y="178" class="desc">Specializing in Python, SQL, Modern React/Next.js, Data Pipelines, and Business Intelligence.</text>
+  <!-- Crisp 1-sentence value statement -->
+  <text x="42" y="136" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12.5" fill="#71717a">
+    Architecting robust full-stack software and transforming enterprise data into actionable intelligence.
+  </text>
 
-  <!-- Divider Line -->
-  <line x1="48" y1="200" x2="802" y2="200" stroke="#1e293b" stroke-width="1" />
+  <!-- Subtle Minimal Divider -->
+  <line x1="42" y1="156" x2="808" y2="156" stroke="#27272a" stroke-width="0.8" />
 
-  <!-- Academic Credentials Badges -->
-  <g transform="translate(48, 214)">
-    <!-- PGDDS -->
-    <rect width="280" height="28" rx="6" fill="#0f172a" stroke="#0ea5e9" stroke-opacity="0.35" stroke-width="1" />
-    <text x="12" y="18" class="cred-text">🎓 PGD in Data Science (2024)</text>
-    <text x="180" y="18" font-family="sans-serif" font-size="10" fill="#64748b">UIU / BITM</text>
-
-    <!-- BSc in CSE -->
-    <g transform="translate(296, 0)">
-      <rect width="280" height="28" rx="6" fill="#0f172a" stroke="#10b981" stroke-opacity="0.35" stroke-width="1" />
-      <text x="12" y="18" class="cred-text">🎓 BSc in Computer Science &amp; Eng.</text>
-      <text x="210" y="18" font-family="sans-serif" font-size="10" fill="#64748b">VU</text>
-    </g>
-
-    <!-- Location -->
-    <g transform="translate(592, 0)">
-      <rect width="162" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
-      <text x="12" y="18" class="cred-text">📍 Dhaka, Bangladesh</text>
-    </g>
+  <!-- Footprint Tags -->
+  <g transform="translate(42, 175)">
+    <text x="0" y="0" class="tag">🎓 PGD in Data Science (2024)</text>
+    <circle cx="170" cy="-3.5" r="1.5" fill="#3f3f46" />
+    <text x="180" y="0" class="tag">BSc in Computer Science &amp; Eng.</text>
+    <circle cx="365" cy="-3.5" r="1.5" fill="#3f3f46" />
+    <text x="375" y="0" class="tag">📍 Dhaka, Bangladesh</text>
   </g>
 </svg>

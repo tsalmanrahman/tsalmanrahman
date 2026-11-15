@@ -4,102 +4,80 @@
 
 <br/>
 
-### 👋 Hi, I'm Salman Rahman!
+### About
 
-I am a **Software Engineer & Data Analyst** with a **BSc in Computer Science & Engineering** and a **Post Graduate Diploma in Data Science (PGDDS, 2024)**.
+I am a **Software Engineer & Data Analyst** focused on engineering reliable web systems and unlocking business value through data intelligence. 
 
-I specialize in bridging the gap between full-stack software architecture and data-driven intelligence: building robust web applications, optimizing relational databases, and engineering end-to-end analytics pipelines that uncover actionable business insights.
+With a background spanning a **BSc in Computer Science & Engineering** and a **Post Graduate Diploma in Data Science (PGDDS, 2024)**, I build software that scales and design analytical workflows that turn raw data into strategic decisions.
 
-- 🔭 **Currently Building:** Scalable web platforms with Next.js, automated ETL pipelines, and predictive business intelligence tools.
-- 🎓 **Academic Background:** 
-  - **Post Graduate Diploma in Data Science (PGDDS, 2024)** — United International University (UIU) & BITM
-  - **BSc in Computer Science & Engineering (BSc in CSE)** — Varendra University
-- 💼 **Enterprise Experience:** Proven experience managing technical operations, systems verification, and data auditing.
-- 📫 **How to reach me:** [LinkedIn](https://www.linkedin.com/in/t-salmanrahman) • [t.salmanrahman@gmail.com](mailto:t.salmanrahman@gmail.com)
+```ts
+const profile = {
+  name: "Salman Rahman",
+  role: "Software Engineer & Data Analyst",
+  credentials: ["BSc in CSE", "PGD in Data Science (2024)"],
+  coreStack: ["TypeScript", "Next.js", "Python", "SQL", "PostgreSQL"],
+  location: "Dhaka, Bangladesh",
+  status: "Available for engineering & data opportunities"
+};
+```
 
 ---
 
-### 🛠️ Tech Stack & Proficiencies
+### Stack & Tooling
 
-#### 💻 Software Engineering & Web Development
-<p>
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
-  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" />
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
-  <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white" alt="C#" />
-  <img src="https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" alt=".NET" />
-  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
-  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
-</p>
+```
+Development  │  TypeScript · Next.js · React · Node.js · C# · PostgreSQL · Tailwind · Docker · Git
+Analytics    │  Python · Complex SQL · Pandas · Scikit-Learn · Power BI · Tableau · Streamlit · BigQuery
+```
 
-#### 📊 Data Analytics & Machine Learning
 <p>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
-  <img src="https://img.shields.io/badge/SQL-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQL" />
-  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas" />
-  <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy" />
-  <img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="Scikit-Learn" />
-  <img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black" alt="Power BI" />
-  <img src="https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white" alt="Tableau" />
-  <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit" />
-  <img src="https://img.shields.io/badge/Google_BigQuery-669DF6?style=for-the-badge&logo=googlecloud&logoColor=white" alt="BigQuery" />
-  <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white" alt="Jupyter" />
+  <img src="https://img.shields.io/badge/TypeScript-18181b?style=flat&logo=typescript&logoColor=3178C6" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Next.js-18181b?style=flat&logo=nextdotjs&logoColor=white" alt="Next.js" />
+  <img src="https://img.shields.io/badge/React-18181b?style=flat&logo=react&logoColor=61DAFB" alt="React" />
+  <img src="https://img.shields.io/badge/Python-18181b?style=flat&logo=python&logoColor=3776AB" alt="Python" />
+  <img src="https://img.shields.io/badge/SQL-18181b?style=flat&logo=postgresql&logoColor=4169E1" alt="SQL" />
+  <img src="https://img.shields.io/badge/PostgreSQL-18181b?style=flat&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+  <img src="https://img.shields.io/badge/Pandas-18181b?style=flat&logo=pandas&logoColor=white" alt="Pandas" />
+  <img src="https://img.shields.io/badge/Power_BI-18181b?style=flat&logo=powerbi&logoColor=F2C811" alt="Power BI" />
+  <img src="https://img.shields.io/badge/Tableau-18181b?style=flat&logo=tableau&logoColor=E97627" alt="Tableau" />
+  <img src="https://img.shields.io/badge/Docker-18181b?style=flat&logo=docker&logoColor=2496ED" alt="Docker" />
 </p>
 
 ---
 
-### ⚡ Technical Competency & Architecture Telemetry
+### Selected Work
 
-<div align="center">
-  <img src="telemetry.svg" alt="Engineering and Analytics Telemetry" width="100%" />
-</div>
+#### 📈 [Enterprise Customer Churn & Revenue Analytics](#)
+> Predictive classification model and interactive executive dashboard evaluating revenue churn patterns across 50,000+ customer records.
+* **Stack:** Python · SQL · Scikit-Learn · Streamlit · Pandas
+* **Impact:** Identified key customer drop-off thresholds and automated quarterly reporting.
 
-<br/>
+#### 💻 [Operations & Inventory Management Platform](#)
+> Full-stack internal operations dashboard for real-time asset reconciliation, order processing, and role-based tracking.
+* **Stack:** Next.js · TypeScript · PostgreSQL · Tailwind CSS
+* **Impact:** Replaced manual spreadsheet reconciliation with an automated single-pane workflow.
 
-### 🐍 Dynamic Contribution Activity
+#### ⚙️ [Compliance & Salary Audit Pipeline](#)
+> Automated data verification pipeline auditing enterprise compensation structures, tax allowances, and compliance brackets.
+* **Stack:** Python · Complex SQL · OpenPyXL · Dataform
+* **Impact:** Reduced audit discrepancy review cycles by over 60%.
+
+---
+
+### Contribution Activity
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/t-salmanrahman/t-salmanrahman/output/github-contribution-grid-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/t-salmanrahman/t-salmanrahman/output/github-contribution-grid-snake.svg">
-    <img alt="GitHub Contribution Snake Animation" src="https://raw.githubusercontent.com/t-salmanrahman/t-salmanrahman/output/github-contribution-grid-snake.svg" width="100%" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tsalmanrahman/tsalmanrahman/output/github-contribution-grid-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tsalmanrahman/tsalmanrahman/output/github-contribution-grid-snake.svg">
+    <img alt="GitHub Contribution Snake" src="https://raw.githubusercontent.com/tsalmanrahman/tsalmanrahman/output/github-contribution-grid-snake.svg" width="100%" />
   </picture>
 </div>
 
 ---
 
-### 📌 Featured Projects
-
-| Project | Domain | Stack | Key Impact | Links |
-| :--- | :--- | :--- | :--- | :--- |
-| **Enterprise Customer Churn Analytics** | Data Science | Python, SQL, Streamlit, Pandas | Predictive model identifying revenue leakages & retention drops across 50k+ records. | [Demo](#) • [Code](#) |
-| **Operations & Inventory Portal** | Full-Stack | Next.js, TypeScript, PostgreSQL | Automated internal inventory management and real-time reconciliation platform. | [Demo](#) • [Code](#) |
-| **Financial & Salary Audit Pipeline** | Data Analytics | Python, SQL, OpenPyXL | Automated compliance auditing pipeline for enterprise salary structures & tax brackets. | [Demo](#) • [Code](#) |
-| **Retail Sales Forecasting Model** | Machine Learning | Python, Scikit-Learn, Statsmodels | Multi-variant time-series forecasting model for seasonal retail demand planning. | [Demo](#) • [Code](#) |
-
----
-
-### 🌐 Connect With Me
-
 <div align="center">
-  <a href="https://www.linkedin.com/in/t-salmanrahman" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
-  &nbsp;&nbsp;
-  <a href="mailto:t.salmanrahman@gmail.com">
-    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-  </a>
-  &nbsp;&nbsp;
-  <a href="#" target="_blank">
-    <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
-  </a>
-</div>
-
-<br/>
-<div align="center">
-  <sub>Designed with precision • Salman Rahman © 2026</sub>
+  <a href="https://www.linkedin.com/in/t-salmanrahman" target="_blank">LinkedIn ↗</a> &nbsp;•&nbsp;
+  <a href="mailto:t.salmanrahman@gmail.com">Email ↗</a> &nbsp;•&nbsp;
+  <a href="#">Web Portfolio ↗</a>
 </div>
