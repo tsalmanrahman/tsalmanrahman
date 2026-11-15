@@ -25,12 +25,17 @@ SQL Developer & Data Analyst specializing in Microsoft SQL Server, relational da
 </p>
 
 <p>
-  <a href="#about-me">About Me</a> &nbsp;•&nbsp;
-  <a href="#technical-skills">Technical Skills</a> &nbsp;•&nbsp;
-  <a href="#featured-projects">Featured Projects</a> &nbsp;•&nbsp;
-  <a href="#certifications--education">Certifications &amp; Education</a> &nbsp;•&nbsp;
-  <a href="#github-activity">GitHub Activity</a> &nbsp;•&nbsp;
-  <a href="#career-status">Career Status</a>
+  <a href="#about-me"><img src="assets/icons/nav-about.svg" alt="About" /></a>
+  &nbsp;
+  <a href="#technical-skills"><img src="assets/icons/nav-skills.svg" alt="Skills" /></a>
+  &nbsp;
+  <a href="#featured-projects"><img src="assets/icons/nav-projects.svg" alt="Projects" /></a>
+  &nbsp;
+  <a href="#certifications--education"><img src="assets/icons/nav-credentials.svg" alt="Credentials" /></a>
+  &nbsp;
+  <a href="#github-activity"><img src="assets/icons/nav-activity.svg" alt="Activity" /></a>
+  &nbsp;
+  <a href="#career-status"><img src="assets/icons/nav-career.svg" alt="Career" /></a>
 </p>
 
 </div>
@@ -45,9 +50,9 @@ Experienced in working with Microsoft SQL Server and Crystal Reports to model en
 
 Deeply interested in ERP systems, relational database architecture, backend development, data engineering, and product design, while continuously expanding technical depth through structured professional learning.
 
-### Experience & Practical Background (2+ Years (Self-Driven & Enterprise Operations))
+### Experience & Practical Background (4+ Years (Self-Driven & Enterprise Operations))
 
-- **SQL Development & Database Architecture**: 2+ years of self-driven and hands-on experience designing relational schemas, writing T-SQL and PL/SQL queries, stored procedures, migrations, and ensuring data integrity on Microsoft SQL Server. (`Microsoft SQL Server` · `T-SQL` · `PL/SQL` · `Relational Modeling`)
+- **SQL Development & Database Architecture**: 4+ years of self-driven and hands-on experience designing relational schemas, writing T-SQL and PL/SQL queries, stored procedures, migrations, and ensuring data integrity on Microsoft SQL Server. (`Microsoft SQL Server` · `T-SQL` · `PL/SQL` · `Relational Modeling`)
 - **Enterprise Reporting & Data Analysis**: Building structured operational and analytical reports using Crystal Reports and SQL aggregations to turn raw business records into clear, verifiable outputs. (`Crystal Reports` · `SQL Queries` · `Data Analysis` · `Audit Reconciliation`)
 - **ERP Systems & Backend Engineering**: Developing multi-company ERP modules, tenant isolation middleware, and SQL-backed operational portals using C# (.NET) and Python (FastAPI). (`C#` · `.NET / ASP.NET Core` · `Python` · `FastAPI` · `EF Core & Dapper`)
 - **IT Support & Infrastructure Diagnostics**: Applying CompTIA A+ certified methodology to hardware troubleshooting, operating system maintenance, ODBC driver configuration, and technical support. (`CompTIA A+` · `Hardware Diagnostics` · `Technical Support` · `ODBC Connectivity`)
@@ -180,7 +185,7 @@ Deeply interested in ERP systems, relational database architecture, backend deve
 - **[Certification] CompTIA A+ Certified IT Professional**: Earned CompTIA A+ certification validating core operational expertise in hardware diagnostics, operating systems, troubleshooting, and technical support.
 - **[Engineering] Enterprise Multi-Company ERP Database & Backend Architecture**: Designed and standardized an 80-table Microsoft SQL Server schema and .NET 10 modular backend across General Ledger, Inventory, AP/AR, HR & Payroll, Fixed Assets, Real Estate, and Manufacturing.
 - **[Tooling] Multi-Company SQL Operations Suite (Pyrix)**: Built a Python FastAPI & SQL Server operational web portal featuring SQL schema inspection, dynamic form/table management, audit logging, and thread-safe TTL query caching.
-- **[Domain Expertise] 2+ Years of Self-Driven SQL, PL/SQL & Crystal Reports Practice**: Delivered structured relational queries, data integrity controls, and Crystal Reports templates bridging operational databases with clear reporting.
+- **[Domain Expertise] 4+ Years of Self-Driven SQL, PL/SQL & Crystal Reports Practice**: Delivered structured relational queries, data integrity controls, and Crystal Reports templates bridging operational databases with clear reporting.
 
 ---
 

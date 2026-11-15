@@ -369,6 +369,67 @@ def render_project_preview_svg(project: dict[str, Any]) -> str:
 """
 
 
+NAV_ITEMS: tuple[dict[str, str], ...] = (
+    {
+        "filename": "assets/icons/nav-about.svg",
+        "href": "#about-me",
+        "label": "About",
+        "accent": "#38bdf8",
+        "icon": '<circle cx="12" cy="8" r="4" /><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />',
+    },
+    {
+        "filename": "assets/icons/nav-skills.svg",
+        "href": "#technical-skills",
+        "label": "Skills",
+        "accent": "#38bdf8",
+        "icon": '<polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" />',
+    },
+    {
+        "filename": "assets/icons/nav-projects.svg",
+        "href": "#featured-projects",
+        "label": "Projects",
+        "accent": "#38bdf8",
+        "icon": '<path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z" />',
+    },
+    {
+        "filename": "assets/icons/nav-credentials.svg",
+        "href": "#certifications--education",
+        "label": "Credentials",
+        "accent": "#38bdf8",
+        "icon": '<circle cx="12" cy="9" r="6" /><path d="M8.5 14l-1.5 7 5-2.5 5 2.5-1.5-7" />',
+    },
+    {
+        "filename": "assets/icons/nav-activity.svg",
+        "href": "#github-activity",
+        "label": "Activity",
+        "accent": "#10b981",
+        "icon": '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />',
+    },
+    {
+        "filename": "assets/icons/nav-career.svg",
+        "href": "#career-status",
+        "label": "Career",
+        "accent": "#10b981",
+        "icon": '<rect x="3" y="7" width="18" height="13" rx="2" /><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />',
+    },
+)
+
+
+def render_nav_pill_svg(item: dict[str, str]) -> str:
+    """Render a modern dark-slate SVG navigation pill with a crisp icon and short label."""
+    label = xml_escape(item["label"])
+    accent = xml_escape(item["accent"])
+    width = max(78, int(33 + len(item["label"]) * 6.8 + 14))
+    return f"""<svg width="{width}" height="30" viewBox="0 0 {width} 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0.5" y="0.5" width="{width - 1}" height="29" rx="7" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
+  <g transform="translate(11, 7) scale(0.667)" stroke="{accent}" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    {item['icon']}
+  </g>
+  <text x="33" y="19" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="600" fill="#e2e8f0">{label}</text>
+</svg>
+"""
+
+
 def render_comptia_badge_svg(cert: dict[str, Any]) -> str:
     """Render a clean verification badge SVG for CompTIA A+ certification."""
     title = xml_escape(cert["name"])
@@ -567,12 +628,7 @@ def render_readme_markdown(
 </p>
 
 <p>
-  <a href="#about-me">About Me</a> &nbsp;•&nbsp;
-  <a href="#technical-skills">Technical Skills</a> &nbsp;•&nbsp;
-  <a href="#featured-projects">Featured Projects</a> &nbsp;•&nbsp;
-  <a href="#certifications--education">Certifications &amp; Education</a> &nbsp;•&nbsp;
-  <a href="#github-activity">GitHub Activity</a> &nbsp;•&nbsp;
-  <a href="#career-status">Career Status</a>
+  {'\n  &nbsp;\n  '.join(f'<a href="{item["href"]}"><img src="{item["filename"]}" alt="{item["label"]}" /></a>' for item in NAV_ITEMS)}
 </p>
 
 </div>
@@ -707,6 +763,9 @@ def build_outputs(root_dir: Path) -> dict[Path, str]:
         root_dir / "assets/profile/github-telemetry.svg": telemetry_svg,
         root_dir / "telemetry.svg": telemetry_svg,
     }
+
+    for nav_item in NAV_ITEMS:
+        outputs[root_dir / nav_item["filename"]] = render_nav_pill_svg(nav_item)
 
     for proj in projects:
         if proj.get("featured") and proj.get("verified") and proj.get("image_path"):

@@ -1,10 +1,10 @@
 {
-  "years_of_experience": "2+ Years (Self-Driven & Enterprise Operations)",
+  "years_of_experience": "4+ Years (Self-Driven & Enterprise Operations)",
   "current_organization": "HATIM Group",
   "highlights": [
     {
       "area": "SQL Development & Database Architecture",
-      "summary": "2+ years of self-driven and hands-on experience designing relational schemas, writing T-SQL and PL/SQL queries, stored procedures, migrations, and ensuring data integrity on Microsoft SQL Server.",
+      "summary": "4+ years of self-driven and hands-on experience designing relational schemas, writing T-SQL and PL/SQL queries, stored procedures, migrations, and ensuring data integrity on Microsoft SQL Server.",
       "tools": ["Microsoft SQL Server", "T-SQL", "PL/SQL", "Relational Modeling"]
     },
     {
