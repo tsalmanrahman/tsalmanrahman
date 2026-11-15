@@ -1,0 +1,20 @@
+[
+  {
+    "id": "pgdds",
+    "degree": "Post Graduate Diploma in Data Science (PGDDS)",
+    "institution": "United International University (UIU) & BITM",
+    "year": "2024",
+    "status": "Completed",
+    "focus": "Data Analysis, SQL Querying, Python Analytics & Business Intelligence",
+    "verified": true
+  },
+  {
+    "id": "bsc-cse",
+    "degree": "Bachelor of Science (BSc) in Computer Science & Engineering",
+    "institution": "Varendra University",
+    "year": "Graduated",
+    "status": "Completed",
+    "focus": "Relational Databases, Software Engineering, Data Structures, Algorithms & Systems",
+    "verified": true
+  }
+]

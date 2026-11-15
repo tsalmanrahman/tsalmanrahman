@@ -1,0 +1,30 @@
+[
+  {
+    "id": "comptia-a-plus-achievement",
+    "title": "CompTIA A+ Certified IT Professional",
+    "category": "Certification",
+    "description": "Earned CompTIA A+ certification validating core operational expertise in hardware diagnostics, operating systems, troubleshooting, and technical support.",
+    "verified": true
+  },
+  {
+    "id": "erp-database-architecture",
+    "title": "Enterprise Multi-Company ERP Database & Backend Architecture",
+    "category": "Engineering",
+    "description": "Designed and standardized an 80-table Microsoft SQL Server schema and .NET 10 modular backend across General Ledger, Inventory, AP/AR, HR & Payroll, Fixed Assets, Real Estate, and Manufacturing.",
+    "verified": true
+  },
+  {
+    "id": "pyrix-sql-suite",
+    "title": "Multi-Company SQL Operations Suite (Pyrix)",
+    "category": "Tooling",
+    "description": "Built a Python FastAPI & SQL Server operational web portal featuring SQL schema inspection, dynamic form/table management, audit logging, and thread-safe TTL query caching.",
+    "verified": true
+  },
+  {
+    "id": "sql-reporting-foundation",
+    "title": "2+ Years of Self-Driven SQL, PL/SQL & Crystal Reports Practice",
+    "category": "Domain Expertise",
+    "description": "Delivered structured relational queries, data integrity controls, and Crystal Reports templates bridging operational databases with clear reporting.",
+    "verified": true
+  }
+]

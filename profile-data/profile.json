@@ -1,0 +1,49 @@
+{
+  "name": "Salman Rahman",
+  "username": "tsalmanrahman",
+  "headline": "SQL Developer | Data Analyst | C# & Python Enthusiast | CompTIA A+ Certified",
+  "short_bio": "SQL Developer & Data Analyst specializing in Microsoft SQL Server, relational database architecture, Crystal Reports, and backend systems in C# and Python.",
+  "location": "Dhaka, Bangladesh",
+  "organization": "HATIM Group",
+  "summary": [
+    "Computer Science graduate with 2+ years of self-driven experience in SQL development, PL/SQL, data analysis, and IT support.",
+    "Experienced in working with Microsoft SQL Server and Crystal Reports to model enterprise data, build reliable queries, and deliver operational reporting, alongside foundational engineering skills in C# and Python.",
+    "Deeply interested in ERP systems, relational database architecture, backend development, data engineering, and product design, while continuously expanding technical depth through structured professional learning."
+  ],
+  "problem_solving_approach": [
+    {
+      "pillar": "Data Integrity First",
+      "description": "Designing normalized relational schemas, explicit constraints, and deterministic audit trails in Microsoft SQL Server."
+    },
+    {
+      "pillar": "Actionable Business Reporting",
+      "description": "Transforming complex operational and transactional tables into clear, dependable Crystal Reports and analytical SQL datasets."
+    },
+    {
+      "pillar": "Pragmatic Backend Automation",
+      "description": "Building maintainable ERP workflows, APIs, and operational tooling with C# (.NET) and Python (FastAPI)."
+    },
+    {
+      "pillar": "Reliable Systems & IT Foundation",
+      "description": "Applying CompTIA A+ certified diagnostics across workstations, ODBC connectivity, and enterprise infrastructure."
+    }
+  ],
+  "contact": {
+    "linkedin": "https://www.linkedin.com/in/t-salmanrahman",
+    "credly": "https://www.credly.com/users/salman_rahman",
+    "github": "https://github.com/tsalmanrahman",
+    "email": "t.salmanrahman@gmail.com",
+    "show_email": true,
+    "portfolio": ""
+  },
+  "banner": {
+    "badge_text": "OPEN TO SQL, DATA & ERP BACKEND ROLES",
+    "tagline": "Designing resilient relational databases, enterprise ERP workflows, and actionable reporting systems.",
+    "pills": [
+      "CompTIA A+ Certified",
+      "BSc in Computer Science",
+      "SQL Server & Crystal Reports",
+      "Dhaka, Bangladesh"
+    ]
+  }
+}

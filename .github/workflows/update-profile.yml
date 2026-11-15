@@ -1,0 +1,84 @@
+name: Update GitHub Profile README
+
+on:
+  schedule:
+    # Daily sync at 06:00 UTC
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+    inputs:
+      check_external_links:
+        description: "Verify external URLs before committing"
+        required: false
+        default: true
+        type: boolean
+  push:
+    branches:
+      - main
+    paths:
+      - "profile-data/**"
+      - "scripts/**"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-github-profile
+  cancel-in-progress: false
+
+jobs:
+  update-profile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Snapshot last valid profile artifacts
+        run: |
+          mkdir -p /tmp/profile_backup
+          cp -f README.md banner.svg tech-matrix.svg telemetry.svg /tmp/profile_backup/ || true
+
+      - name: Sync GitHub metrics & authorized LinkedIn state
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+        run: python scripts/sync_profile.py
+
+      - name: Validate centralized profile data
+        run: python scripts/validate_data.py
+
+      - name: Generate README.md and dynamic SVG assets
+        run: python scripts/generate_readme.py
+
+      - name: Validate generated assets and external links
+        run: |
+          if [ "${{ github.event_name == 'workflow_dispatch' && inputs.check_external_links == false }}" = "true" ]; then
+            python scripts/validate_data.py --check-assets
+          else
+            python scripts/validate_data.py --check-assets --check-links
+          fi
+
+      - name: Restore last valid README on failure
+        if: failure()
+        run: |
+          if [ -f /tmp/profile_backup/README.md ]; then
+            cp -f /tmp/profile_backup/* . || true
+          fi
+
+      - name: Commit and push only if generated content changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md banner.svg tech-matrix.svg telemetry.svg assets/ profile-data/github_metrics.json profile-data/linkedin_sync.json
+          if git diff --cached --quiet; then
+            echo "No profile changes detected; skipping commit."
+          else
+            git commit -m "chore(profile): sync metrics and regenerate README [skip ci]"
+            git push
+          fi

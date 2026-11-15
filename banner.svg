@@ -1,101 +1,60 @@
-<svg width="850" height="210" viewBox="0 0 850 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="860" height="232" viewBox="0 0 860 232" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#09090d" />
-      <stop offset="50%" stop-color="#0e1017" />
-      <stop offset="100%" stop-color="#09090d" />
+    <linearGradient id="heroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="55%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#090d16" />
     </linearGradient>
-    <linearGradient id="border" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#27272a" />
-      <stop offset="40%" stop-color="#3f3f46" />
-      <stop offset="80%" stop-color="#10b981" stop-opacity="0.6" />
-      <stop offset="100%" stop-color="#27272a" />
+    <linearGradient id="heroBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="50%" stop-color="#334155" />
+      <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0.45" />
     </linearGradient>
-    <radialGradient id="ambient" cx="85%" cy="20%" r="60%">
-      <stop offset="0%" stop-color="#10b981" stop-opacity="0.12" />
-      <stop offset="100%" stop-color="#10b981" stop-opacity="0" />
+    <radialGradient id="heroGlow" cx="88%" cy="18%" r="55%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
     </radialGradient>
   </defs>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap');
-    
-    .name { font-family: 'Inter', -apple-system, sans-serif; font-weight: 800; font-size: 29px; fill: #ffffff; letter-spacing: -0.6px; }
-    .title { font-family: 'JetBrains Mono', monospace; font-weight: 600; font-size: 14px; fill: #38bdf8; }
-    .desc { font-family: 'Inter', -apple-system, sans-serif; font-weight: 400; font-size: 12.5px; fill: #a1a1aa; }
-    .badge-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; fill: #10b981; letter-spacing: 1px; }
-    .pill-tag { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 500; fill: #cbd5e1; transition: all 0.25s ease; }
-    .cursor { fill: #10b981; animation: blink 1s step-start infinite; }
-    
-    /* Interactive Card Hover */
-    .banner-container {
-      cursor: default;
-    }
-    .cred-pill {
-      cursor: pointer;
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .cred-pill:hover rect {
-      fill: #181924;
-      stroke: #38bdf8;
-      stroke-width: 1.2px;
-    }
-    .cred-pill:hover text {
-      fill: #ffffff;
-    }
-    @keyframes blink { 50% { opacity: 0; } }
+    .status-text { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 10.5px; font-weight: 700; fill: #10b981; letter-spacing: 0.9px; }
+    .hero-name { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 30px; font-weight: 800; fill: #f8fafc; letter-spacing: -0.5px; }
+    .hero-role { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; fill: #38bdf8; }
+    .hero-desc { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 400; fill: #94a3b8; }
+    .pill-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 500; fill: #cbd5e1; }
   </style>
 
-  <!-- Background Base -->
-  <g class="banner-container">
-    <rect width="850" height="210" rx="12" fill="url(#bg)" />
-    <rect width="850" height="210" rx="12" fill="url(#ambient)" />
-    <rect x="0.5" y="0.5" width="849" height="209" rx="11.5" stroke="url(#border)" stroke-width="1" />
+  <rect width="860" height="232" rx="12" fill="url(#heroBg)" />
+  <rect width="860" height="232" rx="12" fill="url(#heroGlow)" />
+  <rect x="0.5" y="0.5" width="859" height="231" rx="11.5" stroke="url(#heroBorder)" stroke-width="1" />
 
-    <!-- Live Status Beacon -->
-    <g transform="translate(42, 30)">
-      <circle cx="5" cy="5" r="4" fill="#10b981">
-        <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
-      </circle>
-      <text x="16" y="8.5" class="badge-label">AVAILABLE FOR SOFTWARE &amp; DATA ROLES</text>
+  <g transform="translate(42, 32)">
+    <circle cx="5" cy="5" r="4" fill="#10b981" />
+    <text x="16" y="8.5" class="status-text">OPEN TO SQL, DATA &amp; ERP BACKEND ROLES</text>
+  </g>
+
+  <text x="42" y="80" class="hero-name">Salman Rahman</text>
+  <text x="42" y="108" class="hero-role">SQL Developer | Data Analyst | C# &amp; Python Enthusiast | CompTIA A+ Certified</text>
+  <text x="42" y="136" class="hero-desc">Designing resilient relational databases, enterprise ERP workflows, and actionable reporting systems.</text>
+
+  <line x1="42" y1="158" x2="818" y2="158" stroke="#1e293b" stroke-width="1" />
+
+  <g transform="translate(42, 174)">
+    <g transform="translate(0, 0)">
+      <rect width="166" height="28" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1" />
+      <text x="83.0" y="18" text-anchor="middle" class="pill-text">CompTIA A+ Certified</text>
     </g>
-
-    <!-- Name -->
-    <text x="42" y="82" class="name">Salman Rahman</text>
-
-    <!-- Title & Animated Cursor -->
-    <g transform="translate(42, 110)">
-      <text x="0" y="0" class="title">Software Engineer &amp; Data Analyst</text>
-      <rect x="272" y="-12" width="2" height="15" class="cursor" />
+    <g transform="translate(178, 0)">
+      <rect width="186" height="28" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1" />
+      <text x="93.0" y="18" text-anchor="middle" class="pill-text">BSc in Computer Science</text>
     </g>
-
-    <!-- 1-sentence value statement -->
-    <text x="42" y="136" class="desc">
-      Architecting robust full-stack software and transforming complex enterprise data into actionable intelligence.
-    </text>
-
-    <!-- Subtle Minimal Divider -->
-    <line x1="42" y1="156" x2="808" y2="156" stroke="#27272a" stroke-width="0.8" />
-
-    <!-- Interactive Credential Pills -->
-    <g transform="translate(42, 170)">
-      <!-- Pill 1: PGDDS -->
-      <g class="cred-pill">
-        <rect width="210" height="26" rx="6" fill="#12131a" stroke="#27272a" stroke-width="1" />
-        <text x="12" y="17" class="pill-tag">🎓 PGD in Data Science (2024)</text>
-      </g>
-
-      <!-- Pill 2: BSc CSE -->
-      <g class="cred-pill" transform="translate(222, 0)">
-        <rect width="245" height="26" rx="6" fill="#12131a" stroke="#27272a" stroke-width="1" />
-        <text x="12" y="17" class="pill-tag">🎓 BSc in Computer Science &amp; Eng.</text>
-      </g>
-
-      <!-- Pill 3: Location -->
-      <g class="cred-pill" transform="translate(479, 0)">
-        <rect width="145" height="26" rx="6" fill="#12131a" stroke="#27272a" stroke-width="1" />
-        <text x="12" y="17" class="pill-tag">📍 Dhaka, Bangladesh</text>
-      </g>
+    <g transform="translate(376, 0)">
+      <rect width="221" height="28" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1" />
+      <text x="110.5" y="18" text-anchor="middle" class="pill-text">SQL Server &amp; Crystal Reports</text>
+    </g>
+    <g transform="translate(609, 0)">
+      <rect width="145" height="28" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1" />
+      <text x="72.5" y="18" text-anchor="middle" class="pill-text">Dhaka, Bangladesh</text>
     </g>
   </g>
 </svg>

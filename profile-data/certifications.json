@@ -1,0 +1,57 @@
+[
+  {
+    "id": "comptia-a-plus",
+    "name": "CompTIA A+ Certification",
+    "issuer": "CompTIA",
+    "category": "certification",
+    "status": "Certified",
+    "issue_date": "Verified Credential",
+    "credential_id": "",
+    "credential_url": "https://www.credly.com/users/salman_rahman",
+    "badge_path": "assets/certificates/comptia-a-plus-badge.svg",
+    "skills_covered": [
+      "Hardware Diagnostics",
+      "Operating Systems",
+      "IT Troubleshooting",
+      "Networking & Security Fundamentals",
+      "Technical Support"
+    ],
+    "verified": true
+  },
+  {
+    "id": "pgdds-2024",
+    "name": "Post Graduate Diploma in Data Science (PGDDS)",
+    "issuer": "United International University (UIU) & BITM",
+    "category": "course",
+    "status": "Completed (2024)",
+    "issue_date": "2024",
+    "credential_id": "",
+    "credential_url": "",
+    "badge_path": "",
+    "skills_covered": [
+      "Data Analysis",
+      "SQL Querying",
+      "Python for Data Science",
+      "Analytical Workflows"
+    ],
+    "verified": true
+  },
+  {
+    "id": "continuous-platform-learning",
+    "name": "Continuous Professional Training in SQL, C#, Python & ERP Architecture",
+    "issuer": "Self-Directed & Professional Learning Platforms",
+    "category": "course",
+    "status": "Ongoing",
+    "issue_date": "Ongoing",
+    "credential_id": "",
+    "credential_url": "",
+    "badge_path": "",
+    "skills_covered": [
+      "Microsoft SQL Server & T-SQL",
+      "PL/SQL",
+      "C# & .NET Architecture",
+      "Python & Data Engineering"
+    ],
+    "verified": true
+  }
+]

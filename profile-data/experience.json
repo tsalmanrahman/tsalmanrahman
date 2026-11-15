@@ -1,0 +1,26 @@
+{
+  "years_of_experience": "2+ Years (Self-Driven & Enterprise Operations)",
+  "current_organization": "HATIM Group",
+  "highlights": [
+    {
+      "area": "SQL Development & Database Architecture",
+      "summary": "2+ years of self-driven and hands-on experience designing relational schemas, writing T-SQL and PL/SQL queries, stored procedures, migrations, and ensuring data integrity on Microsoft SQL Server.",
+      "tools": ["Microsoft SQL Server", "T-SQL", "PL/SQL", "Relational Modeling"]
+    },
+    {
+      "area": "Enterprise Reporting & Data Analysis",
+      "summary": "Building structured operational and analytical reports using Crystal Reports and SQL aggregations to turn raw business records into clear, verifiable outputs.",
+      "tools": ["Crystal Reports", "SQL Queries", "Data Analysis", "Audit Reconciliation"]
+    },
+    {
+      "area": "ERP Systems & Backend Engineering",
+      "summary": "Developing multi-company ERP modules, tenant isolation middleware, and SQL-backed operational portals using C# (.NET) and Python (FastAPI).",
+      "tools": ["C#", ".NET / ASP.NET Core", "Python", "FastAPI", "EF Core & Dapper"]
+    },
+    {
+      "area": "IT Support & Infrastructure Diagnostics",
+      "summary": "Applying CompTIA A+ certified methodology to hardware troubleshooting, operating system maintenance, ODBC driver configuration, and technical support.",
+      "tools": ["CompTIA A+", "Hardware Diagnostics", "Technical Support", "ODBC Connectivity"]
+    }
+  ]
+}

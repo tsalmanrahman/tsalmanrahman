@@ -1,0 +1,5 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="32" height="32" rx="7" fill="#512BD4" />
+  <path d="M16 5.5L25 10.7V21.3L16 26.5L7 21.3V10.7L16 5.5Z" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-opacity="0.35" />
+  <text x="16" y="20" text-anchor="middle" font-family="monospace" font-size="11.5" font-weight="800" fill="#FFFFFF">C#</text>
+</svg>

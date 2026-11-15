@@ -1,0 +1,96 @@
+[
+  {
+    "id": "erp",
+    "name": "Enterprise Multi-Company ERP",
+    "tagline": "Modular multi-company ERP backend & SQL Server architecture",
+    "description": "Full-featured multi-company ERP built on .NET 10 / ASP.NET Core, Entity Framework Core + Dapper, and Microsoft SQL Server with a unified static web portal and ordered SQL migration pipelines.",
+    "category": "ERP / Backend & Database Architecture",
+    "tech_stack": [
+      "C#",
+      ".NET 10 / ASP.NET Core",
+      "Microsoft SQL Server (T-SQL)",
+      "EF Core + Dapper",
+      "QuestPDF",
+      "Docker"
+    ],
+    "repo_url": "https://github.com/tsalmanrahman/ERP",
+    "live_url": "",
+    "image_path": "assets/projects/erp-preview.svg",
+    "key_features": [
+      "Covers General Ledger & Banking, Inventory, Procure-to-Pay (AP), Order-to-Cash (AR), HR & Payroll, Fixed Assets, Real Estate, Manufacturing, and Data Migration/Cutover.",
+      "Multi-company data isolation enforced via company context middleware and global tenant query filters across domain services.",
+      "Ordered SQL Server schema migrations (80 tables), audit columns, and dual-layer soft-delete/cascade governance.",
+      "Clean layered architecture (Domain -> Application -> Infrastructure -> Web.Api) with xUnit tests and PowerShell E2E checks."
+    ],
+    "my_contribution": "Architected multi-company tenant scoping, SQL Server schema standardization, dual-layer deletion governance, facility/inventory modules, and API service implementations.",
+    "featured": true,
+    "verified": true
+  },
+  {
+    "id": "pyrix",
+    "name": "Pyrix — Multi-Company Operations & Settings Suite",
+    "tagline": "Python FastAPI & SQL Server operational diagnostics and schema management portal",
+    "description": "Enterprise operations and settings web application engineered with Python (FastAPI), Jinja2 templates, and Microsoft SQL Server via ODBC Driver 18 for multi-company administration and SQL inspection.",
+    "category": "Python Backend & SQL Operations",
+    "tech_stack": [
+      "Python",
+      "FastAPI",
+      "Jinja2",
+      "Microsoft SQL Server",
+      "ODBC Driver 18",
+      "HTML / CSS / JS"
+    ],
+    "repo_url": "https://github.com/tsalmanrahman/pyrix",
+    "live_url": "",
+    "image_path": "assets/projects/pyrix-preview.svg",
+    "key_features": [
+      "Multi-Company Operations & Switcher for dynamically managing multiple companies and organizations.",
+      "SQL Inspector & Schema Management, Dynamic Form & Table Builder, and System Diagnostics.",
+      "Manufacturing Operations & Workflow Engine paired with Audit Logging and Session Inactivity Guard.",
+      "Thread-safe TTL in-memory query caching and cross-platform ODBC driver detection for resilient SQL Server connectivity."
+    ],
+    "my_contribution": "Built backend FastAPI routes, SQL Server query deduplication and TTL caching, cross-platform ODBC driver detection, and operational UI workflows.",
+    "featured": true,
+    "verified": true
+  },
+  {
+    "id": "github-profile-ecosystem",
+    "name": "Automated GitHub Profile & Portfolio Ecosystem",
+    "tagline": "Data-driven portfolio generator with schema validation and CI/CD automation",
+    "description": "Centralized JSON-driven GitHub profile headquarters that validates structured identity data, syncs verified repository telemetry, generates custom SVG assets, and renders README.md automatically via GitHub Actions.",
+    "category": "DevOps & Profile Automation",
+    "tech_stack": [
+      "Python (Stdlib)",
+      "GitHub Actions",
+      "JSON Schema Validation",
+      "SVG Generation",
+      "PowerShell"
+    ],
+    "repo_url": "https://github.com/tsalmanrahman/tsalmanrahman",
+    "live_url": "",
+    "image_path": "assets/projects/profile-preview.svg",
+    "key_features": [
+      "Single source of truth in profile-data/*.json separating career, projects, skills, certifications, and profile metadata.",
+      "Automated schema, asset, and external link validation with atomic rollback protection on generation failures.",
+      "Scheduled and event-driven GitHub Actions pipelines with graceful API fallback and approval-gated LinkedIn sync."
+    ],
+    "my_contribution": "Designed and implemented the centralized data schema, pure-Python SVG/Markdown generators, validation/test suite, and CI/CD automation workflows.",
+    "featured": true,
+    "verified": true
+  },
+  {
+    "id": "error-storage",
+    "name": "Personal File Storage",
+    "tagline": "Personal utility storage repository",
+    "description": "Repository used solely for personal file storage.",
+    "category": "Utility",
+    "tech_stack": [],
+    "repo_url": "https://github.com/tsalmanrahman/Error",
+    "live_url": "",
+    "image_path": "",
+    "key_features": [],
+    "my_contribution": "Personal repository management.",
+    "featured": false,
+    "verified": true
+  }
+]

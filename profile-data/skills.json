@@ -1,0 +1,116 @@
+{
+  "Database": [
+    {
+      "name": "Microsoft SQL Server",
+      "role": "Core Database Engine",
+      "focus": "Schema Design, T-SQL, Migrations, Indexing",
+      "color": "#CC2927",
+      "short_code": "MSSQL",
+      "badge_url": "https://img.shields.io/badge/Microsoft_SQL_Server-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white"
+    },
+    {
+      "name": "SQL",
+      "role": "Primary Query Language",
+      "focus": "CTEs, Window Functions, Joins, Optimization",
+      "color": "#0284C7",
+      "short_code": "SQL",
+      "badge_url": "https://img.shields.io/badge/SQL-0284C7?style=flat-square&logo=postgresql&logoColor=white"
+    },
+    {
+      "name": "PL/SQL",
+      "role": "Procedural Database Logic",
+      "focus": "Stored Procedures, Triggers, Transactions",
+      "color": "#D97706",
+      "short_code": "PL/SQL",
+      "badge_url": "https://img.shields.io/badge/PL%2FSQL-D97706?style=flat-square&logo=oracle&logoColor=white"
+    }
+  ],
+  "Programming": [
+    {
+      "name": "Python",
+      "role": "Data & Backend Scripting",
+      "focus": "FastAPI, Automation, Data Analysis, ODBC",
+      "color": "#3776AB",
+      "short_code": "PY",
+      "badge_url": "https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"
+    },
+    {
+      "name": "C#",
+      "role": "Enterprise Backend",
+      "focus": ".NET, ASP.NET Core, EF Core, Dapper",
+      "color": "#512BD4",
+      "short_code": "C#",
+      "badge_url": "https://img.shields.io/badge/C%23-512BD4?style=flat-square&logo=csharp&logoColor=white"
+    }
+  ],
+  "Reporting": [
+    {
+      "name": "Crystal Reports",
+      "role": "Enterprise Reporting",
+      "focus": "Operational Reports, Financial Layouts, Subreports",
+      "color": "#0F766E",
+      "short_code": "CR",
+      "badge_url": "https://img.shields.io/badge/Crystal_Reports-0F766E?style=flat-square&logo=sap&logoColor=white"
+    }
+  ],
+  "IT Support": [
+    {
+      "name": "Hardware & Systems",
+      "role": "Infrastructure Support",
+      "focus": "Workstation Diagnostics, Peripherals, Setup",
+      "color": "#475569",
+      "short_code": "HW",
+      "badge_url": "https://img.shields.io/badge/Hardware-475569?style=flat-square&logo=pcgamingwiki&logoColor=white"
+    },
+    {
+      "name": "Troubleshooting",
+      "role": "Root-Cause Diagnosis",
+      "focus": "OS, Network, ODBC & Environment Recovery",
+      "color": "#0369A1",
+      "short_code": "DBG",
+      "badge_url": "https://img.shields.io/badge/Troubleshooting-0369A1?style=flat-square&logo=checkmk&logoColor=white"
+    },
+    {
+      "name": "Technical Support",
+      "role": "CompTIA A+ Practices",
+      "focus": "Incident Resolution, User Assistance, Maintenance",
+      "color": "#C8202F",
+      "short_code": "A+",
+      "badge_url": "https://img.shields.io/badge/Technical_Support_(CompTIA_A%2B)-C8202F?style=flat-square&logo=comptia&logoColor=white"
+    }
+  ],
+  "Other": [
+    {
+      "name": "Data Analysis",
+      "role": "Analytical Insights",
+      "focus": "Data Auditing, Cleaning, Business Metrics",
+      "color": "#10B981",
+      "short_code": "DATA",
+      "badge_url": "https://img.shields.io/badge/Data_Analysis-10B981?style=flat-square&logo=databricks&logoColor=white"
+    },
+    {
+      "name": "ERP Systems",
+      "role": "Enterprise Workflows",
+      "focus": "GL, Inventory, AP/AR, HR & Payroll, Manufacturing",
+      "color": "#6366F1",
+      "short_code": "ERP",
+      "badge_url": "https://img.shields.io/badge/ERP_Systems-6366F1?style=flat-square&logo=diagram&logoColor=white"
+    },
+    {
+      "name": "Backend Development",
+      "role": "API & Service Design",
+      "focus": "REST APIs, Multi-Tenancy, Auth, Caching",
+      "color": "#0EA5E9",
+      "short_code": "API",
+      "badge_url": "https://img.shields.io/badge/Backend_Development-0EA5E9?style=flat-square&logo=fastapi&logoColor=white"
+    },
+    {
+      "name": "Database Design",
+      "role": "Relational Architecture",
+      "focus": "Normalization, FK Governance, Audit & Soft-Delete",
+      "color": "#8B5CF6",
+      "short_code": "DB",
+      "badge_url": "https://img.shields.io/badge/Database_Design-8B5CF6?style=flat-square&logo=sqlalchemy&logoColor=white"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "username": "tsalmanrahman",
+  "last_synced_utc": "2026-11-15T10:15:48Z",
+  "sync_status": "live_github_api",
+  "profile": {
+    "public_repos": 4,
+    "followers": 3,
+    "following": 3,
+    "created_year": 2023,
+    "company": "HATIM Group",
+    "location": "Dhaka",
+    "hireable": true
+  },
+  "repositories": [
+    {
+      "name": "tsalmanrahman",
+      "url": "https://github.com/tsalmanrahman/tsalmanrahman",
+      "primary_language": "Markdown/Data",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-11-15T09:17:55Z"
+    },
+    {
+      "name": "ERP",
+      "url": "https://github.com/tsalmanrahman/ERP",
+      "primary_language": "C#",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-10-26T10:57:24Z"
+    },
+    {
+      "name": "pyrix",
+      "url": "https://github.com/tsalmanrahman/pyrix",
+      "primary_language": "HTML",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-09-06T04:30:24Z"
+    }
+  ],
+  "language_bytes": {
+    "HTML": 1771360,
+    "C#": 1148128,
+    "Python": 1082352,
+    "JavaScript": 595819,
+    "TSQL": 224358,
+    "CSS": 57499,
+    "PowerShell": 38625,
+    "Dockerfile": 2333
+  }
+}

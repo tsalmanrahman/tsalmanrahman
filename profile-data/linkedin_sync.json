@@ -1,0 +1,16 @@
+{
+  "profile_url": "https://www.linkedin.com/in/t-salmanrahman",
+  "sync_mode": "manual_or_oauth",
+  "require_approval": true,
+  "last_verified_sync": null,
+  "supported_sources": [
+    "Official LinkedIn OpenID Connect API (/v2/userinfo) via LINKEDIN_ACCESS_TOKEN secret",
+    "Official LinkedIn Data Export Archive CSVs (Profile.csv, Certifications.csv, Positions.csv)"
+  ],
+  "limitations": [
+    "LinkedIn's public Consumer API (/v2/userinfo) only exposes basic identity fields (name, email, picture) without Partner Program approval.",
+    "Full headline, positions, education, and certifications are not exposed via standard unprivileged LinkedIn REST APIs; scraping or cookie auth is prohibited.",
+    "All external career updates detected via OAuth or official LinkedIn Data Export CSVs are staged into pending_changes and require explicit approval before updating profile-data/*.json."
+  ],
+  "pending_changes": []
+}

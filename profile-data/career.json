@@ -1,0 +1,33 @@
+{
+  "status": "Open to Opportunities",
+  "available_for_hire": true,
+  "current_focus": [
+    "Enterprise Database Architecture & Query Optimization in Microsoft SQL Server (T-SQL, PL/SQL)",
+    "Multi-Company ERP Backend Development & Operational Tooling with C# (.NET) and Python",
+    "Business Intelligence, Operational Reporting & Data Analysis with Crystal Reports and SQL"
+  ],
+  "career_interests": [
+    "SQL Developer",
+    "Data Analyst",
+    "Data Engineer",
+    "Database Developer",
+    "ERP / Backend Developer"
+  ],
+  "recent_updates": [
+    {
+      "date": "2026-11",
+      "category": "Profile Architecture",
+      "title": "Built a centralized, data-driven GitHub Profile Ecosystem with JSON source-of-truth, schema validation, and automated CI/CD workflows."
+    },
+    {
+      "date": "2026-10",
+      "category": "ERP Engineering",
+      "title": "Implemented multi-company tenant isolation, facility registries, and standardized database architecture audits for the ERP platform on SQL Server & .NET 10."
+    },
+    {
+      "date": "2026-09",
+      "category": "Operations Tooling",
+      "title": "Developed Pyrix multi-company operations & SQL schema inspection suite using Python (FastAPI) and Microsoft SQL Server (ODBC Driver 18)."
+    }
+  ]
+}

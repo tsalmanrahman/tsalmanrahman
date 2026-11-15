@@ -1,0 +1,39 @@
+name: Validate Profile Data & Assets
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate JSON schemas and local SVG assets
+        run: python scripts/validate_data.py --check-assets
+
+      - name: Run profile automation unit tests
+        run: python -m unittest discover -s tests -p "test_*.py" -v
+
+      - name: Verify README.md and SVGs match profile-data
+        run: python scripts/generate_readme.py --check
+
+      - name: Verify external profile and project links
+        run: python scripts/validate_data.py --check-links
