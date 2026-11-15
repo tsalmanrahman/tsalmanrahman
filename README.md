@@ -15,13 +15,13 @@
 SQL Developer & Data Analyst specializing in Microsoft SQL Server, relational database architecture, Crystal Reports, and backend systems in C# and Python.
 
 <p>
-  <a href="https://www.linkedin.com/in/t-salmanrahman"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+  <a href="https://www.linkedin.com/in/t-salmanrahman"><img src="assets/icons/contact-linkedin.svg" alt="LinkedIn" /></a>
   &nbsp;
-  <a href="https://www.credly.com/users/salman_rahman"><img src="https://img.shields.io/badge/Credly-FF6B00?style=for-the-badge&logo=credly&logoColor=white" alt="Credly" /></a>
+  <a href="https://www.credly.com/users/salman_rahman"><img src="assets/icons/contact-credly.svg" alt="Credly" /></a>
   &nbsp;
-  <a href="mailto:t.salmanrahman@gmail.com"><img src="https://img.shields.io/badge/Email-1E293B?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
+  <a href="mailto:t.salmanrahman@gmail.com"><img src="assets/icons/contact-email.svg" alt="Email" /></a>
   &nbsp;
-  <a href="https://github.com/tsalmanrahman"><img src="https://img.shields.io/badge/GitHub-0F172A?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
+  <a href="https://github.com/tsalmanrahman"><img src="assets/icons/contact-github.svg" alt="GitHub" /></a>
 </p>
 
 <p>

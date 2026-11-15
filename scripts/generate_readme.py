@@ -415,6 +415,61 @@ NAV_ITEMS: tuple[dict[str, str], ...] = (
 )
 
 
+CONTACT_PILL_SPECS: dict[str, dict[str, str]] = {
+    "linkedin": {
+        "filename": "assets/icons/contact-linkedin.svg",
+        "label": "LinkedIn",
+        "box_fill": "#0A66C2",
+        "box_stroke": "#0A66C2",
+        "icon": '<text x="18" y="21" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, \'Segoe UI\', sans-serif" font-size="11.5" font-weight="800" fill="#ffffff">in</text>',
+    },
+    "credly": {
+        "filename": "assets/icons/contact-credly.svg",
+        "label": "Credly",
+        "box_fill": "#EA580C",
+        "box_stroke": "#EA580C",
+        "icon": '<g transform="translate(10.5, 9.5) scale(0.625)" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"><circle cx="12" cy="9" r="5.5" /><path d="M8.5 14l-1.5 7 5-2.5 5 2.5-1.5-7" /></g>',
+    },
+    "email": {
+        "filename": "assets/icons/contact-email.svg",
+        "label": "Email",
+        "box_fill": "#0284C7",
+        "box_stroke": "#0284C7",
+        "icon": '<g transform="translate(10.5, 9.5) scale(0.625)" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="M22 7l-10 6L2 7" /></g>',
+    },
+    "github": {
+        "filename": "assets/icons/contact-github.svg",
+        "label": "GitHub",
+        "box_fill": "#24292F",
+        "box_stroke": "#475569",
+        "icon": '<g transform="translate(11, 10) scale(0.583)" fill="#ffffff"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" /></g>',
+    },
+    "portfolio": {
+        "filename": "assets/icons/contact-portfolio.svg",
+        "label": "Portfolio",
+        "box_fill": "#0F766E",
+        "box_stroke": "#0F766E",
+        "icon": '<g transform="translate(10.5, 9.5) scale(0.625)" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"><circle cx="12" cy="12" r="9" /><line x1="3" y1="12" x2="21" y2="12" /><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18z" /></g>',
+    },
+}
+
+
+def render_contact_pill_svg(spec: dict[str, str]) -> str:
+    """Render a unified dark-slate SVG contact pill with a crisp brand badge and arrow."""
+    label = xml_escape(spec["label"])
+    box_fill = xml_escape(spec["box_fill"])
+    box_stroke = xml_escape(spec["box_stroke"])
+    width = max(98, int(36 + len(spec["label"]) * 7.2 + 24))
+    return f"""<svg width="{width}" height="34" viewBox="0 0 {width} 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0.5" y="0.5" width="{width - 1}" height="33" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
+  <rect x="8" y="7" width="20" height="20" rx="5" fill="{box_fill}" stroke="{box_stroke}" stroke-width="0.8" />
+  {spec['icon']}
+  <text x="36" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#f8fafc">{label}</text>
+  <text x="{width - 12}" y="20.5" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#64748b">↗</text>
+</svg>
+"""
+
+
 def render_nav_pill_svg(item: dict[str, str]) -> str:
     """Render a modern dark-slate SVG navigation pill with a crisp icon and short label."""
     label = xml_escape(item["label"])
@@ -471,31 +526,31 @@ def render_readme_markdown(
     if contact.get("linkedin"):
         contact_badges.append(
             f'<a href="{contact["linkedin"]}">'
-            '<img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />'
+            f'<img src="{CONTACT_PILL_SPECS["linkedin"]["filename"]}" alt="LinkedIn" />'
             "</a>"
         )
     if contact.get("credly"):
         contact_badges.append(
             f'<a href="{contact["credly"]}">'
-            '<img src="https://img.shields.io/badge/Credly-FF6B00?style=for-the-badge&logo=credly&logoColor=white" alt="Credly" />'
+            f'<img src="{CONTACT_PILL_SPECS["credly"]["filename"]}" alt="Credly" />'
             "</a>"
         )
     if contact.get("show_email") and contact.get("email"):
         contact_badges.append(
             f'<a href="mailto:{contact["email"]}">'
-            '<img src="https://img.shields.io/badge/Email-1E293B?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />'
+            f'<img src="{CONTACT_PILL_SPECS["email"]["filename"]}" alt="Email" />'
             "</a>"
         )
     if contact.get("github"):
         contact_badges.append(
             f'<a href="{contact["github"]}">'
-            '<img src="https://img.shields.io/badge/GitHub-0F172A?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />'
+            f'<img src="{CONTACT_PILL_SPECS["github"]["filename"]}" alt="GitHub" />'
             "</a>"
         )
     if contact.get("portfolio"):
         contact_badges.append(
             f'<a href="{contact["portfolio"]}">'
-            '<img src="https://img.shields.io/badge/Portfolio-0284C7?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />'
+            f'<img src="{CONTACT_PILL_SPECS["portfolio"]["filename"]}" alt="Portfolio" />'
             "</a>"
         )
 
@@ -766,6 +821,16 @@ def build_outputs(root_dir: Path) -> dict[Path, str]:
 
     for nav_item in NAV_ITEMS:
         outputs[root_dir / nav_item["filename"]] = render_nav_pill_svg(nav_item)
+
+    contact = profile.get("contact", {})
+    active_contacts = [
+        key for key in ("linkedin", "credly", "github", "portfolio") if contact.get(key)
+    ]
+    if contact.get("show_email") and contact.get("email"):
+        active_contacts.append("email")
+    for key in active_contacts:
+        spec = CONTACT_PILL_SPECS[key]
+        outputs[root_dir / spec["filename"]] = render_contact_pill_svg(spec)
 
     for proj in projects:
         if proj.get("featured") and proj.get("verified") and proj.get("image_path"):
