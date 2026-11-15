@@ -11,37 +11,26 @@ I am a **Software Engineer & Data Analyst** focused on engineering reliable web 
 With a background spanning a **BSc in Computer Science & Engineering** and a **Post Graduate Diploma in Data Science (PGDDS, 2024)**, I build software that scales and design analytical workflows that turn raw data into strategic decisions.
 
 ```ts
-const profile = {
+const engineer = {
   name: "Salman Rahman",
   role: "Software Engineer & Data Analyst",
-  credentials: ["BSc in CSE", "PGD in Data Science (2024)"],
-  coreStack: ["TypeScript", "Next.js", "Python", "SQL", "PostgreSQL"],
+  credentials: [
+    "BSc in Computer Science & Engineering (VU)",
+    "Post Graduate Diploma in Data Science (UIU/BITM, 2024)"
+  ],
+  architecture: ["Full-Stack Distributed Systems", "Relational Database Normalization", "Automated ETL Pipelines"],
   location: "Dhaka, Bangladesh",
-  status: "Available for engineering & data opportunities"
+  status: "Open to impactful engineering & data challenges"
 };
 ```
 
 ---
 
-### Stack & Tooling
+### Technical Mastery & Tooling
 
-```
-Development  │  TypeScript · Next.js · React · Node.js · C# · PostgreSQL · Tailwind · Docker · Git
-Analytics    │  Python · Complex SQL · Pandas · Scikit-Learn · Power BI · Tableau · Streamlit · BigQuery
-```
-
-<p>
-  <img src="https://img.shields.io/badge/TypeScript-18181b?style=flat&logo=typescript&logoColor=3178C6" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/Next.js-18181b?style=flat&logo=nextdotjs&logoColor=white" alt="Next.js" />
-  <img src="https://img.shields.io/badge/React-18181b?style=flat&logo=react&logoColor=61DAFB" alt="React" />
-  <img src="https://img.shields.io/badge/Python-18181b?style=flat&logo=python&logoColor=3776AB" alt="Python" />
-  <img src="https://img.shields.io/badge/SQL-18181b?style=flat&logo=postgresql&logoColor=4169E1" alt="SQL" />
-  <img src="https://img.shields.io/badge/PostgreSQL-18181b?style=flat&logo=postgresql&logoColor=white" alt="PostgreSQL" />
-  <img src="https://img.shields.io/badge/Pandas-18181b?style=flat&logo=pandas&logoColor=white" alt="Pandas" />
-  <img src="https://img.shields.io/badge/Power_BI-18181b?style=flat&logo=powerbi&logoColor=F2C811" alt="Power BI" />
-  <img src="https://img.shields.io/badge/Tableau-18181b?style=flat&logo=tableau&logoColor=E97627" alt="Tableau" />
-  <img src="https://img.shields.io/badge/Docker-18181b?style=flat&logo=docker&logoColor=2496ED" alt="Docker" />
-</p>
+<div align="center">
+  <img src="tech-matrix.svg" alt="Technical Mastery Matrix" width="100%" />
+</div>
 
 ---
 
