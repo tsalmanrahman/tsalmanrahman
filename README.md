@@ -39,7 +39,7 @@ SQL Developer & Data Analyst specializing in Microsoft SQL Server, relational da
 
 ## About Me
 
-Computer Science graduate with 2+ years of self-driven experience in SQL development, PL/SQL, data analysis, and IT support.
+Computer Science graduate with 4+ years of self-driven experience in SQL development, PL/SQL, data analysis, and IT support.
 
 Experienced in working with Microsoft SQL Server and Crystal Reports to model enterprise data, build reliable queries, and deliver operational reporting, alongside foundational engineering skills in C# and Python.
 
