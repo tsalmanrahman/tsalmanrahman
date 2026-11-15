@@ -52,20 +52,22 @@ I specialize in bridging the gap between full-stack software architecture and da
 
 ---
 
-### 📈 GitHub Telemetry & Activity
+### ⚡ Technical Competency & Architecture Telemetry
 
 <div align="center">
-  <table border="0">
-    <tr>
-      <td width="50%">
-        <img src="https://github-readme-stats.vercel.app/api?username=t-salmanrahman&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=38bdf8&icon_color=34d399&text_color=94a3b8" width="100%" alt="Salman's GitHub Stats" />
-      </td>
-      <td width="50%">
-        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=t-salmanrahman&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=34d399&text_color=94a3b8" width="100%" alt="Top Languages" />
-      </td>
-    </tr>
-  </table>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=t-salmanrahman&theme=tokyonight&hide_border=true&background=0d1117&stroke=1e293b&ring=38bdf8&fire=34d399&currStreakNum=38bdf8" width="100%" alt="Streak Stats" />
+  <img src="telemetry.svg" alt="Engineering and Analytics Telemetry" width="100%" />
+</div>
+
+<br/>
+
+### 🐍 Dynamic Contribution Activity
+
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/t-salmanrahman/t-salmanrahman/output/github-contribution-grid-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/t-salmanrahman/t-salmanrahman/output/github-contribution-grid-snake.svg">
+    <img alt="GitHub Contribution Snake Animation" src="https://raw.githubusercontent.com/t-salmanrahman/t-salmanrahman/output/github-contribution-grid-snake.svg" width="100%" />
+  </picture>
 </div>
 
 ---
