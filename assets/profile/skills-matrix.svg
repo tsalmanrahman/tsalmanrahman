@@ -15,97 +15,97 @@
   <text x="28" y="26" class="cat-title">DATABASE</text>
   <g transform="translate(28, 40)">
     <rect width="256" height="58" rx="8" fill="#111827" stroke="#1e293b" stroke-width="1" />
-    <rect x="12" y="13" width="38" height="32" rx="6" fill="#CC2927" />
-    <text x="31" y="33" text-anchor="middle" font-family="monospace" font-size="8" font-weight="800" fill="#ffffff">MSSQL</text>
-    <text x="62" y="26" class="skill-name">Microsoft SQL Server</text>
-    <text x="62" y="42" class="skill-role">Core Database Engine</text>
+    <rect x="12" y="11" width="36" height="36" rx="8" fill="#CC2927" fill-opacity="0.16" stroke="#CC2927" stroke-opacity="0.45" stroke-width="1" />
+    <g transform="translate(19, 18) scale(0.9167)"><g stroke="#F87171" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"><ellipse cx="12" cy="5.5" rx="7.5" ry="2.8" fill="#F87171" fill-opacity="0.18" /><path d="M4.5 5.5v13c0 1.55 3.36 2.8 7.5 2.8s7.5-1.25 7.5-2.8v-13" /><path d="M4.5 9.8c0 1.55 3.36 2.8 7.5 2.8s7.5-1.25 7.5-2.8" /><path d="M4.5 14.2c0 1.55 3.36 2.8 7.5 2.8s7.5-1.25 7.5-2.8" /></g></g>
+    <text x="58" y="25" class="skill-name">Microsoft SQL Server</text>
+    <text x="58" y="41" class="skill-role">Core Database Engine</text>
   </g>
   <g transform="translate(302, 40)">
     <rect width="256" height="58" rx="8" fill="#111827" stroke="#1e293b" stroke-width="1" />
-    <rect x="12" y="13" width="38" height="32" rx="6" fill="#0284C7" />
-    <text x="31" y="33" text-anchor="middle" font-family="monospace" font-size="9.5" font-weight="800" fill="#ffffff">SQL</text>
-    <text x="62" y="26" class="skill-name">SQL</text>
-    <text x="62" y="42" class="skill-role">Primary Query Language</text>
+    <rect x="12" y="11" width="36" height="36" rx="8" fill="#0284C7" fill-opacity="0.16" stroke="#0284C7" stroke-opacity="0.45" stroke-width="1" />
+    <g transform="translate(19, 18) scale(0.9167)"><g stroke="#38BDF8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="3" y="4" width="18" height="16" rx="2.5" fill="#38BDF8" fill-opacity="0.14" /><path d="M3 9.5h18" /><path d="M9.5 9.5v10.5" /><path d="M13 13.5h4.5M13 16.8h3" stroke="#7DD3FC" /></g></g>
+    <text x="58" y="25" class="skill-name">SQL</text>
+    <text x="58" y="41" class="skill-role">Primary Query Language</text>
   </g>
   <g transform="translate(576, 40)">
     <rect width="256" height="58" rx="8" fill="#111827" stroke="#1e293b" stroke-width="1" />
-    <rect x="12" y="13" width="38" height="32" rx="6" fill="#D97706" />
-    <text x="31" y="33" text-anchor="middle" font-family="monospace" font-size="8" font-weight="800" fill="#ffffff">PL/SQL</text>
-    <text x="62" y="26" class="skill-name">PL/SQL</text>
-    <text x="62" y="42" class="skill-role">Procedural Database Logic</text>
+    <rect x="12" y="11" width="36" height="36" rx="8" fill="#D97706" fill-opacity="0.16" stroke="#D97706" stroke-opacity="0.45" stroke-width="1" />
+    <g transform="translate(19, 18) scale(0.9167)"><g stroke="#FBBF24" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" fill="none"><ellipse cx="10" cy="6" rx="6" ry="2.4" fill="#FBBF24" fill-opacity="0.16" /><path d="M4 6v10.5c0 1.33 2.69 2.4 6 2.4 1.1 0 2.13-.12 3-.32" /><path d="M4 11.2c0 1.33 2.69 2.4 6 2.4 1.25 0 2.4-.15 3.35-.4" /><path d="M16 6v4.5" /><polygon points="17.8 11.2 13.6 16.8 16.7 16.8 15.6 21.5 20.6 15.4 17.4 15.4" fill="#FBBF24" stroke="none" /></g></g>
+    <text x="58" y="25" class="skill-name">PL/SQL</text>
+    <text x="58" y="41" class="skill-role">Procedural Database Logic</text>
   </g>
   <text x="28" y="120" class="cat-title">PROGRAMMING</text>
   <g transform="translate(28, 134)">
     <rect width="393" height="58" rx="8" fill="#111827" stroke="#1e293b" stroke-width="1" />
-    <rect x="12" y="13" width="38" height="32" rx="6" fill="#3776AB" />
-    <text x="31" y="33" text-anchor="middle" font-family="monospace" font-size="9.5" font-weight="800" fill="#ffffff">PY</text>
-    <text x="62" y="26" class="skill-name">Python</text>
-    <text x="62" y="42" class="skill-role">FastAPI, Automation, Data Analysis, ODBC</text>
+    <rect x="12" y="11" width="36" height="36" rx="8" fill="#3776AB" fill-opacity="0.16" stroke="#3776AB" stroke-opacity="0.45" stroke-width="1" />
+    <g transform="translate(19, 18) scale(0.9167)"><g><path d="M11.8 2C7.9 2 8.2 3.7 8.2 3.7V5.9H12.5V6.6H5.9C3.9 6.6 2.8 8.1 2.8 10.8C2.8 13.5 3.8 15 5.9 15H7.6V12.8C7.6 10.7 9.1 9.8 11.2 9.8H15.2C17 9.8 18.2 8.7 18.2 6.8V3.7C18.2 3.7 18.4 2 11.8 2ZM9.7 3.2A.9.9 0 1 1 9.7 5A.9.9 0 1 1 9.7 3.2Z" fill="#4B8BBE" /><path d="M12.2 22C16.1 22 15.8 20.3 15.8 20.3V18.1H11.5V17.4H18.1C20.1 17.4 21.2 15.9 21.2 13.2C21.2 10.5 20.2 9 18.1 9H16.4V11.2C16.4 13.3 14.9 14.2 12.8 14.2H8.8C7 14.2 5.8 15.3 5.8 17.2V20.3C5.8 20.3 5.6 22 12.2 22ZM14.3 19A.9.9 0 1 1 14.3 20.8A.9.9 0 1 1 14.3 19Z" fill="#FFD43B" /></g></g>
+    <text x="58" y="25" class="skill-name">Python</text>
+    <text x="58" y="41" class="skill-role">FastAPI, Automation, Data Analysis, ODBC</text>
   </g>
   <g transform="translate(439, 134)">
     <rect width="393" height="58" rx="8" fill="#111827" stroke="#1e293b" stroke-width="1" />
-    <rect x="12" y="13" width="38" height="32" rx="6" fill="#512BD4" />
-    <text x="31" y="33" text-anchor="middle" font-family="monospace" font-size="9.5" font-weight="800" fill="#ffffff">C#</text>
-    <text x="62" y="26" class="skill-name">C#</text>
-    <text x="62" y="42" class="skill-role">.NET, ASP.NET Core, EF Core, Dapper</text>
+    <rect x="12" y="11" width="36" height="36" rx="8" fill="#512BD4" fill-opacity="0.16" stroke="#512BD4" stroke-opacity="0.45" stroke-width="1" />
+    <g transform="translate(19, 18) scale(0.9167)"><g><polygon points="12 2.5 20.2 7.25 20.2 16.75 12 21.5 3.8 16.75 3.8 7.25" fill="#7C3AED" fill-opacity="0.35" stroke="#A78BFA" stroke-width="1.6" stroke-linejoin="round" /><path d="M12.4 9.5a3.5 3.5 0 1 0 0 5.0" stroke="#ffffff" stroke-width="2.1" stroke-linecap="round" fill="none" /><path d="M14.8 9.5l-.6 5M17.2 9.5l-.6 5M13.6 11.1h4.2M13.3 13.1h4.2" stroke="#DDD6FE" stroke-width="1.35" stroke-linecap="round" fill="none" /></g></g>
+    <text x="58" y="25" class="skill-name">C#</text>
+    <text x="58" y="41" class="skill-role">.NET, ASP.NET Core, EF Core, Dapper</text>
   </g>
   <text x="28" y="214" class="cat-title">REPORTING</text>
   <g transform="translate(28, 228)">
     <rect width="804" height="58" rx="8" fill="#111827" stroke="#1e293b" stroke-width="1" />
-    <rect x="12" y="13" width="38" height="32" rx="6" fill="#0F766E" />
-    <text x="31" y="33" text-anchor="middle" font-family="monospace" font-size="9.5" font-weight="800" fill="#ffffff">CR</text>
-    <text x="62" y="26" class="skill-name">Crystal Reports</text>
-    <text x="62" y="42" class="skill-role">Enterprise Reporting · Operational Reports, Financial Layouts, Subreports</text>
+    <rect x="12" y="11" width="36" height="36" rx="8" fill="#0F766E" fill-opacity="0.16" stroke="#0F766E" stroke-opacity="0.45" stroke-width="1" />
+    <g transform="translate(19, 18) scale(0.9167)"><g stroke="#2DD4BF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M6 3h8l4.5 4.5V20a1.5 1.5 0 0 1-1.5 1.5H6A1.5 1.5 0 0 1 4.5 20V4.5A1.5 1.5 0 0 1 6 3z" fill="#2DD4BF" fill-opacity="0.14" /><path d="M14 3v4.5h4.5" /><path d="M8.5 17v-3.5M11.5 17V11M14.5 17v-5" stroke="#5EEAD4" stroke-width="2" /><path d="M8 8.5h3.5" stroke="#5EEAD4" /></g></g>
+    <text x="58" y="25" class="skill-name">Crystal Reports</text>
+    <text x="58" y="41" class="skill-role">Enterprise Reporting · Operational Reports, Financial Layouts, Subreports</text>
   </g>
   <text x="28" y="308" class="cat-title">IT SUPPORT</text>
   <g transform="translate(28, 322)">
     <rect width="256" height="58" rx="8" fill="#111827" stroke="#1e293b" stroke-width="1" />
-    <rect x="12" y="13" width="38" height="32" rx="6" fill="#475569" />
-    <text x="31" y="33" text-anchor="middle" font-family="monospace" font-size="9.5" font-weight="800" fill="#ffffff">HW</text>
-    <text x="62" y="26" class="skill-name">Hardware &amp; Systems</text>
-    <text x="62" y="42" class="skill-role">Infrastructure Support</text>
+    <rect x="12" y="11" width="36" height="36" rx="8" fill="#475569" fill-opacity="0.16" stroke="#475569" stroke-opacity="0.45" stroke-width="1" />
+    <g transform="translate(19, 18) scale(0.9167)"><g stroke="#CBD5E1" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="6" y="6" width="12" height="12" rx="2" fill="#94A3B8" fill-opacity="0.2" /><rect x="9.5" y="9.5" width="5" height="5" rx="0.8" fill="#CBD5E1" fill-opacity="0.35" /><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3" /></g></g>
+    <text x="58" y="25" class="skill-name">Hardware &amp; Systems</text>
+    <text x="58" y="41" class="skill-role">Infrastructure Support</text>
   </g>
   <g transform="translate(302, 322)">
     <rect width="256" height="58" rx="8" fill="#111827" stroke="#1e293b" stroke-width="1" />
-    <rect x="12" y="13" width="38" height="32" rx="6" fill="#0369A1" />
-    <text x="31" y="33" text-anchor="middle" font-family="monospace" font-size="9.5" font-weight="800" fill="#ffffff">DBG</text>
-    <text x="62" y="26" class="skill-name">Troubleshooting</text>
-    <text x="62" y="42" class="skill-role">Root-Cause Diagnosis</text>
+    <rect x="12" y="11" width="36" height="36" rx="8" fill="#0369A1" fill-opacity="0.16" stroke="#0369A1" stroke-opacity="0.45" stroke-width="1" />
+    <g transform="translate(19, 18) scale(0.9167)"><g stroke="#38BDF8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" fill="#38BDF8" fill-opacity="0.14" /></g></g>
+    <text x="58" y="25" class="skill-name">Troubleshooting</text>
+    <text x="58" y="41" class="skill-role">Root-Cause Diagnosis</text>
   </g>
   <g transform="translate(576, 322)">
     <rect width="256" height="58" rx="8" fill="#111827" stroke="#1e293b" stroke-width="1" />
-    <rect x="12" y="13" width="38" height="32" rx="6" fill="#C8202F" />
-    <text x="31" y="33" text-anchor="middle" font-family="monospace" font-size="9.5" font-weight="800" fill="#ffffff">A+</text>
-    <text x="62" y="26" class="skill-name">Technical Support</text>
-    <text x="62" y="42" class="skill-role">CompTIA A+ Practices</text>
+    <rect x="12" y="11" width="36" height="36" rx="8" fill="#C8202F" fill-opacity="0.16" stroke="#C8202F" stroke-opacity="0.45" stroke-width="1" />
+    <g transform="translate(19, 18) scale(0.9167)"><g stroke="#F87171" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M4 14v-2a8 8 0 1 1 16 0v2" /><rect x="3" y="13" width="3.5" height="5" rx="1.5" fill="#F87171" fill-opacity="0.22" /><rect x="17.5" y="13" width="3.5" height="5" rx="1.5" fill="#F87171" fill-opacity="0.22" /><path d="M21 16v1.5a3 3 0 0 1-3 3h-3.5" /></g></g>
+    <text x="58" y="25" class="skill-name">Technical Support</text>
+    <text x="58" y="41" class="skill-role">CompTIA A+ Practices</text>
   </g>
   <text x="28" y="402" class="cat-title">OTHER</text>
   <g transform="translate(28, 416)">
     <rect width="393" height="58" rx="8" fill="#111827" stroke="#1e293b" stroke-width="1" />
-    <rect x="12" y="13" width="38" height="32" rx="6" fill="#10B981" />
-    <text x="31" y="33" text-anchor="middle" font-family="monospace" font-size="9.5" font-weight="800" fill="#ffffff">DATA</text>
-    <text x="62" y="26" class="skill-name">Data Analysis</text>
-    <text x="62" y="42" class="skill-role">Data Auditing, Cleaning, Business Metrics</text>
+    <rect x="12" y="11" width="36" height="36" rx="8" fill="#10B981" fill-opacity="0.16" stroke="#10B981" stroke-opacity="0.45" stroke-width="1" />
+    <g transform="translate(19, 18) scale(0.9167)"><g stroke="#34D399" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M4 20h16" /><rect x="5.5" y="13" width="3" height="4.5" rx="0.6" fill="#34D399" fill-opacity="0.3" /><rect x="10.5" y="10" width="3" height="7.5" rx="0.6" fill="#34D399" fill-opacity="0.3" /><rect x="15.5" y="6.5" width="3" height="11" rx="0.6" fill="#34D399" fill-opacity="0.3" /><path d="M5.5 9.5L10.5 6.5L15 8L19 4" stroke="#6EE7B7" /><polyline points="16.5 4 19 4 19 6.5" stroke="#6EE7B7" /></g></g>
+    <text x="58" y="25" class="skill-name">Data Analysis</text>
+    <text x="58" y="41" class="skill-role">Data Auditing, Cleaning, Business Metrics</text>
   </g>
   <g transform="translate(439, 416)">
     <rect width="393" height="58" rx="8" fill="#111827" stroke="#1e293b" stroke-width="1" />
-    <rect x="12" y="13" width="38" height="32" rx="6" fill="#6366F1" />
-    <text x="31" y="33" text-anchor="middle" font-family="monospace" font-size="9.5" font-weight="800" fill="#ffffff">ERP</text>
-    <text x="62" y="26" class="skill-name">ERP Systems</text>
-    <text x="62" y="42" class="skill-role">GL, Inventory, AP/AR, HR &amp; Payroll, Manufacturing</text>
+    <rect x="12" y="11" width="36" height="36" rx="8" fill="#6366F1" fill-opacity="0.16" stroke="#6366F1" stroke-opacity="0.45" stroke-width="1" />
+    <g transform="translate(19, 18) scale(0.9167)"><g stroke="#818CF8" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="9" y="3.5" width="6" height="4.5" rx="1" fill="#818CF8" fill-opacity="0.25" /><rect x="3" y="15.5" width="5" height="4.5" rx="1" fill="#818CF8" fill-opacity="0.25" /><rect x="9.5" y="15.5" width="5" height="4.5" rx="1" fill="#818CF8" fill-opacity="0.25" /><rect x="16" y="15.5" width="5" height="4.5" rx="1" fill="#818CF8" fill-opacity="0.25" /><path d="M12 8v3.5M5.5 15.5v-2.5h13v2.5M12 11.5v4" /></g></g>
+    <text x="58" y="25" class="skill-name">ERP Systems</text>
+    <text x="58" y="41" class="skill-role">GL, Inventory, AP/AR, HR &amp; Payroll, Manufacturing</text>
   </g>
   <g transform="translate(28, 486)">
     <rect width="393" height="58" rx="8" fill="#111827" stroke="#1e293b" stroke-width="1" />
-    <rect x="12" y="13" width="38" height="32" rx="6" fill="#0EA5E9" />
-    <text x="31" y="33" text-anchor="middle" font-family="monospace" font-size="9.5" font-weight="800" fill="#ffffff">API</text>
-    <text x="62" y="26" class="skill-name">Backend Development</text>
-    <text x="62" y="42" class="skill-role">REST APIs, Multi-Tenancy, Auth, Caching</text>
+    <rect x="12" y="11" width="36" height="36" rx="8" fill="#0EA5E9" fill-opacity="0.16" stroke="#0EA5E9" stroke-opacity="0.45" stroke-width="1" />
+    <g transform="translate(19, 18) scale(0.9167)"><g stroke="#38BDF8" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M8.5 5C6.8 5 6.5 6.2 6.5 7.5v2.2c0 1.1-.8 2-2 2.3 1.2.3 2 1.2 2 2.3v2.2c0 1.3.3 2.5 2 2.5" /><path d="M15.5 5c1.7 0 2 1.2 2 2.5v2.2c0 1.1.8 2 2 2.3-1.2.3-2 1.2-2 2.3v2.2c0 1.3-.3 2.5-2 2.5" /><path d="M13 8.5l-2 7" stroke="#7DD3FC" stroke-width="1.75" /></g></g>
+    <text x="58" y="25" class="skill-name">Backend Development</text>
+    <text x="58" y="41" class="skill-role">REST APIs, Multi-Tenancy, Auth, Caching</text>
   </g>
   <g transform="translate(439, 486)">
     <rect width="393" height="58" rx="8" fill="#111827" stroke="#1e293b" stroke-width="1" />
-    <rect x="12" y="13" width="38" height="32" rx="6" fill="#8B5CF6" />
-    <text x="31" y="33" text-anchor="middle" font-family="monospace" font-size="9.5" font-weight="800" fill="#ffffff">DB</text>
-    <text x="62" y="26" class="skill-name">Database Design</text>
-    <text x="62" y="42" class="skill-role">Normalization, FK Governance, Audit &amp; Soft-Delete</text>
+    <rect x="12" y="11" width="36" height="36" rx="8" fill="#8B5CF6" fill-opacity="0.16" stroke="#8B5CF6" stroke-opacity="0.45" stroke-width="1" />
+    <g transform="translate(19, 18) scale(0.9167)"><g stroke="#A78BFA" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="3" y="4" width="8" height="6.5" rx="1.2" fill="#A78BFA" fill-opacity="0.22" /><rect x="13" y="13.5" width="8" height="6.5" rx="1.2" fill="#A78BFA" fill-opacity="0.22" /><path d="M11 7.2h4.5a1.5 1.5 0 0 1 1.5 1.5v4.8" /><path d="M7 10.5v4.8a1.5 1.5 0 0 0 1.5 1.5H13" stroke="#C4B5FD" stroke-opacity="0.7" /><circle cx="17" cy="13.5" r="1.2" fill="#A78BFA" stroke="none" /></g></g>
+    <text x="58" y="25" class="skill-name">Database Design</text>
+    <text x="58" y="41" class="skill-role">Normalization, FK Governance, Audit &amp; Soft-Delete</text>
   </g>
 </svg>

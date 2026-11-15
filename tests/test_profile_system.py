@@ -9,6 +9,7 @@ import sys
 import tempfile
 import unittest
 import urllib.error
+import xml.etree.ElementTree as ET
 from pathlib import Path
 from unittest import mock
 
@@ -156,6 +157,25 @@ class TestProfileEcosystem(unittest.TestCase):
 
         self.assertEqual(sync_profile.apply_approved_linkedin_changes(tmp), 1)
         self.assertEqual(json.loads(profile_path.read_text(encoding="utf-8"))["headline"], "Senior SQL & ERP Architect")
+
+    def test_skills_matrix_renders_tinted_vector_icons_and_fallback(self) -> None:
+        skills = json.loads((REPO_ROOT / "profile-data" / "skills.json").read_text(encoding="utf-8"))
+        skills["Other"].append(
+            {
+                "name": "Custom Stack",
+                "role": "Specialized Tooling",
+                "focus": "Automation",
+                "color": "#14B8A6",
+                "badge_url": "https://img.shields.io/badge/Custom-14B8A6",
+            }
+        )
+        svg = generate_readme.render_skills_matrix_svg(skills)
+        ET.fromstring(svg)  # Must remain well-formed SVG XML
+        self.assertIn('fill-opacity="0.16"', svg)
+        self.assertIn("#FFD43B", svg)  # Python dual-tone emblem
+        self.assertIn("Custom Stack", svg)
+        self.assertIn(generate_readme.SKILL_DEFAULT_ICON_SVG, svg)
+        self.assertNotIn('font-family="monospace"', svg)
 
     def test_generated_assets_and_check_mode(self) -> None:
         tmp = self._copy_repo_to_temp()

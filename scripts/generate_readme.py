@@ -117,8 +117,151 @@ def render_hero_banner_svg(profile: dict[str, Any], career: dict[str, Any]) -> s
 """
 
 
+SKILL_ICON_SVGS: dict[str, str] = {
+    "microsoft sql server": (
+        '<g stroke="#F87171" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none">'
+        '<ellipse cx="12" cy="5.5" rx="7.5" ry="2.8" fill="#F87171" fill-opacity="0.18" />'
+        '<path d="M4.5 5.5v13c0 1.55 3.36 2.8 7.5 2.8s7.5-1.25 7.5-2.8v-13" />'
+        '<path d="M4.5 9.8c0 1.55 3.36 2.8 7.5 2.8s7.5-1.25 7.5-2.8" />'
+        '<path d="M4.5 14.2c0 1.55 3.36 2.8 7.5 2.8s7.5-1.25 7.5-2.8" />'
+        "</g>"
+    ),
+    "sql": (
+        '<g stroke="#38BDF8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none">'
+        '<rect x="3" y="4" width="18" height="16" rx="2.5" fill="#38BDF8" fill-opacity="0.14" />'
+        '<path d="M3 9.5h18" />'
+        '<path d="M9.5 9.5v10.5" />'
+        '<path d="M13 13.5h4.5M13 16.8h3" stroke="#7DD3FC" />'
+        "</g>"
+    ),
+    "pl/sql": (
+        '<g stroke="#FBBF24" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" fill="none">'
+        '<ellipse cx="10" cy="6" rx="6" ry="2.4" fill="#FBBF24" fill-opacity="0.16" />'
+        '<path d="M4 6v10.5c0 1.33 2.69 2.4 6 2.4 1.1 0 2.13-.12 3-.32" />'
+        '<path d="M4 11.2c0 1.33 2.69 2.4 6 2.4 1.25 0 2.4-.15 3.35-.4" />'
+        '<path d="M16 6v4.5" />'
+        '<polygon points="17.8 11.2 13.6 16.8 16.7 16.8 15.6 21.5 20.6 15.4 17.4 15.4" fill="#FBBF24" stroke="none" />'
+        "</g>"
+    ),
+    "python": (
+        "<g>"
+        '<path d="M11.8 2C7.9 2 8.2 3.7 8.2 3.7V5.9H12.5V6.6H5.9C3.9 6.6 2.8 8.1 2.8 10.8C2.8 13.5 3.8 15 5.9 15H7.6V12.8C7.6 10.7 9.1 9.8 11.2 9.8H15.2C17 9.8 18.2 8.7 18.2 6.8V3.7C18.2 3.7 18.4 2 11.8 2ZM9.7 3.2A.9.9 0 1 1 9.7 5A.9.9 0 1 1 9.7 3.2Z" fill="#4B8BBE" />'
+        '<path d="M12.2 22C16.1 22 15.8 20.3 15.8 20.3V18.1H11.5V17.4H18.1C20.1 17.4 21.2 15.9 21.2 13.2C21.2 10.5 20.2 9 18.1 9H16.4V11.2C16.4 13.3 14.9 14.2 12.8 14.2H8.8C7 14.2 5.8 15.3 5.8 17.2V20.3C5.8 20.3 5.6 22 12.2 22ZM14.3 19A.9.9 0 1 1 14.3 20.8A.9.9 0 1 1 14.3 19Z" fill="#FFD43B" />'
+        "</g>"
+    ),
+    "c#": (
+        "<g>"
+        '<polygon points="12 2.5 20.2 7.25 20.2 16.75 12 21.5 3.8 16.75 3.8 7.25" fill="#7C3AED" fill-opacity="0.35" stroke="#A78BFA" stroke-width="1.6" stroke-linejoin="round" />'
+        '<path d="M12.4 9.5a3.5 3.5 0 1 0 0 5.0" stroke="#ffffff" stroke-width="2.1" stroke-linecap="round" fill="none" />'
+        '<path d="M14.8 9.5l-.6 5M17.2 9.5l-.6 5M13.6 11.1h4.2M13.3 13.1h4.2" stroke="#DDD6FE" stroke-width="1.35" stroke-linecap="round" fill="none" />'
+        "</g>"
+    ),
+    "crystal reports": (
+        '<g stroke="#2DD4BF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" fill="none">'
+        '<path d="M6 3h8l4.5 4.5V20a1.5 1.5 0 0 1-1.5 1.5H6A1.5 1.5 0 0 1 4.5 20V4.5A1.5 1.5 0 0 1 6 3z" fill="#2DD4BF" fill-opacity="0.14" />'
+        '<path d="M14 3v4.5h4.5" />'
+        '<path d="M8.5 17v-3.5M11.5 17V11M14.5 17v-5" stroke="#5EEAD4" stroke-width="2" />'
+        '<path d="M8 8.5h3.5" stroke="#5EEAD4" />'
+        "</g>"
+    ),
+    "hardware & systems": (
+        '<g stroke="#CBD5E1" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" fill="none">'
+        '<rect x="6" y="6" width="12" height="12" rx="2" fill="#94A3B8" fill-opacity="0.2" />'
+        '<rect x="9.5" y="9.5" width="5" height="5" rx="0.8" fill="#CBD5E1" fill-opacity="0.35" />'
+        '<path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3" />'
+        "</g>"
+    ),
+    "troubleshooting": (
+        '<g stroke="#38BDF8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none">'
+        '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" fill="#38BDF8" fill-opacity="0.14" />'
+        "</g>"
+    ),
+    "technical support": (
+        '<g stroke="#F87171" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none">'
+        '<path d="M4 14v-2a8 8 0 1 1 16 0v2" />'
+        '<rect x="3" y="13" width="3.5" height="5" rx="1.5" fill="#F87171" fill-opacity="0.22" />'
+        '<rect x="17.5" y="13" width="3.5" height="5" rx="1.5" fill="#F87171" fill-opacity="0.22" />'
+        '<path d="M21 16v1.5a3 3 0 0 1-3 3h-3.5" />'
+        "</g>"
+    ),
+    "data analysis": (
+        '<g stroke="#34D399" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none">'
+        '<path d="M4 20h16" />'
+        '<rect x="5.5" y="13" width="3" height="4.5" rx="0.6" fill="#34D399" fill-opacity="0.3" />'
+        '<rect x="10.5" y="10" width="3" height="7.5" rx="0.6" fill="#34D399" fill-opacity="0.3" />'
+        '<rect x="15.5" y="6.5" width="3" height="11" rx="0.6" fill="#34D399" fill-opacity="0.3" />'
+        '<path d="M5.5 9.5L10.5 6.5L15 8L19 4" stroke="#6EE7B7" />'
+        '<polyline points="16.5 4 19 4 19 6.5" stroke="#6EE7B7" />'
+        "</g>"
+    ),
+    "erp systems": (
+        '<g stroke="#818CF8" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" fill="none">'
+        '<rect x="9" y="3.5" width="6" height="4.5" rx="1" fill="#818CF8" fill-opacity="0.25" />'
+        '<rect x="3" y="15.5" width="5" height="4.5" rx="1" fill="#818CF8" fill-opacity="0.25" />'
+        '<rect x="9.5" y="15.5" width="5" height="4.5" rx="1" fill="#818CF8" fill-opacity="0.25" />'
+        '<rect x="16" y="15.5" width="5" height="4.5" rx="1" fill="#818CF8" fill-opacity="0.25" />'
+        '<path d="M12 8v3.5M5.5 15.5v-2.5h13v2.5M12 11.5v4" />'
+        "</g>"
+    ),
+    "backend development": (
+        '<g stroke="#38BDF8" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" fill="none">'
+        '<path d="M8.5 5C6.8 5 6.5 6.2 6.5 7.5v2.2c0 1.1-.8 2-2 2.3 1.2.3 2 1.2 2 2.3v2.2c0 1.3.3 2.5 2 2.5" />'
+        '<path d="M15.5 5c1.7 0 2 1.2 2 2.5v2.2c0 1.1.8 2 2 2.3-1.2.3-2 1.2-2 2.3v2.2c0 1.3-.3 2.5-2 2.5" />'
+        '<path d="M13 8.5l-2 7" stroke="#7DD3FC" stroke-width="1.75" />'
+        "</g>"
+    ),
+    "database design": (
+        '<g stroke="#A78BFA" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" fill="none">'
+        '<rect x="3" y="4" width="8" height="6.5" rx="1.2" fill="#A78BFA" fill-opacity="0.22" />'
+        '<rect x="13" y="13.5" width="8" height="6.5" rx="1.2" fill="#A78BFA" fill-opacity="0.22" />'
+        '<path d="M11 7.2h4.5a1.5 1.5 0 0 1 1.5 1.5v4.8" />'
+        '<path d="M7 10.5v4.8a1.5 1.5 0 0 0 1.5 1.5H13" stroke="#C4B5FD" stroke-opacity="0.7" />'
+        '<circle cx="17" cy="13.5" r="1.2" fill="#A78BFA" stroke="none" />'
+        "</g>"
+    ),
+}
+
+SKILL_ICON_ALIASES: dict[str, str] = {
+    "mssql": "microsoft sql server",
+    "plsql": "pl/sql",
+    "py": "python",
+    "csharp": "c#",
+    "cr": "crystal reports",
+    "hw": "hardware & systems",
+    "dbg": "troubleshooting",
+    "a+": "technical support",
+    "data": "data analysis",
+    "erp": "erp systems",
+    "api": "backend development",
+    "db": "database design",
+}
+
+SKILL_DEFAULT_ICON_SVG = (
+    '<g stroke="#E2E8F0" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" fill="none">'
+    '<polyline points="16 18 22 12 16 6" />'
+    '<polyline points="8 6 2 12 8 18" />'
+    "</g>"
+)
+
+
+def _get_skill_icon_svg(skill: dict[str, Any]) -> str:
+    """Resolve an inline 24x24 vector SVG icon for a skill, with a clean code fallback."""
+    candidates = [
+        str(skill.get("icon", "")).strip().lower(),
+        str(skill.get("name", "")).strip().lower(),
+        str(skill.get("short_code", "")).strip().lower(),
+    ]
+    for candidate in candidates:
+        if not candidate:
+            continue
+        canonical = SKILL_ICON_ALIASES.get(candidate, candidate)
+        if canonical in SKILL_ICON_SVGS:
+            return SKILL_ICON_SVGS[canonical]
+    return SKILL_DEFAULT_ICON_SVG
+
+
 def render_skills_matrix_svg(skills: dict[str, list[dict[str, Any]]]) -> str:
-    """Render the dynamic categorized technical skills matrix SVG without fake percentages."""
+    """Render the dynamic categorized technical skills matrix SVG with tinted vector icon tiles."""
     category_order = ["Database", "Programming", "Reporting", "IT Support", "Other"]
     total_inner_w = 804
     card_h = 58
@@ -149,19 +292,18 @@ def render_skills_matrix_svg(skills: dict[str, list[dict[str, Any]]]) -> str:
             x = pad_x + col * (card_w + col_gap)
             y = cur_y + row * (card_h + row_gap)
             color = xml_escape(skill.get("color", "#0ea5e9"))
-            code = xml_escape(_truncate(skill.get("short_code", skill["name"][:4].upper()), 6))
-            s_name = xml_escape(_truncate(skill["name"], 32 if cols < 3 else 22))
+            icon_svg = _get_skill_icon_svg(skill)
+            s_name = xml_escape(_truncate(skill["name"], 34 if cols < 3 else 23))
             subtitle_raw = f"{skill['role']} · {skill['focus']}" if cols == 1 else (skill["focus"] if cols == 2 else skill["role"])
-            s_role = xml_escape(_truncate(subtitle_raw, 88 if cols == 1 else (56 if cols == 2 else 28)))
-            badge_font = 9.5 if len(code) <= 4 else 8
+            s_role = xml_escape(_truncate(subtitle_raw, 90 if cols == 1 else (58 if cols == 2 else 29)))
 
             blocks_svg.append(
                 f'  <g transform="translate({x}, {y})">\n'
                 f'    <rect width="{card_w}" height="{card_h}" rx="8" fill="#111827" stroke="#1e293b" stroke-width="1" />\n'
-                f'    <rect x="12" y="13" width="38" height="32" rx="6" fill="{color}" />\n'
-                f'    <text x="31" y="33" text-anchor="middle" font-family="monospace" font-size="{badge_font}" font-weight="800" fill="#ffffff">{code}</text>\n'
-                f'    <text x="62" y="26" class="skill-name">{s_name}</text>\n'
-                f'    <text x="62" y="42" class="skill-role">{s_role}</text>\n'
+                f'    <rect x="12" y="11" width="36" height="36" rx="8" fill="{color}" fill-opacity="0.16" stroke="{color}" stroke-opacity="0.45" stroke-width="1" />\n'
+                f'    <g transform="translate(19, 18) scale(0.9167)">{icon_svg}</g>\n'
+                f'    <text x="58" y="25" class="skill-name">{s_name}</text>\n'
+                f'    <text x="58" y="41" class="skill-role">{s_role}</text>\n'
                 f'  </g>'
             )
 
