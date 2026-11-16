@@ -161,12 +161,22 @@ Deeply interested in ERP systems, relational database architecture, backend deve
 ### Verified Certifications
 
 <p>
+  <a href="https://www.credly.com/badges/d145c575-283d-482e-920f-8038d431ba43"><img src="assets/certificates/ibm-databases-sql-badge.png" alt="Databases and SQL for Data Science" height="112" /></a>
+  &nbsp;&nbsp;
   <a href="https://www.credly.com/badges/0e52798c-e483-499b-ad1c-723ebf802f42"><img src="assets/certificates/google-it-support-badge.png" alt="Google IT Support Certificate" height="112" /></a>
+  &nbsp;&nbsp;
+  <a href="https://www.freecodecamp.org/certification/salman_rahman/foundational-c-sharp-with-microsoft"><img src="assets/certificates/microsoft-csharp-badge.svg" alt="Foundational C# with Microsoft" /></a>
 </p>
 
+- **Databases and SQL for Data Science** — *IBM / Coursera* (Certified · Nov 2023)  
+  *Skills Covered:* SQL Queries, Relational Databases, IBM Db2, Python & Jupyter Notebooks  
+  [View Credential](https://www.credly.com/badges/d145c575-283d-482e-920f-8038d431ba43)
 - **Google IT Support Certificate** — *Google / Coursera* (Certified · Aug 2021)  
   *Skills Covered:* Troubleshooting & Customer Service, Computer Networking, Operating Systems & System Administration, IT Security & Hardware Fundamentals  
   [View Credential](https://www.credly.com/badges/0e52798c-e483-499b-ad1c-723ebf802f42)
+- **Foundational C# with Microsoft** — *Microsoft & freeCodeCamp* (Certified · Feb 2025)  
+  *Skills Covered:* C# Programming, .NET Fundamentals, Object-Oriented Logic, Debugging & Console Applications  
+  [View Credential](https://www.freecodecamp.org/certification/salman_rahman/foundational-c-sharp-with-microsoft)
 
 ### Academic Qualifications
 

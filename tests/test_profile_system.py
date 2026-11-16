@@ -191,8 +191,13 @@ class TestProfileEcosystem(unittest.TestCase):
         readme = (tmp / "README.md").read_text(encoding="utf-8")
         self.assertNotIn("CompTIA", readme)
         self.assertIn("https://www.credly.com/badges/0e52798c-e483-499b-ad1c-723ebf802f42", readme)
+        self.assertIn("https://www.credly.com/badges/d145c575-283d-482e-920f-8038d431ba43", readme)
+        self.assertIn("https://www.freecodecamp.org/certification/salman_rahman/foundational-c-sharp-with-microsoft", readme)
         self.assertIn('assets/certificates/google-it-support-badge.png', readme)
+        self.assertIn('assets/certificates/ibm-databases-sql-badge.png', readme)
+        self.assertIn('assets/certificates/microsoft-csharp-badge.svg', readme)
         self.assertTrue((tmp / "assets/certificates/google-it-support-badge.png").exists())
+        self.assertTrue((tmp / "assets/certificates/ibm-databases-sql-badge.png").exists())
 
 
 if __name__ == "__main__":

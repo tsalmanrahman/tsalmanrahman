@@ -628,10 +628,42 @@ def render_nav_pill_svg(item: dict[str, str]) -> str:
 
 
 def render_cert_badge_svg(cert: dict[str, Any]) -> str:
-    """Render a fallback verification badge SVG card for a verified certification."""
+    """Render a crisp verification badge SVG card for a verified certification."""
     title = xml_escape(cert["name"])
-    issuer = xml_escape(cert["issuer"])
+    issuer_upper = xml_escape(cert["issuer"].upper())
     status = xml_escape(cert["status"])
+
+    if "microsoft" in str(cert.get("id", "")).lower():
+        issue_label = xml_escape(cert.get("issue_date") or cert["status"])
+        if " with " in cert["name"]:
+            top_line, rest_line = cert["name"].split(" with ", 1)
+            line1 = xml_escape(top_line)
+            line2 = xml_escape(f"with {rest_line}")
+        else:
+            line1 = title
+            line2 = ""
+        return f"""<svg width="336" height="112" viewBox="0 0 336 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .mc-issuer {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px; font-weight: 700; fill: #38bdf8; letter-spacing: 0.9px; }}
+    .mc-title {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 15px; font-weight: 800; fill: #f8fafc; }}
+    .mc-sub {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13.5px; font-weight: 600; fill: #cbd5e1; }}
+    .mc-status {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 11px; fill: #10b981; font-weight: 600; }}
+  </style>
+  <rect x="0.5" y="0.5" width="335" height="111" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
+  <rect x="18" y="20" width="72" height="72" rx="12" fill="#111827" stroke="#334155" stroke-width="1" />
+  <rect x="37" y="30" width="16" height="16" rx="2" fill="#F25022" />
+  <rect x="55" y="30" width="16" height="16" rx="2" fill="#7FBA00" />
+  <rect x="37" y="48" width="16" height="16" rx="2" fill="#00A4EF" />
+  <rect x="55" y="48" width="16" height="16" rx="2" fill="#FFB900" />
+  <text x="54" y="81" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="10.5" font-weight="800" fill="#A78BFA">C# · .NET</text>
+  <text x="106" y="34" class="mc-issuer">{issuer_upper}</text>
+  <text x="106" y="55" class="mc-title">{line1}</text>
+  <text x="106" y="73" class="mc-sub">{line2}</text>
+  <circle cx="110" cy="87.5" r="3.5" fill="#10b981" />
+  <text x="119" y="91" class="mc-status">Verified · {issue_label}</text>
+</svg>
+"""
+
     monogram = xml_escape("".join(w[0].upper() for w in cert["issuer"].split()[:2]) or "ID")
 
     return f"""<svg width="380" height="96" viewBox="0 0 380 96" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -643,7 +675,7 @@ def render_cert_badge_svg(cert: dict[str, Any]) -> str:
   <rect width="380" height="96" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
   <rect x="16" y="22" width="52" height="52" rx="10" fill="#0284C7" />
   <text x="42" y="54" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="800" fill="#FFFFFF">{monogram}</text>
-  <text x="84" y="34" class="c-issuer">{issuer.upper()}</text>
+  <text x="84" y="34" class="c-issuer">{issuer_upper}</text>
   <text x="84" y="55" class="c-name">{title}</text>
   <text x="84" y="73" class="c-status">Verified Status: {status}</text>
 </svg>

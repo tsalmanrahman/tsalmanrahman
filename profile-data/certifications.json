@@ -1,5 +1,23 @@
 [
   {
+    "id": "ibm-databases-sql",
+    "name": "Databases and SQL for Data Science",
+    "issuer": "IBM / Coursera",
+    "category": "certification",
+    "status": "Certified · Nov 2023",
+    "issue_date": "November 1, 2023",
+    "credential_id": "d145c575-283d-482e-920f-8038d431ba43",
+    "credential_url": "https://www.credly.com/badges/d145c575-283d-482e-920f-8038d431ba43",
+    "badge_path": "assets/certificates/ibm-databases-sql-badge.png",
+    "skills_covered": [
+      "SQL Queries",
+      "Relational Databases",
+      "IBM Db2",
+      "Python & Jupyter Notebooks"
+    ],
+    "verified": true
+  },
+  {
     "id": "google-it-support",
     "name": "Google IT Support Certificate",
     "issuer": "Google / Coursera",
@@ -14,6 +32,24 @@
       "Computer Networking",
       "Operating Systems & System Administration",
       "IT Security & Hardware Fundamentals"
+    ],
+    "verified": true
+  },
+  {
+    "id": "microsoft-freecodecamp-csharp",
+    "name": "Foundational C# with Microsoft",
+    "issuer": "Microsoft & freeCodeCamp",
+    "category": "certification",
+    "status": "Certified · Feb 2025",
+    "issue_date": "February 2, 2025",
+    "credential_id": "salman_rahman/foundational-c-sharp-with-microsoft",
+    "credential_url": "https://www.freecodecamp.org/certification/salman_rahman/foundational-c-sharp-with-microsoft",
+    "badge_path": "assets/certificates/microsoft-csharp-badge.svg",
+    "skills_covered": [
+      "C# Programming",
+      ".NET Fundamentals",
+      "Object-Oriented Logic",
+      "Debugging & Console Applications"
     ],
     "verified": true
   },
