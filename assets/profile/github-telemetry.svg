@@ -57,21 +57,21 @@
     <text x="36" y="30" fill="#10b981" class="panel-title">VERIFIED CODEBASE LANGUAGE MIX</text>
 
     <text x="24" y="64" class="metric-label">HTML</text>
-    <text x="394" y="64" text-anchor="end" class="metric-val">35.4% (1,729 KB)</text>
+    <text x="394" y="64" text-anchor="end" class="metric-val">35.3% (1,729 KB)</text>
     <rect x="24" y="71" width="370" height="6" rx="3" fill="#1e293b" />
-    <rect x="24" y="71" width="131" height="6" rx="3" fill="#E34F26" />
+    <rect x="24" y="71" width="130" height="6" rx="3" fill="#E34F26" />
     <text x="24" y="98" class="metric-label">Python</text>
-    <text x="394" y="98" text-anchor="end" class="metric-val">23.2% (1,132 KB)</text>
+    <text x="394" y="98" text-anchor="end" class="metric-val">23.4% (1,146 KB)</text>
     <rect x="24" y="105" width="370" height="6" rx="3" fill="#1e293b" />
-    <rect x="24" y="105" width="85" height="6" rx="3" fill="#3776AB" />
+    <rect x="24" y="105" width="86" height="6" rx="3" fill="#3776AB" />
     <text x="24" y="132" class="metric-label">C#</text>
-    <text x="394" y="132" text-anchor="end" class="metric-val">23.0% (1,121 KB)</text>
+    <text x="394" y="132" text-anchor="end" class="metric-val">22.9% (1,121 KB)</text>
     <rect x="24" y="139" width="370" height="6" rx="3" fill="#1e293b" />
     <rect x="24" y="139" width="84" height="6" rx="3" fill="#512BD4" />
     <text x="24" y="166" class="metric-label">JavaScript</text>
     <text x="394" y="166" text-anchor="end" class="metric-val">11.9% (581 KB)</text>
     <rect x="24" y="173" width="370" height="6" rx="3" fill="#1e293b" />
-    <rect x="24" y="173" width="44" height="6" rx="3" fill="#F7DF1E" />
+    <rect x="24" y="173" width="43" height="6" rx="3" fill="#F7DF1E" />
     <text x="24" y="200" class="metric-label">TSQL</text>
     <text x="394" y="200" text-anchor="end" class="metric-val">4.5% (219 KB)</text>
     <rect x="24" y="207" width="370" height="6" rx="3" fill="#1e293b" />
