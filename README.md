@@ -160,11 +160,18 @@ Deeply interested in ERP systems, relational database architecture, backend deve
 
 ### Verified Certifications
 
-<a href="https://www.credly.com/users/salman_rahman"><img src="assets/certificates/comptia-a-plus-badge.svg" alt="CompTIA A+ Certification" /></a>
+<p>
+  <a href="https://www.credly.com/users/salman_rahman"><img src="assets/certificates/comptia-a-plus-badge.svg" alt="CompTIA A+ Certification" /></a>
+  &nbsp;&nbsp;
+  <a href="https://www.credly.com/badges/0e52798c-e483-499b-ad1c-723ebf802f42"><img src="assets/certificates/google-it-support-badge.png" alt="Google IT Support Certificate" height="96" /></a>
+</p>
 
 - **CompTIA A+ Certification** — *CompTIA* (Certified)  
   *Skills Covered:* Hardware Diagnostics, Operating Systems, IT Troubleshooting, Networking & Security Fundamentals, Technical Support  
   [View Credential](https://www.credly.com/users/salman_rahman)
+- **Google IT Support Certificate** — *Google / Coursera* (Certified · Aug 2021)  
+  *Skills Covered:* Troubleshooting & Customer Service, Computer Networking, Operating Systems & System Administration, IT Security & Hardware Fundamentals  
+  [View Credential](https://www.credly.com/badges/0e52798c-e483-499b-ad1c-723ebf802f42)
 
 ### Academic Qualifications
 

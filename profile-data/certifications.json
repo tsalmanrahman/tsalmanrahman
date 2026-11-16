@@ -19,6 +19,24 @@
     "verified": true
   },
   {
+    "id": "google-it-support",
+    "name": "Google IT Support Certificate",
+    "issuer": "Google / Coursera",
+    "category": "certification",
+    "status": "Certified · Aug 2021",
+    "issue_date": "August 20, 2021",
+    "credential_id": "0e52798c-e483-499b-ad1c-723ebf802f42",
+    "credential_url": "https://www.credly.com/badges/0e52798c-e483-499b-ad1c-723ebf802f42",
+    "badge_path": "assets/certificates/google-it-support-badge.png",
+    "skills_covered": [
+      "Troubleshooting & Customer Service",
+      "Computer Networking",
+      "Operating Systems & System Administration",
+      "IT Security & Hardware Fundamentals"
+    ],
+    "verified": true
+  },
+  {
     "id": "pgdds-2024",
     "name": "Post Graduate Diploma in Data Science (PGDDS)",
     "issuer": "United International University (UIU) & BITM",

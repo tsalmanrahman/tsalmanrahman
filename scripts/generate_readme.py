@@ -633,18 +633,18 @@ def render_comptia_badge_svg(cert: dict[str, Any]) -> str:
     issuer = xml_escape(cert["issuer"])
     status = xml_escape(cert["status"])
 
-    return f"""<svg width="380" height="84" viewBox="0 0 380 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+    return f"""<svg width="380" height="96" viewBox="0 0 380 96" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
     .c-issuer {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px; font-weight: 700; fill: #f87171; letter-spacing: 0.9px; }}
-    .c-name {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 15px; font-weight: 700; fill: #f8fafc; }}
+    .c-name {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 15px; font-weight: 700; fill: #f8fafc; }}
     .c-status {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 11px; fill: #10b981; font-weight: 600; }}
   </style>
-  <rect width="380" height="84" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
-  <rect x="16" y="16" width="52" height="52" rx="10" fill="#C8202F" />
-  <text x="42" y="48" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="800" fill="#FFFFFF">A+</text>
-  <text x="84" y="28" class="c-issuer">{issuer.upper()}</text>
-  <text x="84" y="49" class="c-name">{title}</text>
-  <text x="84" y="67" class="c-status">Verified Status: {status}</text>
+  <rect width="380" height="96" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
+  <rect x="16" y="22" width="52" height="52" rx="10" fill="#C8202F" />
+  <text x="42" y="54" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="800" fill="#FFFFFF">A+</text>
+  <text x="84" y="34" class="c-issuer">{issuer.upper()}</text>
+  <text x="84" y="55" class="c-name">{title}</text>
+  <text x="84" y="73" class="c-status">Verified Status: {status}</text>
 </svg>
 """
 
@@ -761,14 +761,22 @@ def render_readme_markdown(
     verified_edu = [e for e in education if e.get("verified")]
     verified_achievements = [a for a in achievements if a.get("verified")]
 
-    cert_badges_html = ""
+    cert_badge_tags: list[str] = []
     for cert in verified_certs:
-        if cert.get("badge_path"):
-            img_tag = f'<img src="{cert["badge_path"]}" alt="{cert["name"]}" />'
-            if cert.get("credential_url"):
-                cert_badges_html += f'<a href="{cert["credential_url"]}">{img_tag}</a>\n'
-            else:
-                cert_badges_html += f"{img_tag}\n"
+        badge_path = cert.get("badge_path", "")
+        if not badge_path:
+            continue
+        size_attr = "" if badge_path.lower().endswith(".svg") else ' height="96"'
+        img_tag = f'<img src="{badge_path}" alt="{cert["name"]}"{size_attr} />'
+        if cert.get("credential_url"):
+            cert_badge_tags.append(f'<a href="{cert["credential_url"]}">{img_tag}</a>')
+        else:
+            cert_badge_tags.append(img_tag)
+    cert_badges_html = (
+        "<p>\n  " + "\n  &nbsp;&nbsp;\n  ".join(cert_badge_tags) + "\n</p>\n"
+        if cert_badge_tags
+        else ""
+    )
 
     cert_rows = "\n".join(
         f"- **{c['name']}** — *{c['issuer']}* ({c['status']})  \n  *Skills Covered:* {', '.join(c['skills_covered'])}"

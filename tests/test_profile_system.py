@@ -188,6 +188,11 @@ class TestProfileEcosystem(unittest.TestCase):
         up_to_date, check_msg = generate_readme.generate_all(tmp, check_only=True)
         self.assertTrue(up_to_date, check_msg)
 
+        readme = (tmp / "README.md").read_text(encoding="utf-8")
+        self.assertIn("https://www.credly.com/badges/0e52798c-e483-499b-ad1c-723ebf802f42", readme)
+        self.assertIn('assets/certificates/google-it-support-badge.png', readme)
+        self.assertTrue((tmp / "assets/certificates/google-it-support-badge.png").exists())
+
 
 if __name__ == "__main__":
     unittest.main()
