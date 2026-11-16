@@ -34,27 +34,23 @@
   </g>
 
   <text x="42" y="80" class="hero-name">Salman Rahman</text>
-  <text x="42" y="108" class="hero-role">SQL Developer | Data Analyst | C# &amp; Python Enthusiast | CompTIA A+ Certified</text>
+  <text x="42" y="108" class="hero-role">SQL Developer | Data Analyst | C# &amp; Python Enthusiast | Google IT Support Certified</text>
   <text x="42" y="136" class="hero-desc">Designing resilient relational databases, enterprise ERP workflows, and actionable reporting systems.</text>
 
   <line x1="42" y1="158" x2="818" y2="158" stroke="#1e293b" stroke-width="1" />
 
   <g transform="translate(42, 174)">
     <g transform="translate(0, 0)">
-      <rect width="166" height="28" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1" />
-      <text x="83.0" y="18" text-anchor="middle" class="pill-text">CompTIA A+ Certified</text>
+      <rect width="214" height="28" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1" />
+      <text x="107.0" y="18" text-anchor="middle" class="pill-text">Google IT Support Certified</text>
     </g>
-    <g transform="translate(178, 0)">
+    <g transform="translate(226, 0)">
       <rect width="186" height="28" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1" />
       <text x="93.0" y="18" text-anchor="middle" class="pill-text">BSc in Computer Science</text>
     </g>
-    <g transform="translate(376, 0)">
+    <g transform="translate(424, 0)">
       <rect width="221" height="28" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1" />
       <text x="110.5" y="18" text-anchor="middle" class="pill-text">SQL Server &amp; Crystal Reports</text>
-    </g>
-    <g transform="translate(609, 0)">
-      <rect width="145" height="28" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1" />
-      <text x="72.5" y="18" text-anchor="middle" class="pill-text">Dhaka, Bangladesh</text>
     </g>
   </g>
 </svg>

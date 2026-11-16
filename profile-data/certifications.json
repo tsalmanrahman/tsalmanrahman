@@ -1,24 +1,5 @@
 [
   {
-    "id": "comptia-a-plus",
-    "name": "CompTIA A+ Certification",
-    "issuer": "CompTIA",
-    "category": "certification",
-    "status": "Certified",
-    "issue_date": "Verified Credential",
-    "credential_id": "",
-    "credential_url": "https://www.credly.com/users/salman_rahman",
-    "badge_path": "assets/certificates/comptia-a-plus-badge.svg",
-    "skills_covered": [
-      "Hardware Diagnostics",
-      "Operating Systems",
-      "IT Troubleshooting",
-      "Networking & Security Fundamentals",
-      "Technical Support"
-    ],
-    "verified": true
-  },
-  {
     "id": "google-it-support",
     "name": "Google IT Support Certificate",
     "issuer": "Google / Coursera",

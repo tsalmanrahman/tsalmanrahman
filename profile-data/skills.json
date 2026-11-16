@@ -72,11 +72,11 @@
     },
     {
       "name": "Technical Support",
-      "role": "CompTIA A+ Practices",
+      "role": "Google IT Support",
       "focus": "Incident Resolution, User Assistance, Maintenance",
-      "color": "#C8202F",
-      "short_code": "A+",
-      "badge_url": "https://img.shields.io/badge/Technical_Support_(CompTIA_A%2B)-C8202F?style=flat-square&logo=comptia&logoColor=white"
+      "color": "#2563EB",
+      "short_code": "IT",
+      "badge_url": "https://img.shields.io/badge/Technical_Support_(Google_IT_Support)-2563EB?style=flat-square&logo=google&logoColor=white"
     }
   ],
   "Other": [

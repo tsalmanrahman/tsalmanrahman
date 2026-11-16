@@ -19,7 +19,7 @@ profile-data/*.json  (Single Source of Truth)
                     ├──▶ assets/profile/skills-matrix.svg (+ tech-matrix.svg)
                     ├──▶ assets/profile/github-telemetry.svg (+ telemetry.svg)
                     ├──▶ assets/projects/*-preview.svg
-                    ├──▶ assets/certificates/comptia-a-plus-badge.svg
+                    ├──▶ assets/certificates/google-it-support-badge.png
                     └──▶ README.md
 ```
 
@@ -38,15 +38,15 @@ tsalmanrahman/
 │   ├── experience.json                        # Verified practical experience areas & tools
 │   ├── skills.json                            # Categorized skills (Database, Programming, Reporting, IT Support, Other)
 │   ├── projects.json                          # Repository portfolio items (only featured+verified render)
-│   ├── certifications.json                    # CompTIA A+ & verified courses
+│   ├── certifications.json                    # Google IT Support Certificate & verified courses
 │   ├── education.json                         # Academic qualifications
 │   ├── achievements.json                      # Factual, verified engineering & credential milestones
 │   ├── github_metrics.json                    # Cached/synced GitHub API profile & codebase language bytes
 │   └── linkedin_sync.json                     # LinkedIn sync configuration & approval-gated staging queue
 ├── assets/
 │   ├── banner/hero-banner.svg
-│   ├── certificates/comptia-a-plus-badge.svg
-│   ├── icons/*.svg                            # Vector icons (SQL Server, Python, C#, Crystal Reports, CompTIA)
+│   ├── certificates/google-it-support-badge.png
+│   ├── icons/*.svg                            # Vector icons (SQL Server, Python, C#, Crystal Reports, Contact/Nav)
 │   ├── profile/
 │   │   ├── skills-matrix.svg
 │   │   └── github-telemetry.svg

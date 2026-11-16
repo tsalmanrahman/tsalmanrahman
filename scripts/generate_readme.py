@@ -177,10 +177,10 @@ SKILL_ICON_SVGS: dict[str, str] = {
         "</g>"
     ),
     "technical support": (
-        '<g stroke="#F87171" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none">'
+        '<g stroke="#60A5FA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none">'
         '<path d="M4 14v-2a8 8 0 1 1 16 0v2" />'
-        '<rect x="3" y="13" width="3.5" height="5" rx="1.5" fill="#F87171" fill-opacity="0.22" />'
-        '<rect x="17.5" y="13" width="3.5" height="5" rx="1.5" fill="#F87171" fill-opacity="0.22" />'
+        '<rect x="3" y="13" width="3.5" height="5" rx="1.5" fill="#60A5FA" fill-opacity="0.22" />'
+        '<rect x="17.5" y="13" width="3.5" height="5" rx="1.5" fill="#60A5FA" fill-opacity="0.22" />'
         '<path d="M21 16v1.5a3 3 0 0 1-3 3h-3.5" />'
         "</g>"
     ),
@@ -229,7 +229,7 @@ SKILL_ICON_ALIASES: dict[str, str] = {
     "cr": "crystal reports",
     "hw": "hardware & systems",
     "dbg": "troubleshooting",
-    "a+": "technical support",
+    "it": "technical support",
     "data": "data analysis",
     "erp": "erp systems",
     "api": "backend development",
@@ -627,21 +627,22 @@ def render_nav_pill_svg(item: dict[str, str]) -> str:
 """
 
 
-def render_comptia_badge_svg(cert: dict[str, Any]) -> str:
-    """Render a clean verification badge SVG for CompTIA A+ certification."""
+def render_cert_badge_svg(cert: dict[str, Any]) -> str:
+    """Render a fallback verification badge SVG card for a verified certification."""
     title = xml_escape(cert["name"])
     issuer = xml_escape(cert["issuer"])
     status = xml_escape(cert["status"])
+    monogram = xml_escape("".join(w[0].upper() for w in cert["issuer"].split()[:2]) or "ID")
 
     return f"""<svg width="380" height="96" viewBox="0 0 380 96" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
-    .c-issuer {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px; font-weight: 700; fill: #f87171; letter-spacing: 0.9px; }}
+    .c-issuer {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px; font-weight: 700; fill: #38bdf8; letter-spacing: 0.9px; }}
     .c-name {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 15px; font-weight: 700; fill: #f8fafc; }}
     .c-status {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 11px; fill: #10b981; font-weight: 600; }}
   </style>
   <rect width="380" height="96" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
-  <rect x="16" y="22" width="52" height="52" rx="10" fill="#C8202F" />
-  <text x="42" y="54" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="800" fill="#FFFFFF">A+</text>
+  <rect x="16" y="22" width="52" height="52" rx="10" fill="#0284C7" />
+  <text x="42" y="54" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="800" fill="#FFFFFF">{monogram}</text>
   <text x="84" y="34" class="c-issuer">{issuer.upper()}</text>
   <text x="84" y="55" class="c-name">{title}</text>
   <text x="84" y="73" class="c-status">Verified Status: {status}</text>
@@ -766,7 +767,7 @@ def render_readme_markdown(
         badge_path = cert.get("badge_path", "")
         if not badge_path:
             continue
-        size_attr = "" if badge_path.lower().endswith(".svg") else ' height="96"'
+        size_attr = "" if badge_path.lower().endswith(".svg") else ' height="112"'
         img_tag = f'<img src="{badge_path}" alt="{cert["name"]}"{size_attr} />'
         if cert.get("credential_url"):
             cert_badge_tags.append(f'<a href="{cert["credential_url"]}">{img_tag}</a>')
@@ -992,7 +993,7 @@ def build_outputs(root_dir: Path) -> dict[Path, str]:
         if cert.get("verified") and cert.get("badge_path"):
             badge_path = root_dir / cert["badge_path"]
             if badge_path.suffix.lower() == ".svg":
-                outputs[badge_path] = render_comptia_badge_svg(cert)
+                outputs[badge_path] = render_cert_badge_svg(cert)
 
     outputs[root_dir / "README.md"] = render_readme_markdown(
         profile=profile,

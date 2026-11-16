@@ -1,7 +1,7 @@
 {
   "name": "Salman Rahman",
   "username": "tsalmanrahman",
-  "headline": "SQL Developer | Data Analyst | C# & Python Enthusiast | CompTIA A+ Certified",
+  "headline": "SQL Developer | Data Analyst | C# & Python Enthusiast | Google IT Support Certified",
   "short_bio": "SQL Developer & Data Analyst specializing in Microsoft SQL Server, relational database architecture, Crystal Reports, and backend systems in C# and Python.",
   "location": "Dhaka, Bangladesh",
   "organization": "HATIM Group",
@@ -25,7 +25,7 @@
     },
     {
       "pillar": "Reliable Systems & IT Foundation",
-      "description": "Applying CompTIA A+ certified diagnostics across workstations, ODBC connectivity, and enterprise infrastructure."
+      "description": "Applying Google IT Support certified diagnostics across workstations, ODBC connectivity, and enterprise infrastructure."
     }
   ],
   "contact": {
@@ -40,7 +40,7 @@
     "badge_text": "OPEN TO SQL, DATA & ERP BACKEND ROLES",
     "tagline": "Designing resilient relational databases, enterprise ERP workflows, and actionable reporting systems.",
     "pills": [
-      "CompTIA A+ Certified",
+      "Google IT Support Certified",
       "BSc in Computer Science",
       "SQL Server & Crystal Reports",
       "Dhaka, Bangladesh"

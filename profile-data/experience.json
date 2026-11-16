@@ -19,8 +19,8 @@
     },
     {
       "area": "IT Support & Infrastructure Diagnostics",
-      "summary": "Applying CompTIA A+ certified methodology to hardware troubleshooting, operating system maintenance, ODBC driver configuration, and technical support.",
-      "tools": ["CompTIA A+", "Hardware Diagnostics", "Technical Support", "ODBC Connectivity"]
+      "summary": "Applying Google IT Support certified methodology to hardware troubleshooting, operating system maintenance, ODBC driver configuration, and technical support.",
+      "tools": ["Google IT Support", "Hardware Diagnostics", "Technical Support", "ODBC Connectivity"]
     }
   ]
 }
