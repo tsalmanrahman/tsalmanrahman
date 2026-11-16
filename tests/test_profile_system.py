@@ -196,8 +196,12 @@ class TestProfileEcosystem(unittest.TestCase):
         self.assertIn('assets/certificates/google-it-support-badge.png', readme)
         self.assertIn('assets/certificates/ibm-databases-sql-badge.png', readme)
         self.assertIn('assets/certificates/microsoft-csharp-badge.svg', readme)
+        self.assertIn('assets/profile/about-terminal.svg', readme)
+        self.assertIn('assets/icons/career-status.svg', readme)
         self.assertTrue((tmp / "assets/certificates/google-it-support-badge.png").exists())
         self.assertTrue((tmp / "assets/certificates/ibm-databases-sql-badge.png").exists())
+        self.assertTrue((tmp / "assets/profile/about-terminal.svg").exists())
+        self.assertTrue((tmp / "assets/icons/career-status.svg").exists())
 
 
 if __name__ == "__main__":

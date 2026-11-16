@@ -10,10 +10,6 @@
 
 <div align="center">
 
-### SQL Developer | Data Analyst | C# & Python Enthusiast | Google IT Support Certified
-
-SQL Developer & Data Analyst specializing in Microsoft SQL Server, relational database architecture, Crystal Reports, and backend systems in C# and Python.
-
 <p>
   <a href="https://www.linkedin.com/in/t-salmanrahman"><img src="assets/icons/contact-linkedin.svg" alt="LinkedIn" /></a>
   &nbsp;
@@ -50,21 +46,11 @@ Experienced in working with Microsoft SQL Server and Crystal Reports to model en
 
 Deeply interested in ERP systems, relational database architecture, backend development, data engineering, and product design, while continuously expanding technical depth through structured professional learning.
 
-### Experience & Practical Background (4+ Years (Self-Driven & Enterprise Operations))
+<br/>
 
-- **SQL Development & Database Architecture**: 4+ years of self-driven and hands-on experience designing relational schemas, writing T-SQL and PL/SQL queries, stored procedures, migrations, and ensuring data integrity on Microsoft SQL Server. (`Microsoft SQL Server` · `T-SQL` · `PL/SQL` · `Relational Modeling`)
-- **Enterprise Reporting & Data Analysis**: Building structured operational and analytical reports using Crystal Reports and SQL aggregations to turn raw business records into clear, verifiable outputs. (`Crystal Reports` · `SQL Queries` · `Data Analysis` · `Audit Reconciliation`)
-- **ERP Systems & Backend Engineering**: Developing multi-company ERP modules, tenant isolation middleware, and SQL-backed operational portals using C# (.NET) and Python (FastAPI). (`C#` · `.NET / ASP.NET Core` · `Python` · `FastAPI` · `EF Core & Dapper`)
-- **IT Support & Infrastructure Diagnostics**: Applying Google IT Support certified methodology to hardware troubleshooting, operating system maintenance, ODBC driver configuration, and technical support. (`Google IT Support` · `Hardware Diagnostics` · `Technical Support` · `ODBC Connectivity`)
-
-### Problem-Solving Approach
-
-| Pillar | Engineering Practice |
-| :--- | :--- |
-| **Data Integrity First** | Designing normalized relational schemas, explicit constraints, and deterministic audit trails in Microsoft SQL Server. |
-| **Actionable Business Reporting** | Transforming complex operational and transactional tables into clear, dependable Crystal Reports and analytical SQL datasets. |
-| **Pragmatic Backend Automation** | Building maintainable ERP workflows, APIs, and operational tooling with C# (.NET) and Python (FastAPI). |
-| **Reliable Systems & IT Foundation** | Applying Google IT Support certified diagnostics across workstations, ODBC connectivity, and enterprise infrastructure. |
+<div align="center">
+  <img src="assets/profile/about-terminal.svg" alt="Engineering Pillars and Experience Terminal (4+ Years (Self-Driven & Enterprise Operations))" width="100%" />
+</div>
 
 ---
 
@@ -74,15 +60,18 @@ Deeply interested in ERP systems, relational database architecture, backend deve
   <img src="assets/profile/skills-matrix.svg" alt="Technical Skills Matrix" width="100%" />
 </div>
 
-<br/>
+<details>
+<summary><code>$ cat skills_index.md</code> — Structured Skill Reference</summary>
 
 | Category | Technologies | Core Focus |
 | :--- | :--- | :--- |
-| **Database** | <img src="https://img.shields.io/badge/Microsoft_SQL_Server-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white" alt="Microsoft SQL Server" /> <img src="https://img.shields.io/badge/SQL-0284C7?style=flat-square&logo=postgresql&logoColor=white" alt="SQL" /> <img src="https://img.shields.io/badge/PL%2FSQL-D97706?style=flat-square&logo=oracle&logoColor=white" alt="PL/SQL" /> | **Microsoft SQL Server** (Schema Design, T-SQL, Migrations, Indexing) · **SQL** (CTEs, Window Functions, Joins, Optimization) · **PL/SQL** (Stored Procedures, Triggers, Transactions) |
-| **Programming** | <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" /> <img src="https://img.shields.io/badge/C%23-512BD4?style=flat-square&logo=csharp&logoColor=white" alt="C#" /> | **Python** (FastAPI, Automation, Data Analysis, ODBC) · **C#** (.NET, ASP.NET Core, EF Core, Dapper) |
-| **Reporting** | <img src="https://img.shields.io/badge/Crystal_Reports-0F766E?style=flat-square&logo=sap&logoColor=white" alt="Crystal Reports" /> | **Crystal Reports** (Operational Reports, Financial Layouts, Subreports) |
-| **IT Support** | <img src="https://img.shields.io/badge/Hardware-475569?style=flat-square&logo=pcgamingwiki&logoColor=white" alt="Hardware & Systems" /> <img src="https://img.shields.io/badge/Troubleshooting-0369A1?style=flat-square&logo=checkmk&logoColor=white" alt="Troubleshooting" /> <img src="https://img.shields.io/badge/Technical_Support_(Google_IT_Support)-2563EB?style=flat-square&logo=google&logoColor=white" alt="Technical Support" /> | **Hardware & Systems** (Workstation Diagnostics, Peripherals, Setup) · **Troubleshooting** (OS, Network, ODBC & Environment Recovery) · **Technical Support** (Incident Resolution, User Assistance, Maintenance) |
-| **Other** | <img src="https://img.shields.io/badge/Data_Analysis-10B981?style=flat-square&logo=databricks&logoColor=white" alt="Data Analysis" /> <img src="https://img.shields.io/badge/ERP_Systems-6366F1?style=flat-square&logo=diagram&logoColor=white" alt="ERP Systems" /> <img src="https://img.shields.io/badge/Backend_Development-0EA5E9?style=flat-square&logo=fastapi&logoColor=white" alt="Backend Development" /> <img src="https://img.shields.io/badge/Database_Design-8B5CF6?style=flat-square&logo=sqlalchemy&logoColor=white" alt="Database Design" /> | **Data Analysis** (Data Auditing, Cleaning, Business Metrics) · **ERP Systems** (GL, Inventory, AP/AR, HR & Payroll, Manufacturing) · **Backend Development** (REST APIs, Multi-Tenancy, Auth, Caching) · **Database Design** (Normalization, FK Governance, Audit & Soft-Delete) |
+| **Database** | `Microsoft SQL Server` · `SQL` · `PL/SQL` | **Microsoft SQL Server** (Schema Design, T-SQL, Migrations, Indexing) · **SQL** (CTEs, Window Functions, Joins, Optimization) · **PL/SQL** (Stored Procedures, Triggers, Transactions) |
+| **Programming** | `Python` · `C#` | **Python** (FastAPI, Automation, Data Analysis, ODBC) · **C#** (.NET, ASP.NET Core, EF Core, Dapper) |
+| **Reporting** | `Crystal Reports` | **Crystal Reports** (Operational Reports, Financial Layouts, Subreports) |
+| **IT Support** | `Hardware & Systems` · `Troubleshooting` · `Technical Support` | **Hardware & Systems** (Workstation Diagnostics, Peripherals, Setup) · **Troubleshooting** (OS, Network, ODBC & Environment Recovery) · **Technical Support** (Incident Resolution, User Assistance, Maintenance) |
+| **Other** | `Data Analysis` · `ERP Systems` · `Backend Development` · `Database Design` | **Data Analysis** (Data Auditing, Cleaning, Business Metrics) · **ERP Systems** (GL, Inventory, AP/AR, HR & Payroll, Manufacturing) · **Backend Development** (REST APIs, Multi-Tenancy, Auth, Caching) · **Database Design** (Normalization, FK Governance, Audit & Soft-Delete) |
+
+</details>
 
 ---
 
@@ -200,7 +189,7 @@ Deeply interested in ERP systems, relational database architecture, backend deve
 ## Career Status
 
 <p>
-  <img src="https://img.shields.io/badge/Status-Open_to_Opportunities-10B981?style=flat-square" alt="Career Status: Open to Opportunities" />
+  <img src="assets/icons/career-status.svg" alt="Career Status: Open to Opportunities" />
 </p>
 
 - **Current Status:** Open to Opportunities (Dhaka, Bangladesh · HATIM Group)

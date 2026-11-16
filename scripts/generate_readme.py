@@ -43,76 +43,202 @@ def _truncate(text: str, limit: int) -> str:
 
 
 def render_hero_banner_svg(profile: dict[str, Any], career: dict[str, Any]) -> str:
-    """Render the restrained dark-slate hero banner SVG from profile.json and career.json."""
-    name = xml_escape(profile["name"])
+    """Render the Neo-Matrix Terminal HUD hero banner with subtle binary rain & laser sweep."""
+    name = xml_escape(profile["name"].upper().replace(" ", "_"))
     headline = xml_escape(profile["headline"])
     banner = profile["banner"]
-    status_label = xml_escape(banner["badge_text"] if career.get("available_for_hire") else career.get("status", "PORTFOLIO"))
-    tagline = xml_escape(_truncate(banner["tagline"], 112))
+    status_label = xml_escape(
+        "SYS::OPEN_TO_WORK" if career.get("available_for_hire") else "SYS::ACTIVE_BUILD"
+    )
+    tagline = xml_escape(_truncate(banner["tagline"], 96))
     pills: list[str] = list(banner["pills"])[:4]
 
     pills_svg_parts: list[str] = []
     cursor_x = 0
-    for pill in pills:
-        pill_width = max(125, int(len(pill) * 6.9) + 28)
-        if cursor_x + pill_width > 776:
+    for idx, pill in enumerate(pills, start=1):
+        label = f"[{idx:02d}] {pill}"
+        pill_width = max(132, int(len(label) * 6.4) + 22)
+        if cursor_x + pill_width > 800:
             break
-        escaped_pill = xml_escape(pill)
         pills_svg_parts.append(
             f'    <g transform="translate({cursor_x}, 0)">\n'
-            f'      <rect width="{pill_width}" height="28" rx="6" fill="#111827" stroke="#1e293b" stroke-width="1" />\n'
-            f'      <text x="{pill_width / 2:.1f}" y="18" text-anchor="middle" class="pill-text">{escaped_pill}</text>\n'
+            f'      <rect width="{pill_width}" height="26" rx="5" fill="#09151a" stroke="#10b981" stroke-opacity="0.35" stroke-width="1" />\n'
+            f'      <text x="{pill_width / 2:.1f}" y="16.5" text-anchor="middle" class="pill-text">{xml_escape(label)}</text>\n'
             f'    </g>'
         )
-        cursor_x += pill_width + 12
+        cursor_x += pill_width + 10
 
     pills_block = "\n".join(pills_svg_parts)
-    status_color = "#10b981" if career.get("available_for_hire") else "#38bdf8"
+    status_color = "#00ff9c" if career.get("available_for_hire") else "#38bdf8"
+    name_cursor_x = 34 + int(len(f"> {name}") * 17.6) + 8
 
-    return f"""<svg width="860" height="232" viewBox="0 0 860 232" fill="none" xmlns="http://www.w3.org/2000/svg">
+    return f"""<svg width="860" height="252" viewBox="0 0 860 252" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
+    <pattern id="mxGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#00ff9c" stroke-opacity="0.045" stroke-width="0.8" />
+    </pattern>
     <linearGradient id="heroBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#090d16" />
-      <stop offset="55%" stop-color="#0f172a" />
-      <stop offset="100%" stop-color="#090d16" />
+      <stop offset="0%" stop-color="#03070b" />
+      <stop offset="60%" stop-color="#061017" />
+      <stop offset="100%" stop-color="#03070b" />
     </linearGradient>
-    <linearGradient id="heroBorder" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1e293b" />
-      <stop offset="50%" stop-color="#334155" />
-      <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0.45" />
-    </linearGradient>
-    <radialGradient id="heroGlow" cx="88%" cy="18%" r="55%">
-      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.12" />
+    <linearGradient id="mxLaser" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00ff9c" stop-opacity="0" />
+      <stop offset="50%" stop-color="#00ff9c" stop-opacity="0.9" />
       <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
-    </radialGradient>
+    </linearGradient>
+    <clipPath id="mxClip">
+      <rect x="0.5" y="0.5" width="859" height="251" rx="12" />
+    </clipPath>
   </defs>
 
   <style>
-    .status-text {{ font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 10.5px; font-weight: 700; fill: {status_color}; letter-spacing: 0.9px; }}
-    .hero-name {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 30px; font-weight: 800; fill: #f8fafc; letter-spacing: -0.5px; }}
-    .hero-role {{ font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; fill: #38bdf8; }}
+    @keyframes rainA {{
+      0% {{ transform: translateY(-48px); opacity: 0; }}
+      20% {{ opacity: 0.28; }}
+      80% {{ opacity: 0.22; }}
+      100% {{ transform: translateY(180px); opacity: 0; }}
+    }}
+    @keyframes rainB {{
+      0% {{ transform: translateY(-72px); opacity: 0; }}
+      25% {{ opacity: 0.22; }}
+      85% {{ opacity: 0.16; }}
+      100% {{ transform: translateY(180px); opacity: 0; }}
+    }}
+    @keyframes laserMove {{
+      0% {{ transform: translateX(-220px); }}
+      100% {{ transform: translateX(920px); }}
+    }}
+    @keyframes pulseDot {{
+      0% {{ transform: scale(1); opacity: 0.85; }}
+      100% {{ transform: scale(2.3); opacity: 0; }}
+    }}
+    @keyframes blinkCur {{
+      0%, 49% {{ opacity: 1; }}
+      50%, 100% {{ opacity: 0; }}
+    }}
+    .rain-a {{ animation: rainA 5.2s linear infinite; }}
+    .rain-b {{ animation: rainB 6.4s 1.4s linear infinite; }}
+    .laser {{ animation: laserMove 4.6s ease-in-out infinite; }}
+    .pulse {{ transform-box: fill-box; transform-origin: center; animation: pulseDot 2.1s ease-out infinite; }}
+    .cur {{ animation: blinkCur 1s steps(1) infinite; }}
+    .win-title {{ font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11px; fill: #6ee7b7; }}
+    .cmd-prompt {{ font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 600; fill: #34d399; }}
+    .hero-name {{ font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 29px; font-weight: 800; fill: #ecfdf5; letter-spacing: 0.5px; }}
+    .hero-role {{ font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12.5px; font-weight: 600; fill: #00ff9c; }}
     .hero-desc {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 400; fill: #94a3b8; }}
-    .pill-text {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 500; fill: #cbd5e1; }}
+    .status-text {{ font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 10.5px; font-weight: 700; fill: {status_color}; letter-spacing: 0.7px; }}
+    .pill-text {{ font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 10.5px; font-weight: 600; fill: #a7f3d0; }}
   </style>
 
-  <rect width="860" height="232" rx="12" fill="url(#heroBg)" />
-  <rect width="860" height="232" rx="12" fill="url(#heroGlow)" />
-  <rect x="0.5" y="0.5" width="859" height="231" rx="11.5" stroke="url(#heroBorder)" stroke-width="1" />
+  <rect width="860" height="252" rx="12" fill="url(#heroBg)" />
+  <rect width="860" height="252" rx="12" fill="url(#mxGrid)" />
 
-  <g transform="translate(42, 32)">
-    <circle cx="5" cy="5" r="4" fill="{status_color}" />
-    <text x="16" y="8.5" class="status-text">{status_label}</text>
+  <g clip-path="url(#mxClip)">
+    <g font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" fill="#00ff9c" class="rain-a">
+      <text x="712" y="40">0</text><text x="712" y="56">1</text><text x="712" y="72">1</text><text x="712" y="88">0</text><text x="712" y="104">1</text>
+      <text x="752" y="18">1</text><text x="752" y="34">0</text><text x="752" y="50">1</text><text x="752" y="66">1</text><text x="752" y="82">0</text>
+      <text x="794" y="48">1</text><text x="794" y="64">0</text><text x="794" y="80">0</text><text x="794" y="96">1</text>
+    </g>
+    <g font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" fill="#10b981" class="rain-b">
+      <text x="732" y="24">1</text><text x="732" y="40">0</text><text x="732" y="56">1</text><text x="732" y="72">1</text>
+      <text x="774" y="32">0</text><text x="774" y="48">1</text><text x="774" y="64">0</text><text x="774" y="80">1</text>
+      <text x="816" y="16">1</text><text x="816" y="32">1</text><text x="816" y="48">0</text><text x="816" y="64">1</text>
+    </g>
+
+    <rect x="0" y="0" width="860" height="34" fill="#081218" />
+    <line x1="0" y1="34" x2="860" y2="34" stroke="#10b981" stroke-opacity="0.25" stroke-width="1" />
+    <rect x="0" y="0.5" width="210" height="2" fill="url(#mxLaser)" class="laser" />
+
+    <circle cx="22" cy="17" r="4.5" fill="#ef4444" />
+    <circle cx="37" cy="17" r="4.5" fill="#f59e0b" />
+    <circle cx="52" cy="17" r="4.5" fill="#10b981" />
+    <text x="72" y="21" class="win-title">salman@db-core:~/tsalmanrahman — zsh</text>
+
+    <circle cx="704" cy="17" r="4.5" fill="{status_color}" class="pulse" />
+    <circle cx="704" cy="17" r="4" fill="{status_color}" />
+    <text x="716" y="20.5" class="status-text">{status_label}</text>
   </g>
 
-  <text x="42" y="80" class="hero-name">{name}</text>
-  <text x="42" y="108" class="hero-role">{headline}</text>
-  <text x="42" y="136" class="hero-desc">{tagline}</text>
+  <rect x="0.5" y="0.5" width="859" height="251" rx="11.5" stroke="#10b981" stroke-opacity="0.4" stroke-width="1" />
 
-  <line x1="42" y1="158" x2="818" y2="158" stroke="#1e293b" stroke-width="1" />
+  <text x="34" y="64" class="cmd-prompt">$ ./whoami --stack=sql,erp,python,csharp</text>
+  <text x="34" y="102" class="hero-name">&gt; {name}</text>
+  <rect x="{name_cursor_x}" y="79" width="12" height="24" rx="1.5" fill="#00ff9c" class="cur" />
 
-  <g transform="translate(42, 174)">
+  <text x="34" y="132" class="hero-role">[{headline}]</text>
+  <text x="34" y="160" class="hero-desc">{tagline}</text>
+
+  <line x1="34" y1="182" x2="826" y2="182" stroke="#10b981" stroke-opacity="0.2" stroke-width="1" />
+
+  <g transform="translate(34, 198)">
 {pills_block}
   </g>
+</svg>
+"""
+
+
+def render_about_terminal_svg(profile: dict[str, Any], experience: dict[str, Any]) -> str:
+    """Render a dual-pane About & Engineering Pillars terminal HUD card."""
+    pillars = list(profile.get("problem_solving_approach", []))[:4]
+    highlights = list(experience.get("highlights", []))[:4]
+    years = xml_escape(experience.get("years_of_experience", "4+ Years"))
+
+    pillar_nodes: list[str] = []
+    for idx, pillar in enumerate(pillars):
+        py = 52 + idx * 54
+        title = xml_escape(_truncate(pillar["pillar"], 36))
+        desc = xml_escape(_truncate(pillar["description"], 54))
+        pillar_nodes.append(
+            f'  <g transform="translate(24, {py})">\n'
+            f'    <rect width="386" height="46" rx="6" fill="#09131a" stroke="#10b981" stroke-opacity="0.22" />\n'
+            f'    <text x="12" y="18" class="item-head">&gt; [{idx + 1:02d}] {title}</text>\n'
+            f'    <text x="12" y="34" class="item-sub">{desc}</text>\n'
+            f'  </g>'
+        )
+
+    exp_nodes: list[str] = []
+    for idx, item in enumerate(highlights):
+        ey = 52 + idx * 54
+        area = xml_escape(_truncate(item["area"], 38))
+        tools = xml_escape(" · ".join(list(item.get("tools", []))[:4]))
+        exp_nodes.append(
+            f'  <g transform="translate(450, {ey})">\n'
+            f'    <rect width="386" height="46" rx="6" fill="#09131a" stroke="#38bdf8" stroke-opacity="0.22" />\n'
+            f'    <text x="12" y="18" class="item-head-cyan">$ {area}</text>\n'
+            f'    <text x="12" y="34" class="item-sub">{tools}</text>\n'
+            f'  </g>'
+        )
+
+    left_block = "\n".join(pillar_nodes)
+    right_block = "\n".join(exp_nodes)
+
+    return f"""<svg width="860" height="284" viewBox="0 0 860 284" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="abtGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#00ff9c" stroke-opacity="0.035" stroke-width="0.8" />
+    </pattern>
+  </defs>
+  <style>
+    .pane-hdr {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.9px; fill: #00ff9c; }}
+    .pane-hdr-c {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.9px; fill: #38bdf8; }}
+    .exp-tag {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 9.5px; font-weight: 700; fill: #6ee7b7; }}
+    .item-head {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px; font-weight: 700; fill: #ecfdf5; }}
+    .item-head-cyan {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px; font-weight: 700; fill: #e0f2fe; }}
+    .item-sub {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 10px; fill: #94a3b8; }}
+  </style>
+
+  <rect width="860" height="284" rx="12" fill="#03070b" stroke="#10b981" stroke-opacity="0.3" stroke-width="1" />
+  <rect width="860" height="284" rx="12" fill="url(#abtGrid)" />
+
+  <text x="24" y="30" class="pane-hdr">[01] ./ENGINEERING_PILLARS</text>
+  <text x="450" y="30" class="pane-hdr-c">[02] ./PRACTICAL_EXPERIENCE</text>
+  <text x="836" y="30" text-anchor="end" class="exp-tag">{years}</text>
+
+  <line x1="430" y1="20" x2="430" y2="266" stroke="#10b981" stroke-opacity="0.18" stroke-width="1" />
+
+{left_block}
+{right_block}
 </svg>
 """
 
@@ -261,7 +387,7 @@ def _get_skill_icon_svg(skill: dict[str, Any]) -> str:
 
 
 def render_skills_matrix_svg(skills: dict[str, list[dict[str, Any]]]) -> str:
-    """Render the dynamic categorized technical skills matrix SVG with tinted vector icon tiles."""
+    """Render the Neo-Matrix Terminal HUD technical skills matrix with tinted vector icon tiles."""
     category_order = ["Database", "Programming", "Reporting", "IT Support", "Other"]
     total_inner_w = 804
     card_h = 58
@@ -271,14 +397,15 @@ def render_skills_matrix_svg(skills: dict[str, list[dict[str, Any]]]) -> str:
     pad_x = 28
 
     blocks_svg: list[str] = []
-    cur_y = 26
+    cur_y = 28
 
-    for cat in category_order:
+    for cat_idx, cat in enumerate(category_order, start=1):
         items = skills.get(cat, [])
         if not items:
             continue
+        cat_label = xml_escape(f"> [{cat_idx:02d}] {cat.upper().replace(' ', '_')}")
         blocks_svg.append(
-            f'  <text x="{pad_x}" y="{cur_y}" class="cat-title">{xml_escape(cat.upper())}</text>'
+            f'  <text x="{pad_x}" y="{cur_y}" class="cat-title">{cat_label}</text>'
         )
         cur_y += 14
 
@@ -291,7 +418,7 @@ def render_skills_matrix_svg(skills: dict[str, list[dict[str, Any]]]) -> str:
             row = idx // cols
             x = pad_x + col * (card_w + col_gap)
             y = cur_y + row * (card_h + row_gap)
-            color = xml_escape(skill.get("color", "#0ea5e9"))
+            color = xml_escape(skill.get("color", "#00ff9c"))
             icon_svg = _get_skill_icon_svg(skill)
             s_name = xml_escape(_truncate(skill["name"], 34 if cols < 3 else 23))
             subtitle_raw = f"{skill['role']} · {skill['focus']}" if cols == 1 else (skill["focus"] if cols == 2 else skill["role"])
@@ -299,7 +426,7 @@ def render_skills_matrix_svg(skills: dict[str, list[dict[str, Any]]]) -> str:
 
             blocks_svg.append(
                 f'  <g transform="translate({x}, {y})">\n'
-                f'    <rect width="{card_w}" height="{card_h}" rx="8" fill="#111827" stroke="#1e293b" stroke-width="1" />\n'
+                f'    <rect width="{card_w}" height="{card_h}" rx="7" fill="#060d12" stroke="#10b981" stroke-opacity="0.24" stroke-width="1" />\n'
                 f'    <rect x="12" y="11" width="36" height="36" rx="8" fill="{color}" fill-opacity="0.16" stroke="{color}" stroke-opacity="0.45" stroke-width="1" />\n'
                 f'    <g transform="translate(19, 18) scale(0.9167)">{icon_svg}</g>\n'
                 f'    <text x="58" y="25" class="skill-name">{s_name}</text>\n'
@@ -315,25 +442,25 @@ def render_skills_matrix_svg(skills: dict[str, list[dict[str, Any]]]) -> str:
 
     return f"""<svg width="860" height="{total_height}" viewBox="0 0 860 {total_height}" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="matrixBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#090d16" />
-      <stop offset="100%" stop-color="#0f172a" />
-    </linearGradient>
+    <pattern id="skGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#00ff9c" stroke-opacity="0.035" stroke-width="0.8" />
+    </pattern>
   </defs>
   <style>
-    .cat-title {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px; font-weight: 700; letter-spacing: 1.4px; fill: #38bdf8; }}
-    .skill-name {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 12.5px; font-weight: 700; fill: #f8fafc; }}
+    .cat-title {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px; font-weight: 700; letter-spacing: 1.2px; fill: #00ff9c; }}
+    .skill-name {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 12.5px; font-weight: 700; fill: #ecfdf5; }}
     .skill-role {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 10.5px; font-weight: 400; fill: #94a3b8; }}
   </style>
 
-  <rect width="860" height="{total_height}" rx="12" fill="url(#matrixBg)" stroke="#1e293b" stroke-width="1" />
+  <rect width="860" height="{total_height}" rx="12" fill="#03070b" stroke="#10b981" stroke-opacity="0.3" stroke-width="1" />
+  <rect width="860" height="{total_height}" rx="12" fill="url(#skGrid)" />
 {body}
 </svg>
 """
 
 
 def render_github_telemetry_svg(metrics: dict[str, Any], projects: list[dict[str, Any]]) -> str:
-    """Render verified GitHub activity & repository language mix SVG (zero fake metrics)."""
+    """Render Neo-Matrix Telemetry Daemon SVG with radar pulse & animated language bars."""
     username = xml_escape(metrics.get("username", "tsalmanrahman"))
     gh_profile = metrics.get("profile", {})
     public_repos = int(gh_profile.get("public_repos", 0))
@@ -345,7 +472,7 @@ def render_github_telemetry_svg(metrics: dict[str, Any], projects: list[dict[str
 
     repos = list(metrics.get("repositories", []))[:3]
     repo_lines: list[str] = [
-        '    <text x="24" y="154" class="sub-label">ACTIVE PUBLIC REPOSITORIES</text>'
+        '    <text x="24" y="154" class="sub-label">ACTIVE_REPOSITORIES</text>'
     ]
     for idx, repo in enumerate(repos):
         box_y = 164 + idx * 27
@@ -353,23 +480,23 @@ def render_github_telemetry_svg(metrics: dict[str, Any], projects: list[dict[str
         r_name = xml_escape(_truncate(str(repo.get("name", "")), 24))
         r_lang = xml_escape(str(repo.get("primary_language", "Code")))
         repo_lines.append(
-            f'    <rect x="24" y="{box_y}" width="370" height="22" rx="5" fill="#0f172a" stroke="#1e293b" />\n'
-            f'    <text x="34" y="{text_y}" class="repo-name">{r_name}</text>\n'
-            f'    <text x="384" y="{text_y}" text-anchor="end" class="repo-lang">{r_lang}</text>'
+            f'    <rect x="24" y="{box_y}" width="370" height="22" rx="5" fill="#09131a" stroke="#10b981" stroke-opacity="0.22" />\n'
+            f'    <text x="34" y="{text_y}" class="repo-name">$ {r_name}</text>\n'
+            f'    <text x="384" y="{text_y}" text-anchor="end" class="repo-lang">[{r_lang}]</text>'
         )
     repos_svg = "\n".join(repo_lines)
 
     lang_bytes: dict[str, int] = metrics.get("language_bytes", {})
     total_bytes = sum(v for v in lang_bytes.values() if isinstance(v, int) and v > 0)
     lang_colors = {
-        "C#": "#512BD4",
-        "Python": "#3776AB",
-        "TSQL": "#CC2927",
-        "HTML": "#E34F26",
-        "JavaScript": "#F7DF1E",
-        "CSS": "#38BDF8",
-        "PowerShell": "#012456",
-        "Dockerfile": "#2496ED",
+        "C#": "#a78bfa",
+        "Python": "#00ff9c",
+        "TSQL": "#f87171",
+        "HTML": "#38bdf8",
+        "JavaScript": "#facc15",
+        "CSS": "#2dd4bf",
+        "PowerShell": "#60a5fa",
+        "Dockerfile": "#22d3ee",
     }
 
     lang_bars: list[str] = []
@@ -382,7 +509,7 @@ def render_github_telemetry_svg(metrics: dict[str, Any], projects: list[dict[str
 
         for idx, (lang_name, byte_val) in enumerate(top_langs):
             pct = (byte_val / total_bytes) * 100.0
-            bar_w = max(6, int((pct / 100.0) * 370))
+            bar_w = max(8, int((pct / 100.0) * 370))
             y_label = 64 + idx * 34
             y_bar = y_label + 7
             kb = max(1, byte_val // 1024)
@@ -390,8 +517,8 @@ def render_github_telemetry_svg(metrics: dict[str, Any], projects: list[dict[str
             lang_bars.append(
                 f'    <text x="24" y="{y_label}" class="metric-label">{xml_escape(lang_name)}</text>\n'
                 f'    <text x="394" y="{y_label}" text-anchor="end" class="metric-val">{pct:.1f}% ({kb:,} KB)</text>\n'
-                f'    <rect x="24" y="{y_bar}" width="370" height="6" rx="3" fill="#1e293b" />\n'
-                f'    <rect x="24" y="{y_bar}" width="{bar_w}" height="6" rx="3" fill="{color}" />'
+                f'    <rect x="24" y="{y_bar}" width="370" height="6" rx="3" fill="#0f1e24" />\n'
+                f'    <rect x="24" y="{y_bar}" width="{bar_w}" height="6" rx="3" fill="{color}" class="bar-grow" />'
             )
     else:
         lang_bars.append(
@@ -401,77 +528,83 @@ def render_github_telemetry_svg(metrics: dict[str, Any], projects: list[dict[str
     langs_svg = "\n".join(lang_bars)
 
     return f"""<svg width="860" height="278" viewBox="0 0 860 278" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="cardSurface" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#090d16" />
-      <stop offset="100%" stop-color="#111827" />
-    </linearGradient>
-  </defs>
   <style>
-    .panel-title {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11.5px; font-weight: 700; letter-spacing: 0.8px; }}
-    .stat-k {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 11px; fill: #94a3b8; }}
+    @keyframes barGrow {{
+      0% {{ transform: scaleX(0); }}
+      100% {{ transform: scaleX(1); }}
+    }}
+    @keyframes beacon {{
+      0% {{ transform: scale(1); opacity: 0.85; }}
+      100% {{ transform: scale(2.2); opacity: 0; }}
+    }}
+    .bar-grow {{ transform-box: fill-box; transform-origin: left center; animation: barGrow 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards; }}
+    .beacon {{ transform-box: fill-box; transform-origin: center; animation: beacon 2.2s ease-out infinite; }}
+    .panel-title {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.8px; }}
+    .stat-k {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px; fill: #6ee7b7; }}
     .sub-label {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.7px; fill: #64748b; }}
-    .stat-v {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11.5px; font-weight: 700; fill: #f8fafc; }}
-    .repo-name {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11.5px; font-weight: 600; fill: #e2e8f0; }}
-    .repo-lang {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 10.5px; fill: #38bdf8; }}
-    .metric-label {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 11.5px; font-weight: 600; fill: #e2e8f0; }}
-    .metric-val {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10.5px; fill: #94a3b8; }}
-    .footnote {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 9.5px; fill: #64748b; }}
+    .stat-v {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11.5px; font-weight: 700; fill: #ecfdf5; }}
+    .repo-name {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px; font-weight: 600; fill: #e2e8f0; }}
+    .repo-lang {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px; fill: #00ff9c; }}
+    .metric-label {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px; font-weight: 600; fill: #e2e8f0; }}
+    .metric-val {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px; fill: #94a3b8; }}
+    .footnote {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 9px; fill: #64748b; }}
   </style>
 
-  <!-- Left Panel: Verified GitHub Overview -->
   <g transform="translate(0, 0)">
-    <rect width="418" height="278" rx="12" fill="url(#cardSurface)" stroke="#1e293b" stroke-width="1" />
-    <circle cx="24" cy="26" r="4" fill="#38bdf8" />
-    <text x="36" y="30" fill="#38bdf8" class="panel-title">VERIFIED GITHUB PROFILE</text>
+    <rect width="418" height="278" rx="12" fill="#03070b" stroke="#10b981" stroke-opacity="0.3" stroke-width="1" />
+    <circle cx="24" cy="26" r="4" fill="#38bdf8" class="beacon" />
+    <circle cx="24" cy="26" r="3.5" fill="#38bdf8" />
+    <text x="36" y="30" fill="#38bdf8" class="panel-title">[01] ./GITHUB_PROFILE_DAEMON</text>
 
-    <rect x="24" y="46" width="180" height="44" rx="6" fill="#0f172a" stroke="#1e293b" />
-    <text x="34" y="63" class="stat-k">Handle</text>
+    <rect x="24" y="46" width="180" height="44" rx="6" fill="#060d12" stroke="#10b981" stroke-opacity="0.22" />
+    <text x="34" y="63" class="stat-k">HANDLE</text>
     <text x="34" y="80" class="stat-v">@{username}</text>
 
-    <rect x="214" y="46" width="180" height="44" rx="6" fill="#0f172a" stroke="#1e293b" />
-    <text x="224" y="63" class="stat-k">Public Repos (Featured)</text>
+    <rect x="214" y="46" width="180" height="44" rx="6" fill="#060d12" stroke="#10b981" stroke-opacity="0.22" />
+    <text x="224" y="63" class="stat-k">REPOS (FEATURED)</text>
     <text x="224" y="80" class="stat-v">{public_repos} ({featured_count} Featured)</text>
 
-    <rect x="24" y="98" width="180" height="36" rx="6" fill="#0f172a" stroke="#1e293b" />
-    <text x="34" y="120" class="stat-k">Since {created_year} · Followers: {followers}</text>
+    <rect x="24" y="98" width="180" height="36" rx="6" fill="#060d12" stroke="#10b981" stroke-opacity="0.22" />
+    <text x="34" y="120" class="stat-k">SINCE {created_year} · FOLLOWERS: {followers}</text>
 
-    <rect x="214" y="98" width="180" height="36" rx="6" fill="#0f172a" stroke="#1e293b" />
-    <text x="224" y="120" class="stat-k">Org: {company}</text>
+    <rect x="214" y="98" width="180" height="36" rx="6" fill="#060d12" stroke="#10b981" stroke-opacity="0.22" />
+    <text x="224" y="120" class="stat-k">ORG: {company}</text>
 
 {repos_svg}
-    <text x="24" y="260" class="footnote">Source: GitHub REST API ({sync_status})</text>
+    <text x="24" y="260" class="footnote">SOURCE: GITHUB_REST_API ({sync_status})</text>
   </g>
 
-  <!-- Right Panel: Verified Codebase Language Mix -->
   <g transform="translate(442, 0)">
-    <rect width="418" height="278" rx="12" fill="url(#cardSurface)" stroke="#1e293b" stroke-width="1" />
-    <circle cx="24" cy="26" r="4" fill="#10b981" />
-    <text x="36" y="30" fill="#10b981" class="panel-title">VERIFIED CODEBASE LANGUAGE MIX</text>
+    <rect width="418" height="278" rx="12" fill="#03070b" stroke="#10b981" stroke-opacity="0.3" stroke-width="1" />
+    <circle cx="24" cy="26" r="4" fill="#00ff9c" class="beacon" />
+    <circle cx="24" cy="26" r="3.5" fill="#00ff9c" />
+    <text x="36" y="30" fill="#00ff9c" class="panel-title">[02] ./CODEBASE_LANGUAGE_MIX</text>
 
 {langs_svg}
-    <text x="24" y="260" class="footnote">Measured directly from non-fork repository byte counts</text>
+    <text x="24" y="260" class="footnote">MEASURED BYTE COUNTS (NON-FORK REPOS)</text>
   </g>
 </svg>
 """
 
 
-def render_project_preview_svg(project: dict[str, Any]) -> str:
-    """Render a clean architectural preview card SVG for a featured project."""
-    name = xml_escape(_truncate(project["name"], 56))
+def render_project_preview_svg(project: dict[str, Any], index: int = 1) -> str:
+    """Render a Neo-Matrix Terminal deployment preview card SVG for a featured project."""
+    name = xml_escape(_truncate(project["name"], 54))
     category = xml_escape(project["category"].upper())
-    tagline = xml_escape(_truncate(project["tagline"], 92))
+    tagline = xml_escape(_truncate(project["tagline"], 90))
+    slug = xml_escape(f"DEPLOY_{index:02d} // {project['id'].upper()}")
+    accent = "#00ff9c" if index % 2 == 1 else "#38bdf8"
     stack: list[str] = list(project.get("tech_stack", []))[:6]
 
     pills_parts: list[str] = []
     px = 0
     for tech in stack:
-        pw = max(64, int(len(tech) * 6.8) + 20)
+        pw = max(68, int(len(tech) * 6.8) + 20)
         if px + pw > 756:
             break
         pills_parts.append(
             f'    <g transform="translate({px}, 0)">\n'
-            f'      <rect width="{pw}" height="24" rx="5" fill="#111827" stroke="#334155" stroke-width="1" />\n'
+            f'      <rect width="{pw}" height="24" rx="5" fill="#09131a" stroke="#10b981" stroke-opacity="0.35" stroke-width="1" />\n'
             f'      <text x="{pw / 2:.1f}" y="15.5" text-anchor="middle" class="tech-pill">{xml_escape(tech)}</text>\n'
             f'    </g>'
         )
@@ -480,31 +613,41 @@ def render_project_preview_svg(project: dict[str, Any]) -> str:
     pills_block = "\n".join(pills_parts)
     repo_label = xml_escape(project["repo_url"].replace("https://", ""))
 
-    return f"""<svg width="820" height="156" viewBox="0 0 820 156" fill="none" xmlns="http://www.w3.org/2000/svg">
+    return f"""<svg width="820" height="160" viewBox="0 0 820 160" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="projBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#090d16" />
-      <stop offset="100%" stop-color="#0f172a" />
+    <linearGradient id="pSheen{index}" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="{accent}" stop-opacity="0" />
+      <stop offset="50%" stop-color="{accent}" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="{accent}" stop-opacity="0" />
     </linearGradient>
+    <clipPath id="pClip{index}"><rect width="820" height="160" rx="10" /></clipPath>
   </defs>
   <style>
-    .proj-cat {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px; font-weight: 700; fill: #38bdf8; letter-spacing: 1px; }}
-    .proj-repo {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px; fill: #64748b; }}
-    .proj-title {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 20px; font-weight: 800; fill: #f8fafc; }}
+    @keyframes pSweep{index} {{
+      0% {{ transform: translateX(-200px); }}
+      100% {{ transform: translateX(860px); }}
+    }}
+    .psweep{index} {{ animation: pSweep{index} 5s ease-in-out infinite; }}
+    .proj-cat {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10.5px; font-weight: 700; fill: {accent}; letter-spacing: 0.9px; }}
+    .proj-repo {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px; fill: #6ee7b7; }}
+    .proj-title {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 20px; font-weight: 800; fill: #ecfdf5; }}
     .proj-tag {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 12px; fill: #94a3b8; }}
-    .tech-pill {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px; font-weight: 600; fill: #cbd5e1; }}
+    .tech-pill {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px; font-weight: 600; fill: #a7f3d0; }}
   </style>
 
-  <rect width="820" height="156" rx="10" fill="url(#projBg)" stroke="#1e293b" stroke-width="1" />
-  <rect x="0" y="0" width="4" height="156" rx="2" fill="#38bdf8" />
+  <rect width="820" height="160" rx="10" fill="#060d12" stroke="#10b981" stroke-opacity="0.3" stroke-width="1" />
+  <g clip-path="url(#pClip{index})">
+    <rect x="0" y="0" width="180" height="2" fill="url(#pSheen{index})" class="psweep{index}" />
+    <rect x="0" y="0" width="4" height="160" fill="{accent}" />
+  </g>
 
-  <text x="28" y="30" class="proj-cat">{category}</text>
-  <text x="792" y="30" text-anchor="end" class="proj-repo">{repo_label}</text>
+  <text x="28" y="30" class="proj-cat">&gt; {slug} · {category}</text>
+  <text x="792" y="30" text-anchor="end" class="proj-repo">{repo_label} ↗</text>
 
-  <text x="28" y="64" class="proj-title">{name}</text>
-  <text x="28" y="88" class="proj-tag">{tagline}</text>
+  <text x="28" y="66" class="proj-title">{name}</text>
+  <text x="28" y="90" class="proj-tag">{tagline}</text>
 
-  <g transform="translate(28, 108)">
+  <g transform="translate(28, 112)">
 {pills_block}
   </g>
 </svg>
@@ -597,38 +740,59 @@ CONTACT_PILL_SPECS: dict[str, dict[str, str]] = {
 
 
 def render_contact_pill_svg(spec: dict[str, str]) -> str:
-    """Render a unified dark-slate SVG contact pill with a crisp brand badge and arrow."""
+    """Render a Neo-Matrix Terminal HUD SVG contact pill with brand badge and arrow."""
     label = xml_escape(spec["label"])
     box_fill = xml_escape(spec["box_fill"])
     box_stroke = xml_escape(spec["box_stroke"])
-    width = max(98, int(36 + len(spec["label"]) * 7.2 + 24))
+    width = max(102, int(36 + len(spec["label"]) * 7.4 + 26))
     return f"""<svg width="{width}" height="34" viewBox="0 0 {width} 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="0.5" y="0.5" width="{width - 1}" height="33" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
+  <rect x="0.5" y="0.5" width="{width - 1}" height="33" rx="7" fill="#060d12" stroke="#10b981" stroke-opacity="0.4" stroke-width="1" />
   <rect x="8" y="7" width="20" height="20" rx="5" fill="{box_fill}" stroke="{box_stroke}" stroke-width="0.8" />
   {spec['icon']}
-  <text x="36" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#f8fafc">{label}</text>
-  <text x="{width - 12}" y="20.5" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#64748b">↗</text>
+  <text x="36" y="21" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11.5" font-weight="700" fill="#ecfdf5">{label}</text>
+  <text x="{width - 11}" y="20.5" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" font-weight="700" fill="#00ff9c">↗</text>
 </svg>
 """
 
 
 def render_nav_pill_svg(item: dict[str, str]) -> str:
-    """Render a modern dark-slate SVG navigation pill with a crisp icon and short label."""
-    label = xml_escape(item["label"])
-    accent = xml_escape(item["accent"])
-    width = max(78, int(33 + len(item["label"]) * 6.8 + 14))
+    """Render a Neo-Matrix Terminal HUD SVG navigation pill with icon and short label."""
+    label = xml_escape(item["label"].upper())
+    accent = "#00ff9c" if item["accent"] == "#10b981" else "#38bdf8"
+    width = max(84, int(33 + len(label) * 6.9 + 16))
     return f"""<svg width="{width}" height="30" viewBox="0 0 {width} 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="0.5" y="0.5" width="{width - 1}" height="29" rx="7" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
-  <g transform="translate(11, 7) scale(0.667)" stroke="{accent}" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" fill="none">
+  <rect x="0.5" y="0.5" width="{width - 1}" height="29" rx="6" fill="#060d12" stroke="#10b981" stroke-opacity="0.38" stroke-width="1" />
+  <g transform="translate(10, 7) scale(0.667)" stroke="{accent}" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" fill="none">
     {item['icon']}
   </g>
-  <text x="33" y="19" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="600" fill="#e2e8f0">{label}</text>
+  <text x="32" y="19" font-family="JetBrains Mono, ui-monospace, monospace" font-size="10.5" font-weight="700" fill="#d1fae5">{label}</text>
+</svg>
+"""
+
+
+def render_career_status_svg(career: dict[str, Any]) -> str:
+    """Render Neo-Matrix animated career status pill SVG."""
+    label = "STATUS: OPEN_TO_OPPORTUNITIES" if career.get("available_for_hire") else "STATUS: FOCUSED_ON_PROJECTS"
+    color = "#00ff9c" if career.get("available_for_hire") else "#38bdf8"
+    width = 278 if career.get("available_for_hire") else 258
+    return f"""<svg width="{width}" height="32" viewBox="0 0 {width} 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @keyframes stPulse {{
+      0% {{ transform: scale(1); opacity: 0.85; }}
+      100% {{ transform: scale(2.2); opacity: 0; }}
+    }}
+    .st-p {{ transform-box: fill-box; transform-origin: center; animation: stPulse 2s ease-out infinite; }}
+  </style>
+  <rect x="0.5" y="0.5" width="{width - 1}" height="31" rx="6" fill="#060d12" stroke="{color}" stroke-opacity="0.45" stroke-width="1" />
+  <circle cx="18" cy="16" r="4" fill="{color}" class="st-p" />
+  <circle cx="18" cy="16" r="3.5" fill="{color}" />
+  <text x="31" y="20" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" font-weight="700" fill="{color}">{label}</text>
 </svg>
 """
 
 
 def render_cert_badge_svg(cert: dict[str, Any]) -> str:
-    """Render a crisp verification badge SVG card for a verified certification."""
+    """Render a crisp Neo-Matrix verification badge SVG card for a verified certification."""
     title = xml_escape(cert["name"])
     issuer_upper = xml_escape(cert["issuer"].upper())
     status = xml_escape(cert["status"])
@@ -644,23 +808,23 @@ def render_cert_badge_svg(cert: dict[str, Any]) -> str:
             line2 = ""
         return f"""<svg width="336" height="112" viewBox="0 0 336 112" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
-    .mc-issuer {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px; font-weight: 700; fill: #38bdf8; letter-spacing: 0.9px; }}
-    .mc-title {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 15px; font-weight: 800; fill: #f8fafc; }}
+    .mc-issuer {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 9.5px; font-weight: 700; fill: #00ff9c; letter-spacing: 0.9px; }}
+    .mc-title {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 15px; font-weight: 800; fill: #ecfdf5; }}
     .mc-sub {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13.5px; font-weight: 600; fill: #cbd5e1; }}
-    .mc-status {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 11px; fill: #10b981; font-weight: 600; }}
+    .mc-status {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px; fill: #6ee7b7; font-weight: 600; }}
   </style>
-  <rect x="0.5" y="0.5" width="335" height="111" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
-  <rect x="18" y="20" width="72" height="72" rx="12" fill="#111827" stroke="#334155" stroke-width="1" />
+  <rect x="0.5" y="0.5" width="335" height="111" rx="10" fill="#060d12" stroke="#10b981" stroke-opacity="0.4" stroke-width="1" />
+  <rect x="18" y="20" width="72" height="72" rx="10" fill="#09151a" stroke="#10b981" stroke-opacity="0.3" stroke-width="1" />
   <rect x="37" y="30" width="16" height="16" rx="2" fill="#F25022" />
   <rect x="55" y="30" width="16" height="16" rx="2" fill="#7FBA00" />
   <rect x="37" y="48" width="16" height="16" rx="2" fill="#00A4EF" />
   <rect x="55" y="48" width="16" height="16" rx="2" fill="#FFB900" />
   <text x="54" y="81" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="10.5" font-weight="800" fill="#A78BFA">C# · .NET</text>
-  <text x="106" y="34" class="mc-issuer">{issuer_upper}</text>
+  <text x="106" y="34" class="mc-issuer">&gt; {issuer_upper}</text>
   <text x="106" y="55" class="mc-title">{line1}</text>
   <text x="106" y="73" class="mc-sub">{line2}</text>
-  <circle cx="110" cy="87.5" r="3.5" fill="#10b981" />
-  <text x="119" y="91" class="mc-status">Verified · {issue_label}</text>
+  <circle cx="110" cy="87.5" r="3.5" fill="#00ff9c" />
+  <text x="119" y="91" class="mc-status">VERIFIED · {issue_label}</text>
 </svg>
 """
 
@@ -668,16 +832,16 @@ def render_cert_badge_svg(cert: dict[str, Any]) -> str:
 
     return f"""<svg width="380" height="96" viewBox="0 0 380 96" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
-    .c-issuer {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px; font-weight: 700; fill: #38bdf8; letter-spacing: 0.9px; }}
-    .c-name {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 15px; font-weight: 700; fill: #f8fafc; }}
-    .c-status {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 11px; fill: #10b981; font-weight: 600; }}
+    .c-issuer {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px; font-weight: 700; fill: #00ff9c; letter-spacing: 0.9px; }}
+    .c-name {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 15px; font-weight: 700; fill: #ecfdf5; }}
+    .c-status {{ font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10.5px; fill: #6ee7b7; font-weight: 600; }}
   </style>
-  <rect width="380" height="96" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
-  <rect x="16" y="22" width="52" height="52" rx="10" fill="#0284C7" />
-  <text x="42" y="54" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="800" fill="#FFFFFF">{monogram}</text>
+  <rect width="380" height="96" rx="10" fill="#060d12" stroke="#10b981" stroke-opacity="0.35" stroke-width="1" />
+  <rect x="16" y="22" width="52" height="52" rx="10" fill="#09151a" stroke="#10b981" stroke-opacity="0.35" />
+  <text x="42" y="54" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="800" fill="#00ff9c">{monogram}</text>
   <text x="84" y="34" class="c-issuer">{issuer_upper}</text>
   <text x="84" y="55" class="c-name">{title}</text>
-  <text x="84" y="73" class="c-status">Verified Status: {status}</text>
+  <text x="84" y="73" class="c-status">VERIFIED: {status}</text>
 </svg>
 """
 
@@ -731,29 +895,18 @@ def render_readme_markdown(
 
     contact_html = "\n  &nbsp;\n  ".join(contact_badges)
 
-    # About Me paragraphs & approach table
+    # About Me paragraphs
     summary_paragraphs = "\n\n".join(profile["summary"])
-    approach_rows = "\n".join(
-        f"| **{item['pillar']}** | {item['description']} |"
-        for item in profile["problem_solving_approach"]
-    )
-    exp_highlights = "\n".join(
-        f"- **{item['area']}**: {item['summary']} (`{'` · `'.join(item['tools'])}`)"
-        for item in experience["highlights"]
-    )
 
-    # Technical Skills section
+    # Technical Skills section (compact reference inside collapsible block)
     skills_rows: list[str] = []
     for cat in ("Database", "Programming", "Reporting", "IT Support", "Other"):
         cat_items = skills.get(cat, [])
         if not cat_items:
             continue
-        badges = " ".join(
-            f'<img src="{s["badge_url"]}" alt="{s["name"]}" />'
-            for s in cat_items
-        )
+        techs_inline = " · ".join(f"`{s['name']}`" for s in cat_items)
         focus_summary = " · ".join(f"**{s['name']}** ({s['focus']})" for s in cat_items)
-        skills_rows.append(f"| **{cat}** | {badges} | {focus_summary} |")
+        skills_rows.append(f"| **{cat}** | {techs_inline} | {focus_summary} |")
     skills_table = "\n".join(skills_rows)
 
     # Featured Projects section (strictly featured == True AND verified == True)
@@ -839,11 +992,6 @@ def render_readme_markdown(
         f"| `{u['date']}` | **{u['category']}** | {u['title']} |"
         for u in career["recent_updates"]
     )
-    availability_badge = (
-        "https://img.shields.io/badge/Status-Open_to_Opportunities-10B981?style=flat-square"
-        if career.get("available_for_hire")
-        else "https://img.shields.io/badge/Status-Focused_on_Current_Projects-0284C7?style=flat-square"
-    )
 
     return f"""<!-- AUTO-GENERATED FILE: DO NOT EDIT MANUALLY.
      Source of truth: profile-data/*.json
@@ -856,10 +1004,6 @@ def render_readme_markdown(
 <br/>
 
 <div align="center">
-
-### {profile['headline']}
-
-{profile['short_bio']}
 
 <p>
   {contact_html}
@@ -877,15 +1021,11 @@ def render_readme_markdown(
 
 {summary_paragraphs}
 
-### Experience & Practical Background ({experience['years_of_experience']})
+<br/>
 
-{exp_highlights}
-
-### Problem-Solving Approach
-
-| Pillar | Engineering Practice |
-| :--- | :--- |
-{approach_rows}
+<div align="center">
+  <img src="assets/profile/about-terminal.svg" alt="Engineering Pillars and Experience Terminal ({experience['years_of_experience']})" width="100%" />
+</div>
 
 ---
 
@@ -895,11 +1035,14 @@ def render_readme_markdown(
   <img src="assets/profile/skills-matrix.svg" alt="Technical Skills Matrix" width="100%" />
 </div>
 
-<br/>
+<details>
+<summary><code>$ cat skills_index.md</code> — Structured Skill Reference</summary>
 
 | Category | Technologies | Core Focus |
 | :--- | :--- | :--- |
 {skills_table}
+
+</details>
 
 ---
 
@@ -953,7 +1096,7 @@ def render_readme_markdown(
 ## Career Status
 
 <p>
-  <img src="{availability_badge}" alt="Career Status: {career['status']}" />
+  <img src="assets/icons/career-status.svg" alt="Career Status: {career['status']}" />
 </p>
 
 - **Current Status:** {career['status']} ({profile['location']} · {profile['organization']})
@@ -990,16 +1133,19 @@ def build_outputs(root_dir: Path) -> dict[Path, str]:
     github_metrics = _load_json(data_dir / "github_metrics.json")
 
     banner_svg = render_hero_banner_svg(profile, career)
+    about_svg = render_about_terminal_svg(profile, experience)
     skills_svg = render_skills_matrix_svg(skills)
     telemetry_svg = render_github_telemetry_svg(github_metrics, projects)
 
     outputs: dict[Path, str] = {
         root_dir / "assets/banner/hero-banner.svg": banner_svg,
         root_dir / "banner.svg": banner_svg,
+        root_dir / "assets/profile/about-terminal.svg": about_svg,
         root_dir / "assets/profile/skills-matrix.svg": skills_svg,
         root_dir / "tech-matrix.svg": skills_svg,
         root_dir / "assets/profile/github-telemetry.svg": telemetry_svg,
         root_dir / "telemetry.svg": telemetry_svg,
+        root_dir / "assets/icons/career-status.svg": render_career_status_svg(career),
     }
 
     for nav_item in NAV_ITEMS:
@@ -1015,11 +1161,12 @@ def build_outputs(root_dir: Path) -> dict[Path, str]:
         spec = CONTACT_PILL_SPECS[key]
         outputs[root_dir / spec["filename"]] = render_contact_pill_svg(spec)
 
-    for proj in projects:
-        if proj.get("featured") and proj.get("verified") and proj.get("image_path"):
+    verified_featured = [p for p in projects if p.get("featured") and p.get("verified")]
+    for idx, proj in enumerate(verified_featured, start=1):
+        if proj.get("image_path"):
             img_path = root_dir / proj["image_path"]
             if img_path.suffix.lower() == ".svg":
-                outputs[img_path] = render_project_preview_svg(proj)
+                outputs[img_path] = render_project_preview_svg(proj, idx)
 
     for cert in certifications:
         if cert.get("verified") and cert.get("badge_path"):

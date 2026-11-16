@@ -1,46 +1,56 @@
-<svg width="820" height="156" viewBox="0 0 820 156" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="820" height="160" viewBox="0 0 820 160" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="projBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#090d16" />
-      <stop offset="100%" stop-color="#0f172a" />
+    <linearGradient id="pSheen1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00ff9c" stop-opacity="0" />
+      <stop offset="50%" stop-color="#00ff9c" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#00ff9c" stop-opacity="0" />
     </linearGradient>
+    <clipPath id="pClip1"><rect width="820" height="160" rx="10" /></clipPath>
   </defs>
   <style>
-    .proj-cat { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px; font-weight: 700; fill: #38bdf8; letter-spacing: 1px; }
-    .proj-repo { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px; fill: #64748b; }
-    .proj-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 20px; font-weight: 800; fill: #f8fafc; }
+    @keyframes pSweep1 {
+      0% { transform: translateX(-200px); }
+      100% { transform: translateX(860px); }
+    }
+    .psweep1 { animation: pSweep1 5s ease-in-out infinite; }
+    .proj-cat { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10.5px; font-weight: 700; fill: #00ff9c; letter-spacing: 0.9px; }
+    .proj-repo { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px; fill: #6ee7b7; }
+    .proj-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 20px; font-weight: 800; fill: #ecfdf5; }
     .proj-tag { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 12px; fill: #94a3b8; }
-    .tech-pill { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px; font-weight: 600; fill: #cbd5e1; }
+    .tech-pill { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px; font-weight: 600; fill: #a7f3d0; }
   </style>
 
-  <rect width="820" height="156" rx="10" fill="url(#projBg)" stroke="#1e293b" stroke-width="1" />
-  <rect x="0" y="0" width="4" height="156" rx="2" fill="#38bdf8" />
+  <rect width="820" height="160" rx="10" fill="#060d12" stroke="#10b981" stroke-opacity="0.3" stroke-width="1" />
+  <g clip-path="url(#pClip1)">
+    <rect x="0" y="0" width="180" height="2" fill="url(#pSheen1)" class="psweep1" />
+    <rect x="0" y="0" width="4" height="160" fill="#00ff9c" />
+  </g>
 
-  <text x="28" y="30" class="proj-cat">ERP / BACKEND &amp; DATABASE ARCHITECTURE</text>
-  <text x="792" y="30" text-anchor="end" class="proj-repo">github.com/tsalmanrahman/ERP</text>
+  <text x="28" y="30" class="proj-cat">&gt; DEPLOY_01 // ERP · ERP / BACKEND &amp; DATABASE ARCHITECTURE</text>
+  <text x="792" y="30" text-anchor="end" class="proj-repo">github.com/tsalmanrahman/ERP ↗</text>
 
-  <text x="28" y="64" class="proj-title">Enterprise Multi-Company ERP</text>
-  <text x="28" y="88" class="proj-tag">Modular multi-company ERP backend &amp; SQL Server architecture</text>
+  <text x="28" y="66" class="proj-title">Enterprise Multi-Company ERP</text>
+  <text x="28" y="90" class="proj-tag">Modular multi-company ERP backend &amp; SQL Server architecture</text>
 
-  <g transform="translate(28, 108)">
+  <g transform="translate(28, 112)">
     <g transform="translate(0, 0)">
-      <rect width="64" height="24" rx="5" fill="#111827" stroke="#334155" stroke-width="1" />
-      <text x="32.0" y="15.5" text-anchor="middle" class="tech-pill">C#</text>
+      <rect width="68" height="24" rx="5" fill="#09131a" stroke="#10b981" stroke-opacity="0.35" stroke-width="1" />
+      <text x="34.0" y="15.5" text-anchor="middle" class="tech-pill">C#</text>
     </g>
-    <g transform="translate(74, 0)">
-      <rect width="169" height="24" rx="5" fill="#111827" stroke="#334155" stroke-width="1" />
+    <g transform="translate(78, 0)">
+      <rect width="169" height="24" rx="5" fill="#09131a" stroke="#10b981" stroke-opacity="0.35" stroke-width="1" />
       <text x="84.5" y="15.5" text-anchor="middle" class="tech-pill">.NET 10 / ASP.NET Core</text>
     </g>
-    <g transform="translate(253, 0)">
-      <rect width="210" height="24" rx="5" fill="#111827" stroke="#334155" stroke-width="1" />
+    <g transform="translate(257, 0)">
+      <rect width="210" height="24" rx="5" fill="#09131a" stroke="#10b981" stroke-opacity="0.35" stroke-width="1" />
       <text x="105.0" y="15.5" text-anchor="middle" class="tech-pill">Microsoft SQL Server (T-SQL)</text>
     </g>
-    <g transform="translate(473, 0)">
-      <rect width="128" height="24" rx="5" fill="#111827" stroke="#334155" stroke-width="1" />
+    <g transform="translate(477, 0)">
+      <rect width="128" height="24" rx="5" fill="#09131a" stroke="#10b981" stroke-opacity="0.35" stroke-width="1" />
       <text x="64.0" y="15.5" text-anchor="middle" class="tech-pill">EF Core + Dapper</text>
     </g>
-    <g transform="translate(611, 0)">
-      <rect width="74" height="24" rx="5" fill="#111827" stroke="#334155" stroke-width="1" />
+    <g transform="translate(615, 0)">
+      <rect width="74" height="24" rx="5" fill="#09131a" stroke="#10b981" stroke-opacity="0.35" stroke-width="1" />
       <text x="37.0" y="15.5" text-anchor="middle" class="tech-pill">QuestPDF</text>
     </g>
   </g>

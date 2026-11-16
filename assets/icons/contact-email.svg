@@ -1,7 +1,7 @@
-<svg width="98" height="34" viewBox="0 0 98 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="0.5" y="0.5" width="97" height="33" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
+<svg width="102" height="34" viewBox="0 0 102 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0.5" y="0.5" width="101" height="33" rx="7" fill="#060d12" stroke="#10b981" stroke-opacity="0.4" stroke-width="1" />
   <rect x="8" y="7" width="20" height="20" rx="5" fill="#0284C7" stroke="#0284C7" stroke-width="0.8" />
   <g transform="translate(10.5, 9.5) scale(0.625)" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="M22 7l-10 6L2 7" /></g>
-  <text x="36" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#f8fafc">Email</text>
-  <text x="86" y="20.5" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#64748b">↗</text>
+  <text x="36" y="21" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11.5" font-weight="700" fill="#ecfdf5">Email</text>
+  <text x="91" y="20.5" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" font-weight="700" fill="#00ff9c">↗</text>
 </svg>

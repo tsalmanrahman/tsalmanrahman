@@ -16,10 +16,12 @@ profile-data/*.json  (Single Source of Truth)
         └──▶ scripts/generate_readme.py   (Atomic generation with rollback on failure)
                     │
                     ├──▶ assets/banner/hero-banner.svg  (+ banner.svg)
+                    ├──▶ assets/profile/about-terminal.svg
                     ├──▶ assets/profile/skills-matrix.svg (+ tech-matrix.svg)
                     ├──▶ assets/profile/github-telemetry.svg (+ telemetry.svg)
+                    ├──▶ assets/icons/*.svg (nav, contact, career-status)
                     ├──▶ assets/projects/*-preview.svg
-                    ├──▶ assets/certificates/google-it-support-badge.png
+                    ├──▶ assets/certificates/microsoft-csharp-badge.svg
                     └──▶ README.md
 ```
 
