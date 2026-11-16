@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import sys
 from pathlib import Path
@@ -182,7 +183,9 @@ def render_about_terminal_svg(profile: dict[str, Any], experience: dict[str, Any
     """Render a dual-pane About & Engineering Pillars terminal HUD card."""
     pillars = list(profile.get("problem_solving_approach", []))[:4]
     highlights = list(experience.get("highlights", []))[:4]
-    years = xml_escape(experience.get("years_of_experience", "4+ Years"))
+    raw_years = str(experience.get("years_of_experience", "4+ Years"))
+    short_years = xml_escape(raw_years.split("(")[0].strip() or raw_years)
+    years = xml_escape(f"EXP: {short_years.upper()}")
 
     pillar_nodes: list[str] = []
     for idx, pillar in enumerate(pillars):
@@ -846,6 +849,14 @@ def render_cert_badge_svg(cert: dict[str, Any]) -> str:
 """
 
 
+def _versioned_asset(rel_path: str, asset_versions: dict[str, str] | None) -> str:
+    """Append deterministic content-hash query param so GitHub Camo CDN serves updated SVGs immediately."""
+    if not asset_versions:
+        return rel_path
+    digest = asset_versions.get(rel_path)
+    return f"{rel_path}?v={digest}" if digest else rel_path
+
+
 def render_readme_markdown(
     profile: dict[str, Any],
     career: dict[str, Any],
@@ -855,6 +866,7 @@ def render_readme_markdown(
     certifications: list[dict[str, Any]],
     education: list[dict[str, Any]],
     achievements: list[dict[str, Any]],
+    asset_versions: dict[str, str] | None = None,
 ) -> str:
     """Assemble the complete GitHub Profile README.md strictly from verified data."""
     username = profile["username"]
@@ -862,36 +874,23 @@ def render_readme_markdown(
 
     # Contact badges (never output broken '#' placeholders)
     contact_badges: list[str] = []
-    if contact.get("linkedin"):
-        contact_badges.append(
-            f'<a href="{contact["linkedin"]}">'
-            f'<img src="{CONTACT_PILL_SPECS["linkedin"]["filename"]}" alt="LinkedIn" />'
-            "</a>"
-        )
-    if contact.get("credly"):
-        contact_badges.append(
-            f'<a href="{contact["credly"]}">'
-            f'<img src="{CONTACT_PILL_SPECS["credly"]["filename"]}" alt="Credly" />'
-            "</a>"
-        )
+    for key, label in (("linkedin", "LinkedIn"), ("credly", "Credly")):
+        if contact.get(key):
+            src = _versioned_asset(CONTACT_PILL_SPECS[key]["filename"], asset_versions)
+            contact_badges.append(
+                f'<a href="{contact[key]}"><img src="{src}" alt="{label}" /></a>'
+            )
     if contact.get("show_email") and contact.get("email"):
+        src = _versioned_asset(CONTACT_PILL_SPECS["email"]["filename"], asset_versions)
         contact_badges.append(
-            f'<a href="mailto:{contact["email"]}">'
-            f'<img src="{CONTACT_PILL_SPECS["email"]["filename"]}" alt="Email" />'
-            "</a>"
+            f'<a href="mailto:{contact["email"]}"><img src="{src}" alt="Email" /></a>'
         )
-    if contact.get("github"):
-        contact_badges.append(
-            f'<a href="{contact["github"]}">'
-            f'<img src="{CONTACT_PILL_SPECS["github"]["filename"]}" alt="GitHub" />'
-            "</a>"
-        )
-    if contact.get("portfolio"):
-        contact_badges.append(
-            f'<a href="{contact["portfolio"]}">'
-            f'<img src="{CONTACT_PILL_SPECS["portfolio"]["filename"]}" alt="Portfolio" />'
-            "</a>"
-        )
+    for key, label in (("github", "GitHub"), ("portfolio", "Portfolio")):
+        if contact.get(key):
+            src = _versioned_asset(CONTACT_PILL_SPECS[key]["filename"], asset_versions)
+            contact_badges.append(
+                f'<a href="{contact[key]}"><img src="{src}" alt="{label}" /></a>'
+            )
 
     contact_html = "\n  &nbsp;\n  ".join(contact_badges)
 
@@ -925,7 +924,7 @@ def render_readme_markdown(
 
 <div align="center">
   <a href="{proj['repo_url']}">
-    <img src="{proj['image_path']}" alt="{proj['name']} Preview" width="100%" />
+    <img src="{_versioned_asset(proj['image_path'], asset_versions)}" alt="{proj['name']} Preview" width="100%" />
   </a>
 </div>
 
@@ -953,7 +952,7 @@ def render_readme_markdown(
         if not badge_path:
             continue
         size_attr = "" if badge_path.lower().endswith(".svg") else ' height="112"'
-        img_tag = f'<img src="{badge_path}" alt="{cert["name"]}"{size_attr} />'
+        img_tag = f'<img src="{_versioned_asset(badge_path, asset_versions)}" alt="{cert["name"]}"{size_attr} />'
         if cert.get("credential_url"):
             cert_badge_tags.append(f'<a href="{cert["credential_url"]}">{img_tag}</a>')
         else:
@@ -998,7 +997,7 @@ def render_readme_markdown(
      Generator: python scripts/generate_readme.py -->
 
 <div align="center">
-  <img src="assets/banner/hero-banner.svg" alt="{profile['name']} - {profile['headline']}" width="100%" />
+  <img src="{_versioned_asset('assets/banner/hero-banner.svg', asset_versions)}" alt="{profile['name']} - {profile['headline']}" width="100%" />
 </div>
 
 <br/>
@@ -1010,7 +1009,7 @@ def render_readme_markdown(
 </p>
 
 <p>
-  {'\n  &nbsp;\n  '.join(f'<a href="{item["href"]}"><img src="{item["filename"]}" alt="{item["label"]}" /></a>' for item in NAV_ITEMS)}
+  {'\n  &nbsp;\n  '.join(f'<a href="{item["href"]}"><img src="{_versioned_asset(item["filename"], asset_versions)}" alt="{item["label"]}" /></a>' for item in NAV_ITEMS)}
 </p>
 
 </div>
@@ -1024,7 +1023,7 @@ def render_readme_markdown(
 <br/>
 
 <div align="center">
-  <img src="assets/profile/about-terminal.svg" alt="Engineering Pillars and Experience Terminal ({experience['years_of_experience']})" width="100%" />
+  <img src="{_versioned_asset('assets/profile/about-terminal.svg', asset_versions)}" alt="Engineering Pillars and Experience Terminal ({experience['years_of_experience']})" width="100%" />
 </div>
 
 ---
@@ -1032,7 +1031,7 @@ def render_readme_markdown(
 ## Technical Skills
 
 <div align="center">
-  <img src="assets/profile/skills-matrix.svg" alt="Technical Skills Matrix" width="100%" />
+  <img src="{_versioned_asset('assets/profile/skills-matrix.svg', asset_versions)}" alt="Technical Skills Matrix" width="100%" />
 </div>
 
 <details>
@@ -1078,7 +1077,7 @@ def render_readme_markdown(
 ## GitHub Activity
 
 <div align="center">
-  <img src="assets/profile/github-telemetry.svg" alt="Verified GitHub Activity and Codebase Telemetry" width="100%" />
+  <img src="{_versioned_asset('assets/profile/github-telemetry.svg', asset_versions)}" alt="Verified GitHub Activity and Codebase Telemetry" width="100%" />
 </div>
 
 <br/>
@@ -1096,7 +1095,7 @@ def render_readme_markdown(
 ## Career Status
 
 <p>
-  <img src="assets/icons/career-status.svg" alt="Career Status: {career['status']}" />
+  <img src="{_versioned_asset('assets/icons/career-status.svg', asset_versions)}" alt="Career Status: {career['status']}" />
 </p>
 
 - **Current Status:** {career['status']} ({profile['location']} · {profile['organization']})
@@ -1174,6 +1173,23 @@ def build_outputs(root_dir: Path) -> dict[Path, str]:
             if badge_path.suffix.lower() == ".svg":
                 outputs[badge_path] = render_cert_badge_svg(cert)
 
+    asset_versions: dict[str, str] = {
+        path.relative_to(root_dir).as_posix(): hashlib.sha256(
+            content.replace("\r\n", "\n").encode("utf-8")
+        ).hexdigest()[:8]
+        for path, content in outputs.items()
+    }
+    for static_group in (projects, certifications):
+        for entry in static_group:
+            for field in ("image_path", "badge_path"):
+                rel = entry.get(field, "")
+                if rel and rel not in asset_versions:
+                    static_file = root_dir / rel
+                    if static_file.exists():
+                        asset_versions[rel] = hashlib.sha256(
+                            static_file.read_bytes()
+                        ).hexdigest()[:8]
+
     outputs[root_dir / "README.md"] = render_readme_markdown(
         profile=profile,
         career=career,
@@ -1183,6 +1199,7 @@ def build_outputs(root_dir: Path) -> dict[Path, str]:
         certifications=certifications,
         education=education,
         achievements=achievements,
+        asset_versions=asset_versions,
     )
     return outputs
 

@@ -477,10 +477,10 @@ def validate_assets(root_dir: Path) -> list[str]:
         local_refs: set[str] = set()
         for attr_match in re.findall(r'(?:src|srcset)=["\']([^"\']+)["\']', readme_text):
             if not attr_match.startswith(("http://", "https://", "data:", "#")):
-                local_refs.add(attr_match)
+                local_refs.add(attr_match.split("?", 1)[0])
         for md_img in re.findall(r'!\[[^\]]*\]\(([^)]+)\)', readme_text):
             if not md_img.startswith(("http://", "https://", "data:", "#")):
-                local_refs.add(md_img)
+                local_refs.add(md_img.split("?", 1)[0])
         for rel in sorted(local_refs):
             target = root_dir / rel
             if not target.exists():

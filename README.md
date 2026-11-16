@@ -3,7 +3,7 @@
      Generator: python scripts/generate_readme.py -->
 
 <div align="center">
-  <img src="assets/banner/hero-banner.svg" alt="Salman Rahman - SQL Developer | Data Analyst | C# & Python Enthusiast | Google IT Support Certified" width="100%" />
+  <img src="assets/banner/hero-banner.svg?v=912c7754" alt="Salman Rahman - SQL Developer | Data Analyst | C# & Python Enthusiast | Google IT Support Certified" width="100%" />
 </div>
 
 <br/>
@@ -11,27 +11,27 @@
 <div align="center">
 
 <p>
-  <a href="https://www.linkedin.com/in/t-salmanrahman"><img src="assets/icons/contact-linkedin.svg" alt="LinkedIn" /></a>
+  <a href="https://www.linkedin.com/in/t-salmanrahman"><img src="assets/icons/contact-linkedin.svg?v=d849a91a" alt="LinkedIn" /></a>
   &nbsp;
-  <a href="https://www.credly.com/users/salman_rahman"><img src="assets/icons/contact-credly.svg" alt="Credly" /></a>
+  <a href="https://www.credly.com/users/salman_rahman"><img src="assets/icons/contact-credly.svg?v=3377c308" alt="Credly" /></a>
   &nbsp;
-  <a href="mailto:t.salmanrahman@gmail.com"><img src="assets/icons/contact-email.svg" alt="Email" /></a>
+  <a href="mailto:t.salmanrahman@gmail.com"><img src="assets/icons/contact-email.svg?v=9bc3d706" alt="Email" /></a>
   &nbsp;
-  <a href="https://github.com/tsalmanrahman"><img src="assets/icons/contact-github.svg" alt="GitHub" /></a>
+  <a href="https://github.com/tsalmanrahman"><img src="assets/icons/contact-github.svg?v=5901df56" alt="GitHub" /></a>
 </p>
 
 <p>
-  <a href="#about-me"><img src="assets/icons/nav-about.svg" alt="About" /></a>
+  <a href="#about-me"><img src="assets/icons/nav-about.svg?v=15ec1224" alt="About" /></a>
   &nbsp;
-  <a href="#technical-skills"><img src="assets/icons/nav-skills.svg" alt="Skills" /></a>
+  <a href="#technical-skills"><img src="assets/icons/nav-skills.svg?v=0121030a" alt="Skills" /></a>
   &nbsp;
-  <a href="#featured-projects"><img src="assets/icons/nav-projects.svg" alt="Projects" /></a>
+  <a href="#featured-projects"><img src="assets/icons/nav-projects.svg?v=19edd1a1" alt="Projects" /></a>
   &nbsp;
-  <a href="#certifications--education"><img src="assets/icons/nav-credentials.svg" alt="Credentials" /></a>
+  <a href="#certifications--education"><img src="assets/icons/nav-credentials.svg?v=706eba40" alt="Credentials" /></a>
   &nbsp;
-  <a href="#github-activity"><img src="assets/icons/nav-activity.svg" alt="Activity" /></a>
+  <a href="#github-activity"><img src="assets/icons/nav-activity.svg?v=39b5deea" alt="Activity" /></a>
   &nbsp;
-  <a href="#career-status"><img src="assets/icons/nav-career.svg" alt="Career" /></a>
+  <a href="#career-status"><img src="assets/icons/nav-career.svg?v=f3db6e30" alt="Career" /></a>
 </p>
 
 </div>
@@ -49,7 +49,7 @@ Deeply interested in ERP systems, relational database architecture, backend deve
 <br/>
 
 <div align="center">
-  <img src="assets/profile/about-terminal.svg" alt="Engineering Pillars and Experience Terminal (4+ Years (Self-Driven & Enterprise Operations))" width="100%" />
+  <img src="assets/profile/about-terminal.svg?v=71456b31" alt="Engineering Pillars and Experience Terminal (4+ Years (Self-Driven & Enterprise Operations))" width="100%" />
 </div>
 
 ---
@@ -57,7 +57,7 @@ Deeply interested in ERP systems, relational database architecture, backend deve
 ## Technical Skills
 
 <div align="center">
-  <img src="assets/profile/skills-matrix.svg" alt="Technical Skills Matrix" width="100%" />
+  <img src="assets/profile/skills-matrix.svg?v=f79c42c4" alt="Technical Skills Matrix" width="100%" />
 </div>
 
 <details>
@@ -82,7 +82,7 @@ Deeply interested in ERP systems, relational database architecture, backend deve
 
 <div align="center">
   <a href="https://github.com/tsalmanrahman/ERP">
-    <img src="assets/projects/erp-preview.svg" alt="Enterprise Multi-Company ERP Preview" width="100%" />
+    <img src="assets/projects/erp-preview.svg?v=a7237e81" alt="Enterprise Multi-Company ERP Preview" width="100%" />
   </a>
 </div>
 
@@ -105,7 +105,7 @@ Deeply interested in ERP systems, relational database architecture, backend deve
 
 <div align="center">
   <a href="https://github.com/tsalmanrahman/pyrix">
-    <img src="assets/projects/pyrix-preview.svg" alt="Pyrix — Multi-Company Operations & Settings Suite Preview" width="100%" />
+    <img src="assets/projects/pyrix-preview.svg?v=c01a5726" alt="Pyrix — Multi-Company Operations & Settings Suite Preview" width="100%" />
   </a>
 </div>
 
@@ -128,11 +128,11 @@ Deeply interested in ERP systems, relational database architecture, backend deve
 ### Verified Certifications
 
 <p>
-  <a href="https://www.credly.com/badges/d145c575-283d-482e-920f-8038d431ba43"><img src="assets/certificates/ibm-databases-sql-badge.png" alt="Databases and SQL for Data Science" height="112" /></a>
+  <a href="https://www.credly.com/badges/d145c575-283d-482e-920f-8038d431ba43"><img src="assets/certificates/ibm-databases-sql-badge.png?v=23b9e34d" alt="Databases and SQL for Data Science" height="112" /></a>
   &nbsp;&nbsp;
-  <a href="https://www.credly.com/badges/0e52798c-e483-499b-ad1c-723ebf802f42"><img src="assets/certificates/google-it-support-badge.png" alt="Google IT Support Certificate" height="112" /></a>
+  <a href="https://www.credly.com/badges/0e52798c-e483-499b-ad1c-723ebf802f42"><img src="assets/certificates/google-it-support-badge.png?v=7b904d28" alt="Google IT Support Certificate" height="112" /></a>
   &nbsp;&nbsp;
-  <a href="https://www.freecodecamp.org/certification/salman_rahman/foundational-c-sharp-with-microsoft"><img src="assets/certificates/microsoft-csharp-badge.svg" alt="Foundational C# with Microsoft" /></a>
+  <a href="https://www.freecodecamp.org/certification/salman_rahman/foundational-c-sharp-with-microsoft"><img src="assets/certificates/microsoft-csharp-badge.svg?v=ea9c0f15" alt="Foundational C# with Microsoft" /></a>
 </p>
 
 - **Databases and SQL for Data Science** — *IBM / Coursera* (Certified · Nov 2023)  
@@ -171,7 +171,7 @@ Deeply interested in ERP systems, relational database architecture, backend deve
 ## GitHub Activity
 
 <div align="center">
-  <img src="assets/profile/github-telemetry.svg" alt="Verified GitHub Activity and Codebase Telemetry" width="100%" />
+  <img src="assets/profile/github-telemetry.svg?v=53b095a4" alt="Verified GitHub Activity and Codebase Telemetry" width="100%" />
 </div>
 
 <br/>
@@ -189,7 +189,7 @@ Deeply interested in ERP systems, relational database architecture, backend deve
 ## Career Status
 
 <p>
-  <img src="assets/icons/career-status.svg" alt="Career Status: Open to Opportunities" />
+  <img src="assets/icons/career-status.svg?v=dc0cbc4a" alt="Career Status: Open to Opportunities" />
 </p>
 
 - **Current Status:** Open to Opportunities (Dhaka, Bangladesh · HATIM Group)
