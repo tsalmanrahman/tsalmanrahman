@@ -134,28 +134,6 @@ Deeply interested in ERP systems, relational database architecture, backend deve
 
 ---
 
-#### [Automated GitHub Profile & Portfolio Ecosystem](https://github.com/tsalmanrahman/tsalmanrahman)
-*DevOps & Profile Automation* — [GitHub Repository](https://github.com/tsalmanrahman/tsalmanrahman)
-
-<div align="center">
-  <a href="https://github.com/tsalmanrahman/tsalmanrahman">
-    <img src="assets/projects/profile-preview.svg" alt="Automated GitHub Profile & Portfolio Ecosystem Preview" width="100%" />
-  </a>
-</div>
-
-> Centralized JSON-driven GitHub profile headquarters that validates structured identity data, syncs verified repository telemetry, generates custom SVG assets, and renders README.md automatically via GitHub Actions.
-
-**Technology Stack:** `Python (Stdlib)` · `GitHub Actions` · `JSON Schema Validation` · `SVG Generation` · `PowerShell`
-
-**Key Features:**
-- Single source of truth in profile-data/*.json separating career, projects, skills, certifications, and profile metadata.
-- Automated schema, asset, and external link validation with atomic rollback protection on generation failures.
-- Scheduled and event-driven GitHub Actions pipelines with graceful API fallback and approval-gated LinkedIn sync.
-
-**My Contribution:** Designed and implemented the centralized data schema, pure-Python SVG/Markdown generators, validation/test suite, and CI/CD automation workflows.
-
----
-
 ## Certifications & Education
 
 ### Verified Certifications

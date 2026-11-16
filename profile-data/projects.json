@@ -68,14 +68,14 @@
     ],
     "repo_url": "https://github.com/tsalmanrahman/tsalmanrahman",
     "live_url": "",
-    "image_path": "assets/projects/profile-preview.svg",
+    "image_path": "",
     "key_features": [
       "Single source of truth in profile-data/*.json separating career, projects, skills, certifications, and profile metadata.",
       "Automated schema, asset, and external link validation with atomic rollback protection on generation failures.",
       "Scheduled and event-driven GitHub Actions pipelines with graceful API fallback and approval-gated LinkedIn sync."
     ],
     "my_contribution": "Designed and implemented the centralized data schema, pure-Python SVG/Markdown generators, validation/test suite, and CI/CD automation workflows.",
-    "featured": true,
+    "featured": false,
     "verified": true
   },
   {

@@ -29,7 +29,7 @@
 
     <rect x="214" y="46" width="180" height="44" rx="6" fill="#0f172a" stroke="#1e293b" />
     <text x="224" y="63" class="stat-k">Public Repos (Featured)</text>
-    <text x="224" y="80" class="stat-v">4 (3 Featured)</text>
+    <text x="224" y="80" class="stat-v">4 (2 Featured)</text>
 
     <rect x="24" y="98" width="180" height="36" rx="6" fill="#0f172a" stroke="#1e293b" />
     <text x="34" y="120" class="stat-k">Since 2023 · Followers: 3</text>
