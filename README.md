@@ -171,7 +171,7 @@ Deeply interested in ERP systems, relational database architecture, backend deve
 ## GitHub Activity
 
 <div align="center">
-  <img src="assets/profile/github-telemetry.svg?v=e3933e39" alt="Verified GitHub Activity and Codebase Telemetry" width="100%" />
+  <img src="assets/profile/github-telemetry.svg?v=b671c5ba" alt="Verified GitHub Activity and Codebase Telemetry" width="100%" />
 </div>
 
 <br/>
