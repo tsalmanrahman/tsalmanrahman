@@ -43,25 +43,27 @@ export const MagneticButton: React.FC<MagneticButtonProps> = ({
   }
 
   const baseStyles =
-    'relative inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full px-5 py-2.5 text-sm font-medium tracking-tight transition-[border-color,color,box-shadow] duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#060A13] select-none cursor-pointer'
+    'relative inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full px-5 py-2.5 text-sm font-medium tracking-tight transition-[border-color,color,box-shadow] duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:ring-offset-[#F8FAFC] select-none cursor-pointer'
 
   const variantStyles =
     variant === 'primary'
-      ? 'border border-cyan-400/50 bg-cyan-400/15 text-cyan-50 shadow-[0_0_24px_rgba(34,211,238,0.18)] hover:border-cyan-300 hover:text-slate-950'
+      ? 'border border-slate-950 bg-slate-950 text-white shadow-[0_8px_24px_rgba(15,23,42,0.14)] hover:border-blue-600 hover:text-white'
       : variant === 'secondary'
-        ? 'border border-amber-400/40 bg-amber-400/10 text-amber-100 hover:border-amber-300 hover:text-slate-950'
-        : 'border border-slate-700/80 bg-[#0B1220]/80 text-slate-200 hover:border-cyan-400/50 hover:text-white'
+        ? 'border border-blue-200 bg-blue-50 text-blue-800 shadow-[0_4px_14px_rgba(37,99,235,0.08)] hover:border-blue-600 hover:text-white'
+        : 'border border-slate-200 bg-white/95 text-slate-800 shadow-xs hover:border-slate-900 hover:text-slate-950'
 
   const fillStyles =
     variant === 'primary'
-      ? 'bg-gradient-to-r from-cyan-300 via-cyan-400 to-teal-300'
+      ? 'bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600'
       : variant === 'secondary'
-        ? 'bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-300'
-        : 'bg-slate-800/90'
+        ? 'bg-gradient-to-r from-blue-600 via-sky-500 to-indigo-600'
+        : 'bg-slate-100'
 
   const style: React.CSSProperties = {
     transform: `translate3d(${offset.x.toFixed(1)}px, ${offset.y.toFixed(1)}px, 0)`,
-    transition: hovered ? 'transform 0.16s cubic-bezier(0.22, 1, 0.36, 1)' : 'transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)',
+    transition: hovered
+      ? 'transform 0.16s cubic-bezier(0.22, 1, 0.36, 1)'
+      : 'transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)',
   }
 
   const content = (

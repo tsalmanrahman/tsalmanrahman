@@ -41,22 +41,22 @@ export const SpatialWebGLCanvas: React.FC = () => {
     rootGroup.position.set(2.4, 0.2, 0)
     scene.add(rootGroup)
 
-    // Outer crystalline ERP/data architecture wireframe
+    // Outer crystalline ERP/data architecture wireframe (Antigravity Cobalt Blue)
     const outerGeo = new THREE.IcosahedronGeometry(3.1, 1)
     const outerWire = new THREE.WireframeGeometry(outerGeo)
     const outerMat = new THREE.LineBasicMaterial({
-      color: 0x22d3ee,
+      color: 0x2563eb,
       transparent: true,
       opacity: 0.16,
     })
     const outerMesh = new THREE.LineSegments(outerWire, outerMat)
     rootGroup.add(outerMesh)
 
-    // Inner amber ledger core
+    // Inner indigo architectural core
     const innerGeo = new THREE.OctahedronGeometry(1.55, 0)
     const innerWire = new THREE.WireframeGeometry(innerGeo)
     const innerMat = new THREE.LineBasicMaterial({
-      color: 0xf59e0b,
+      color: 0x6366f1,
       transparent: true,
       opacity: 0.22,
     })
@@ -68,15 +68,15 @@ export const SpatialWebGLCanvas: React.FC = () => {
     const nodeGeo = new THREE.BufferGeometry()
     nodeGeo.setAttribute('position', new THREE.BufferAttribute(nodePositions, 3))
     const nodeMat = new THREE.PointsMaterial({
-      color: 0x67e8f9,
-      size: 0.08,
+      color: 0x0284c7,
+      size: 0.085,
       transparent: true,
-      opacity: 0.72,
+      opacity: 0.55,
     })
     const nodePoints = new THREE.Points(nodeGeo, nodeMat)
     rootGroup.add(nodePoints)
 
-    // Subtle spatial dust particles
+    // Airy floating spatial particles
     const starCount = 260
     const starCoords = new Float32Array(starCount * 3)
     for (let i = 0; i < starCount; i++) {
@@ -87,10 +87,10 @@ export const SpatialWebGLCanvas: React.FC = () => {
     const starGeo = new THREE.BufferGeometry()
     starGeo.setAttribute('position', new THREE.BufferAttribute(starCoords, 3))
     const starMat = new THREE.PointsMaterial({
-      color: 0x94a3b8,
+      color: 0x64748b,
       size: 0.045,
       transparent: true,
-      opacity: 0.45,
+      opacity: 0.28,
     })
     const stars = new THREE.Points(starGeo, starMat)
     scene.add(stars)
@@ -188,18 +188,18 @@ export const SpatialWebGLCanvas: React.FC = () => {
     <div
       ref={containerRef}
       aria-hidden="true"
-      className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
+      className="pointer-events-none fixed inset-0 z-0 overflow-hidden bg-[#F8FAFC]"
     >
-      <div className="hud-grid absolute inset-0 opacity-75" />
+      <div className="hud-grid absolute inset-0 opacity-90" />
       <div
         className="absolute inset-0"
         style={{
           background:
-            'radial-gradient(circle at 72% 24%, rgba(34,211,238,0.11), transparent 45%), radial-gradient(circle at 18% 72%, rgba(245,158,11,0.08), transparent 42%)',
+            'radial-gradient(circle at 75% 22%, rgba(224,242,254,0.78), transparent 46%), radial-gradient(circle at 18% 68%, rgba(238,242,255,0.78), transparent 45%), radial-gradient(circle at 52% 85%, rgba(254,243,199,0.38), transparent 40%)',
         }}
       />
       {fallbackActive && (
-        <div className="absolute right-[10%] top-[20%] h-72 w-72 rounded-full border border-cyan-400/20 bg-cyan-400/5 blur-2xl" />
+        <div className="absolute right-[10%] top-[20%] h-72 w-72 rounded-full border border-blue-200 bg-sky-100/50 blur-2xl" />
       )}
     </div>
   )

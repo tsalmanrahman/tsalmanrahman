@@ -158,7 +158,7 @@ export const App: React.FC = () => {
   const showSkillsHub = viewMode === 'unified' || viewMode === 'skills'
 
   return (
-    <div className="relative min-h-screen bg-[#060A13] text-slate-100">
+    <div className="relative min-h-screen bg-[#F8FAFC] text-slate-900">
       {!preloaderDone && (
         <CinematicPreloader
           onComplete={() => setPreloaderDone(true)}

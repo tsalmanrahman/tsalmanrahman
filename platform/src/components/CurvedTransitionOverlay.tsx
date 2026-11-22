@@ -16,7 +16,7 @@ export const CurvedTransitionOverlay: React.FC<CurvedTransitionOverlayProps> = (
       <svg
         viewBox="0 0 1440 120"
         preserveAspectRatio="none"
-        className="block h-14 w-full text-[#0B1220]"
+        className="block h-14 w-full text-white"
       >
         <path
           fill="currentColor"
@@ -27,11 +27,11 @@ export const CurvedTransitionOverlay: React.FC<CurvedTransitionOverlayProps> = (
           }
         />
       </svg>
-      <div className="flex h-[calc(100vh-3.5rem)] w-full flex-col items-center justify-center bg-[#0B1220] border-t border-cyan-400/20">
-        <span className="font-mono text-xs uppercase tracking-[0.3em] text-cyan-400">
+      <div className="flex h-[calc(100vh-3.5rem)] w-full flex-col items-center justify-center border-t border-slate-200 bg-white">
+        <span className="font-mono text-xs uppercase tracking-[0.3em] text-blue-600">
           SYS.SWITCH // MODE_TRANSITION
         </span>
-        <p className="mt-3 font-display text-3xl font-semibold tracking-tight text-slate-100 sm:text-5xl">
+        <p className="mt-3 font-display text-3xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
           {label}
         </p>
       </div>

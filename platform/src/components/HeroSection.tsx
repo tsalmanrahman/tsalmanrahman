@@ -53,28 +53,28 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       value: String(githubMetrics.profile.public_repos),
       sub: `Since ${githubMetrics.profile.created_year} · ${profile.organization}`,
       icon: FolderGit2,
-      accent: 'text-cyan-300 border-cyan-400/30 bg-cyan-400/10',
+      accent: 'text-blue-700 border-blue-200 bg-blue-50',
     },
     {
       label: 'FREE & OPEN AI SKILLS',
       value: String(skillCount),
       sub: 'Security-audited · Zero paid traps',
       icon: Sparkles,
-      accent: 'text-amber-300 border-amber-400/30 bg-amber-400/10',
+      accent: 'text-amber-700 border-amber-200 bg-amber-50',
     },
     {
       label: 'AGENT INTEGRATIONS',
       value: String(agentCount),
       sub: 'OpenCode · Antigravity · Ollama · Copilot',
       icon: Cpu,
-      accent: 'text-emerald-300 border-emerald-400/30 bg-emerald-400/10',
+      accent: 'text-emerald-700 border-emerald-200 bg-emerald-50',
     },
     {
       label: 'VERIFIED CREDENTIALS',
       value: String(verifiedCertCount),
       sub: 'IBM SQL · Google IT · Microsoft C#',
       icon: Database,
-      accent: 'text-sky-300 border-sky-400/30 bg-sky-400/10',
+      accent: 'text-sky-700 border-sky-200 bg-sky-50',
     },
   ]
 
@@ -87,37 +87,37 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         {/* Left: Editorial Identity & Positioning */}
         <div className="space-y-6 lg:col-span-7">
           <div className="flex flex-wrap items-center gap-2.5">
-            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/35 bg-emerald-400/10 px-3 py-1 font-mono text-[11px] font-medium text-emerald-300">
-              <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 font-mono text-[11px] font-medium text-emerald-700">
+              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
               {career.status}
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-700/80 bg-[#0B1220]/90 px-3 py-1 font-mono text-[11px] text-slate-300">
-              <MapPin className="h-3 w-3 text-cyan-400" />
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1 font-mono text-[11px] text-slate-700 shadow-2xs">
+              <MapPin className="h-3 w-3 text-blue-600" />
               {profile.location}
             </span>
             <button
               type="button"
               onClick={onOpenVerificationModal}
-              className="inline-flex items-center gap-1.5 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 font-mono text-[11px] text-cyan-200 transition hover:border-cyan-300 cursor-pointer"
+              className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50 px-3 py-1 font-mono text-[11px] font-medium text-blue-700 transition hover:border-blue-400 hover:bg-blue-100/70 cursor-pointer"
             >
-              <ShieldCheck className="h-3.5 w-3.5 text-cyan-300" />
+              <ShieldCheck className="h-3.5 w-3.5 text-blue-600" />
               Verified LinkedIn Source
             </button>
           </div>
 
           <div className="space-y-4">
-            <p className="font-mono text-xs uppercase tracking-[0.25em] text-cyan-300/90">
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.25em] text-blue-600">
               {profile.organization} · ENTERPRISE DATA &amp; AI HUB
             </p>
-            <h1 className="font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            <h1 className="font-display text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
               {profile.name}
             </h1>
-            <p className="max-w-2xl font-display text-lg font-medium leading-snug text-cyan-100/90 sm:text-xl">
+            <p className="max-w-2xl font-display text-lg font-medium leading-snug text-blue-800 sm:text-xl">
               {profile.headline}
             </p>
           </div>
 
-          <div className="space-y-3 text-sm leading-relaxed text-slate-300 sm:text-base">
+          <div className="space-y-3 text-sm leading-relaxed text-slate-600 sm:text-base">
             <p>{profile.short_bio}</p>
           </div>
 
@@ -125,7 +125,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             {profile.banner.pills.map((pill) => (
               <span
                 key={pill}
-                className="rounded-lg border border-slate-800 bg-[#0B1220]/85 px-3 py-1.5 font-mono text-xs text-slate-300"
+                className="rounded-lg border border-slate-200 bg-white/95 px-3 py-1.5 font-mono text-xs text-slate-700 shadow-2xs"
               >
                 {pill}
               </span>
@@ -148,12 +148,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               Open AI Skills Hub ({skillCount})
             </MagneticButton>
             <MagneticButton href={profile.contact.linkedin} target="_blank" variant="ghost">
-              <Briefcase className="h-4 w-4 text-cyan-300" />
+              <Briefcase className="h-4 w-4 text-blue-600" />
               LinkedIn
               <ExternalLink className="h-3.5 w-3.5" />
             </MagneticButton>
             <MagneticButton href={profile.contact.github} target="_blank" variant="ghost">
-              <FolderGit2 className="h-4 w-4" />
+              <FolderGit2 className="h-4 w-4 text-slate-700" />
               GitHub
             </MagneticButton>
           </div>
@@ -161,16 +161,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
         {/* Right: Genuine Identity-Locked Studio Portrait Card */}
         <div className="lg:col-span-5">
-          <div className="glass-panel relative mx-auto max-w-md overflow-hidden rounded-3xl p-5 shadow-[0_24px_80px_rgba(6,10,19,0.85)]">
+          <div className="glass-panel relative mx-auto max-w-md overflow-hidden rounded-3xl p-5">
             <div className="mb-3 flex items-center justify-between font-mono text-[11px]">
-              <span className="inline-flex items-center gap-1.5 text-emerald-300">
-                <ShieldCheck className="h-3.5 w-3.5" />
+              <span className="inline-flex items-center gap-1.5 font-medium text-emerald-700">
+                <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
                 IDENTITY LOCK ACTIVE
               </span>
-              <span className="text-slate-400">SHA256:{identityLock.sha256.slice(0, 10)}</span>
+              <span className="text-slate-500">SHA256:{identityLock.sha256.slice(0, 10)}</span>
             </div>
 
-            <div className="relative overflow-hidden rounded-2xl border border-cyan-400/25 bg-[#080E1A]">
+            <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-100">
               <img
                 src="./assets/identity/salman-rahman-portrait.jpg"
                 alt="Salman Rahman — Verified Studio Headshot"
@@ -178,29 +178,29 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               />
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#060A13]/85 via-transparent to-transparent"
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/25 via-transparent to-transparent"
               />
-              <div className="absolute inset-x-3 bottom-3 flex items-end justify-between gap-2 rounded-xl border border-slate-700/70 bg-[#060A13]/85 px-3.5 py-2.5 backdrop-blur-md">
+              <div className="absolute inset-x-3 bottom-3 flex items-end justify-between gap-2 rounded-xl border border-slate-200/90 bg-white/92 px-3.5 py-2.5 shadow-sm backdrop-blur-md">
                 <div>
-                  <p className="font-display text-sm font-semibold text-white">{profile.name}</p>
-                  <p className="font-mono text-[11px] text-cyan-300">
+                  <p className="font-display text-sm font-bold text-slate-950">{profile.name}</p>
+                  <p className="font-mono text-[11px] font-medium text-blue-700">
                     Executive (IT &amp; MIS) · SQL &amp; ERP
                   </p>
                 </div>
-                <span className="rounded-md border border-emerald-500/35 bg-emerald-500/15 px-2 py-0.5 font-mono text-[10px] text-emerald-300">
+                <span className="rounded-md border border-emerald-200 bg-emerald-50 px-2 py-0.5 font-mono text-[10px] font-semibold text-emerald-700">
                   UNALTERED PHOTO
                 </span>
               </div>
             </div>
 
-            <div className="mt-4 flex items-center justify-between gap-2 rounded-xl border border-slate-800/90 bg-[#060A13]/75 px-3.5 py-2.5 text-xs text-slate-400">
+            <div className="mt-4 flex items-center justify-between gap-2 rounded-xl border border-slate-200/90 bg-slate-50/90 px-3.5 py-2.5 text-xs text-slate-600">
               <span className="truncate font-mono text-[11px]">
                 Ref: {identityLock.primary_reference.replace('https://www.', '')}
               </span>
               <button
                 type="button"
                 onClick={onOpenVerificationModal}
-                className="shrink-0 font-mono text-[11px] text-cyan-300 hover:text-cyan-200 cursor-pointer"
+                className="shrink-0 font-mono text-[11px] font-semibold text-blue-700 hover:text-blue-900 cursor-pointer"
               >
                 Audit Log →
               </button>
@@ -219,15 +219,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               className="glass-panel rounded-2xl p-5 transition duration-300 hover:-translate-y-0.5"
             >
               <div className="flex items-center justify-between">
-                <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-400">
+                <span className="font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-slate-500">
                   {kpi.label}
                 </span>
                 <span className={`inline-flex rounded-lg border p-2 ${kpi.accent}`}>
                   <Icon className="h-4 w-4" />
                 </span>
               </div>
-              <div className="mt-3 font-display text-3xl font-bold text-white">{kpi.value}</div>
-              <p className="mt-1 text-xs text-slate-400">{kpi.sub}</p>
+              <div className="mt-3 font-display text-3xl font-bold text-slate-950">{kpi.value}</div>
+              <p className="mt-1 text-xs text-slate-600">{kpi.sub}</p>
             </div>
           )
         })}

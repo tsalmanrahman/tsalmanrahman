@@ -90,28 +90,28 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       role="dialog"
       aria-modal="true"
       aria-label="Global Command Search"
-      className="fixed inset-0 z-[90] flex items-start justify-center bg-black/75 px-4 pt-20 backdrop-blur-md"
+      className="fixed inset-0 z-[90] flex items-start justify-center bg-slate-950/35 px-4 pt-20 backdrop-blur-md"
       onClick={onClose}
     >
       <div
-        className="w-full max-w-2xl overflow-hidden rounded-2xl border border-cyan-400/30 bg-[#0B1220] shadow-[0_24px_80px_rgba(0,0,0,0.75)]"
+        className="w-full max-w-2xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.18)]"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center gap-3 border-b border-slate-800 px-4 py-3.5">
-          <Search className="h-4 w-4 text-cyan-400" />
+        <div className="flex items-center gap-3 border-b border-slate-200 px-4 py-3.5">
+          <Search className="h-4 w-4 text-blue-600" />
           <input
             ref={inputRef}
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search projects, SQL Server stack, certifications, or 32 AI skills..."
-            className="w-full bg-transparent text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none"
+            className="w-full bg-transparent text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none"
           />
           <button
             type="button"
             onClick={onClose}
             aria-label="Close Search"
-            className="rounded-lg border border-slate-700 p-1 text-slate-400 hover:text-white cursor-pointer"
+            className="rounded-lg border border-slate-200 bg-slate-50 p-1 text-slate-500 hover:text-slate-950 cursor-pointer"
           >
             <X className="h-4 w-4" />
           </button>
@@ -130,10 +130,10 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                   onClose()
                   onSwitchMode('unified', 'hero')
                 }}
-                className="flex items-center justify-between rounded-xl border border-slate-800 bg-slate-900/60 px-3 py-2 text-left text-xs text-slate-200 hover:border-cyan-400/40 cursor-pointer"
+                className="flex items-center justify-between rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-left text-xs font-medium text-slate-800 hover:border-blue-300 hover:bg-blue-50/70 cursor-pointer"
               >
                 <span>Unified View</span>
-                <ArrowRight className="h-3.5 w-3.5 text-cyan-400" />
+                <ArrowRight className="h-3.5 w-3.5 text-blue-600" />
               </button>
               <button
                 type="button"
@@ -141,10 +141,10 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                   onClose()
                   onSwitchMode('portfolio', 'projects')
                 }}
-                className="flex items-center justify-between rounded-xl border border-slate-800 bg-slate-900/60 px-3 py-2 text-left text-xs text-slate-200 hover:border-cyan-400/40 cursor-pointer"
+                className="flex items-center justify-between rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-left text-xs font-medium text-slate-800 hover:border-blue-300 hover:bg-blue-50/70 cursor-pointer"
               >
                 <span>Engineering Case Studies</span>
-                <ArrowRight className="h-3.5 w-3.5 text-cyan-400" />
+                <ArrowRight className="h-3.5 w-3.5 text-blue-600" />
               </button>
               <button
                 type="button"
@@ -152,10 +152,10 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                   onClose()
                   onSwitchMode('skills', 'skills-hub')
                 }}
-                className="flex items-center justify-between rounded-xl border border-slate-800 bg-slate-900/60 px-3 py-2 text-left text-xs text-slate-200 hover:border-amber-400/40 cursor-pointer"
+                className="flex items-center justify-between rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-left text-xs font-medium text-slate-800 hover:border-amber-300 hover:bg-amber-50/70 cursor-pointer"
               >
                 <span>AI Skills Hub</span>
-                <ArrowRight className="h-3.5 w-3.5 text-amber-400" />
+                <ArrowRight className="h-3.5 w-3.5 text-amber-600" />
               </button>
             </div>
           </div>
@@ -174,16 +174,18 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                       onClose()
                       onSelectProject(project)
                     }}
-                    className="flex w-full items-center justify-between gap-3 rounded-xl px-3 py-2.5 text-left transition hover:bg-cyan-400/10 cursor-pointer"
+                    className="flex w-full items-center justify-between gap-3 rounded-xl px-3 py-2.5 text-left transition hover:bg-blue-50 cursor-pointer"
                   >
                     <div className="flex items-center gap-3 min-w-0">
-                      <Code2 className="h-4 w-4 shrink-0 text-cyan-400" />
+                      <Code2 className="h-4 w-4 shrink-0 text-blue-600" />
                       <div className="min-w-0">
-                        <p className="truncate text-sm font-medium text-white">{project.name}</p>
-                        <p className="truncate text-xs text-slate-400">{project.tagline}</p>
+                        <p className="truncate text-sm font-medium text-slate-900">{project.name}</p>
+                        <p className="truncate text-xs text-slate-500">{project.tagline}</p>
                       </div>
                     </div>
-                    <span className="shrink-0 font-mono text-[10px] text-cyan-300">CASE STUDY</span>
+                    <span className="shrink-0 font-mono text-[10px] font-semibold text-blue-700">
+                      CASE STUDY
+                    </span>
                   </button>
                 ))}
               </div>
@@ -204,18 +206,18 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                       onClose()
                       onSelectSkill(skill)
                     }}
-                    className="flex w-full items-center justify-between gap-3 rounded-xl px-3 py-2.5 text-left transition hover:bg-amber-400/10 cursor-pointer"
+                    className="flex w-full items-center justify-between gap-3 rounded-xl px-3 py-2.5 text-left transition hover:bg-amber-50 cursor-pointer"
                   >
                     <div className="flex items-center gap-3 min-w-0">
-                      <Sparkles className="h-4 w-4 shrink-0 text-amber-400" />
+                      <Sparkles className="h-4 w-4 shrink-0 text-amber-600" />
                       <div className="min-w-0">
-                        <p className="truncate text-sm font-medium text-white">{skill.name}</p>
-                        <p className="truncate text-xs text-slate-400">
+                        <p className="truncate text-sm font-medium text-slate-900">{skill.name}</p>
+                        <p className="truncate text-xs text-slate-500">
                           {skill.domain} · {skill.source_type}
                         </p>
                       </div>
                     </div>
-                    <span className="shrink-0 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 font-mono text-[10px] text-emerald-300">
+                    <span className="shrink-0 rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 font-mono text-[10px] font-medium text-emerald-700">
                       FREE / OSS
                     </span>
                   </button>
@@ -238,12 +240,12 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                       onClose()
                       onSwitchMode('portfolio', 'capabilities')
                     }}
-                    className="flex items-center gap-2.5 rounded-xl border border-slate-800/80 bg-slate-900/40 px-3 py-2 text-left hover:border-cyan-400/30 cursor-pointer"
+                    className="flex items-center gap-2.5 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-left hover:border-blue-300 hover:bg-blue-50/50 cursor-pointer"
                   >
-                    <Database className="h-3.5 w-3.5 shrink-0 text-cyan-400" />
+                    <Database className="h-3.5 w-3.5 shrink-0 text-blue-600" />
                     <div className="min-w-0">
-                      <p className="truncate text-xs font-medium text-slate-100">{tech.name}</p>
-                      <p className="truncate text-[11px] text-slate-400">{tech.role}</p>
+                      <p className="truncate text-xs font-medium text-slate-900">{tech.name}</p>
+                      <p className="truncate text-[11px] text-slate-500">{tech.role}</p>
                     </div>
                   </button>
                 ))}
