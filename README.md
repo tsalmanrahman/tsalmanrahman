@@ -141,7 +141,7 @@ Previously served as Junior Software Engineer at Logic InfoTech Ltd building ent
 <br/>
 
 <div align="center">
-  <picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/about-terminal-dark.svg?v=8b4e0fb3" /><source media="(prefers-color-scheme: light)" srcset="assets/profile/about-terminal.svg?v=f1a76568" /><img src="assets/profile/about-terminal.svg?v=f1a76568" alt="Engineering Pillars and Experience (4+ Years (Self-Driven &amp; Enterprise Operations))" width="100%" /></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/about-terminal-dark.svg?v=097262eb" /><source media="(prefers-color-scheme: light)" srcset="assets/profile/about-terminal.svg?v=5aeb0512" /><img src="assets/profile/about-terminal.svg?v=5aeb0512" alt="Engineering Pillars and Experience (4+ Years (Self-Driven &amp; Enterprise Operations))" width="100%" /></picture>
 </div>
 
 - **Target Roles:** `SQL Developer` · `Data Analyst` · `Data Engineer` · `Database Developer` · `ERP / Backend Developer`

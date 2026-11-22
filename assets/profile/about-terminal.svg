@@ -30,19 +30,19 @@
     <rect x="0.5" y="0.5" width="385" height="57" rx="0" fill="#F4F4F2" stroke="#111110" stroke-opacity="0.24" stroke-width="1" />
     <text x="12" y="18" class="item-head">[02] Actionable Business Reporting</text>
     <text x="12" y="34" class="item-sub">Transforming complex operational and transactional tables into clear,</text>
-    <text x="12" y="48" class="item-sub">dependable Crystal Reports, Power BI models, and analytical SQL datas...</text>
+    <text x="12" y="48" class="item-sub">dependable Crystal Reports, Power BI models, and analytical SQL datasets.</text>
   </g>
   <g transform="translate(24, 182)">
     <rect x="0.5" y="0.5" width="385" height="57" rx="0" fill="#F4F4F2" stroke="#111110" stroke-opacity="0.24" stroke-width="1" />
     <text x="12" y="18" class="item-head">[03] Pragmatic Backend Automation</text>
-    <text x="12" y="34" class="item-sub">Building maintainable ERP workflows, APIs, and operational tooling with</text>
-    <text x="12" y="48" class="item-sub">C# (.NET) and Python (FastAPI).</text>
+    <text x="12" y="34" class="item-sub">Building maintainable ERP workflows, APIs, and operational tooling with C#</text>
+    <text x="12" y="48" class="item-sub">(.NET) and Python (FastAPI).</text>
   </g>
   <g transform="translate(24, 248)">
     <rect x="0.5" y="0.5" width="385" height="57" rx="0" fill="#F4F4F2" stroke="#111110" stroke-opacity="0.24" stroke-width="1" />
     <text x="12" y="18" class="item-head">[04] Reliable Systems &amp; IT Foundation</text>
-    <text x="12" y="34" class="item-sub">Applying Google IT Support certified diagnostics across workstations,</text>
-    <text x="12" y="48" class="item-sub">ODBC connectivity, backups, and enterprise infrastructure.</text>
+    <text x="12" y="34" class="item-sub">Applying Google IT Support certified diagnostics across workstations, ODBC</text>
+    <text x="12" y="48" class="item-sub">connectivity, backups, and enterprise infrastructure.</text>
   </g>
   <g transform="translate(450, 50)">
     <rect x="0.5" y="0.5" width="385" height="57" rx="0" fill="#F4F4F2" stroke="#111110" stroke-opacity="0.24" stroke-width="1" />

@@ -232,7 +232,7 @@ def render_about_terminal_svg(
     for idx, pillar in enumerate(pillars):
         py = 50 + idx * 66
         title = xml_escape(_truncate(pillar["pillar"], 42))
-        desc_lines = _wrap_lines(pillar["description"], width=72, max_lines=2)
+        desc_lines = _wrap_lines(pillar["description"], width=78, max_lines=2)
         line1 = xml_escape(desc_lines[0])
         line2 = xml_escape(desc_lines[1]) if len(desc_lines) > 1 else ""
         line2_svg = f'\n    <text x="12" y="48" class="item-sub">{line2}</text>' if line2 else ""
