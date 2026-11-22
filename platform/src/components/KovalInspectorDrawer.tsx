@@ -2,15 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { ArrowLeft, Check, Copy } from 'lucide-react'
 import type { ProjectItem } from '../types/ecosystem'
+import { KovalProjectWireframe } from './KovalProjectWireframe'
 
 interface KovalInspectorDrawerProps {
   project: ProjectItem | null
   onClose: () => void
-}
-
-function resolvePreview(path: string): string | null {
-  const name = path.trim().split('/').pop()
-  return name ? `./assets/projects/${name}` : null
 }
 
 export const KovalInspectorDrawer: React.FC<KovalInspectorDrawerProps> = ({
@@ -29,8 +25,6 @@ export const KovalInspectorDrawer: React.FC<KovalInspectorDrawerProps> = ({
   }, [project, onClose])
 
   if (!project) return null
-
-  const previewSrc = resolvePreview(project.image_path)
 
   const handleCopyLink = async () => {
     try {
@@ -100,11 +94,7 @@ export const KovalInspectorDrawer: React.FC<KovalInspectorDrawerProps> = ({
             <p className="mt-1.5 text-sm text-[#3A3A38]">{project.tagline}</p>
           </div>
 
-          {previewSrc && (
-            <div className="border border-[#111110]/20 bg-[#111110] p-3">
-              <img src={previewSrc} alt={project.name} className="max-h-60 w-full object-contain" />
-            </div>
-          )}
+          <KovalProjectWireframe projectId={project.id} />
 
           <p className="text-sm leading-relaxed text-[#3A3A38]">{project.description}</p>
 

@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react'
-import { Layers } from 'lucide-react'
 import type {
   CertificationItem,
   EducationItem,
@@ -9,6 +8,7 @@ import type {
   ProjectItem,
   Recommendation,
 } from '../types/ecosystem'
+import { KovalProjectWireframe } from './KovalProjectWireframe'
 
 interface KovalSectionsProps {
   profile: ProfileData
@@ -22,11 +22,6 @@ interface KovalSectionsProps {
   onInspectProject: (project: ProjectItem) => void
   onOpenSkillsHub: () => void
   onOpenVerificationModal: () => void
-}
-
-function resolveProjectImg(path: string): string | null {
-  const name = path.trim().split('/').pop()
-  return name ? `./assets/projects/${name}` : null
 }
 
 function resolveBadgeImg(path: string): string | null {
@@ -128,36 +123,22 @@ export const KovalSections: React.FC<KovalSectionsProps> = ({
 
         {/* Minimal Horizontal Project Rows */}
         <div className="divide-y divide-[#111110]/15 border-y border-[#111110]/15">
-          {visibleProjects.map((project, idx) => {
-            const imgSrc = resolveProjectImg(project.image_path)
-            return (
-              <article
-                key={project.id}
-                className="grid grid-cols-1 gap-6 py-10 lg:grid-cols-[minmax(0,1fr)_244px] lg:gap-12"
-              >
-                <div className="grid grid-cols-1 gap-6 md:grid-cols-12 md:items-center">
-                  <button
-                    type="button"
-                    onClick={() => onInspectProject(project)}
-                    className="block border border-[#111110]/25 bg-[#111110] p-2.5 text-left transition hover:border-[#111110] md:col-span-5 cursor-pointer"
-                  >
-                    {imgSrc ? (
-                      <img
-                        src={imgSrc}
-                        alt={project.name}
-                        className="h-44 w-full object-contain"
-                      />
-                    ) : (
-                      <div className="flex h-44 w-full flex-col justify-between bg-[#F4F4F2] p-4 text-[#111110]">
-                        <Layers className="h-5 w-5" />
-                        <span className="font-mono text-xs uppercase tracking-wider">
-                          JSON → ECOSYSTEM PIPELINE
-                        </span>
-                      </div>
-                    )}
-                  </button>
+          {visibleProjects.map((project, idx) => (
+            <article
+              key={project.id}
+              className="grid grid-cols-1 gap-6 py-10 lg:grid-cols-[minmax(0,1fr)_244px] lg:gap-12"
+            >
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-12 md:items-center">
+                <button
+                  type="button"
+                  onClick={() => onInspectProject(project)}
+                  aria-label={`Inspect ${project.name} architecture`}
+                  className="group block w-full text-left md:col-span-5 cursor-pointer"
+                >
+                  <KovalProjectWireframe projectId={project.id} />
+                </button>
 
-                  <div className="md:col-span-7">
+                <div className="md:col-span-7">
                     <span className="font-mono text-xs uppercase tracking-[0.08em] text-[#656561]">
                       0{idx + 1} · {project.category}
                     </span>
@@ -194,8 +175,7 @@ export const KovalSections: React.FC<KovalSectionsProps> = ({
                   </a>
                 </div>
               </article>
-            )
-          })}
+          ))}
         </div>
       </section>
 
