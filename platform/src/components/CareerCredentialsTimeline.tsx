@@ -105,7 +105,7 @@ export const CareerCredentialsTimeline: React.FC<CareerCredentialsTimelineProps>
             <h3 className="font-display text-xl font-bold text-slate-950">Employment Timeline</h3>
           </div>
 
-          <div className="relative space-y-6 before:absolute before:top-6 before:bottom-6 before:left-4 before:w-px before:bg-gradient-to-b before:from-blue-500/60 before:via-slate-300 before:to-transparent">
+          <div className="relative space-y-6 before:absolute before:top-6 before:bottom-6 before:left-4 before:w-px before:bg-slate-200">
             {positions.map((pos) => (
               <article
                 key={pos.id}

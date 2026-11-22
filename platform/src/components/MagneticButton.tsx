@@ -54,9 +54,9 @@ export const MagneticButton: React.FC<MagneticButtonProps> = ({
 
   const fillStyles =
     variant === 'primary'
-      ? 'bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600'
+      ? 'bg-blue-600'
       : variant === 'secondary'
-        ? 'bg-gradient-to-r from-blue-600 via-sky-500 to-indigo-600'
+        ? 'bg-blue-600'
         : 'bg-slate-100'
 
   const style: React.CSSProperties = {

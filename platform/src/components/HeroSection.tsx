@@ -176,10 +176,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 alt="Salman Rahman — Verified Studio Headshot"
                 className="aspect-[4/4.2] w-full object-cover object-top"
               />
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/25 via-transparent to-transparent"
-              />
               <div className="absolute inset-x-3 bottom-3 flex items-end justify-between gap-2 rounded-xl border border-slate-200/90 bg-white/92 px-3.5 py-2.5 shadow-sm backdrop-blur-md">
                 <div>
                   <p className="font-display text-sm font-bold text-slate-950">{profile.name}</p>

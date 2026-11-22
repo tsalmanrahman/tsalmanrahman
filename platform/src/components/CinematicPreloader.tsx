@@ -118,7 +118,7 @@ export const CinematicPreloader: React.FC<CinematicPreloaderProps> = ({
           </div>
           <div className="h-1.5 w-full overflow-hidden rounded-full bg-slate-200">
             <div
-              className="h-full rounded-full bg-gradient-to-r from-blue-600 via-sky-500 to-indigo-600 transition-all duration-300 ease-out"
+              className="h-full rounded-full bg-blue-600 transition-all duration-300 ease-out"
               style={{ width: `${progress}%` }}
             />
           </div>

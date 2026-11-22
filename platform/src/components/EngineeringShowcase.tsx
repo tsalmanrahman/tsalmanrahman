@@ -92,7 +92,7 @@ export const EngineeringShowcase: React.FC<EngineeringShowcaseProps> = ({
                     />
                   </div>
                 ) : (
-                  <div className="mt-4 flex h-40 flex-col justify-between rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50 to-blue-50/80 p-4">
+                  <div className="mt-4 flex h-40 flex-col justify-between rounded-2xl border border-slate-200 bg-slate-50 p-4">
                     <div className="flex items-center justify-between font-mono text-[11px] font-semibold text-blue-700">
                       <span>UNIFIED ARCHITECTURE</span>
                       <Layers className="h-4 w-4 text-amber-600" />

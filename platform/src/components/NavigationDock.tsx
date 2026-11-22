@@ -159,7 +159,7 @@ export const NavigationDock: React.FC<NavigationDockProps> = ({
         {/* Scroll Progress Hairline */}
         <div className="h-[2px] w-full bg-slate-200/70">
           <div
-            className="h-full bg-gradient-to-r from-blue-600 via-sky-500 to-indigo-500 transition-[width] duration-75"
+            className="h-full bg-blue-600 transition-[width] duration-75"
             style={{ width: `${Math.round(scrollProgress * 100)}%` }}
           />
         </div>

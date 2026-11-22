@@ -191,13 +191,6 @@ export const SpatialWebGLCanvas: React.FC = () => {
       className="pointer-events-none fixed inset-0 z-0 overflow-hidden bg-[#F8FAFC]"
     >
       <div className="hud-grid absolute inset-0 opacity-90" />
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            'radial-gradient(circle at 75% 22%, rgba(224,242,254,0.78), transparent 46%), radial-gradient(circle at 18% 68%, rgba(238,242,255,0.78), transparent 45%), radial-gradient(circle at 52% 85%, rgba(254,243,199,0.38), transparent 40%)',
-        }}
-      />
       {fallbackActive && (
         <div className="absolute right-[10%] top-[20%] h-72 w-72 rounded-full border border-blue-200 bg-sky-100/50 blur-2xl" />
       )}
