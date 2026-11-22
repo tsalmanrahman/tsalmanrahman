@@ -1484,7 +1484,11 @@ def build_outputs(root_dir: Path) -> dict[Path, str]:
     education = _load_json(data_dir / "education.json")
     achievements = _load_json(data_dir / "achievements.json")
     github_metrics = _load_json(data_dir / "github_metrics.json")
-    ai_registry = _load_json(root_dir / "ai-skills" / "registry.json")
+    # Tests use minimal temp fixtures without the AI skills hub; keep generation backward compatible.
+    ai_registry_path = root_dir / "ai-skills" / "registry.json"
+    ai_skill_count = 0
+    if ai_registry_path.exists():
+        ai_skill_count = len(_load_json(ai_registry_path).get("skills", []))
 
     banner_svg = render_hero_banner_svg(profile, career)
     about_svg = render_about_terminal_svg(profile, experience)
@@ -1555,7 +1559,7 @@ def build_outputs(root_dir: Path) -> dict[Path, str]:
         education=education,
         achievements=achievements,
         github_metrics=github_metrics,
-        ai_skill_count=len(ai_registry.get("skills", [])),
+        ai_skill_count=ai_skill_count,
         asset_versions=asset_versions,
     )
     return outputs
