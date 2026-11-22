@@ -1,16 +1,13 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
-import { createPortal } from 'react-dom'
 import Lenis from 'lenis'
-import { X } from 'lucide-react'
 import rawBundle from './data/ecosystem.generated.json'
-import type { AiSkillEntry, EcosystemBundle, ProjectItem } from './types/ecosystem'
+import type { EcosystemBundle, ProjectItem } from './types/ecosystem'
 import { KovalHeader } from './components/KovalHeader'
 import { KovalHero } from './components/KovalHero'
 import { KovalSections } from './components/KovalSections'
 import { KovalFooter } from './components/KovalFooter'
 import { KovalInspectorDrawer } from './components/KovalInspectorDrawer'
 import { KovalPageRail } from './components/KovalPageRail'
-import { AiSkillsHubSection } from './components/AiSkillsHubSection'
 import { CommandPalette } from './components/CommandPalette'
 import { VerificationModal } from './components/VerificationModal'
 
@@ -22,13 +19,10 @@ export const App: React.FC = () => {
   const [commandOpen, setCommandOpen] = useState(false)
   const [paletteSeed, setPaletteSeed] = useState('')
   const [verificationOpen, setVerificationOpen] = useState(false)
-  const [skillsHubOpen, setSkillsHubOpen] = useState(false)
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null)
-  const [selectedSkill, setSelectedSkill] = useState<AiSkillEntry | null>(null)
   const [activeSectionId, setActiveSectionId] = useState<string>('top')
   const [overDarkFooter, setOverDarkFooter] = useState<boolean>(false)
   const lenisRef = useRef<Lenis | null>(null)
-  const skillsScrollRef = useRef<HTMLDivElement | null>(null)
 
   // Deep link via ?work=<project-id>
   useEffect(() => {
@@ -68,30 +62,8 @@ export const App: React.FC = () => {
     updateUrlWorkParam(null)
   }, [updateUrlWorkParam])
 
-  // Escape closes AI Skills Hub modal when its inner skill inspector isn't active
-  useEffect(() => {
-    if (!skillsHubOpen) return
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && !selectedSkill) {
-        setSkillsHubOpen(false)
-      }
-    }
-    window.addEventListener('keydown', onKeyDown)
-    return () => window.removeEventListener('keydown', onKeyDown)
-  }, [skillsHubOpen, selectedSkill])
-
-  // Focus scrollable body when /ai-skills opens so keyboard scrolling works immediately
-  useEffect(() => {
-    if (skillsHubOpen) {
-      window.setTimeout(() => {
-        skillsScrollRef.current?.focus({ preventScroll: true })
-      }, 20)
-    }
-  }, [skillsHubOpen])
-
   // Pause Lenis and lock background document scroll whenever any modal/drawer is open
-  const anyOverlayOpen =
-    skillsHubOpen || Boolean(selectedProject) || commandOpen || verificationOpen
+  const anyOverlayOpen = Boolean(selectedProject) || commandOpen || verificationOpen
 
   useEffect(() => {
     const html = document.documentElement
@@ -207,11 +179,6 @@ export const App: React.FC = () => {
     setCommandOpen(true)
   }, [])
 
-  const handleSelectSkillFromPalette = useCallback((skill: AiSkillEntry) => {
-    setSelectedSkill(skill)
-    setSkillsHubOpen(true)
-  }, [])
-
   return (
     <div className="koval-dots relative min-h-screen bg-white text-[#111110]">
       <KovalHeader
@@ -219,7 +186,6 @@ export const App: React.FC = () => {
         linkedinUrl={bundle.profile.contact.linkedin}
         activeSectionId={activeSectionId}
         onNavigate={scrollToSection}
-        onOpenSkillsHub={() => setSkillsHubOpen(true)}
       />
 
       <main>
@@ -238,14 +204,12 @@ export const App: React.FC = () => {
           education={bundle.education}
           recommendations={bundle.experience.recommendations}
           githubMetrics={bundle.github_metrics}
-          skillCount={bundle.ai_skills_registry.skills.length}
           onInspectProject={handleInspectProject}
-          onOpenSkillsHub={() => setSkillsHubOpen(true)}
           onOpenVerificationModal={() => setVerificationOpen(true)}
         />
       </main>
 
-      <KovalFooter profile={bundle.profile} onOpenSkillsHub={() => setSkillsHubOpen(true)} />
+      <KovalFooter profile={bundle.profile} />
 
       <KovalPageRail
         activeSectionId={activeSectionId}
@@ -255,64 +219,13 @@ export const App: React.FC = () => {
 
       <KovalInspectorDrawer project={selectedProject} onClose={handleCloseProject} />
 
-      {/* On-Demand Sharp Monochrome AI Skills Hub Dialog with Isolated Scroll Container */}
-      {skillsHubOpen &&
-        createPortal(
-          <div
-            role="dialog"
-            aria-modal="true"
-            aria-label="Centralized AI Skills Hub"
-            className="fixed inset-0 z-[90] flex items-center justify-center bg-[#111110]/45 p-3 sm:p-6"
-            onClick={() => setSkillsHubOpen(false)}
-          >
-            <div
-              className="flex h-[90vh] max-h-[90vh] w-full max-w-6xl flex-col overflow-hidden border border-[#111110] bg-white"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="flex shrink-0 items-center justify-between border-b border-[#111110]/15 bg-white px-5 py-4 sm:px-8">
-                <span className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-[#111110]">
-                  CENTRALIZED AI SKILLS HUB ({bundle.ai_skills_registry.skills.length})
-                </span>
-                <button
-                  type="button"
-                  onClick={() => setSkillsHubOpen(false)}
-                  aria-label="Close AI Skills Hub"
-                  className="border border-[#111110] p-1.5 text-[#111110] transition hover:bg-[#111110] hover:text-white cursor-pointer"
-                >
-                  <X className="h-4 w-4" />
-                </button>
-              </div>
-
-              <div
-                id="skills-hub-scroll"
-                ref={skillsScrollRef}
-                tabIndex={0}
-                data-lenis-prevent
-                data-lenis-prevent-wheel
-                data-lenis-prevent-touch
-                className="min-h-0 flex-1 overflow-y-auto overscroll-contain focus:outline-none"
-              >
-                <AiSkillsHubSection
-                  registry={bundle.ai_skills_registry}
-                  agentsRoster={bundle.ai_agents}
-                  selectedSkill={selectedSkill}
-                  onSelectSkill={setSelectedSkill}
-                />
-              </div>
-            </div>
-          </div>,
-          document.body,
-        )}
-
       <CommandPalette
         open={commandOpen}
         initialQuery={paletteSeed}
         onClose={() => setCommandOpen(false)}
         bundle={bundle}
         onSelectProject={handleInspectProject}
-        onSelectSkill={handleSelectSkillFromPalette}
         onNavigateSection={scrollToSection}
-        onOpenSkillsHub={() => setSkillsHubOpen(true)}
       />
 
       <VerificationModal

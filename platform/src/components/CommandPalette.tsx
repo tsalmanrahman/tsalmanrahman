@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
-import { ArrowRight, Code2, Database, Search, Sparkles, X } from 'lucide-react'
-import type { AiSkillEntry, EcosystemBundle, ProjectItem, SkillEntry } from '../types/ecosystem'
+import { ArrowRight, Code2, Database, Search, X } from 'lucide-react'
+import type { EcosystemBundle, ProjectItem, SkillEntry } from '../types/ecosystem'
 
 interface CommandPaletteProps {
   open: boolean
@@ -9,9 +9,7 @@ interface CommandPaletteProps {
   onClose: () => void
   bundle: EcosystemBundle
   onSelectProject: (project: ProjectItem) => void
-  onSelectSkill: (skill: AiSkillEntry) => void
   onNavigateSection: (sectionId: string) => void
-  onOpenSkillsHub: () => void
 }
 
 const SECTION_LINKS = [
@@ -27,9 +25,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
   onClose,
   bundle,
   onSelectProject,
-  onSelectSkill,
   onNavigateSection,
-  onOpenSkillsHub,
 }) => {
   const [query, setQuery] = useState(initialQuery)
   const inputRef = useRef<HTMLInputElement | null>(null)
@@ -64,19 +60,6 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       )
       .slice(0, 4)
   }, [bundle.projects, normalized])
-
-  const matchedSkills = useMemo(() => {
-    return bundle.ai_skills_registry.skills
-      .filter(
-        (s) =>
-          !normalized ||
-          s.name.toLowerCase().includes(normalized) ||
-          s.domain.toLowerCase().includes(normalized) ||
-          s.summary.toLowerCase().includes(normalized) ||
-          s.tags.some((t) => t.toLowerCase().includes(normalized)),
-      )
-      .slice(0, 6)
-  }, [bundle.ai_skills_registry.skills, normalized])
 
   const matchedTech = useMemo(() => {
     const flat = (Object.entries(bundle.skills) as Array<[string, SkillEntry[]]>).flatMap(
@@ -114,7 +97,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search projects, SQL stack, credentials, or 32 AI skills..."
+            placeholder="Search projects, SQL stack, or credentials..."
             className="w-full bg-transparent text-sm text-[#111110] placeholder:text-[#656561] focus:outline-none"
           />
           <button
@@ -132,7 +115,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
           data-lenis-prevent-wheel
           className="max-h-[65vh] space-y-4 overflow-y-auto overscroll-contain p-4"
         >
-          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
             {SECTION_LINKS.map((sec) => (
               <button
                 key={sec.id}
@@ -147,17 +130,6 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                 <ArrowRight className="h-3.5 w-3.5" />
               </button>
             ))}
-            <button
-              type="button"
-              onClick={() => {
-                onClose()
-                onOpenSkillsHub()
-              }}
-              className="flex items-center justify-between border border-[#111110] bg-[#111110] px-3 py-2 text-left text-xs font-medium text-white hover:bg-white hover:text-[#111110] cursor-pointer"
-            >
-              <span>AI Skills Hub (32)</span>
-              <ArrowRight className="h-3.5 w-3.5" />
-            </button>
           </div>
 
           {matchedProjects.length > 0 && (
@@ -182,33 +154,6 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                         {project.name}
                       </p>
                       <p className="truncate text-xs text-[#656561]">{project.tagline}</p>
-                    </div>
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {matchedSkills.length > 0 && (
-            <div>
-              <p className="pb-1.5 font-mono text-[10px] uppercase tracking-widest text-[#656561]">
-                AI Skills
-              </p>
-              <div className="space-y-1">
-                {matchedSkills.map((skill) => (
-                  <button
-                    key={skill.id}
-                    type="button"
-                    onClick={() => {
-                      onClose()
-                      onSelectSkill(skill)
-                    }}
-                    className="flex w-full items-center gap-3 px-3 py-2 text-left hover:bg-[#F4F4F2] cursor-pointer"
-                  >
-                    <Sparkles className="h-4 w-4 shrink-0 text-[#111110]" />
-                    <div className="min-w-0">
-                      <p className="truncate text-sm font-medium text-[#111110]">{skill.name}</p>
-                      <p className="truncate font-mono text-xs text-[#656561]">{skill.domain}</p>
                     </div>
                   </button>
                 ))}

@@ -78,13 +78,13 @@ export const KovalHero: React.FC<KovalHeroProps> = ({
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              aria-label="Search projects, credentials, and AI skills"
-              placeholder="sql, erp, pyrix, ibm, skills..."
+              aria-label="Search projects, credentials, and technical stack"
+              placeholder="sql, erp, pyrix, ibm, c#..."
               className="min-w-0 flex-1 border-b-2 border-[#111110]/20 bg-transparent px-3 text-base text-[#111110] placeholder:text-[#656561] focus:border-[#111110] focus:outline-none sm:text-xl"
             />
           </div>
           <p className="mt-2 font-mono text-xs text-[#656561]">
-            Enter a topic to filter projects &amp; 32 AI skills, or browse below.
+            Enter a topic to filter projects &amp; technical stack, or browse below.
           </p>
         </div>
 

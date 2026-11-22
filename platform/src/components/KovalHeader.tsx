@@ -7,7 +7,6 @@ interface KovalHeaderProps {
   linkedinUrl: string
   activeSectionId: string
   onNavigate: (targetId: string) => void
-  onOpenSkillsHub: () => void
 }
 
 const GeometricSquareMark: React.FC = () => (
@@ -22,7 +21,6 @@ export const KovalHeader: React.FC<KovalHeaderProps> = ({
   linkedinUrl,
   activeSectionId,
   onNavigate,
-  onOpenSkillsHub,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
@@ -86,15 +84,6 @@ export const KovalHeader: React.FC<KovalHeaderProps> = ({
                 <span className="koval-chip-prefix">/</span>
                 <span className="koval-chip-label">journey</span>
               </button>
-
-              <button
-                type="button"
-                onClick={onOpenSkillsHub}
-                className="koval-chip"
-              >
-                <span className="koval-chip-prefix">/</span>
-                <span className="koval-chip-label">ai-skills</span>
-              </button>
             </nav>
 
             <div className="flex items-center gap-2.5">
@@ -129,14 +118,6 @@ export const KovalHeader: React.FC<KovalHeaderProps> = ({
             >
               <span className="koval-chip-prefix">||</span>
               <span className="koval-chip-label">menu</span>
-            </button>
-            <button
-              type="button"
-              onClick={onOpenSkillsHub}
-              className="koval-chip hidden sm:inline-flex"
-            >
-              <span className="koval-chip-prefix">/</span>
-              <span className="koval-chip-label">skills</span>
             </button>
           </div>
 
@@ -204,18 +185,6 @@ export const KovalHeader: React.FC<KovalHeaderProps> = ({
                       <span className="koval-chip-label">{item.label}</span>
                     </button>
                   ))}
-
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setMobileMenuOpen(false)
-                      onOpenSkillsHub()
-                    }}
-                    className="koval-chip w-fit"
-                  >
-                    <span className="koval-chip-prefix">/</span>
-                    <span className="koval-chip-label">ai-skills (32)</span>
-                  </button>
                 </div>
               </div>
 

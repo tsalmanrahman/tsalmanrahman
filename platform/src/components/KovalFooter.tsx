@@ -4,12 +4,10 @@ import type { ProfileData } from '../types/ecosystem'
 
 interface KovalFooterProps {
   profile: ProfileData
-  onOpenSkillsHub: () => void
 }
 
 export const KovalFooter: React.FC<KovalFooterProps> = ({
   profile,
-  onOpenSkillsHub,
 }) => {
   const [note, setNote] = useState('')
   const [copiedEmail, setCopiedEmail] = useState(false)
@@ -129,10 +127,6 @@ export const KovalFooter: React.FC<KovalFooterProps> = ({
               <span className="koval-chip-dark-prefix">/</span>
               <span className="koval-chip-label">credly</span>
             </a>
-            <button type="button" onClick={onOpenSkillsHub} className="koval-chip-dark">
-              <span className="koval-chip-dark-prefix">/</span>
-              <span className="koval-chip-label">ai-skills</span>
-            </button>
           </div>
 
           <span className="font-mono text-xs text-white/60">

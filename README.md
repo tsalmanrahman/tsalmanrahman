@@ -34,10 +34,9 @@
 
 <table width="100%">
 <tr>
-<td align="center" width="25%"><b>02</b><br/><sub>VERIFIED SYSTEMS</sub></td>
-<td align="center" width="25%"><b>03</b><br/><sub>BADGE CREDENTIALS</sub></td>
-<td align="center" width="25%"><a href="https://tsalmanrahman.github.io/tsalmanrahman/#skills-hub"><b>32</b><br/><sub>AI SKILLS HUB →</sub></a></td>
-<td align="center" width="25%"><b>5.36 MB</b><br/><sub>GITHUB CODEBASE</sub></td>
+<td align="center" width="33%"><b>02</b><br/><sub>VERIFIED SYSTEMS</sub></td>
+<td align="center" width="33%"><b>03</b><br/><sub>BADGE CREDENTIALS</sub></td>
+<td align="center" width="34%"><b>5.36 MB</b><br/><sub>GITHUB CODEBASE</sub></td>
 </tr>
 </table>
 
@@ -143,10 +142,6 @@
 
 > “Endorsed Salman Rahman's strong SQL capabilities, database management fundamentals, analytical mindset, and disciplined problem-solving approach.” — **Mohammad Rafiqul Islam**, August 2025
 > “Highlighted Salman's grasp of ERP business dynamics, clear technical communication, and collaborative execution on software initiatives.” — **Mazharul Haque**, October 2022
-
-### ECOSYSTEM HUB
-
-Browse all **32** audited AI agent skills &amp; orchestrators — <a href="https://tsalmanrahman.github.io/tsalmanrahman/"><b>Open AI Skills Hub →</b></a>
 
 ---
 

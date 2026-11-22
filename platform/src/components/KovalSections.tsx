@@ -18,9 +18,7 @@ interface KovalSectionsProps {
   education: EducationItem[]
   recommendations: Recommendation[]
   githubMetrics: GitHubMetrics
-  skillCount: number
   onInspectProject: (project: ProjectItem) => void
-  onOpenSkillsHub: () => void
   onOpenVerificationModal: () => void
 }
 
@@ -56,9 +54,7 @@ export const KovalSections: React.FC<KovalSectionsProps> = ({
   education,
   recommendations,
   githubMetrics,
-  skillCount,
   onInspectProject,
-  onOpenSkillsHub,
   onOpenVerificationModal,
 }) => {
   const visibleProjects = useMemo(
@@ -104,9 +100,9 @@ export const KovalSections: React.FC<KovalSectionsProps> = ({
           </a>
         </div>
 
-        {/* 4-Cell Counter Grid (Exact Koval Metric Bar) */}
-        <div className="mb-12 grid grid-cols-2 border border-[#111110]/25 bg-white sm:grid-cols-4">
-          <div className="border-b border-r border-[#111110]/20 p-5 sm:border-b-0">
+        {/* 3-Cell Counter Grid (Exact Koval Metric Bar) */}
+        <div className="mb-12 grid grid-cols-1 border border-[#111110]/25 bg-white sm:grid-cols-3">
+          <div className="border-b border-[#111110]/20 p-5 sm:border-b-0 sm:border-r">
             <div className="font-display text-3xl font-bold text-[#111110]">
               0{visibleProjects.length}
             </div>
@@ -122,16 +118,6 @@ export const KovalSections: React.FC<KovalSectionsProps> = ({
               BADGE CREDENTIALS
             </div>
           </div>
-          <button
-            type="button"
-            onClick={onOpenSkillsHub}
-            className="border-r border-[#111110]/20 p-5 text-left transition hover:bg-[#F4F4F2] cursor-pointer"
-          >
-            <div className="font-display text-3xl font-bold text-[#111110]">{skillCount}</div>
-            <div className="mt-1 font-mono text-[11px] uppercase tracking-[0.08em] text-[#111110] underline underline-offset-4">
-              AI SKILLS HUB →
-            </div>
-          </button>
           <div className="p-5">
             <div className="font-display text-3xl font-bold text-[#111110]">{totalMb}</div>
             <div className="mt-1 font-mono text-[11px] uppercase tracking-[0.08em] text-[#656561]">
@@ -353,9 +339,8 @@ export const KovalSections: React.FC<KovalSectionsProps> = ({
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_244px] lg:gap-12">
-          {/* Hairline Ledger Table */}
-          <div className="space-y-8">
+        {/* Hairline Ledger Table */}
+        <div className="space-y-8">
             <div>
               <div className="border-b border-[#111110] pb-2 font-mono text-xs uppercase tracking-[0.08em] text-[#656561]">
                 EXPERIENCE
@@ -424,42 +409,6 @@ export const KovalSections: React.FC<KovalSectionsProps> = ({
               </div>
             </div>
           </div>
-
-          {/* Sticky Right Rail CTA Column */}
-          <div className="flex flex-col justify-between border border-[#111110]/20 bg-white p-6 lg:sticky lg:top-28 lg:h-fit">
-            <div>
-              <span className="font-mono text-xs uppercase tracking-[0.08em] text-[#656561]">
-                ECOSYSTEM HUB
-              </span>
-              <p className="mt-3 text-sm leading-relaxed text-[#3A3A38]">
-                Browse all {skillCount} audited AI agent skills &amp; orchestrators.
-              </p>
-            </div>
-
-            <div className="mt-6 space-y-3">
-              <button
-                type="button"
-                onClick={onOpenSkillsHub}
-                className="koval-cut-btn w-full"
-              >
-                <span className="koval-cut-btn-slit" aria-hidden="true" />
-                <span className="koval-cut-btn-body flex-1 text-sm">Open AI Skills Hub</span>
-              </button>
-
-              <div className="flex flex-wrap gap-2 pt-2">
-                <a
-                  href={profile.contact.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="koval-chip"
-                >
-                  <span className="koval-chip-prefix">/</span>
-                  <span className="koval-chip-label">linkedin</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
     </div>
   )

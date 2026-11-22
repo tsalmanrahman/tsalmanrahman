@@ -1056,7 +1056,7 @@ def render_readme_markdown_website(
     education: list[dict[str, Any]],
     achievements: list[dict[str, Any]],
     github_metrics: dict[str, Any],
-    ai_skill_count: int,
+    ai_skill_count: int = 0,
     asset_versions: dict[str, str] | None = None,
 ) -> str:
     """Assemble a Swiss Monochrome website-matched GitHub Profile README strictly from verified data."""
@@ -1279,10 +1279,9 @@ def render_readme_markdown_website(
 
 <table width="100%">
 <tr>
-<td align="center" width="25%"><b>{len(featured_projects):02d}</b><br/><sub>VERIFIED SYSTEMS</sub></td>
-<td align="center" width="25%"><b>{len(verified_certs):02d}</b><br/><sub>BADGE CREDENTIALS</sub></td>
-<td align="center" width="25%"><a href="{live_url}#skills-hub"><b>{ai_skill_count}</b><br/><sub>AI SKILLS HUB →</sub></a></td>
-<td align="center" width="25%"><b>{codebase_mb}</b><br/><sub>GITHUB CODEBASE</sub></td>
+<td align="center" width="33%"><b>{len(featured_projects):02d}</b><br/><sub>VERIFIED SYSTEMS</sub></td>
+<td align="center" width="33%"><b>{len(verified_certs):02d}</b><br/><sub>BADGE CREDENTIALS</sub></td>
+<td align="center" width="34%"><b>{codebase_mb}</b><br/><sub>GITHUB CODEBASE</sub></td>
 </tr>
 </table>
 
@@ -1328,10 +1327,6 @@ def render_readme_markdown_website(
 ### ENDORSEMENTS
 
 {endorsement_rows}
-
-### ECOSYSTEM HUB
-
-Browse all **{ai_skill_count}** audited AI agent skills &amp; orchestrators — <a href="{live_url}"><b>Open AI Skills Hub →</b></a>
 
 ---
 
