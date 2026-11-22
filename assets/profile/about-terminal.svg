@@ -1,65 +1,65 @@
-<svg width="860" height="284" viewBox="0 0 860 284" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="860" height="288" viewBox="0 0 860 288" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <pattern id="abtGrid" width="24" height="24" patternUnits="userSpaceOnUse">
-      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#00ff9c" stroke-opacity="0.035" stroke-width="0.8" />
+    <pattern id="kovalDotsAbout" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="8" cy="8" r="1" fill="#111110" fill-opacity="0.1" />
     </pattern>
   </defs>
   <style>
-    .pane-hdr { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.9px; fill: #00ff9c; }
-    .pane-hdr-c { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.9px; fill: #38bdf8; }
-    .exp-tag { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 9.5px; font-weight: 700; fill: #6ee7b7; }
-    .item-head { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px; font-weight: 700; fill: #ecfdf5; }
-    .item-head-cyan { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px; font-weight: 700; fill: #e0f2fe; }
-    .item-sub { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 10px; fill: #94a3b8; }
+    .pane-hdr { font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 10.5px; font-weight: 600; letter-spacing: 0.9px; fill: #FFFFFF; }
+    .item-head { font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11px; font-weight: 700; fill: #111110; }
+    .item-sub { font-family: "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 10px; fill: #656561; }
   </style>
 
-  <rect width="860" height="284" rx="12" fill="#03070b" stroke="#10b981" stroke-opacity="0.3" stroke-width="1" />
-  <rect width="860" height="284" rx="12" fill="url(#abtGrid)" />
+  <rect width="860" height="288" rx="0" fill="#FFFFFF" />
+  <rect width="860" height="288" rx="0" fill="url(#kovalDotsAbout)" />
+  <rect x="0" y="0" width="860" height="32" rx="0" fill="#111110" />
 
-  <text x="24" y="30" class="pane-hdr">[01] ./ENGINEERING_PILLARS</text>
-  <text x="450" y="30" class="pane-hdr-c">[02] ./PRACTICAL_EXPERIENCE</text>
-  <text x="836" y="30" text-anchor="end" class="exp-tag">EXP: 4+ YEARS</text>
+  <text x="24" y="20" class="pane-hdr">01 // ENGINEERING PILLARS</text>
+  <text x="450" y="20" class="pane-hdr">02 // PRACTICAL EXPERIENCE</text>
+  <text x="836" y="20" text-anchor="end" class="pane-hdr">EXP: 4+ YEARS</text>
 
-  <line x1="430" y1="20" x2="430" y2="266" stroke="#10b981" stroke-opacity="0.18" stroke-width="1" />
+  <line x1="430" y1="32" x2="430" y2="288" stroke="#111110" stroke-opacity="0.18" stroke-width="1" />
 
-  <g transform="translate(24, 52)">
-    <rect width="386" height="46" rx="6" fill="#09131a" stroke="#10b981" stroke-opacity="0.22" />
-    <text x="12" y="18" class="item-head">&gt; [01] Data Integrity First</text>
+  <g transform="translate(24, 56)">
+    <rect x="0.5" y="0.5" width="385" height="45" rx="0" fill="#F4F4F2" stroke="#111110" stroke-opacity="0.25" stroke-width="1" />
+    <text x="12" y="18" class="item-head">[01] Data Integrity First</text>
     <text x="12" y="34" class="item-sub">Designing normalized relational schemas, explicit c...</text>
   </g>
-  <g transform="translate(24, 106)">
-    <rect width="386" height="46" rx="6" fill="#09131a" stroke="#10b981" stroke-opacity="0.22" />
-    <text x="12" y="18" class="item-head">&gt; [02] Actionable Business Reporting</text>
+  <g transform="translate(24, 110)">
+    <rect x="0.5" y="0.5" width="385" height="45" rx="0" fill="#F4F4F2" stroke="#111110" stroke-opacity="0.25" stroke-width="1" />
+    <text x="12" y="18" class="item-head">[02] Actionable Business Reporting</text>
     <text x="12" y="34" class="item-sub">Transforming complex operational and transactional...</text>
   </g>
-  <g transform="translate(24, 160)">
-    <rect width="386" height="46" rx="6" fill="#09131a" stroke="#10b981" stroke-opacity="0.22" />
-    <text x="12" y="18" class="item-head">&gt; [03] Pragmatic Backend Automation</text>
+  <g transform="translate(24, 164)">
+    <rect x="0.5" y="0.5" width="385" height="45" rx="0" fill="#F4F4F2" stroke="#111110" stroke-opacity="0.25" stroke-width="1" />
+    <text x="12" y="18" class="item-head">[03] Pragmatic Backend Automation</text>
     <text x="12" y="34" class="item-sub">Building maintainable ERP workflows, APIs, and oper...</text>
   </g>
-  <g transform="translate(24, 214)">
-    <rect width="386" height="46" rx="6" fill="#09131a" stroke="#10b981" stroke-opacity="0.22" />
-    <text x="12" y="18" class="item-head">&gt; [04] Reliable Systems &amp; IT Foundation</text>
+  <g transform="translate(24, 218)">
+    <rect x="0.5" y="0.5" width="385" height="45" rx="0" fill="#F4F4F2" stroke="#111110" stroke-opacity="0.25" stroke-width="1" />
+    <text x="12" y="18" class="item-head">[04] Reliable Systems &amp; IT Foundation</text>
     <text x="12" y="34" class="item-sub">Applying Google IT Support certified diagnostics ac...</text>
   </g>
-  <g transform="translate(450, 52)">
-    <rect width="386" height="46" rx="6" fill="#09131a" stroke="#38bdf8" stroke-opacity="0.22" />
-    <text x="12" y="18" class="item-head-cyan">$ SQL Development &amp; Database Architec...</text>
+  <g transform="translate(450, 56)">
+    <rect x="0.5" y="0.5" width="385" height="45" rx="0" fill="#F4F4F2" stroke="#111110" stroke-opacity="0.25" stroke-width="1" />
+    <text x="12" y="18" class="item-head">SQL Development &amp; Database Architec...</text>
     <text x="12" y="34" class="item-sub">Microsoft SQL Server · T-SQL · Query Optimization · Relational Modeling</text>
   </g>
-  <g transform="translate(450, 106)">
-    <rect width="386" height="46" rx="6" fill="#09131a" stroke="#38bdf8" stroke-opacity="0.22" />
-    <text x="12" y="18" class="item-head-cyan">$ Enterprise Reporting &amp; Data Analysis</text>
+  <g transform="translate(450, 110)">
+    <rect x="0.5" y="0.5" width="385" height="45" rx="0" fill="#F4F4F2" stroke="#111110" stroke-opacity="0.25" stroke-width="1" />
+    <text x="12" y="18" class="item-head">Enterprise Reporting &amp; Data Analysis</text>
     <text x="12" y="34" class="item-sub">Crystal Reports · Microsoft Power BI · SQL Queries · Audit Reconciliation</text>
   </g>
-  <g transform="translate(450, 160)">
-    <rect width="386" height="46" rx="6" fill="#09131a" stroke="#38bdf8" stroke-opacity="0.22" />
-    <text x="12" y="18" class="item-head-cyan">$ ERP Systems &amp; Backend Engineering</text>
+  <g transform="translate(450, 164)">
+    <rect x="0.5" y="0.5" width="385" height="45" rx="0" fill="#F4F4F2" stroke="#111110" stroke-opacity="0.25" stroke-width="1" />
+    <text x="12" y="18" class="item-head">ERP Systems &amp; Backend Engineering</text>
     <text x="12" y="34" class="item-sub">C# · .NET / ASP.NET Core · Python · FastAPI</text>
   </g>
-  <g transform="translate(450, 214)">
-    <rect width="386" height="46" rx="6" fill="#09131a" stroke="#38bdf8" stroke-opacity="0.22" />
-    <text x="12" y="18" class="item-head-cyan">$ IT Support &amp; Infrastructure Diagnos...</text>
+  <g transform="translate(450, 218)">
+    <rect x="0.5" y="0.5" width="385" height="45" rx="0" fill="#F4F4F2" stroke="#111110" stroke-opacity="0.25" stroke-width="1" />
+    <text x="12" y="18" class="item-head">IT Support &amp; Infrastructure Diagnos...</text>
     <text x="12" y="34" class="item-sub">Google IT Support · Hardware Diagnostics · Backup &amp; Recovery · ODBC Connectivity</text>
   </g>
+
+  <rect x="0.5" y="0.5" width="859" height="287" rx="0" stroke="#111110" stroke-width="1" />
 </svg>

@@ -1,86 +1,74 @@
 <svg width="860" height="278" viewBox="0 0 860 278" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
-    @keyframes barGrow {
-      0% { transform: scaleX(0); }
-      100% { transform: scaleX(1); }
-    }
-    @keyframes beacon {
-      0% { transform: scale(1); opacity: 0.85; }
-      100% { transform: scale(2.2); opacity: 0; }
-    }
-    .bar-grow { transform-box: fill-box; transform-origin: left center; animation: barGrow 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
-    .beacon { transform-box: fill-box; transform-origin: center; animation: beacon 2.2s ease-out infinite; }
-    .panel-title { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.8px; }
-    .stat-k { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px; fill: #6ee7b7; }
-    .sub-label { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.7px; fill: #64748b; }
-    .stat-v { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11.5px; font-weight: 700; fill: #ecfdf5; }
-    .repo-name { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px; font-weight: 600; fill: #e2e8f0; }
-    .repo-lang { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px; fill: #00ff9c; }
-    .metric-label { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px; font-weight: 600; fill: #e2e8f0; }
-    .metric-val { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px; fill: #94a3b8; }
-    .footnote { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 9px; fill: #64748b; }
+    .panel-hdr { font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 10.5px; font-weight: 600; letter-spacing: 0.9px; fill: #FFFFFF; }
+    .stat-k { font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 9.5px; fill: #656561; }
+    .sub-label { font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 9.5px; font-weight: 700; letter-spacing: 0.8px; fill: #656561; }
+    .stat-v { font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 700; fill: #111110; }
+    .repo-name { font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 10.5px; font-weight: 600; fill: #111110; }
+    .repo-lang { font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 10px; fill: #3A3A38; }
+    .metric-label { font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11px; font-weight: 600; fill: #111110; }
+    .metric-val { font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 10px; fill: #656561; }
+    .footnote { font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 9px; fill: #656561; }
   </style>
 
   <g transform="translate(0, 0)">
-    <rect width="418" height="278" rx="12" fill="#03070b" stroke="#10b981" stroke-opacity="0.3" stroke-width="1" />
-    <circle cx="24" cy="26" r="4" fill="#38bdf8" class="beacon" />
-    <circle cx="24" cy="26" r="3.5" fill="#38bdf8" />
-    <text x="36" y="30" fill="#38bdf8" class="panel-title">[01] ./GITHUB_PROFILE_DAEMON</text>
+    <rect x="0.5" y="0.5" width="417" height="277" rx="0" fill="#FFFFFF" stroke="#111110" stroke-width="1" />
+    <rect x="0" y="0" width="418" height="32" rx="0" fill="#111110" />
+    <text x="20" y="20" class="panel-hdr">01 // GITHUB PROFILE DAEMON</text>
 
-    <rect x="24" y="46" width="180" height="44" rx="6" fill="#060d12" stroke="#10b981" stroke-opacity="0.22" />
+    <rect x="24.5" y="46.5" width="179" height="43" rx="0" fill="#F4F4F2" stroke="#111110" stroke-opacity="0.22" />
     <text x="34" y="63" class="stat-k">HANDLE</text>
     <text x="34" y="80" class="stat-v">@tsalmanrahman</text>
 
-    <rect x="214" y="46" width="180" height="44" rx="6" fill="#060d12" stroke="#10b981" stroke-opacity="0.22" />
+    <rect x="214.5" y="46.5" width="179" height="43" rx="0" fill="#F4F4F2" stroke="#111110" stroke-opacity="0.22" />
     <text x="224" y="63" class="stat-k">REPOS (FEATURED)</text>
     <text x="224" y="80" class="stat-v">4 (2 Featured)</text>
 
-    <rect x="24" y="98" width="180" height="36" rx="6" fill="#060d12" stroke="#10b981" stroke-opacity="0.22" />
+    <rect x="24.5" y="98.5" width="179" height="35" rx="0" fill="#F4F4F2" stroke="#111110" stroke-opacity="0.22" />
     <text x="34" y="120" class="stat-k">SINCE 2023 · FOLLOWERS: 2</text>
 
-    <rect x="214" y="98" width="180" height="36" rx="6" fill="#060d12" stroke="#10b981" stroke-opacity="0.22" />
+    <rect x="214.5" y="98.5" width="179" height="35" rx="0" fill="#F4F4F2" stroke="#111110" stroke-opacity="0.22" />
     <text x="224" y="120" class="stat-k">ORG: HATIM Group</text>
 
-    <text x="24" y="154" class="sub-label">ACTIVE_REPOSITORIES</text>
-    <rect x="24" y="164" width="370" height="22" rx="5" fill="#09131a" stroke="#10b981" stroke-opacity="0.22" />
-    <text x="34" y="179" class="repo-name">$ ERP</text>
+    <text x="24" y="154" class="sub-label">ACTIVE REPOSITORIES</text>
+    <rect x="24.5" y="164.5" width="369" height="21" rx="0" fill="#F4F4F2" stroke="#111110" stroke-opacity="0.22" />
+    <text x="34" y="179" class="repo-name">ERP</text>
     <text x="384" y="179" text-anchor="end" class="repo-lang">[C#]</text>
-    <rect x="24" y="191" width="370" height="22" rx="5" fill="#09131a" stroke="#10b981" stroke-opacity="0.22" />
-    <text x="34" y="206" class="repo-name">$ pyrix</text>
+    <rect x="24.5" y="191.5" width="369" height="21" rx="0" fill="#F4F4F2" stroke="#111110" stroke-opacity="0.22" />
+    <text x="34" y="206" class="repo-name">pyrix</text>
     <text x="384" y="206" text-anchor="end" class="repo-lang">[HTML]</text>
-    <text x="24" y="260" class="footnote">SOURCE: GITHUB_REST_API (live_github_api)</text>
+    <text x="24" y="260" class="footnote">SOURCE: GITHUB REST API (live_github_api)</text>
   </g>
 
   <g transform="translate(442, 0)">
-    <rect width="418" height="278" rx="12" fill="#03070b" stroke="#10b981" stroke-opacity="0.3" stroke-width="1" />
-    <circle cx="24" cy="26" r="4" fill="#00ff9c" class="beacon" />
-    <circle cx="24" cy="26" r="3.5" fill="#00ff9c" />
-    <text x="36" y="30" fill="#00ff9c" class="panel-title">[02] ./CODEBASE_LANGUAGE_MIX</text>
+    <rect x="0.5" y="0.5" width="417" height="277" rx="0" fill="#FFFFFF" stroke="#111110" stroke-width="1" />
+    <rect x="0" y="0" width="418" height="32" rx="0" fill="#111110" />
+    <text x="20" y="20" class="panel-hdr">02 // CODEBASE LANGUAGE MIX</text>
 
     <text x="24" y="64" class="metric-label">HTML</text>
     <text x="394" y="64" text-anchor="end" class="metric-val">32.1% (1,761 KB)</text>
-    <rect x="24" y="71" width="370" height="6" rx="3" fill="#0f1e24" />
-    <rect x="24" y="71" width="118" height="6" rx="3" fill="#38bdf8" class="bar-grow" />
+    <rect x="24" y="71" width="370" height="6" rx="0" fill="#F4F4F2" stroke="#111110" stroke-opacity="0.15" stroke-width="1" />
+    <rect x="24" y="71" width="118" height="6" rx="0" fill="#111110" />
     <text x="24" y="98" class="metric-label">C#</text>
     <text x="394" y="98" text-anchor="end" class="metric-val">27.5% (1,506 KB)</text>
-    <rect x="24" y="105" width="370" height="6" rx="3" fill="#0f1e24" />
-    <rect x="24" y="105" width="101" height="6" rx="3" fill="#a78bfa" class="bar-grow" />
+    <rect x="24" y="105" width="370" height="6" rx="0" fill="#F4F4F2" stroke="#111110" stroke-opacity="0.15" stroke-width="1" />
+    <rect x="24" y="105" width="101" height="6" rx="0" fill="#3A3A38" />
     <text x="24" y="132" class="metric-label">Python</text>
     <text x="394" y="132" text-anchor="end" class="metric-val">19.3% (1,056 KB)</text>
-    <rect x="24" y="139" width="370" height="6" rx="3" fill="#0f1e24" />
-    <rect x="24" y="139" width="71" height="6" rx="3" fill="#00ff9c" class="bar-grow" />
+    <rect x="24" y="139" width="370" height="6" rx="0" fill="#F4F4F2" stroke="#111110" stroke-opacity="0.15" stroke-width="1" />
+    <rect x="24" y="139" width="71" height="6" rx="0" fill="#52524E" />
     <text x="24" y="166" class="metric-label">JavaScript</text>
     <text x="394" y="166" text-anchor="end" class="metric-val">12.6% (690 KB)</text>
-    <rect x="24" y="173" width="370" height="6" rx="3" fill="#0f1e24" />
-    <rect x="24" y="173" width="46" height="6" rx="3" fill="#facc15" class="bar-grow" />
+    <rect x="24" y="173" width="370" height="6" rx="0" fill="#F4F4F2" stroke="#111110" stroke-opacity="0.15" stroke-width="1" />
+    <rect x="24" y="173" width="46" height="6" rx="0" fill="#656561" />
     <text x="24" y="200" class="metric-label">TSQL</text>
     <text x="394" y="200" text-anchor="end" class="metric-val">6.5% (355 KB)</text>
-    <rect x="24" y="207" width="370" height="6" rx="3" fill="#0f1e24" />
-    <rect x="24" y="207" width="23" height="6" rx="3" fill="#f87171" class="bar-grow" />
+    <rect x="24" y="207" width="370" height="6" rx="0" fill="#F4F4F2" stroke="#111110" stroke-opacity="0.15" stroke-width="1" />
+    <rect x="24" y="207" width="23" height="6" rx="0" fill="#787873" />
     <text x="24" y="234" class="metric-label">Other</text>
     <text x="394" y="234" text-anchor="end" class="metric-val">2.1% (113 KB)</text>
-    <rect x="24" y="241" width="370" height="6" rx="3" fill="#0f1e24" />
-    <rect x="24" y="241" width="8" height="6" rx="3" fill="#64748b" class="bar-grow" />
+    <rect x="24" y="241" width="370" height="6" rx="0" fill="#F4F4F2" stroke="#111110" stroke-opacity="0.15" stroke-width="1" />
+    <rect x="24" y="241" width="8" height="6" rx="0" fill="#94948F" />
     <text x="24" y="260" class="footnote">MEASURED BYTE COUNTS (NON-FORK REPOS)</text>
   </g>
 </svg>
