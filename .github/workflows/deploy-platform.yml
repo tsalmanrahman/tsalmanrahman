@@ -1,0 +1,68 @@
+name: Build & Deploy Unified Web Platform
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "platform/**"
+      - "profile-data/**"
+      - "ai-skills/**"
+      - "assets/**"
+      - "scripts/skills_hub.py"
+      - ".github/workflows/deploy-platform.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate hub and export unified platform data
+        run: |
+          python scripts/skills_hub.py validate
+          python scripts/skills_hub.py export-platform
+
+      - name: Set up Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install platform dependencies and build
+        working-directory: platform
+        run: |
+          npm ci
+          npm run build
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: platform/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -4,3 +4,7 @@ __pycache__/
 .pytest_cache/
 .env
 *.bak
+*.log
+platform/node_modules/
+platform/dist/
+.opencode/.cache/

@@ -1,14 +1,14 @@
 {
   "name": "Salman Rahman",
   "username": "tsalmanrahman",
-  "headline": "SQL Developer | Data Analyst | C# & Python Enthusiast | Google IT Support Certified",
-  "short_bio": "SQL Developer & Data Analyst specializing in Microsoft SQL Server, relational database architecture, Crystal Reports, and backend systems in C# and Python.",
+  "headline": "SQL Server & Database Engineer | T-SQL, Query Optimization & ERP Data Systems | C# (.NET) · Power BI · Python",
+  "short_bio": "SQL Server & ERP Database professional specializing in Microsoft SQL Server, T-SQL optimization, multi-outlet Web POS reconciliation, Crystal Reports, and enterprise software in C# (.NET) and Python.",
   "location": "Dhaka, Bangladesh",
-  "organization": "HATIM Group",
+  "organization": "HATIM GROUP",
   "summary": [
-    "Computer Science graduate with 4+ years of self-driven experience in SQL development, PL/SQL, data analysis, and IT support.",
-    "Experienced in working with Microsoft SQL Server and Crystal Reports to model enterprise data, build reliable queries, and deliver operational reporting, alongside foundational engineering skills in C# and Python.",
-    "Deeply interested in ERP systems, relational database architecture, backend development, data engineering, and product design, while continuously expanding technical depth through structured professional learning."
+    "Database and Enterprise Systems professional with a B.Sc. in Computer Science & Engineering (Varendra University) and a Post Graduate Diploma in Data Science (UIU, CGPA 3.56), specializing in Microsoft SQL Server engineering, T-SQL development, and operational reporting.",
+    "At HATIM GROUP (Executive, IT & MIS), manages and optimizes Microsoft SQL Server databases supporting the central InteAcc ERP and retail Web POS network—writing and tuning T-SQL queries, stored procedures, and indexing strategies while maintaining backups, integrity checks, and transaction reconciliation.",
+    "Previously served as Junior Software Engineer at Logic InfoTech Ltd building enterprise application modules in C# (.NET Framework) with SQL Server and MySQL backends alongside Crystal Reports, complemented by Power BI (DAX) and Python data workflows."
   ],
   "problem_solving_approach": [
     {
@@ -17,7 +17,7 @@
     },
     {
       "pillar": "Actionable Business Reporting",
-      "description": "Transforming complex operational and transactional tables into clear, dependable Crystal Reports and analytical SQL datasets."
+      "description": "Transforming complex operational and transactional tables into clear, dependable Crystal Reports, Power BI models, and analytical SQL datasets."
     },
     {
       "pillar": "Pragmatic Backend Automation",
@@ -25,7 +25,7 @@
     },
     {
       "pillar": "Reliable Systems & IT Foundation",
-      "description": "Applying Google IT Support certified diagnostics across workstations, ODBC connectivity, and enterprise infrastructure."
+      "description": "Applying Google IT Support certified diagnostics across workstations, ODBC connectivity, backups, and enterprise infrastructure."
     }
   ],
   "contact": {
@@ -37,12 +37,12 @@
     "portfolio": ""
   },
   "banner": {
-    "badge_text": "OPEN TO SQL, DATA & ERP BACKEND ROLES",
-    "tagline": "Designing resilient relational databases, enterprise ERP workflows, and actionable reporting systems.",
+    "badge_text": "OPEN TO SQL, DATABASE & ERP BACKEND ROLES",
+    "tagline": "Designing resilient SQL Server architectures, enterprise ERP workflows, and actionable reporting systems.",
     "pills": [
-      "Google IT Support Certified",
-      "BSc in Computer Science",
-      "SQL Server & Crystal Reports",
+      "SQL Server & T-SQL",
+      "InteAcc ERP & Web POS",
+      "PGDDS (UIU · 3.56)",
       "Dhaka, Bangladesh"
     ]
   }

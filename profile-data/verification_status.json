@@ -1,0 +1,88 @@
+{
+  "profile_url": "https://www.linkedin.com/in/t-salmanrahman",
+  "last_verified_date": "2026-11-22",
+  "audit_reference_date": "2026-11-17",
+  "policy": "Zero fabrication. Only verified public/authenticated LinkedIn, Credly, freeCodeCamp, and GitHub facts are published as verified; unconfirmed details are transparently marked pending_confirmation.",
+  "verified_sections": [
+    {
+      "section": "Identity & Studio Portrait",
+      "status": "verified",
+      "source": "Signed-in LinkedIn profile & local original studio headshot (SHA-256 locked)",
+      "verified_date": "2026-11-22"
+    },
+    {
+      "section": "Current Role — HATIM GROUP",
+      "status": "verified",
+      "source": "LinkedIn Profile Audit (Dec 2024 – Present · Executive (IT & MIS) | SQL Developer & Data Analyst · InteAcc ERP & Web POS)",
+      "verified_date": "2026-11-17"
+    },
+    {
+      "section": "Past Role — Logic InfoTech Ltd",
+      "status": "verified",
+      "source": "LinkedIn Profile Audit (Jul 2022 – Oct 2023 · Junior Software Engineer · C#, .NET Framework, SQL Server, MySQL, Crystal Reports)",
+      "verified_date": "2026-11-17"
+    },
+    {
+      "section": "Education — UIU PGDDS & Varendra University B.Sc. CSE",
+      "status": "verified",
+      "source": "LinkedIn Education & Certificate Media (UIU CGPA 3.56, VU CGPA 3.12)",
+      "verified_date": "2026-11-17"
+    },
+    {
+      "section": "Certifications & Language Proficiency",
+      "status": "verified",
+      "source": "Credly Badges (IBM SQL, Google IT Support), freeCodeCamp (Microsoft C#), Duolingo Score 129 (Aug 2026)",
+      "verified_date": "2026-11-17"
+    },
+    {
+      "section": "GitHub Repositories & Codebase Metrics",
+      "status": "verified",
+      "source": "GitHub REST API sync (tsalmanrahman/ERP, tsalmanrahman/pyrix, tsalmanrahman/tsalmanrahman)",
+      "verified_date": "2026-11-20"
+    },
+    {
+      "section": "Recommendations",
+      "status": "verified",
+      "source": "LinkedIn Recommendations (Mohammad Rafiqul Islam, Aug 2025; Mazharul Haque, Oct 2022)",
+      "verified_date": "2026-11-17"
+    }
+  ],
+  "pending_confirmation": [
+    {
+      "field": "Official HR Designation at HATIM GROUP",
+      "reason": "Verify exact HR employment-letter title ('Executive (IT)' vs 'Executive (IT & MIS)')",
+      "status": "unavailable"
+    },
+    {
+      "field": "HATIM GROUP Scale & Query Optimization Benchmarks",
+      "reason": "Exact count of retail Web POS outlets synced and verified before/after query runtime metrics have not yet been supplied",
+      "status": "unavailable"
+    },
+    {
+      "field": "Power BI & Python Production vs. Academic Scope",
+      "reason": "Confirmed in PGDDS coursework and GitHub projects (Pyrix); awaiting confirmation on production Power BI/Python usage inside HATIM GROUP",
+      "status": "pending_confirmation"
+    },
+    {
+      "field": "Logic InfoTech Ltd Official Company Entity & Modules",
+      "reason": "Clarify LinkedIn company page alignment ('Logic InfoTech Ltd' vs 'Logic Software Limited') and specific client ERP modules built",
+      "status": "pending_confirmation"
+    },
+    {
+      "field": "Timeline Intervals (Aug 2017 – Jul 2022 & Oct 2023 – Dec 2024)",
+      "reason": "Optional context regarding independent study, consulting, or transition periods not yet listed on LinkedIn",
+      "status": "unavailable"
+    },
+    {
+      "field": "Oracle PL/SQL Production Usage",
+      "reason": "Retained from baseline skills schema; awaiting confirmation on whether Oracle PL/SQL is actively used alongside Microsoft T-SQL",
+      "status": "pending_confirmation"
+    }
+  ],
+  "excluded_items": [
+    "Physical street address (excluded for personal privacy)",
+    "Personal phone number (excluded for personal privacy)",
+    "Hyperbolic unverified claims ('zero-latency', 'zero downtime', '100% accuracy')",
+    "Off-brand LinkedIn items (Adobe Photoshop, Adobe Illustrator, Google Digital Marketing)"
+  ]
+}

@@ -3,7 +3,7 @@
      Generator: python scripts/generate_readme.py -->
 
 <div align="center">
-  <img src="assets/banner/hero-banner.svg?v=912c7754" alt="Salman Rahman - SQL Developer | Data Analyst | C# & Python Enthusiast | Google IT Support Certified" width="100%" />
+  <img src="assets/banner/hero-banner.svg?v=aa727902" alt="Salman Rahman - SQL Server & Database Engineer | T-SQL, Query Optimization & ERP Data Systems | C# (.NET) · Power BI · Python" width="100%" />
 </div>
 
 <br/>
@@ -40,16 +40,16 @@
 
 ## About Me
 
-Computer Science graduate with 4+ years of self-driven experience in SQL development, PL/SQL, data analysis, and IT support.
+Database and Enterprise Systems professional with a B.Sc. in Computer Science & Engineering (Varendra University) and a Post Graduate Diploma in Data Science (UIU, CGPA 3.56), specializing in Microsoft SQL Server engineering, T-SQL development, and operational reporting.
 
-Experienced in working with Microsoft SQL Server and Crystal Reports to model enterprise data, build reliable queries, and deliver operational reporting, alongside foundational engineering skills in C# and Python.
+At HATIM GROUP (Executive, IT & MIS), manages and optimizes Microsoft SQL Server databases supporting the central InteAcc ERP and retail Web POS network—writing and tuning T-SQL queries, stored procedures, and indexing strategies while maintaining backups, integrity checks, and transaction reconciliation.
 
-Deeply interested in ERP systems, relational database architecture, backend development, data engineering, and product design, while continuously expanding technical depth through structured professional learning.
+Previously served as Junior Software Engineer at Logic InfoTech Ltd building enterprise application modules in C# (.NET Framework) with SQL Server and MySQL backends alongside Crystal Reports, complemented by Power BI (DAX) and Python data workflows.
 
 <br/>
 
 <div align="center">
-  <img src="assets/profile/about-terminal.svg?v=71456b31" alt="Engineering Pillars and Experience Terminal (4+ Years (Self-Driven & Enterprise Operations))" width="100%" />
+  <img src="assets/profile/about-terminal.svg?v=1e08da75" alt="Engineering Pillars and Experience Terminal (4+ Years (Self-Driven & Enterprise Operations))" width="100%" />
 </div>
 
 ---
@@ -57,7 +57,7 @@ Deeply interested in ERP systems, relational database architecture, backend deve
 ## Technical Skills
 
 <div align="center">
-  <img src="assets/profile/skills-matrix.svg?v=f79c42c4" alt="Technical Skills Matrix" width="100%" />
+  <img src="assets/profile/skills-matrix.svg?v=75388203" alt="Technical Skills Matrix" width="100%" />
 </div>
 
 <details>
@@ -65,9 +65,9 @@ Deeply interested in ERP systems, relational database architecture, backend deve
 
 | Category | Technologies | Core Focus |
 | :--- | :--- | :--- |
-| **Database** | `Microsoft SQL Server` · `SQL` · `PL/SQL` | **Microsoft SQL Server** (Schema Design, T-SQL, Migrations, Indexing) · **SQL** (CTEs, Window Functions, Joins, Optimization) · **PL/SQL** (Stored Procedures, Triggers, Transactions) |
+| **Database** | `Microsoft SQL Server` · `Transact-SQL (T-SQL)` · `Query Optimization` · `SQL` · `PL/SQL` | **Microsoft SQL Server** (Schema Design, T-SQL, Migrations, Indexing) · **Transact-SQL (T-SQL)** (Stored Procedures, Execution Plans, Reconciliation) · **Query Optimization** (Execution Plan Analysis, Index Refactoring, Diagnostics) · **SQL** (CTEs, Window Functions, Joins, Optimization) · **PL/SQL** (Stored Procedures, Triggers, Transactions) |
 | **Programming** | `Python` · `C#` | **Python** (FastAPI, Automation, Data Analysis, ODBC) · **C#** (.NET, ASP.NET Core, EF Core, Dapper) |
-| **Reporting** | `Crystal Reports` | **Crystal Reports** (Operational Reports, Financial Layouts, Subreports) |
+| **Reporting** | `Crystal Reports` · `Microsoft Power BI` | **Crystal Reports** (Operational Reports, Financial Layouts, Subreports) · **Microsoft Power BI** (KPI Data Modeling, DAX Measures, Executive Dashboards) |
 | **IT Support** | `Hardware & Systems` · `Troubleshooting` · `Technical Support` | **Hardware & Systems** (Workstation Diagnostics, Peripherals, Setup) · **Troubleshooting** (OS, Network, ODBC & Environment Recovery) · **Technical Support** (Incident Resolution, User Assistance, Maintenance) |
 | **Other** | `Data Analysis` · `ERP Systems` · `Backend Development` · `Database Design` | **Data Analysis** (Data Auditing, Cleaning, Business Metrics) · **ERP Systems** (GL, Inventory, AP/AR, HR & Payroll, Manufacturing) · **Backend Development** (REST APIs, Multi-Tenancy, Auth, Caching) · **Database Design** (Normalization, FK Governance, Audit & Soft-Delete) |
 
@@ -149,8 +149,8 @@ Deeply interested in ERP systems, relational database architecture, backend deve
 
 | Qualification | Institution | Year / Status | Core Focus |
 | :--- | :--- | :--- | :--- |
-| **Post Graduate Diploma in Data Science (PGDDS)** | United International University (UIU) & BITM | 2024 | Data Analysis, SQL Querying, Python Analytics & Business Intelligence |
-| **Bachelor of Science (BSc) in Computer Science & Engineering** | Varendra University | Graduated | Relational Databases, Software Engineering, Data Structures, Algorithms & Systems |
+| **Post Graduate Diploma in Data Science (PGDDS)** | United International University (UIU) & BITM | May 2023 – Jan 2024 | Data Analysis, SQL Database Design & Development, Python Analytics & Machine Learning |
+| **Bachelor of Science (B.Sc.) in Computer Science & Engineering** | Varendra University (VU), Rajshahi | Sep 2013 – Aug 2017 | Relational Databases (DBMS), Software Engineering, Data Structures, Algorithms & Systems |
 
 ### Professional Courses & Continuous Learning
 
@@ -192,7 +192,7 @@ Deeply interested in ERP systems, relational database architecture, backend deve
   <img src="assets/icons/career-status.svg?v=dc0cbc4a" alt="Career Status: Open to Opportunities" />
 </p>
 
-- **Current Status:** Open to Opportunities (Dhaka, Bangladesh · HATIM Group)
+- **Current Status:** Open to Opportunities (Dhaka, Bangladesh · HATIM GROUP)
 - **Target Roles:** `SQL Developer` · `Data Analyst` · `Data Engineer` · `Database Developer` · `ERP / Backend Developer`
 
 **Current Focus:**

@@ -1,0 +1,258 @@
+import React, { useEffect, useMemo, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
+import { ArrowRight, Code2, Database, Search, Sparkles, X } from 'lucide-react'
+import type { AiSkillEntry, EcosystemBundle, ProjectItem, SkillEntry } from '../types/ecosystem'
+import type { ViewMode } from './NavigationDock'
+
+interface CommandPaletteProps {
+  open: boolean
+  onClose: () => void
+  bundle: EcosystemBundle
+  onSelectProject: (project: ProjectItem) => void
+  onSelectSkill: (skill: AiSkillEntry) => void
+  onSwitchMode: (mode: ViewMode, anchorId?: string) => void
+}
+
+export const CommandPalette: React.FC<CommandPaletteProps> = ({
+  open,
+  onClose,
+  bundle,
+  onSelectProject,
+  onSelectSkill,
+  onSwitchMode,
+}) => {
+  const [query, setQuery] = useState('')
+  const inputRef = useRef<HTMLInputElement | null>(null)
+
+  useEffect(() => {
+    if (open) {
+      setQuery('')
+      window.setTimeout(() => inputRef.current?.focus(), 40)
+    }
+  }, [open])
+
+  useEffect(() => {
+    if (!open) return
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose()
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [open, onClose])
+
+  const normalized = query.trim().toLowerCase()
+
+  const matchedProjects = useMemo(() => {
+    return bundle.projects
+      .filter((p) => p.verified && p.id !== 'error-storage')
+      .filter(
+        (p) =>
+          !normalized ||
+          p.name.toLowerCase().includes(normalized) ||
+          p.tagline.toLowerCase().includes(normalized) ||
+          p.tech_stack.some((t) => t.toLowerCase().includes(normalized)),
+      )
+      .slice(0, 4)
+  }, [bundle.projects, normalized])
+
+  const matchedSkills = useMemo(() => {
+    return bundle.ai_skills_registry.skills
+      .filter(
+        (s) =>
+          !normalized ||
+          s.name.toLowerCase().includes(normalized) ||
+          s.domain.toLowerCase().includes(normalized) ||
+          s.summary.toLowerCase().includes(normalized) ||
+          s.tags.some((t) => t.toLowerCase().includes(normalized)),
+      )
+      .slice(0, 6)
+  }, [bundle.ai_skills_registry.skills, normalized])
+
+  const matchedTech = useMemo(() => {
+    const flat = (Object.entries(bundle.skills) as Array<[string, SkillEntry[]]>).flatMap(
+      ([cat, items]) => items.map((item) => ({ ...item, category: cat })),
+    )
+    return flat
+      .filter(
+        (s) =>
+          !normalized ||
+          s.name.toLowerCase().includes(normalized) ||
+          s.focus.toLowerCase().includes(normalized) ||
+          s.category.toLowerCase().includes(normalized),
+      )
+      .slice(0, 4)
+  }, [bundle.skills, normalized])
+
+  if (!open) return null
+
+  return createPortal(
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label="Global Command Search"
+      className="fixed inset-0 z-[90] flex items-start justify-center bg-black/75 px-4 pt-20 backdrop-blur-md"
+      onClick={onClose}
+    >
+      <div
+        className="w-full max-w-2xl overflow-hidden rounded-2xl border border-cyan-400/30 bg-[#0B1220] shadow-[0_24px_80px_rgba(0,0,0,0.75)]"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="flex items-center gap-3 border-b border-slate-800 px-4 py-3.5">
+          <Search className="h-4 w-4 text-cyan-400" />
+          <input
+            ref={inputRef}
+            type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search projects, SQL Server stack, certifications, or 32 AI skills..."
+            className="w-full bg-transparent text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none"
+          />
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close Search"
+            className="rounded-lg border border-slate-700 p-1 text-slate-400 hover:text-white cursor-pointer"
+          >
+            <X className="h-4 w-4" />
+          </button>
+        </div>
+
+        <div className="max-h-[65vh] overflow-y-auto p-3 space-y-4">
+          {/* Quick View Jumps */}
+          <div>
+            <p className="px-2 pb-1.5 font-mono text-[10px] uppercase tracking-widest text-slate-500">
+              Quick Navigation
+            </p>
+            <div className="grid grid-cols-1 gap-1.5 sm:grid-cols-3">
+              <button
+                type="button"
+                onClick={() => {
+                  onClose()
+                  onSwitchMode('unified', 'hero')
+                }}
+                className="flex items-center justify-between rounded-xl border border-slate-800 bg-slate-900/60 px-3 py-2 text-left text-xs text-slate-200 hover:border-cyan-400/40 cursor-pointer"
+              >
+                <span>Unified View</span>
+                <ArrowRight className="h-3.5 w-3.5 text-cyan-400" />
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  onClose()
+                  onSwitchMode('portfolio', 'projects')
+                }}
+                className="flex items-center justify-between rounded-xl border border-slate-800 bg-slate-900/60 px-3 py-2 text-left text-xs text-slate-200 hover:border-cyan-400/40 cursor-pointer"
+              >
+                <span>Engineering Case Studies</span>
+                <ArrowRight className="h-3.5 w-3.5 text-cyan-400" />
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  onClose()
+                  onSwitchMode('skills', 'skills-hub')
+                }}
+                className="flex items-center justify-between rounded-xl border border-slate-800 bg-slate-900/60 px-3 py-2 text-left text-xs text-slate-200 hover:border-amber-400/40 cursor-pointer"
+              >
+                <span>AI Skills Hub</span>
+                <ArrowRight className="h-3.5 w-3.5 text-amber-400" />
+              </button>
+            </div>
+          </div>
+
+          {matchedProjects.length > 0 && (
+            <div>
+              <p className="px-2 pb-1.5 font-mono text-[10px] uppercase tracking-widest text-slate-500">
+                Verified Engineering Systems
+              </p>
+              <div className="space-y-1">
+                {matchedProjects.map((project) => (
+                  <button
+                    key={project.id}
+                    type="button"
+                    onClick={() => {
+                      onClose()
+                      onSelectProject(project)
+                    }}
+                    className="flex w-full items-center justify-between gap-3 rounded-xl px-3 py-2.5 text-left transition hover:bg-cyan-400/10 cursor-pointer"
+                  >
+                    <div className="flex items-center gap-3 min-w-0">
+                      <Code2 className="h-4 w-4 shrink-0 text-cyan-400" />
+                      <div className="min-w-0">
+                        <p className="truncate text-sm font-medium text-white">{project.name}</p>
+                        <p className="truncate text-xs text-slate-400">{project.tagline}</p>
+                      </div>
+                    </div>
+                    <span className="shrink-0 font-mono text-[10px] text-cyan-300">CASE STUDY</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {matchedSkills.length > 0 && (
+            <div>
+              <p className="px-2 pb-1.5 font-mono text-[10px] uppercase tracking-widest text-slate-500">
+                Centralized Free AI Skills
+              </p>
+              <div className="space-y-1">
+                {matchedSkills.map((skill) => (
+                  <button
+                    key={skill.id}
+                    type="button"
+                    onClick={() => {
+                      onClose()
+                      onSelectSkill(skill)
+                    }}
+                    className="flex w-full items-center justify-between gap-3 rounded-xl px-3 py-2.5 text-left transition hover:bg-amber-400/10 cursor-pointer"
+                  >
+                    <div className="flex items-center gap-3 min-w-0">
+                      <Sparkles className="h-4 w-4 shrink-0 text-amber-400" />
+                      <div className="min-w-0">
+                        <p className="truncate text-sm font-medium text-white">{skill.name}</p>
+                        <p className="truncate text-xs text-slate-400">
+                          {skill.domain} · {skill.source_type}
+                        </p>
+                      </div>
+                    </div>
+                    <span className="shrink-0 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 font-mono text-[10px] text-emerald-300">
+                      FREE / OSS
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {matchedTech.length > 0 && (
+            <div>
+              <p className="px-2 pb-1.5 font-mono text-[10px] uppercase tracking-widest text-slate-500">
+                Technical Capabilities
+              </p>
+              <div className="grid grid-cols-1 gap-1.5 sm:grid-cols-2">
+                {matchedTech.map((tech) => (
+                  <button
+                    key={tech.name}
+                    type="button"
+                    onClick={() => {
+                      onClose()
+                      onSwitchMode('portfolio', 'capabilities')
+                    }}
+                    className="flex items-center gap-2.5 rounded-xl border border-slate-800/80 bg-slate-900/40 px-3 py-2 text-left hover:border-cyan-400/30 cursor-pointer"
+                  >
+                    <Database className="h-3.5 w-3.5 shrink-0 text-cyan-400" />
+                    <div className="min-w-0">
+                      <p className="truncate text-xs font-medium text-slate-100">{tech.name}</p>
+                      <p className="truncate text-[11px] text-slate-400">{tech.role}</p>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>,
+    document.body,
+  )
+}

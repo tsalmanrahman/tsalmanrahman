@@ -1,0 +1,118 @@
+{
+  "schema_version": "1.0.0",
+  "updated_at": "2026-11-22",
+  "coordination_policy": "Single-writer file ownership managed by Senior AI Lead (Antigravity). Coding tasks are delegated sequentially or to disjoint files via OpenCode CLI free models and independently audited before integration.",
+  "agents": [
+    {
+      "id": "antigravity",
+      "name": "Google Antigravity",
+      "role": "Senior AI Manager, Architect, UI/UX Lead & Final Quality Auditor",
+      "status": "verified-active",
+      "pricing_tier": "free-tier-limited",
+      "pricing_notes": "Quota-governed platform session; delegates bounded coding tasks to free OpenCode/local models to conserve capacity.",
+      "executable": "Antigravity Agent Runtime + Subagents",
+      "supported_skill_paths": [
+        "ai-skills/library/",
+        ".agents/skills/",
+        "AGENTS.md"
+      ],
+      "primary_models": [
+        "Gemini 4 Neon (High)"
+      ],
+      "responsibilities": [
+        "System architecture and multi-agent task decomposition",
+        "LinkedIn source-of-truth verification and Identity Lock enforcement",
+        "Frontend UI/UX orchestration and browser visual QA",
+        "Independent code review, test verification, and git integration"
+      ]
+    },
+    {
+      "id": "opencode-cli",
+      "name": "OpenCode CLI",
+      "role": "Primary Automated Coding & Tooling Worker",
+      "status": "verified-active",
+      "pricing_tier": "free-tier-limited",
+      "pricing_notes": "Open-source CLI (MIT) v2.3.2 configured with genuinely free OpenCode models (deepseek-v4.1-flash-free, big-pickle, flint-40b-free) plus local Ollama.",
+      "executable": "C:\\Users\\ho.mis\\AppData\\Local\\Programs\\ai.opencode.desktop\\resources\\opencode-cli.exe",
+      "service_endpoint": "http://127.0.0.1:28894",
+      "supported_skill_paths": [
+        ".opencode/skills/",
+        "~/.agents/skills/",
+        "AGENTS.md"
+      ],
+      "primary_models": [
+        "opencode/deepseek-v4.1-flash-free",
+        "opencode/big-pickle",
+        "opencode/flint-40b-free"
+      ],
+      "responsibilities": [
+        "Drafting well-scoped Python scripts and TypeScript UI components",
+        "Executing bounded refactors under Senior AI Lead acceptance criteria",
+        "Preserving free-tier usage limits without unnecessary paid calls"
+      ]
+    },
+    {
+      "id": "ollama-local",
+      "name": "Ollama Local Runtime",
+      "role": "Offline Local Code-Model Fallback",
+      "status": "verified-installed",
+      "pricing_tier": "free-open-source",
+      "pricing_notes": "100% free local inference (MIT); zero external API calls. Daemon started on demand.",
+      "executable": "C:\\Users\\ho.mis\\AppData\\Local\\Programs\\Ollama\\ollama.exe",
+      "supported_skill_paths": [
+        "ai-skills/registry.json (via OpenCode provider)"
+      ],
+      "primary_models": [
+        "ollama/qwen2.5-coder:3b",
+        "ollama/qwen2.5-coder:3b-cpu4"
+      ],
+      "responsibilities": [
+        "Zero-cost offline fallback when remote free-tier providers are rate-limited",
+        "Local code completion and syntax checks via OpenCode"
+      ]
+    },
+    {
+      "id": "github-copilot",
+      "name": "GitHub Copilot",
+      "role": "IDE Coding Partner",
+      "status": "verified-configured",
+      "pricing_tier": "freemium",
+      "pricing_notes": "GitHub Copilot offers a limited Free tier and paid Pro subscription; configured as an available OpenCode/IDE provider.",
+      "executable": "VS Code / OpenCode Provider (github-copilot/*)",
+      "supported_skill_paths": [
+        "AGENTS.md",
+        "~/.agents/skills/"
+      ],
+      "primary_models": [
+        "github-copilot/gpt-5.4-nano",
+        "github-copilot/gemini-3.8-flash"
+      ],
+      "responsibilities": [
+        "Interactive IDE assistance and inline code completion",
+        "Secondary verification provider when explicitly authorized"
+      ]
+    },
+    {
+      "id": "shared-agent-skills",
+      "name": "Shared Agent Skills Ecosystem",
+      "role": "Cross-Agent Capability Registry & Sync Layer",
+      "status": "verified-active",
+      "pricing_tier": "free-open-source",
+      "pricing_notes": "Open Markdown SKILL.md specification; 62 local skills verified in ~/.agents/skills plus 8 repo-authored flagship skills synced to .opencode/skills.",
+      "executable": "scripts/skills_hub.py",
+      "supported_skill_paths": [
+        "ai-skills/library/",
+        ".opencode/skills/",
+        "~/.agents/skills/"
+      ],
+      "primary_models": [
+        "Model-agnostic Markdown instructions"
+      ],
+      "responsibilities": [
+        "Centralized skill catalog, versioning, and deduplication",
+        "Automated security auditing and pricing-tier classification",
+        "Cross-agent synchronization into .opencode/skills/"
+      ]
+    }
+  ]
+}

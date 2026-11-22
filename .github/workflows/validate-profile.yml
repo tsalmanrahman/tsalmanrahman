@@ -29,7 +29,10 @@ jobs:
       - name: Validate JSON schemas and local SVG assets
         run: python scripts/validate_data.py --check-assets
 
-      - name: Run profile automation unit tests
+      - name: Validate Centralized AI Skills Hub & Identity Lock
+        run: python scripts/skills_hub.py validate
+
+      - name: Run profile and skills hub unit tests
         run: python -m unittest discover -s tests -p "test_*.py" -v
 
       - name: Verify README.md and SVGs match profile-data

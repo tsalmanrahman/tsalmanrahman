@@ -45,12 +45,12 @@
   <g transform="translate(450, 52)">
     <rect width="386" height="46" rx="6" fill="#09131a" stroke="#38bdf8" stroke-opacity="0.22" />
     <text x="12" y="18" class="item-head-cyan">$ SQL Development &amp; Database Architec...</text>
-    <text x="12" y="34" class="item-sub">Microsoft SQL Server · T-SQL · PL/SQL · Relational Modeling</text>
+    <text x="12" y="34" class="item-sub">Microsoft SQL Server · T-SQL · Query Optimization · Relational Modeling</text>
   </g>
   <g transform="translate(450, 106)">
     <rect width="386" height="46" rx="6" fill="#09131a" stroke="#38bdf8" stroke-opacity="0.22" />
     <text x="12" y="18" class="item-head-cyan">$ Enterprise Reporting &amp; Data Analysis</text>
-    <text x="12" y="34" class="item-sub">Crystal Reports · SQL Queries · Data Analysis · Audit Reconciliation</text>
+    <text x="12" y="34" class="item-sub">Crystal Reports · Microsoft Power BI · SQL Queries · Audit Reconciliation</text>
   </g>
   <g transform="translate(450, 160)">
     <rect width="386" height="46" rx="6" fill="#09131a" stroke="#38bdf8" stroke-opacity="0.22" />
@@ -60,6 +60,6 @@
   <g transform="translate(450, 214)">
     <rect width="386" height="46" rx="6" fill="#09131a" stroke="#38bdf8" stroke-opacity="0.22" />
     <text x="12" y="18" class="item-head-cyan">$ IT Support &amp; Infrastructure Diagnos...</text>
-    <text x="12" y="34" class="item-sub">Google IT Support · Hardware Diagnostics · Technical Support · ODBC Connectivity</text>
+    <text x="12" y="34" class="item-sub">Google IT Support · Hardware Diagnostics · Backup &amp; Recovery · ODBC Connectivity</text>
   </g>
 </svg>
