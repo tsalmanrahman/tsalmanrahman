@@ -737,10 +737,10 @@ def render_career_status_svg(career: dict[str, Any]) -> str:
 
 
 def render_cert_badge_svg(cert: dict[str, Any]) -> str:
-    """Render a borderless transparent monochrome verification seal SVG for a certification."""
+    """Render a borderless circular monochrome verification seal SVG with light interior for light/dark themes."""
     if "microsoft" in str(cert.get("id", "")).lower():
         return """<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="90" cy="90" r="82" stroke="#111110" stroke-width="2.5" />
+  <circle cx="90" cy="90" r="82" fill="#FFFFFF" stroke="#111110" stroke-width="2.5" />
   <circle cx="90" cy="90" r="74" stroke="#111110" stroke-opacity="0.25" stroke-width="1" />
   <text x="90" y="34" text-anchor="middle" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="9.5" font-weight="600" letter-spacing="1.6" fill="#111110">MICROSOFT</text>
   <rect x="69" y="48" width="19" height="19" fill="#F25022" />
@@ -759,7 +759,7 @@ def render_cert_badge_svg(cert: dict[str, Any]) -> str:
     date_short = xml_escape(_truncate(str(cert.get("issue_date") or cert["status"]).upper(), 16))
 
     return f"""<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="90" cy="90" r="82" stroke="#111110" stroke-width="2.5" />
+  <circle cx="90" cy="90" r="82" fill="#FFFFFF" stroke="#111110" stroke-width="2.5" />
   <circle cx="90" cy="90" r="74" stroke="#111110" stroke-opacity="0.25" stroke-width="1" />
   <text x="90" y="38" text-anchor="middle" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="9" font-weight="600" letter-spacing="1.4" fill="#111110">{issuer_short}</text>
   <line x1="50" y1="49" x2="130" y2="49" stroke="#111110" stroke-opacity="0.25" stroke-width="1" />

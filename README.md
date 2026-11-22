@@ -113,10 +113,10 @@
   <a href="https://www.credly.com/badges/0e52798c-e483-499b-ad1c-723ebf802f42"><img src="assets/certificates/google-it-support-badge.png?v=7b904d28" alt="Google IT Support Certificate badge" height="120" /></a>
 </td>
 <td align="center" width="25%" valign="middle">
-  <a href="https://www.freecodecamp.org/certification/salman_rahman/foundational-c-sharp-with-microsoft"><img src="assets/certificates/microsoft-csharp-badge.svg?v=497c13de" alt="Foundational C# with Microsoft badge" height="120" /></a>
+  <a href="https://www.freecodecamp.org/certification/salman_rahman/foundational-c-sharp-with-microsoft"><img src="assets/certificates/microsoft-csharp-badge.svg?v=9d1d1788" alt="Foundational C# with Microsoft badge" height="120" /></a>
 </td>
 <td align="center" width="25%" valign="middle">
-  <a href="https://tsalmanrahman.github.io/tsalmanrahman/#credentials"><img src="assets/certificates/uiu-pgdds-transparent.svg?v=80bac279" alt="UIU &amp; BITM PGDDS 3.56 Emblem" height="120" /></a>
+  <a href="https://tsalmanrahman.github.io/tsalmanrahman/#credentials"><img src="assets/certificates/uiu-pgdds-transparent.svg?v=26f3087f" alt="UIU &amp; BITM PGDDS 3.56 Emblem" height="120" /></a>
 </td>
 </tr>
 </table>
