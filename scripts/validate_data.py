@@ -528,6 +528,9 @@ def _check_single_url(url: str, timeout: int = 12) -> tuple[bool, str]:
                 return True, "HTTP 999 (LinkedIn bot guard; host reachable)"
             if "credly.com" in parsed.netloc.lower() and exc.code == 403:
                 return True, "HTTP 403 (Credly bot guard; host reachable)"
+            # Rate limits confirm the host is reachable; repeated CI runs can hit provider quotas.
+            if exc.code == 429:
+                return True, "HTTP 429 (rate limit; host reachable)"
             return False, f"HTTP {exc.code}"
         except (urllib.error.URLError, TimeoutError, OSError) as exc:
             if method == "HEAD":
