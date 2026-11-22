@@ -1169,6 +1169,8 @@ def render_readme_markdown_website(
     contact_text.append(f"[Live website]({live_url})")
     contact_text_html = " · ".join(contact_text)
 
+    summary_paragraphs = "\n\n".join(profile["summary"])
+
     # Verified data selections
     featured_projects = [p for p in projects if p.get("featured") and p.get("verified")]
     verified_certs = [
