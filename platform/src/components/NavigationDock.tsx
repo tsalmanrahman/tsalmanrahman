@@ -88,7 +88,7 @@ export const NavigationDock: React.FC<NavigationDockProps> = ({
 
           <nav
             aria-label="Workspace View Mode"
-            className="hidden items-center rounded-full border border-slate-200/90 bg-slate-100/90 p-1 md:flex"
+            className="hidden items-center rounded-full border border-slate-200/90 bg-slate-100/90 p-1 lg:flex"
           >
             {MODE_LABELS.map((mode) => {
               const active = viewMode === mode.id
@@ -97,7 +97,7 @@ export const NavigationDock: React.FC<NavigationDockProps> = ({
                   key={mode.id}
                   type="button"
                   onClick={() => onChangeViewMode(mode.id)}
-                  className={`rounded-full px-3.5 py-1.5 font-mono text-xs transition-all cursor-pointer ${
+                  className={`whitespace-nowrap rounded-full px-3.5 py-1.5 font-mono text-xs transition-all cursor-pointer ${
                     active
                       ? 'border border-slate-200 bg-white font-semibold text-slate-950 shadow-xs'
                       : 'border border-transparent text-slate-600 hover:text-slate-950'
@@ -135,8 +135,8 @@ export const NavigationDock: React.FC<NavigationDockProps> = ({
           </div>
         </div>
 
-        {/* Mobile Mode Switcher Strip */}
-        <div className="flex items-center justify-center gap-1 border-t border-slate-200/70 bg-slate-50/70 px-3 py-1.5 md:hidden">
+        {/* Mobile / Tablet Mode Switcher Strip */}
+        <div className="flex items-center justify-center gap-1 border-t border-slate-200/70 bg-slate-50/70 px-3 py-1.5 lg:hidden">
           {MODE_LABELS.map((mode) => {
             const active = viewMode === mode.id
             return (

@@ -18,6 +18,7 @@ import type {
   ProfileData,
 } from '../types/ecosystem'
 import { MagneticButton } from './MagneticButton'
+import { InteractivePortraitStage } from './InteractivePortraitStage'
 import type { ViewMode } from './NavigationDock'
 
 interface HeroSectionProps {
@@ -159,49 +160,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </div>
         </div>
 
-        {/* Right: Genuine Identity-Locked Studio Portrait Card */}
+        {/* Right: Interactive 3D Animated Portrait Stage (Identity Locked) */}
         <div className="lg:col-span-5">
-          <div className="glass-panel relative mx-auto max-w-md overflow-hidden rounded-3xl p-5">
-            <div className="mb-3 flex items-center justify-between font-mono text-[11px]">
-              <span className="inline-flex items-center gap-1.5 font-medium text-emerald-700">
-                <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
-                IDENTITY LOCK ACTIVE
-              </span>
-              <span className="text-slate-500">SHA256:{identityLock.sha256.slice(0, 10)}</span>
-            </div>
-
-            <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-100">
-              <img
-                src="./assets/identity/salman-rahman-portrait.jpg"
-                alt="Salman Rahman — Verified Studio Headshot"
-                className="aspect-[4/4.2] w-full object-cover object-top"
-              />
-              <div className="absolute inset-x-3 bottom-3 flex items-end justify-between gap-2 rounded-xl border border-slate-200/90 bg-white/92 px-3.5 py-2.5 shadow-sm backdrop-blur-md">
-                <div>
-                  <p className="font-display text-sm font-bold text-slate-950">{profile.name}</p>
-                  <p className="font-mono text-[11px] font-medium text-blue-700">
-                    Executive (IT &amp; MIS) · SQL &amp; ERP
-                  </p>
-                </div>
-                <span className="rounded-md border border-emerald-200 bg-emerald-50 px-2 py-0.5 font-mono text-[10px] font-semibold text-emerald-700">
-                  UNALTERED PHOTO
-                </span>
-              </div>
-            </div>
-
-            <div className="mt-4 flex items-center justify-between gap-2 rounded-xl border border-slate-200/90 bg-slate-50/90 px-3.5 py-2.5 text-xs text-slate-600">
-              <span className="truncate font-mono text-[11px]">
-                Ref: {identityLock.primary_reference.replace('https://www.', '')}
-              </span>
-              <button
-                type="button"
-                onClick={onOpenVerificationModal}
-                className="shrink-0 font-mono text-[11px] font-semibold text-blue-700 hover:text-blue-900 cursor-pointer"
-              >
-                Audit Log →
-              </button>
-            </div>
-          </div>
+          <InteractivePortraitStage
+            portraitSrc="./assets/identity/salman-rahman-portrait.jpg"
+            ownerName={profile.name}
+            roleLabel="Executive (IT & MIS) · SQL & ERP"
+            identityShaPrefix={identityLock.sha256.slice(0, 10)}
+            onOpenVerificationModal={onOpenVerificationModal}
+          />
         </div>
       </div>
 

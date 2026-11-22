@@ -38,7 +38,7 @@ export const SpatialWebGLCanvas: React.FC = () => {
     container.appendChild(renderer.domElement)
 
     const rootGroup = new THREE.Group()
-    rootGroup.position.set(2.4, 0.2, 0)
+    rootGroup.position.set(-3.2, 0.2, 0)
     scene.add(rootGroup)
 
     // Outer crystalline ERP/data architecture wireframe (Antigravity Cobalt Blue)
@@ -47,7 +47,7 @@ export const SpatialWebGLCanvas: React.FC = () => {
     const outerMat = new THREE.LineBasicMaterial({
       color: 0x2563eb,
       transparent: true,
-      opacity: 0.16,
+      opacity: 0.09,
     })
     const outerMesh = new THREE.LineSegments(outerWire, outerMat)
     rootGroup.add(outerMesh)
@@ -58,7 +58,7 @@ export const SpatialWebGLCanvas: React.FC = () => {
     const innerMat = new THREE.LineBasicMaterial({
       color: 0x6366f1,
       transparent: true,
-      opacity: 0.22,
+      opacity: 0.12,
     })
     const innerMesh = new THREE.LineSegments(innerWire, innerMat)
     rootGroup.add(innerMesh)
@@ -117,7 +117,7 @@ export const SpatialWebGLCanvas: React.FC = () => {
       camera.updateProjectionMatrix()
       renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2))
       renderer.setSize(w, h)
-      rootGroup.position.x = w < 768 ? 0 : 2.4
+      rootGroup.position.x = w < 768 ? 0 : -3.2
     }
 
     onResize()
