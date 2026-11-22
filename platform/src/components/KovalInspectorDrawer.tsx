@@ -54,7 +54,10 @@ export const KovalInspectorDrawer: React.FC<KovalInspectorDrawerProps> = ({
       onClick={onClose}
     >
       <div
-        className="flex h-full w-full max-w-[540px] flex-col overflow-y-auto border-r border-[#111110] bg-white"
+        data-lenis-prevent
+        data-lenis-prevent-wheel
+        data-lenis-prevent-touch
+        className="flex h-full w-full max-w-[540px] flex-col overflow-y-auto overscroll-contain border-r border-[#111110] bg-white"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Sticky Header */}

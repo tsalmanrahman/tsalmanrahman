@@ -28,6 +28,7 @@ export const App: React.FC = () => {
   const [activeSectionId, setActiveSectionId] = useState<string>('top')
   const [overDarkFooter, setOverDarkFooter] = useState<boolean>(false)
   const lenisRef = useRef<Lenis | null>(null)
+  const skillsScrollRef = useRef<HTMLDivElement | null>(null)
 
   // Deep link via ?work=<project-id>
   useEffect(() => {
@@ -67,15 +68,51 @@ export const App: React.FC = () => {
     updateUrlWorkParam(null)
   }, [updateUrlWorkParam])
 
-  // Escape closes AI Skills Hub sheet
+  // Escape closes AI Skills Hub modal when its inner skill inspector isn't active
   useEffect(() => {
     if (!skillsHubOpen) return
     const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setSkillsHubOpen(false)
+      if (e.key === 'Escape' && !selectedSkill) {
+        setSkillsHubOpen(false)
+      }
     }
     window.addEventListener('keydown', onKeyDown)
     return () => window.removeEventListener('keydown', onKeyDown)
+  }, [skillsHubOpen, selectedSkill])
+
+  // Focus scrollable body when /ai-skills opens so keyboard scrolling works immediately
+  useEffect(() => {
+    if (skillsHubOpen) {
+      window.setTimeout(() => {
+        skillsScrollRef.current?.focus({ preventScroll: true })
+      }, 20)
+    }
   }, [skillsHubOpen])
+
+  // Pause Lenis and lock background document scroll whenever any modal/drawer is open
+  const anyOverlayOpen =
+    skillsHubOpen || Boolean(selectedProject) || commandOpen || verificationOpen
+
+  useEffect(() => {
+    const html = document.documentElement
+    const body = document.body
+
+    if (anyOverlayOpen) {
+      lenisRef.current?.stop()
+      html.style.overflow = 'hidden'
+      body.style.overflow = 'hidden'
+    } else {
+      html.style.overflow = ''
+      body.style.overflow = ''
+      lenisRef.current?.start()
+    }
+
+    return () => {
+      html.style.overflow = ''
+      body.style.overflow = ''
+      lenisRef.current?.start()
+    }
+  }, [anyOverlayOpen])
 
   // Lenis smooth scroll + deterministic active section & dark-footer contrast tracking
   useEffect(() => {
@@ -191,7 +228,6 @@ export const App: React.FC = () => {
           identityLock={bundle.identity_lock}
           onExploreWork={() => scrollToSection('work')}
           onSearchPortal={handleHeroSearch}
-          onOpenVerificationModal={() => setVerificationOpen(true)}
         />
 
         <KovalSections
@@ -209,11 +245,7 @@ export const App: React.FC = () => {
         />
       </main>
 
-      <KovalFooter
-        profile={bundle.profile}
-        onOpenSkillsHub={() => setSkillsHubOpen(true)}
-        onOpenVerificationModal={() => setVerificationOpen(true)}
-      />
+      <KovalFooter profile={bundle.profile} onOpenSkillsHub={() => setSkillsHubOpen(true)} />
 
       <KovalPageRail
         activeSectionId={activeSectionId}
@@ -223,7 +255,7 @@ export const App: React.FC = () => {
 
       <KovalInspectorDrawer project={selectedProject} onClose={handleCloseProject} />
 
-      {/* On-Demand Sharp Monochrome AI Skills Hub Sheet */}
+      {/* On-Demand Sharp Monochrome AI Skills Hub Dialog with Isolated Scroll Container */}
       {skillsHubOpen &&
         createPortal(
           <div
@@ -234,28 +266,39 @@ export const App: React.FC = () => {
             onClick={() => setSkillsHubOpen(false)}
           >
             <div
-              className="relative max-h-[90vh] w-full max-w-6xl overflow-y-auto border border-[#111110] bg-white"
+              className="flex h-[90vh] max-h-[90vh] w-full max-w-6xl flex-col overflow-hidden border border-[#111110] bg-white"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="sticky top-0 z-20 flex items-center justify-between border-b border-[#111110]/15 bg-white px-6 py-4">
-                <span className="font-mono text-xs uppercase tracking-[0.12em] text-[#111110]">
+              <div className="flex shrink-0 items-center justify-between border-b border-[#111110]/15 bg-white px-5 py-4 sm:px-8">
+                <span className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-[#111110]">
                   CENTRALIZED AI SKILLS HUB ({bundle.ai_skills_registry.skills.length})
                 </span>
                 <button
                   type="button"
                   onClick={() => setSkillsHubOpen(false)}
                   aria-label="Close AI Skills Hub"
-                  className="border border-[#111110] p-1.5 text-[#111110] hover:bg-[#111110] hover:text-white cursor-pointer"
+                  className="border border-[#111110] p-1.5 text-[#111110] transition hover:bg-[#111110] hover:text-white cursor-pointer"
                 >
                   <X className="h-4 w-4" />
                 </button>
               </div>
-              <AiSkillsHubSection
-                registry={bundle.ai_skills_registry}
-                agentsRoster={bundle.ai_agents}
-                selectedSkill={selectedSkill}
-                onSelectSkill={setSelectedSkill}
-              />
+
+              <div
+                id="skills-hub-scroll"
+                ref={skillsScrollRef}
+                tabIndex={0}
+                data-lenis-prevent
+                data-lenis-prevent-wheel
+                data-lenis-prevent-touch
+                className="min-h-0 flex-1 overflow-y-auto overscroll-contain focus:outline-none"
+              >
+                <AiSkillsHubSection
+                  registry={bundle.ai_skills_registry}
+                  agentsRoster={bundle.ai_agents}
+                  selectedSkill={selectedSkill}
+                  onSelectSkill={setSelectedSkill}
+                />
+              </div>
             </div>
           </div>,
           document.body,

@@ -3,6 +3,7 @@ __pycache__/
 *.pyo
 .pytest_cache/
 .env
+.env.*
 *.bak
 *.log
 platform/node_modules/

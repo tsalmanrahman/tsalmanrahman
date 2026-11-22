@@ -37,7 +37,10 @@ export const VerificationModal: React.FC<VerificationModalProps> = ({
       onClick={onClose}
     >
       <div
-        className="max-h-[88vh] w-full max-w-3xl overflow-y-auto rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 shadow-2xl"
+        data-lenis-prevent
+        data-lenis-prevent-wheel
+        data-lenis-prevent-touch
+        className="max-h-[88vh] w-full max-w-3xl overflow-y-auto overscroll-contain border border-[#111110] bg-white p-6 sm:p-8"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-start justify-between gap-4 border-b border-slate-200 pb-4">

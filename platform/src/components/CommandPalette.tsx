@@ -54,7 +54,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
 
   const matchedProjects = useMemo(() => {
     return bundle.projects
-      .filter((p) => p.verified && p.id !== 'error-storage')
+      .filter((p) => p.verified && p.id !== 'error-storage' && p.id !== 'github-profile-ecosystem')
       .filter(
         (p) =>
           !normalized ||
@@ -127,7 +127,11 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
           </button>
         </div>
 
-        <div className="max-h-[65vh] space-y-4 overflow-y-auto p-4">
+        <div
+          data-lenis-prevent
+          data-lenis-prevent-wheel
+          className="max-h-[65vh] space-y-4 overflow-y-auto overscroll-contain p-4"
+        >
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
             {SECTION_LINKS.map((sec) => (
               <button

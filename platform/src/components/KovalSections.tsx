@@ -48,7 +48,10 @@ export const KovalSections: React.FC<KovalSectionsProps> = ({
   onOpenVerificationModal,
 }) => {
   const visibleProjects = useMemo(
-    () => projects.filter((p) => p.verified && p.id !== 'error-storage').slice(0, 3),
+    () =>
+      projects.filter(
+        (p) => p.verified && p.id !== 'error-storage' && p.id !== 'github-profile-ecosystem',
+      ),
     [projects],
   )
 

@@ -6,7 +6,6 @@ interface KovalHeroProps {
   identityLock: IdentityLockManifest
   onExploreWork: () => void
   onSearchPortal: (query: string) => void
-  onOpenVerificationModal: () => void
 }
 
 export const KovalHero: React.FC<KovalHeroProps> = ({
@@ -14,7 +13,6 @@ export const KovalHero: React.FC<KovalHeroProps> = ({
   identityLock,
   onExploreWork,
   onSearchPortal,
-  onOpenVerificationModal,
 }) => {
   const [query, setQuery] = useState('')
 
@@ -54,7 +52,7 @@ export const KovalHero: React.FC<KovalHeroProps> = ({
           </p>
         </div>
 
-        {/* Right Rail: Architectural Portrait Frame (Identity Locked) */}
+        {/* Right Rail: Architectural Portrait Frame */}
         <div className="flex flex-col items-start lg:items-stretch">
           <div className="w-40 overflow-hidden border border-[#111110] bg-[#F4F4F2] sm:w-48 lg:w-[244px]">
             <img
@@ -63,13 +61,6 @@ export const KovalHero: React.FC<KovalHeroProps> = ({
               className="aspect-square w-full object-cover object-top"
             />
           </div>
-          <button
-            type="button"
-            onClick={onOpenVerificationModal}
-            className="mt-2 font-mono text-[11px] text-[#656561] transition hover:text-[#111110] cursor-pointer text-left"
-          >
-            SHA-256 LOCKED · {identityLock.sha256.slice(0, 10)}
-          </button>
         </div>
       </div>
 
