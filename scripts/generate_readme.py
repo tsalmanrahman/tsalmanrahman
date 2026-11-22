@@ -1161,12 +1161,12 @@ def render_readme_markdown_website(
     contact_text: list[str] = []
     for key, label in (("linkedin", "LinkedIn"), ("credly", "Credly")):
         if contact.get(key):
-            contact_text.append(f"[{label}]({contact[key]})")
+            contact_text.append(f'<a href="{contact[key]}">{label}</a>')
     if contact.get("show_email") and contact.get("email"):
-        contact_text.append(f"[Email](mailto:{contact['email']})")
+        contact_text.append(f'<a href="mailto:{contact["email"]}">Email</a>')
     if contact.get("github"):
-        contact_text.append(f"[GitHub]({contact['github']})")
-    contact_text.append(f"[Live website]({live_url})")
+        contact_text.append(f'<a href="{contact["github"]}">GitHub</a>')
+    contact_text.append(f'<a href="{live_url}">Live website</a>')
     contact_text_html = " · ".join(contact_text)
 
     summary_paragraphs = "\n\n".join(profile["summary"])
@@ -1188,7 +1188,7 @@ def render_readme_markdown_website(
     # Selected work cards
     project_cells: list[str] = []
     for idx, proj in enumerate(featured_projects, start=1):
-        stack = " · ".join(f"`{t}`" for t in proj.get("tech_stack", []))
+        stack = " · ".join(proj.get("tech_stack", []))
         image = ""
         if proj.get("image_path"):
             image = (
@@ -1199,11 +1199,11 @@ def render_readme_markdown_website(
         project_cells.append(
             f"""
 <td width="50%" valign="top">
-  <sub>{idx:02d} · {proj['category'].upper()}</sub><br/>
+  <sub>{idx:02d} · {proj['category'].upper().replace('&', '&amp;')}</sub><br/>
   <b>{proj['name']}</b><br/>
   {image}
   <p>{proj['tagline']}</p>
-  <p><code>{stack}</code></p>
+  <p><sub>{stack}</sub></p>
   <a href="{proj['repo_url']}">/inspect</a> · <a href="{proj['repo_url']}">/github</a>
 </td>"""
         )
@@ -1234,7 +1234,7 @@ def render_readme_markdown_website(
             f"""
 <td align="center" width="25%" valign="top">
   {badge}<br/>
-  <sub>{cert['issuer'].upper()}</sub><br/>
+  <sub>{cert['issuer'].upper().replace('&', '&amp;')}</sub><br/>
   <b>{cert['name']}</b><br/>
   <sub>{cert['issue_date']}</sub><br/>
   {verify}
@@ -1257,7 +1257,7 @@ def render_readme_markdown_website(
 
     # Ledgers
     experience_rows = "\n".join(
-        f"| **{p['organization']}** | {p['role']} | {p['period']} |"
+        f"| **{p['organization']}** | {p['role'].replace('|', '\\|')} | {p['period']} |"
         for p in experience.get("positions", [])
     )
     education_rows = "\n".join(
@@ -1304,7 +1304,7 @@ def render_readme_markdown_website(
   <img src="assets/identity/web/salman-rahman-portrait.jpg" width="140" alt="{profile['name']}" />
   <h1>{profile['name']}.</h1>
   <p><b>SQL &amp; ERP ENGINEER</b><br/>AT {profile['organization']} · {location_short}</p>
-  <p>{profile['short_bio']}</p>
+  <p>{profile['short_bio'].replace('&', '&amp;')}</p>
   <p>
   {contact_html}
   </p>
@@ -1453,7 +1453,7 @@ Browse all **{ai_skill_count}** audited AI agent skills &amp; orchestrators.
 
 ## Start with A MESSAGE.
 
-<a href="mailto:{contact['email']}">{contact['email']}</a> · [Send email](mailto:{contact['email']}) · {contact_text_html}
+<a href="mailto:{contact['email']}">{contact['email']}</a> · <a href="mailto:{contact['email']}">Send email</a> · {contact_text_html}
 
 ---
 
