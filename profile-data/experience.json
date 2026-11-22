@@ -1,16 +1,16 @@
 {
   "years_of_experience": "4+ Years (Self-Driven & Enterprise Operations)",
-  "current_organization": "HATIM Group",
+  "current_organization": "HATIM GROUP",
   "highlights": [
     {
       "area": "SQL Development & Database Architecture",
-      "summary": "4+ years of self-driven and hands-on experience designing relational schemas, writing T-SQL and PL/SQL queries, stored procedures, migrations, and ensuring data integrity on Microsoft SQL Server.",
-      "tools": ["Microsoft SQL Server", "T-SQL", "PL/SQL", "Relational Modeling"]
+      "summary": "Hands-on experience designing relational schemas, analyzing execution plans, writing T-SQL queries, stored procedures, indexing strategies, and ensuring data integrity on Microsoft SQL Server.",
+      "tools": ["Microsoft SQL Server", "T-SQL", "Query Optimization", "Relational Modeling"]
     },
     {
       "area": "Enterprise Reporting & Data Analysis",
-      "summary": "Building structured operational and analytical reports using Crystal Reports and SQL aggregations to turn raw business records into clear, verifiable outputs.",
-      "tools": ["Crystal Reports", "SQL Queries", "Data Analysis", "Audit Reconciliation"]
+      "summary": "Building structured operational, financial, and sales reports using Crystal Reports, Power BI (DAX), and analytical SQL reconciliations across retail POS and ERP datasets.",
+      "tools": ["Crystal Reports", "Microsoft Power BI", "SQL Queries", "Audit Reconciliation"]
     },
     {
       "area": "ERP Systems & Backend Engineering",
@@ -19,8 +19,90 @@
     },
     {
       "area": "IT Support & Infrastructure Diagnostics",
-      "summary": "Applying Google IT Support certified methodology to hardware troubleshooting, operating system maintenance, ODBC driver configuration, and technical support.",
-      "tools": ["Google IT Support", "Hardware Diagnostics", "Technical Support", "ODBC Connectivity"]
+      "summary": "Applying Google IT Support certified methodology to hardware troubleshooting, operating system maintenance, ODBC driver configuration, and SQL Server backup/recovery checks.",
+      "tools": ["Google IT Support", "Hardware Diagnostics", "Backup & Recovery", "ODBC Connectivity"]
+    }
+  ],
+  "positions": [
+    {
+      "id": "hatim-group",
+      "role": "Executive (IT & MIS) | SQL Developer & Data Analyst",
+      "organization": "HATIM GROUP",
+      "location": "Dhaka, Bangladesh",
+      "work_mode": "On-site",
+      "period": "Dec 2024 – Present",
+      "current": true,
+      "summary": "Managing enterprise database operations, T-SQL performance tuning, and operational reporting across HATIM GROUP's central InteAcc ERP and retail Web POS environments.",
+      "responsibilities": [
+        "Analyze execution plans and refactor T-SQL queries, views, stored procedures, and indexes supporting InteAcc ERP and retail Web POS modules.",
+        "Build and execute SQL audit scripts to reconcile daily transaction synchronization between retail Web POS outlets and central ERP accounting and inventory ledgers.",
+        "Administer Microsoft SQL Server maintenance routines, database backups, recovery verification, schema updates, and data integrity checks.",
+        "Transform sales, inventory, and supply chain datasets into structured operational and management reporting."
+      ],
+      "technologies": [
+        "Microsoft SQL Server",
+        "Transact-SQL (T-SQL)",
+        "InteAcc ERP",
+        "Web POS",
+        "Query Optimization",
+        "Database Administration"
+      ],
+      "verified_source": "LinkedIn Profile Audit (2026-11-17)"
+    },
+    {
+      "id": "logic-infotech",
+      "role": "Junior Software Engineer",
+      "organization": "Logic InfoTech Ltd",
+      "location": "Dhaka, Bangladesh",
+      "work_mode": "On-site",
+      "period": "Jul 2022 – Oct 2023 (1 yr 4 mos)",
+      "current": false,
+      "summary": "Developed backend enterprise software features, relational database logic, and client reporting solutions in C# (.NET Framework), SQL Server, MySQL, and Crystal Reports.",
+      "responsibilities": [
+        "Designed and delivered operational and financial client reports using Crystal Reports backed by SQL Server and MySQL queries.",
+        "Authored, maintained, and debugged stored procedures, views, and relational queries supporting core enterprise business workflows.",
+        "Implemented and updated desktop and enterprise software components in C# and the .NET Framework using object-oriented design patterns.",
+        "Partnered with project managers and client stakeholders to diagnose database and application defects and support production deployments."
+      ],
+      "technologies": [
+        "C#",
+        ".NET Framework",
+        "Microsoft SQL Server",
+        "MySQL",
+        "Crystal Reports",
+        "OOP"
+      ],
+      "verified_source": "LinkedIn Profile Audit (2026-11-17)"
+    }
+  ],
+  "recommendations": [
+    {
+      "id": "rafiqul-islam",
+      "author": "Mohammad Rafiqul Islam",
+      "title": "Executive Vice President & SQL Server DBA at Sonali Life Insurance | Adjunct Faculty at UIU",
+      "date": "August 2025",
+      "relationship": "Faculty & Senior DBA Mentor",
+      "excerpt": "Endorsed Salman Rahman's strong SQL capabilities, database management fundamentals, analytical mindset, and disciplined problem-solving approach.",
+      "verified_source": "LinkedIn Recommendations (Observed 2026-11-17)"
+    },
+    {
+      "id": "mazharul-haque",
+      "author": "Mazharul Haque",
+      "title": "Google Certified Project Manager | Business Analyst | ERP & Six Sigma",
+      "date": "October 2022",
+      "relationship": "Colleague / ERP Collaborator",
+      "excerpt": "Highlighted Salman's grasp of ERP business dynamics, clear technical communication, and collaborative execution on software initiatives.",
+      "verified_source": "LinkedIn Recommendations (Observed 2026-11-17)"
+    }
+  ],
+  "languages": [
+    {
+      "language": "Bangla",
+      "proficiency": "Native / Bilingual Proficiency"
+    },
+    {
+      "language": "English",
+      "proficiency": "Professional Working Proficiency (Duolingo English Test Score: 129, Aug 2026)"
     }
   ]
 }

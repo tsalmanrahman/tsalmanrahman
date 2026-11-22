@@ -92,23 +92,27 @@
   <text x="34" y="102" class="hero-name">&gt; SALMAN_RAHMAN</text>
   <rect x="306" y="79" width="12" height="24" rx="1.5" fill="#00ff9c" class="cur" />
 
-  <text x="34" y="132" class="hero-role">[SQL Developer | Data Analyst | C# &amp; Python Enthusiast | Google IT Support Certified]</text>
-  <text x="34" y="160" class="hero-desc">Designing resilient relational databases, enterprise ERP workflows, and actionable reporting...</text>
+  <text x="34" y="132" class="hero-role">[SQL Server &amp; Database Engineer | T-SQL, Query Optimization &amp; ERP Data Systems | C# (.NET) · Power BI · Python]</text>
+  <text x="34" y="160" class="hero-desc">Designing resilient SQL Server architectures, enterprise ERP workflows, and actionable report...</text>
 
   <line x1="34" y1="182" x2="826" y2="182" stroke="#10b981" stroke-opacity="0.2" stroke-width="1" />
 
   <g transform="translate(34, 198)">
     <g transform="translate(0, 0)">
-      <rect width="226" height="26" rx="5" fill="#09151a" stroke="#10b981" stroke-opacity="0.35" stroke-width="1" />
-      <text x="113.0" y="16.5" text-anchor="middle" class="pill-text">[01] Google IT Support Certified</text>
+      <rect width="169" height="26" rx="5" fill="#09151a" stroke="#10b981" stroke-opacity="0.35" stroke-width="1" />
+      <text x="84.5" y="16.5" text-anchor="middle" class="pill-text">[01] SQL Server &amp; T-SQL</text>
     </g>
-    <g transform="translate(236, 0)">
-      <rect width="201" height="26" rx="5" fill="#09151a" stroke="#10b981" stroke-opacity="0.35" stroke-width="1" />
-      <text x="100.5" y="16.5" text-anchor="middle" class="pill-text">[02] BSc in Computer Science</text>
+    <g transform="translate(179, 0)">
+      <rect width="188" height="26" rx="5" fill="#09151a" stroke="#10b981" stroke-opacity="0.35" stroke-width="1" />
+      <text x="94.0" y="16.5" text-anchor="middle" class="pill-text">[02] InteAcc ERP &amp; Web POS</text>
     </g>
-    <g transform="translate(447, 0)">
-      <rect width="233" height="26" rx="5" fill="#09151a" stroke="#10b981" stroke-opacity="0.35" stroke-width="1" />
-      <text x="116.5" y="16.5" text-anchor="middle" class="pill-text">[03] SQL Server &amp; Crystal Reports</text>
+    <g transform="translate(377, 0)">
+      <rect width="169" height="26" rx="5" fill="#09151a" stroke="#10b981" stroke-opacity="0.35" stroke-width="1" />
+      <text x="84.5" y="16.5" text-anchor="middle" class="pill-text">[03] PGDDS (UIU · 3.56)</text>
+    </g>
+    <g transform="translate(556, 0)">
+      <rect width="162" height="26" rx="5" fill="#09151a" stroke="#10b981" stroke-opacity="0.35" stroke-width="1" />
+      <text x="81.0" y="16.5" text-anchor="middle" class="pill-text">[04] Dhaka, Bangladesh</text>
     </g>
   </g>
 </svg>

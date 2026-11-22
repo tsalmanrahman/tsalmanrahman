@@ -1,0 +1,23 @@
+{
+  "owner": "Salman Rahman",
+  "username": "tsalmanrahman",
+  "identity_lock_enforced": true,
+  "primary_reference": "https://www.linkedin.com/in/t-salmanrahman",
+  "verified_date": "2026-11-22",
+  "original_path": "assets/identity/original/salman-rahman-original.jpg",
+  "web_path": "assets/identity/web/salman-rahman-portrait.jpg",
+  "sha256": "4213d6ad1dfa967a059db3073f253e950d20fd5d2b1c83eee27f653036d245d8",
+  "size_bytes": 301070,
+  "dimensions_note": "Studio portrait headshot in navy blazer and white open-collar shirt on neutral light backdrop",
+  "permitted_operations": [
+    "Lossless verbatim archival of original portrait",
+    "Responsive CSS framing, aspect-ratio cropping, and studio halo border styling",
+    "Website image optimization preserving natural facial identity"
+  ],
+  "prohibited_operations": [
+    "AI face generation or synthetic face replacement",
+    "Face swapping or blending with another individual",
+    "Facial structure, age, skin tone, or identity alteration",
+    "Removing or altering the immutable original image file"
+  ]
+}

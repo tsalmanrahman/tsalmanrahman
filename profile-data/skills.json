@@ -9,6 +9,22 @@
       "badge_url": "https://img.shields.io/badge/Microsoft_SQL_Server-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white"
     },
     {
+      "name": "Transact-SQL (T-SQL)",
+      "role": "Procedural & Query Engineering",
+      "focus": "Stored Procedures, Execution Plans, Reconciliation",
+      "color": "#E11D48",
+      "short_code": "TSQL",
+      "badge_url": "https://img.shields.io/badge/Transact--SQL_(T--SQL)-E11D48?style=flat-square&logo=microsoftsqlserver&logoColor=white"
+    },
+    {
+      "name": "Query Optimization",
+      "role": "Performance Tuning",
+      "focus": "Execution Plan Analysis, Index Refactoring, Diagnostics",
+      "color": "#F59E0B",
+      "short_code": "OPT",
+      "badge_url": "https://img.shields.io/badge/Query_Optimization-F59E0B?style=flat-square&logo=databricks&logoColor=white"
+    },
+    {
       "name": "SQL",
       "role": "Primary Query Language",
       "focus": "CTEs, Window Functions, Joins, Optimization",
@@ -51,6 +67,14 @@
       "color": "#0F766E",
       "short_code": "CR",
       "badge_url": "https://img.shields.io/badge/Crystal_Reports-0F766E?style=flat-square&logo=sap&logoColor=white"
+    },
+    {
+      "name": "Microsoft Power BI",
+      "role": "Business Intelligence & DAX",
+      "focus": "KPI Data Modeling, DAX Measures, Executive Dashboards",
+      "color": "#F2C811",
+      "short_code": "PBI",
+      "badge_url": "https://img.shields.io/badge/Microsoft_Power_BI-F2C811?style=flat-square&logo=powerbi&logoColor=black"
     }
   ],
   "IT Support": [
