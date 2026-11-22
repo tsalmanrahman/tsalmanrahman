@@ -1,0 +1,1864 @@
+{
+  "generated_at_utc": "2026-11-22T06:06:19Z",
+  "profile": {
+    "name": "Salman Rahman",
+    "username": "tsalmanrahman",
+    "headline": "SQL Server & Database Engineer | T-SQL, Query Optimization & ERP Data Systems | C# (.NET) · Power BI · Python",
+    "short_bio": "SQL Server & ERP Database professional specializing in Microsoft SQL Server, T-SQL optimization, multi-outlet Web POS reconciliation, Crystal Reports, and enterprise software in C# (.NET) and Python.",
+    "location": "Dhaka, Bangladesh",
+    "organization": "HATIM GROUP",
+    "summary": [
+      "Database and Enterprise Systems professional with a B.Sc. in Computer Science & Engineering (Varendra University) and a Post Graduate Diploma in Data Science (UIU, CGPA 3.56), specializing in Microsoft SQL Server engineering, T-SQL development, and operational reporting.",
+      "At HATIM GROUP (Executive, IT & MIS), manages and optimizes Microsoft SQL Server databases supporting the central InteAcc ERP and retail Web POS network—writing and tuning T-SQL queries, stored procedures, and indexing strategies while maintaining backups, integrity checks, and transaction reconciliation.",
+      "Previously served as Junior Software Engineer at Logic InfoTech Ltd building enterprise application modules in C# (.NET Framework) with SQL Server and MySQL backends alongside Crystal Reports, complemented by Power BI (DAX) and Python data workflows."
+    ],
+    "problem_solving_approach": [
+      {
+        "pillar": "Data Integrity First",
+        "description": "Designing normalized relational schemas, explicit constraints, and deterministic audit trails in Microsoft SQL Server."
+      },
+      {
+        "pillar": "Actionable Business Reporting",
+        "description": "Transforming complex operational and transactional tables into clear, dependable Crystal Reports, Power BI models, and analytical SQL datasets."
+      },
+      {
+        "pillar": "Pragmatic Backend Automation",
+        "description": "Building maintainable ERP workflows, APIs, and operational tooling with C# (.NET) and Python (FastAPI)."
+      },
+      {
+        "pillar": "Reliable Systems & IT Foundation",
+        "description": "Applying Google IT Support certified diagnostics across workstations, ODBC connectivity, backups, and enterprise infrastructure."
+      }
+    ],
+    "contact": {
+      "linkedin": "https://www.linkedin.com/in/t-salmanrahman",
+      "credly": "https://www.credly.com/users/salman_rahman",
+      "github": "https://github.com/tsalmanrahman",
+      "email": "t.salmanrahman@gmail.com",
+      "show_email": true,
+      "portfolio": ""
+    },
+    "banner": {
+      "badge_text": "OPEN TO SQL, DATABASE & ERP BACKEND ROLES",
+      "tagline": "Designing resilient SQL Server architectures, enterprise ERP workflows, and actionable reporting systems.",
+      "pills": [
+        "SQL Server & T-SQL",
+        "InteAcc ERP & Web POS",
+        "PGDDS (UIU · 3.56)",
+        "Dhaka, Bangladesh"
+      ]
+    }
+  },
+  "career": {
+    "status": "Open to Opportunities",
+    "available_for_hire": true,
+    "current_focus": [
+      "Enterprise Database Architecture & Query Optimization in Microsoft SQL Server (T-SQL, PL/SQL)",
+      "Multi-Company ERP Backend Development & Operational Tooling with C# (.NET) and Python",
+      "Business Intelligence, Operational Reporting & Data Analysis with Crystal Reports and SQL"
+    ],
+    "career_interests": [
+      "SQL Developer",
+      "Data Analyst",
+      "Data Engineer",
+      "Database Developer",
+      "ERP / Backend Developer"
+    ],
+    "recent_updates": [
+      {
+        "date": "2026-11",
+        "category": "Profile Architecture",
+        "title": "Built a centralized, data-driven GitHub Profile Ecosystem with JSON source-of-truth, schema validation, and automated CI/CD workflows."
+      },
+      {
+        "date": "2026-10",
+        "category": "ERP Engineering",
+        "title": "Implemented multi-company tenant isolation, facility registries, and standardized database architecture audits for the ERP platform on SQL Server & .NET 10."
+      },
+      {
+        "date": "2026-09",
+        "category": "Operations Tooling",
+        "title": "Developed Pyrix multi-company operations & SQL schema inspection suite using Python (FastAPI) and Microsoft SQL Server (ODBC Driver 18)."
+      }
+    ]
+  },
+  "experience": {
+    "years_of_experience": "4+ Years (Self-Driven & Enterprise Operations)",
+    "current_organization": "HATIM GROUP",
+    "highlights": [
+      {
+        "area": "SQL Development & Database Architecture",
+        "summary": "Hands-on experience designing relational schemas, analyzing execution plans, writing T-SQL queries, stored procedures, indexing strategies, and ensuring data integrity on Microsoft SQL Server.",
+        "tools": [
+          "Microsoft SQL Server",
+          "T-SQL",
+          "Query Optimization",
+          "Relational Modeling"
+        ]
+      },
+      {
+        "area": "Enterprise Reporting & Data Analysis",
+        "summary": "Building structured operational, financial, and sales reports using Crystal Reports, Power BI (DAX), and analytical SQL reconciliations across retail POS and ERP datasets.",
+        "tools": [
+          "Crystal Reports",
+          "Microsoft Power BI",
+          "SQL Queries",
+          "Audit Reconciliation"
+        ]
+      },
+      {
+        "area": "ERP Systems & Backend Engineering",
+        "summary": "Developing multi-company ERP modules, tenant isolation middleware, and SQL-backed operational portals using C# (.NET) and Python (FastAPI).",
+        "tools": [
+          "C#",
+          ".NET / ASP.NET Core",
+          "Python",
+          "FastAPI",
+          "EF Core & Dapper"
+        ]
+      },
+      {
+        "area": "IT Support & Infrastructure Diagnostics",
+        "summary": "Applying Google IT Support certified methodology to hardware troubleshooting, operating system maintenance, ODBC driver configuration, and SQL Server backup/recovery checks.",
+        "tools": [
+          "Google IT Support",
+          "Hardware Diagnostics",
+          "Backup & Recovery",
+          "ODBC Connectivity"
+        ]
+      }
+    ],
+    "positions": [
+      {
+        "id": "hatim-group",
+        "role": "Executive (IT & MIS) | SQL Developer & Data Analyst",
+        "organization": "HATIM GROUP",
+        "location": "Dhaka, Bangladesh",
+        "work_mode": "On-site",
+        "period": "Dec 2024 – Present",
+        "current": true,
+        "summary": "Managing enterprise database operations, T-SQL performance tuning, and operational reporting across HATIM GROUP's central InteAcc ERP and retail Web POS environments.",
+        "responsibilities": [
+          "Analyze execution plans and refactor T-SQL queries, views, stored procedures, and indexes supporting InteAcc ERP and retail Web POS modules.",
+          "Build and execute SQL audit scripts to reconcile daily transaction synchronization between retail Web POS outlets and central ERP accounting and inventory ledgers.",
+          "Administer Microsoft SQL Server maintenance routines, database backups, recovery verification, schema updates, and data integrity checks.",
+          "Transform sales, inventory, and supply chain datasets into structured operational and management reporting."
+        ],
+        "technologies": [
+          "Microsoft SQL Server",
+          "Transact-SQL (T-SQL)",
+          "InteAcc ERP",
+          "Web POS",
+          "Query Optimization",
+          "Database Administration"
+        ],
+        "verified_source": "LinkedIn Profile Audit (2026-11-17)"
+      },
+      {
+        "id": "logic-infotech",
+        "role": "Junior Software Engineer",
+        "organization": "Logic InfoTech Ltd",
+        "location": "Dhaka, Bangladesh",
+        "work_mode": "On-site",
+        "period": "Jul 2022 – Oct 2023 (1 yr 4 mos)",
+        "current": false,
+        "summary": "Developed backend enterprise software features, relational database logic, and client reporting solutions in C# (.NET Framework), SQL Server, MySQL, and Crystal Reports.",
+        "responsibilities": [
+          "Designed and delivered operational and financial client reports using Crystal Reports backed by SQL Server and MySQL queries.",
+          "Authored, maintained, and debugged stored procedures, views, and relational queries supporting core enterprise business workflows.",
+          "Implemented and updated desktop and enterprise software components in C# and the .NET Framework using object-oriented design patterns.",
+          "Partnered with project managers and client stakeholders to diagnose database and application defects and support production deployments."
+        ],
+        "technologies": [
+          "C#",
+          ".NET Framework",
+          "Microsoft SQL Server",
+          "MySQL",
+          "Crystal Reports",
+          "OOP"
+        ],
+        "verified_source": "LinkedIn Profile Audit (2026-11-17)"
+      }
+    ],
+    "recommendations": [
+      {
+        "id": "rafiqul-islam",
+        "author": "Mohammad Rafiqul Islam",
+        "title": "Executive Vice President & SQL Server DBA at Sonali Life Insurance | Adjunct Faculty at UIU",
+        "date": "August 2025",
+        "relationship": "Faculty & Senior DBA Mentor",
+        "excerpt": "Endorsed Salman Rahman's strong SQL capabilities, database management fundamentals, analytical mindset, and disciplined problem-solving approach.",
+        "verified_source": "LinkedIn Recommendations (Observed 2026-11-17)"
+      },
+      {
+        "id": "mazharul-haque",
+        "author": "Mazharul Haque",
+        "title": "Google Certified Project Manager | Business Analyst | ERP & Six Sigma",
+        "date": "October 2022",
+        "relationship": "Colleague / ERP Collaborator",
+        "excerpt": "Highlighted Salman's grasp of ERP business dynamics, clear technical communication, and collaborative execution on software initiatives.",
+        "verified_source": "LinkedIn Recommendations (Observed 2026-11-17)"
+      }
+    ],
+    "languages": [
+      {
+        "language": "Bangla",
+        "proficiency": "Native / Bilingual Proficiency"
+      },
+      {
+        "language": "English",
+        "proficiency": "Professional Working Proficiency (Duolingo English Test Score: 129, Aug 2026)"
+      }
+    ]
+  },
+  "skills": {
+    "Database": [
+      {
+        "name": "Microsoft SQL Server",
+        "role": "Core Database Engine",
+        "focus": "Schema Design, T-SQL, Migrations, Indexing",
+        "color": "#CC2927",
+        "short_code": "MSSQL",
+        "badge_url": "https://img.shields.io/badge/Microsoft_SQL_Server-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white"
+      },
+      {
+        "name": "Transact-SQL (T-SQL)",
+        "role": "Procedural & Query Engineering",
+        "focus": "Stored Procedures, Execution Plans, Reconciliation",
+        "color": "#E11D48",
+        "short_code": "TSQL",
+        "badge_url": "https://img.shields.io/badge/Transact--SQL_(T--SQL)-E11D48?style=flat-square&logo=microsoftsqlserver&logoColor=white"
+      },
+      {
+        "name": "Query Optimization",
+        "role": "Performance Tuning",
+        "focus": "Execution Plan Analysis, Index Refactoring, Diagnostics",
+        "color": "#F59E0B",
+        "short_code": "OPT",
+        "badge_url": "https://img.shields.io/badge/Query_Optimization-F59E0B?style=flat-square&logo=databricks&logoColor=white"
+      },
+      {
+        "name": "SQL",
+        "role": "Primary Query Language",
+        "focus": "CTEs, Window Functions, Joins, Optimization",
+        "color": "#0284C7",
+        "short_code": "SQL",
+        "badge_url": "https://img.shields.io/badge/SQL-0284C7?style=flat-square&logo=postgresql&logoColor=white"
+      },
+      {
+        "name": "PL/SQL",
+        "role": "Procedural Database Logic",
+        "focus": "Stored Procedures, Triggers, Transactions",
+        "color": "#D97706",
+        "short_code": "PL/SQL",
+        "badge_url": "https://img.shields.io/badge/PL%2FSQL-D97706?style=flat-square&logo=oracle&logoColor=white"
+      }
+    ],
+    "Programming": [
+      {
+        "name": "Python",
+        "role": "Data & Backend Scripting",
+        "focus": "FastAPI, Automation, Data Analysis, ODBC",
+        "color": "#3776AB",
+        "short_code": "PY",
+        "badge_url": "https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"
+      },
+      {
+        "name": "C#",
+        "role": "Enterprise Backend",
+        "focus": ".NET, ASP.NET Core, EF Core, Dapper",
+        "color": "#512BD4",
+        "short_code": "C#",
+        "badge_url": "https://img.shields.io/badge/C%23-512BD4?style=flat-square&logo=csharp&logoColor=white"
+      }
+    ],
+    "Reporting": [
+      {
+        "name": "Crystal Reports",
+        "role": "Enterprise Reporting",
+        "focus": "Operational Reports, Financial Layouts, Subreports",
+        "color": "#0F766E",
+        "short_code": "CR",
+        "badge_url": "https://img.shields.io/badge/Crystal_Reports-0F766E?style=flat-square&logo=sap&logoColor=white"
+      },
+      {
+        "name": "Microsoft Power BI",
+        "role": "Business Intelligence & DAX",
+        "focus": "KPI Data Modeling, DAX Measures, Executive Dashboards",
+        "color": "#F2C811",
+        "short_code": "PBI",
+        "badge_url": "https://img.shields.io/badge/Microsoft_Power_BI-F2C811?style=flat-square&logo=powerbi&logoColor=black"
+      }
+    ],
+    "IT Support": [
+      {
+        "name": "Hardware & Systems",
+        "role": "Infrastructure Support",
+        "focus": "Workstation Diagnostics, Peripherals, Setup",
+        "color": "#475569",
+        "short_code": "HW",
+        "badge_url": "https://img.shields.io/badge/Hardware-475569?style=flat-square&logo=pcgamingwiki&logoColor=white"
+      },
+      {
+        "name": "Troubleshooting",
+        "role": "Root-Cause Diagnosis",
+        "focus": "OS, Network, ODBC & Environment Recovery",
+        "color": "#0369A1",
+        "short_code": "DBG",
+        "badge_url": "https://img.shields.io/badge/Troubleshooting-0369A1?style=flat-square&logo=checkmk&logoColor=white"
+      },
+      {
+        "name": "Technical Support",
+        "role": "Google IT Support",
+        "focus": "Incident Resolution, User Assistance, Maintenance",
+        "color": "#2563EB",
+        "short_code": "IT",
+        "badge_url": "https://img.shields.io/badge/Technical_Support_(Google_IT_Support)-2563EB?style=flat-square&logo=google&logoColor=white"
+      }
+    ],
+    "Other": [
+      {
+        "name": "Data Analysis",
+        "role": "Analytical Insights",
+        "focus": "Data Auditing, Cleaning, Business Metrics",
+        "color": "#10B981",
+        "short_code": "DATA",
+        "badge_url": "https://img.shields.io/badge/Data_Analysis-10B981?style=flat-square&logo=databricks&logoColor=white"
+      },
+      {
+        "name": "ERP Systems",
+        "role": "Enterprise Workflows",
+        "focus": "GL, Inventory, AP/AR, HR & Payroll, Manufacturing",
+        "color": "#6366F1",
+        "short_code": "ERP",
+        "badge_url": "https://img.shields.io/badge/ERP_Systems-6366F1?style=flat-square&logo=diagram&logoColor=white"
+      },
+      {
+        "name": "Backend Development",
+        "role": "API & Service Design",
+        "focus": "REST APIs, Multi-Tenancy, Auth, Caching",
+        "color": "#0EA5E9",
+        "short_code": "API",
+        "badge_url": "https://img.shields.io/badge/Backend_Development-0EA5E9?style=flat-square&logo=fastapi&logoColor=white"
+      },
+      {
+        "name": "Database Design",
+        "role": "Relational Architecture",
+        "focus": "Normalization, FK Governance, Audit & Soft-Delete",
+        "color": "#8B5CF6",
+        "short_code": "DB",
+        "badge_url": "https://img.shields.io/badge/Database_Design-8B5CF6?style=flat-square&logo=sqlalchemy&logoColor=white"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "id": "erp",
+      "name": "Enterprise Multi-Company ERP",
+      "tagline": "Modular multi-company ERP backend & SQL Server architecture",
+      "description": "Full-featured multi-company ERP built on .NET 10 / ASP.NET Core, Entity Framework Core + Dapper, and Microsoft SQL Server with a unified static web portal and ordered SQL migration pipelines.",
+      "category": "ERP / Backend & Database Architecture",
+      "tech_stack": [
+        "C#",
+        ".NET 10 / ASP.NET Core",
+        "Microsoft SQL Server (T-SQL)",
+        "EF Core + Dapper",
+        "QuestPDF",
+        "Docker"
+      ],
+      "repo_url": "https://github.com/tsalmanrahman/ERP",
+      "live_url": "",
+      "image_path": "assets/projects/erp-preview.svg",
+      "key_features": [
+        "Covers General Ledger & Banking, Inventory, Procure-to-Pay (AP), Order-to-Cash (AR), HR & Payroll, Fixed Assets, Real Estate, Manufacturing, and Data Migration/Cutover.",
+        "Multi-company data isolation enforced via company context middleware and global tenant query filters across domain services.",
+        "Ordered SQL Server schema migrations (80 tables), audit columns, and dual-layer soft-delete/cascade governance.",
+        "Clean layered architecture (Domain -> Application -> Infrastructure -> Web.Api) with xUnit tests and PowerShell E2E checks."
+      ],
+      "my_contribution": "Architected multi-company tenant scoping, SQL Server schema standardization, dual-layer deletion governance, facility/inventory modules, and API service implementations.",
+      "featured": true,
+      "verified": true
+    },
+    {
+      "id": "pyrix",
+      "name": "Pyrix — Multi-Company Operations & Settings Suite",
+      "tagline": "Python FastAPI & SQL Server operational diagnostics and schema management portal",
+      "description": "Enterprise operations and settings web application engineered with Python (FastAPI), Jinja2 templates, and Microsoft SQL Server via ODBC Driver 18 for multi-company administration and SQL inspection.",
+      "category": "Python Backend & SQL Operations",
+      "tech_stack": [
+        "Python",
+        "FastAPI",
+        "Jinja2",
+        "Microsoft SQL Server",
+        "ODBC Driver 18",
+        "HTML / CSS / JS"
+      ],
+      "repo_url": "https://github.com/tsalmanrahman/pyrix",
+      "live_url": "",
+      "image_path": "assets/projects/pyrix-preview.svg",
+      "key_features": [
+        "Multi-Company Operations & Switcher for dynamically managing multiple companies and organizations.",
+        "SQL Inspector & Schema Management, Dynamic Form & Table Builder, and System Diagnostics.",
+        "Manufacturing Operations & Workflow Engine paired with Audit Logging and Session Inactivity Guard.",
+        "Thread-safe TTL in-memory query caching and cross-platform ODBC driver detection for resilient SQL Server connectivity."
+      ],
+      "my_contribution": "Built backend FastAPI routes, SQL Server query deduplication and TTL caching, cross-platform ODBC driver detection, and operational UI workflows.",
+      "featured": true,
+      "verified": true
+    },
+    {
+      "id": "github-profile-ecosystem",
+      "name": "Automated GitHub Profile & Portfolio Ecosystem",
+      "tagline": "Data-driven portfolio generator with schema validation and CI/CD automation",
+      "description": "Centralized JSON-driven GitHub profile headquarters that validates structured identity data, syncs verified repository telemetry, generates custom SVG assets, and renders README.md automatically via GitHub Actions.",
+      "category": "DevOps & Profile Automation",
+      "tech_stack": [
+        "Python (Stdlib)",
+        "GitHub Actions",
+        "JSON Schema Validation",
+        "SVG Generation",
+        "PowerShell"
+      ],
+      "repo_url": "https://github.com/tsalmanrahman/tsalmanrahman",
+      "live_url": "",
+      "image_path": "",
+      "key_features": [
+        "Single source of truth in profile-data/*.json separating career, projects, skills, certifications, and profile metadata.",
+        "Automated schema, asset, and external link validation with atomic rollback protection on generation failures.",
+        "Scheduled and event-driven GitHub Actions pipelines with graceful API fallback and approval-gated LinkedIn sync."
+      ],
+      "my_contribution": "Designed and implemented the centralized data schema, pure-Python SVG/Markdown generators, validation/test suite, and CI/CD automation workflows.",
+      "featured": false,
+      "verified": true
+    },
+    {
+      "id": "error-storage",
+      "name": "Personal File Storage",
+      "tagline": "Personal utility storage repository",
+      "description": "Repository used solely for personal file storage.",
+      "category": "Utility",
+      "tech_stack": [],
+      "repo_url": "https://github.com/tsalmanrahman/Error",
+      "live_url": "",
+      "image_path": "",
+      "key_features": [],
+      "my_contribution": "Personal repository management.",
+      "featured": false,
+      "verified": true
+    }
+  ],
+  "certifications": [
+    {
+      "id": "ibm-databases-sql",
+      "name": "Databases and SQL for Data Science",
+      "issuer": "IBM / Coursera",
+      "category": "certification",
+      "status": "Certified · Nov 2023",
+      "issue_date": "November 1, 2023",
+      "credential_id": "d145c575-283d-482e-920f-8038d431ba43",
+      "credential_url": "https://www.credly.com/badges/d145c575-283d-482e-920f-8038d431ba43",
+      "badge_path": "assets/certificates/ibm-databases-sql-badge.png",
+      "skills_covered": [
+        "SQL Queries",
+        "Relational Databases",
+        "IBM Db2",
+        "Python & Jupyter Notebooks"
+      ],
+      "verified": true
+    },
+    {
+      "id": "google-it-support",
+      "name": "Google IT Support Certificate",
+      "issuer": "Google / Coursera",
+      "category": "certification",
+      "status": "Certified · Aug 2021",
+      "issue_date": "August 20, 2021",
+      "credential_id": "0e52798c-e483-499b-ad1c-723ebf802f42",
+      "credential_url": "https://www.credly.com/badges/0e52798c-e483-499b-ad1c-723ebf802f42",
+      "badge_path": "assets/certificates/google-it-support-badge.png",
+      "skills_covered": [
+        "Troubleshooting & Customer Service",
+        "Computer Networking",
+        "Operating Systems & System Administration",
+        "IT Security & Hardware Fundamentals"
+      ],
+      "verified": true
+    },
+    {
+      "id": "microsoft-freecodecamp-csharp",
+      "name": "Foundational C# with Microsoft",
+      "issuer": "Microsoft & freeCodeCamp",
+      "category": "certification",
+      "status": "Certified · Feb 2025",
+      "issue_date": "February 2, 2025",
+      "credential_id": "salman_rahman/foundational-c-sharp-with-microsoft",
+      "credential_url": "https://www.freecodecamp.org/certification/salman_rahman/foundational-c-sharp-with-microsoft",
+      "badge_path": "assets/certificates/microsoft-csharp-badge.svg",
+      "skills_covered": [
+        "C# Programming",
+        ".NET Fundamentals",
+        "Object-Oriented Logic",
+        "Debugging & Console Applications"
+      ],
+      "verified": true
+    },
+    {
+      "id": "pgdds-2024",
+      "name": "Post Graduate Diploma in Data Science (PGDDS)",
+      "issuer": "United International University (UIU) & BITM",
+      "category": "course",
+      "status": "Completed (2024)",
+      "issue_date": "2024",
+      "credential_id": "",
+      "credential_url": "",
+      "badge_path": "",
+      "skills_covered": [
+        "Data Analysis",
+        "SQL Querying",
+        "Python for Data Science",
+        "Analytical Workflows"
+      ],
+      "verified": true
+    },
+    {
+      "id": "continuous-platform-learning",
+      "name": "Continuous Professional Training in SQL, C#, Python & ERP Architecture",
+      "issuer": "Self-Directed & Professional Learning Platforms",
+      "category": "course",
+      "status": "Ongoing",
+      "issue_date": "Ongoing",
+      "credential_id": "",
+      "credential_url": "",
+      "badge_path": "",
+      "skills_covered": [
+        "Microsoft SQL Server & T-SQL",
+        "PL/SQL",
+        "C# & .NET Architecture",
+        "Python & Data Engineering"
+      ],
+      "verified": true
+    }
+  ],
+  "education": [
+    {
+      "id": "pgdds",
+      "degree": "Post Graduate Diploma in Data Science (PGDDS)",
+      "institution": "United International University (UIU) & BITM",
+      "year": "May 2023 – Jan 2024",
+      "status": "Completed",
+      "cgpa": "3.56 / 4.00",
+      "focus": "Data Analysis, SQL Database Design & Development, Python Analytics & Machine Learning",
+      "coursework": [
+        "PGDDS 102 — SQL Database Design and Development: Grade A (4.00 / 4.00)",
+        "PGDDS 103 — Data Analysis & Data Visualizations: Grade A (4.00 / 4.00)",
+        "PGDDS 201 — Machine Learning using Python: Grade A- (3.67 / 4.00)",
+        "Joint 18-credit post-graduate program by IBER (UIU) and BITM"
+      ],
+      "verified": true
+    },
+    {
+      "id": "bsc-cse",
+      "degree": "Bachelor of Science (B.Sc.) in Computer Science & Engineering",
+      "institution": "Varendra University (VU), Rajshahi",
+      "year": "Sep 2013 – Aug 2017",
+      "status": "Completed",
+      "cgpa": "3.12 / 4.00",
+      "focus": "Relational Databases (DBMS), Software Engineering, Data Structures, Algorithms & Systems",
+      "coursework": [
+        "Database Management Systems (DBMS) & Relational Modeling",
+        "Data Structures, Algorithms & Object-Oriented Programming",
+        "Software Engineering, Operating Systems & Computer Networks"
+      ],
+      "verified": true
+    }
+  ],
+  "achievements": [
+    {
+      "id": "google-it-support-achievement",
+      "title": "Google IT Support Certified Professional",
+      "category": "Certification",
+      "description": "Earned the Google IT Support Certificate via Coursera, validating foundational operational expertise in troubleshooting, customer service, networking, operating systems, system administration, and IT security.",
+      "verified": true
+    },
+    {
+      "id": "erp-database-architecture",
+      "title": "Enterprise Multi-Company ERP Database & Backend Architecture",
+      "category": "Engineering",
+      "description": "Designed and standardized an 80-table Microsoft SQL Server schema and .NET 10 modular backend across General Ledger, Inventory, AP/AR, HR & Payroll, Fixed Assets, Real Estate, and Manufacturing.",
+      "verified": true
+    },
+    {
+      "id": "pyrix-sql-suite",
+      "title": "Multi-Company SQL Operations Suite (Pyrix)",
+      "category": "Tooling",
+      "description": "Built a Python FastAPI & SQL Server operational web portal featuring SQL schema inspection, dynamic form/table management, audit logging, and thread-safe TTL query caching.",
+      "verified": true
+    },
+    {
+      "id": "sql-reporting-foundation",
+      "title": "4+ Years of Self-Driven SQL, PL/SQL & Crystal Reports Practice",
+      "category": "Domain Expertise",
+      "description": "Delivered structured relational queries, data integrity controls, and Crystal Reports templates bridging operational databases with clear reporting.",
+      "verified": true
+    }
+  ],
+  "github_metrics": {
+    "username": "tsalmanrahman",
+    "last_synced_utc": "2026-11-20T15:09:51Z",
+    "sync_status": "live_github_api",
+    "profile": {
+      "public_repos": 4,
+      "followers": 2,
+      "following": 3,
+      "created_year": 2023,
+      "company": "HATIM Group",
+      "location": "Dhaka",
+      "hireable": true
+    },
+    "repositories": [
+      {
+        "name": "ERP",
+        "url": "https://github.com/tsalmanrahman/ERP",
+        "primary_language": "C#",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-10-26T10:57:24Z"
+      },
+      {
+        "name": "pyrix",
+        "url": "https://github.com/tsalmanrahman/pyrix",
+        "primary_language": "HTML",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-09-06T04:30:24Z"
+      }
+    ],
+    "language_bytes": {
+      "HTML": 1803884,
+      "C#": 1542291,
+      "Python": 1082352,
+      "JavaScript": 707249,
+      "TSQL": 363777,
+      "CSS": 75129,
+      "PowerShell": 38617,
+      "Dockerfile": 2333
+    }
+  },
+  "verification_status": {
+    "profile_url": "https://www.linkedin.com/in/t-salmanrahman",
+    "last_verified_date": "2026-11-22",
+    "audit_reference_date": "2026-11-17",
+    "policy": "Zero fabrication. Only verified public/authenticated LinkedIn, Credly, freeCodeCamp, and GitHub facts are published as verified; unconfirmed details are transparently marked pending_confirmation.",
+    "verified_sections": [
+      {
+        "section": "Identity & Studio Portrait",
+        "status": "verified",
+        "source": "Signed-in LinkedIn profile & local original studio headshot (SHA-256 locked)",
+        "verified_date": "2026-11-22"
+      },
+      {
+        "section": "Current Role — HATIM GROUP",
+        "status": "verified",
+        "source": "LinkedIn Profile Audit (Dec 2024 – Present · Executive (IT & MIS) | SQL Developer & Data Analyst · InteAcc ERP & Web POS)",
+        "verified_date": "2026-11-17"
+      },
+      {
+        "section": "Past Role — Logic InfoTech Ltd",
+        "status": "verified",
+        "source": "LinkedIn Profile Audit (Jul 2022 – Oct 2023 · Junior Software Engineer · C#, .NET Framework, SQL Server, MySQL, Crystal Reports)",
+        "verified_date": "2026-11-17"
+      },
+      {
+        "section": "Education — UIU PGDDS & Varendra University B.Sc. CSE",
+        "status": "verified",
+        "source": "LinkedIn Education & Certificate Media (UIU CGPA 3.56, VU CGPA 3.12)",
+        "verified_date": "2026-11-17"
+      },
+      {
+        "section": "Certifications & Language Proficiency",
+        "status": "verified",
+        "source": "Credly Badges (IBM SQL, Google IT Support), freeCodeCamp (Microsoft C#), Duolingo Score 129 (Aug 2026)",
+        "verified_date": "2026-11-17"
+      },
+      {
+        "section": "GitHub Repositories & Codebase Metrics",
+        "status": "verified",
+        "source": "GitHub REST API sync (tsalmanrahman/ERP, tsalmanrahman/pyrix, tsalmanrahman/tsalmanrahman)",
+        "verified_date": "2026-11-20"
+      },
+      {
+        "section": "Recommendations",
+        "status": "verified",
+        "source": "LinkedIn Recommendations (Mohammad Rafiqul Islam, Aug 2025; Mazharul Haque, Oct 2022)",
+        "verified_date": "2026-11-17"
+      }
+    ],
+    "pending_confirmation": [
+      {
+        "field": "Official HR Designation at HATIM GROUP",
+        "reason": "Verify exact HR employment-letter title ('Executive (IT)' vs 'Executive (IT & MIS)')",
+        "status": "unavailable"
+      },
+      {
+        "field": "HATIM GROUP Scale & Query Optimization Benchmarks",
+        "reason": "Exact count of retail Web POS outlets synced and verified before/after query runtime metrics have not yet been supplied",
+        "status": "unavailable"
+      },
+      {
+        "field": "Power BI & Python Production vs. Academic Scope",
+        "reason": "Confirmed in PGDDS coursework and GitHub projects (Pyrix); awaiting confirmation on production Power BI/Python usage inside HATIM GROUP",
+        "status": "pending_confirmation"
+      },
+      {
+        "field": "Logic InfoTech Ltd Official Company Entity & Modules",
+        "reason": "Clarify LinkedIn company page alignment ('Logic InfoTech Ltd' vs 'Logic Software Limited') and specific client ERP modules built",
+        "status": "pending_confirmation"
+      },
+      {
+        "field": "Timeline Intervals (Aug 2017 – Jul 2022 & Oct 2023 – Dec 2024)",
+        "reason": "Optional context regarding independent study, consulting, or transition periods not yet listed on LinkedIn",
+        "status": "unavailable"
+      },
+      {
+        "field": "Oracle PL/SQL Production Usage",
+        "reason": "Retained from baseline skills schema; awaiting confirmation on whether Oracle PL/SQL is actively used alongside Microsoft T-SQL",
+        "status": "pending_confirmation"
+      }
+    ],
+    "excluded_items": [
+      "Physical street address (excluded for personal privacy)",
+      "Personal phone number (excluded for personal privacy)",
+      "Hyperbolic unverified claims ('zero-latency', 'zero downtime', '100% accuracy')",
+      "Off-brand LinkedIn items (Adobe Photoshop, Adobe Illustrator, Google Digital Marketing)"
+    ]
+  },
+  "identity_lock": {
+    "owner": "Salman Rahman",
+    "username": "tsalmanrahman",
+    "identity_lock_enforced": true,
+    "primary_reference": "https://www.linkedin.com/in/t-salmanrahman",
+    "verified_date": "2026-11-22",
+    "original_path": "assets/identity/original/salman-rahman-original.jpg",
+    "web_path": "assets/identity/web/salman-rahman-portrait.jpg",
+    "sha256": "4213d6ad1dfa967a059db3073f253e950d20fd5d2b1c83eee27f653036d245d8",
+    "size_bytes": 301070,
+    "dimensions_note": "Studio portrait headshot in navy blazer and white open-collar shirt on neutral light backdrop",
+    "permitted_operations": [
+      "Lossless verbatim archival of original portrait",
+      "Responsive CSS framing, aspect-ratio cropping, and studio halo border styling",
+      "Website image optimization preserving natural facial identity"
+    ],
+    "prohibited_operations": [
+      "AI face generation or synthetic face replacement",
+      "Face swapping or blending with another individual",
+      "Facial structure, age, skin tone, or identity alteration",
+      "Removing or altering the immutable original image file"
+    ]
+  },
+  "ai_skills_registry": {
+    "schema_version": "1.0.0",
+    "hub_name": "Salman Rahman Centralized AI Skills Hub",
+    "updated_at": "2026-11-22",
+    "pricing_tiers_legend": {
+      "free-open-source": "Completely free and open-source; locally runnable or open Markdown specification with no paid license or remote API fee.",
+      "free-tier-limited": "Free access subject to provider rate limits, daily quotas, or account tier caps.",
+      "freemium": "Core features free with optional paid plans or premium model tiers.",
+      "paid": "Requires a paid subscription, commercial license, or metered API billing."
+    },
+    "skills": [
+      {
+        "id": "salman-sql-server-tuning",
+        "name": "Salman SQL Server & T-SQL Tuning",
+        "version": "1.0.0",
+        "domain": "Database & SQL",
+        "tags": [
+          "sql-server",
+          "t-sql",
+          "execution-plans",
+          "indexing",
+          "reconciliation"
+        ],
+        "summary": "Diagnostic protocol for T-SQL query optimization, execution plan analysis, covering indexes, parameter sniffing checks, and POS-to-ERP data reconciliation.",
+        "license": "MIT",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free open-source repo skill; runs with any compatible agent and local SQL Server tools.",
+        "source": "tsalmanrahman/ai-skills/library/salman-sql-server-tuning",
+        "source_type": "repo-authored",
+        "dependencies": [],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "ollama-local",
+          "github-copilot",
+          "shared-agent-skills"
+        ],
+        "skill_path": "ai-skills/library/salman-sql-server-tuning/SKILL.md",
+        "install_command": "python scripts/skills_hub.py sync-agents",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      },
+      {
+        "id": "salman-erp-architecture",
+        "name": "Salman Multi-Company ERP Architecture",
+        "version": "1.0.0",
+        "domain": "ERP & Backend",
+        "tags": [
+          "erp",
+          "multi-tenancy",
+          "dotnet",
+          "fastapi",
+          "migrations"
+        ],
+        "summary": "Architectural blueprint for multi-company tenant scoping, ordered SQL Server migrations, EF Core + Dapper read/write separation, and soft-delete governance.",
+        "license": "MIT",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free open-source repo skill; no paid dependency required.",
+        "source": "tsalmanrahman/ai-skills/library/salman-erp-architecture",
+        "source_type": "repo-authored",
+        "dependencies": [
+          "salman-sql-server-tuning"
+        ],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "ollama-local",
+          "github-copilot",
+          "shared-agent-skills"
+        ],
+        "skill_path": "ai-skills/library/salman-erp-architecture/SKILL.md",
+        "install_command": "python scripts/skills_hub.py sync-agents",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      },
+      {
+        "id": "multi-agent-orchestrator",
+        "name": "Multi-Agent Orchestrator & Auditor",
+        "version": "1.0.0",
+        "domain": "Docs & Orchestration",
+        "tags": [
+          "multi-agent",
+          "opencode",
+          "delegation",
+          "audit",
+          "orchestration"
+        ],
+        "summary": "Playbook for Senior AI Manager task decomposition, free-model OpenCode CLI delegation, collision prevention, and mandatory independent auditing.",
+        "license": "MIT",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free open-source workflow; targets free OpenCode and local Ollama models first.",
+        "source": "tsalmanrahman/ai-skills/library/multi-agent-orchestrator",
+        "source_type": "repo-authored",
+        "dependencies": [
+          "skill-security-auditor"
+        ],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "shared-agent-skills"
+        ],
+        "skill_path": "ai-skills/library/multi-agent-orchestrator/SKILL.md",
+        "install_command": "python scripts/skills_hub.py sync-agents",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      },
+      {
+        "id": "cinematic-web-ui",
+        "name": "Cinematic Web UI & Motion System",
+        "version": "1.0.0",
+        "domain": "UI/UX & Motion",
+        "tags": [
+          "threejs",
+          "gsap",
+          "lenis",
+          "webgl",
+          "tailwind"
+        ],
+        "summary": "Design tokens and engineering guardrails for dark midnight-slate interfaces blending spatial Three.js nodes, Lenis smooth scroll, GSAP ScrollTrigger, and reduced-motion accessibility.",
+        "license": "MIT",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free open-source guide built around MIT/free libraries (Three.js, GSAP core, Lenis, Tailwind CSS).",
+        "source": "tsalmanrahman/ai-skills/library/cinematic-web-ui",
+        "source_type": "repo-authored",
+        "dependencies": [],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "github-copilot",
+          "shared-agent-skills"
+        ],
+        "skill_path": "ai-skills/library/cinematic-web-ui/SKILL.md",
+        "install_command": "python scripts/skills_hub.py sync-agents",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      },
+      {
+        "id": "linkedin-identity-governance",
+        "name": "LinkedIn Identity Lock & Governance",
+        "version": "1.0.0",
+        "domain": "Security & Governance",
+        "tags": [
+          "identity-lock",
+          "sha256",
+          "linkedin",
+          "privacy",
+          "verification"
+        ],
+        "summary": "Enforces portrait SHA-256 immutability, authorized-only LinkedIn profile verification, PII redaction, and approval-gated sync queues.",
+        "license": "MIT",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free open-source governance skill using Python stdlib SHA-256 verification.",
+        "source": "tsalmanrahman/ai-skills/library/linkedin-identity-governance",
+        "source_type": "repo-authored",
+        "dependencies": [],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "shared-agent-skills"
+        ],
+        "skill_path": "ai-skills/library/linkedin-identity-governance/SKILL.md",
+        "install_command": "python scripts/skills_hub.py sync-agents",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      },
+      {
+        "id": "skill-security-auditor",
+        "name": "Skill Security & Pricing Auditor",
+        "version": "1.0.0",
+        "domain": "Security & Governance",
+        "tags": [
+          "security-scan",
+          "supply-chain",
+          "pricing-integrity",
+          "validation"
+        ],
+        "summary": "Validates YAML frontmatter, rejects duplicate skill IDs, enforces honest 4-tier pricing labels, and scans skill packages for risky shell pipes or secrets.",
+        "license": "MIT",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free open-source static audit skill powered by scripts/skills_hub.py.",
+        "source": "tsalmanrahman/ai-skills/library/skill-security-auditor",
+        "source_type": "repo-authored",
+        "dependencies": [],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "ollama-local",
+          "shared-agent-skills"
+        ],
+        "skill_path": "ai-skills/library/skill-security-auditor/SKILL.md",
+        "install_command": "python scripts/skills_hub.py validate",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      },
+      {
+        "id": "profile-ci-automation",
+        "name": "Profile & Platform CI Automation",
+        "version": "1.0.0",
+        "domain": "DevOps & Automation",
+        "tags": [
+          "github-actions",
+          "ci-cd",
+          "svg-generator",
+          "github-pages",
+          "rollback"
+        ],
+        "summary": "Automated pipeline rules for JSON source-of-truth generation, atomic rollback protection, schema validation, and GitHub Pages deployment.",
+        "license": "MIT",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free open-source workflow; runs in Python stdlib and GitHub Actions.",
+        "source": "tsalmanrahman/ai-skills/library/profile-ci-automation",
+        "source_type": "repo-authored",
+        "dependencies": [
+          "skill-security-auditor"
+        ],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "github-copilot",
+          "shared-agent-skills"
+        ],
+        "skill_path": "ai-skills/library/profile-ci-automation/SKILL.md",
+        "install_command": "python scripts/skills_hub.py export-platform",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      },
+      {
+        "id": "powerbi-dax-modeling",
+        "name": "Power BI Star Schema & DAX Modeling",
+        "version": "1.0.0",
+        "domain": "BI & Analytics",
+        "tags": [
+          "power-bi",
+          "dax",
+          "star-schema",
+          "query-folding",
+          "kpi"
+        ],
+        "summary": "Standards for conformed star-schema views, explicit DAX measures, query folding to SQL Server, and financial/operational KPI reconciliation.",
+        "license": "MIT",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free open-source guidance skill; targets Power BI Desktop free authoring and T-SQL views.",
+        "source": "tsalmanrahman/ai-skills/library/powerbi-dax-modeling",
+        "source_type": "repo-authored",
+        "dependencies": [
+          "salman-sql-server-tuning"
+        ],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "github-copilot",
+          "shared-agent-skills"
+        ],
+        "skill_path": "ai-skills/library/powerbi-dax-modeling/SKILL.md",
+        "install_command": "python scripts/skills_hub.py sync-agents",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      },
+      {
+        "id": "erp-sql-server",
+        "name": "ERP SQL Server Engineering",
+        "version": "1.0.0",
+        "domain": "Database & SQL",
+        "tags": [
+          "sql-server",
+          "schemas",
+          "transactions",
+          "constraints",
+          "backups"
+        ],
+        "summary": "SQL Server database practices for ERP projects covering schema design, safe DDL changes, transactions, indexes, constraints, backups, and operational checks.",
+        "license": "MIT",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free open-source MIT skill verified in local shared skills repository.",
+        "source": "~/.agents/skills/erp-sql-server",
+        "source_type": "local-verified",
+        "dependencies": [],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "shared-agent-skills"
+        ],
+        "skill_path": "~/.agents/skills/erp-sql-server/SKILL.md",
+        "install_command": "Verify active in ~/.agents/skills/erp-sql-server/SKILL.md",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      },
+      {
+        "id": "erp-tsql-optimization",
+        "name": "ERP T-SQL Optimization",
+        "version": "1.0.0",
+        "domain": "Database & SQL",
+        "tags": [
+          "t-sql",
+          "sargable",
+          "query-store",
+          "statistics",
+          "indexing"
+        ],
+        "summary": "Diagnose and optimize T-SQL query performance using execution plans, sargable predicates, index coverage, statistics, and Query Store evidence.",
+        "license": "MIT",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free open-source MIT skill verified in local shared skills repository.",
+        "source": "~/.agents/skills/erp-tsql-optimization",
+        "source_type": "local-verified",
+        "dependencies": [
+          "erp-sql-server"
+        ],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "shared-agent-skills"
+        ],
+        "skill_path": "~/.agents/skills/erp-tsql-optimization/SKILL.md",
+        "install_command": "Verify active in ~/.agents/skills/erp-tsql-optimization/SKILL.md",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      },
+      {
+        "id": "sql-optimization-patterns",
+        "name": "SQL Optimization Patterns",
+        "version": "1.0.0",
+        "domain": "Database & SQL",
+        "tags": [
+          "sql",
+          "explain",
+          "postgres",
+          "mysql",
+          "health-check"
+        ],
+        "summary": "Safe SQL query diagnosis, EXPLAIN analysis, index and rewrite recommendations, and database health reviews for PostgreSQL, MySQL, and MariaDB.",
+        "license": "Open Source Markdown Skill",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free open-source operational protocol; optional MCP Toolbox for Databases is also Apache 2.0 open source.",
+        "source": "~/.agents/skills/sql-optimization-patterns",
+        "source_type": "local-verified",
+        "dependencies": [],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "shared-agent-skills"
+        ],
+        "skill_path": "~/.agents/skills/sql-optimization-patterns/SKILL.md",
+        "install_command": "Verify active in ~/.agents/skills/sql-optimization-patterns/SKILL.md",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      },
+      {
+        "id": "erp-architecture",
+        "name": "ERP System Architecture",
+        "version": "1.0.0",
+        "domain": "ERP & Backend",
+        "tags": [
+          "bounded-contexts",
+          "idempotency",
+          "audit-trails",
+          "multi-tenancy"
+        ],
+        "summary": "ERP architecture guidance covering bounded contexts, module boundaries, integration patterns, idempotency, audit trails, and multi-tenancy.",
+        "license": "MIT",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free open-source MIT skill verified in local shared skills repository.",
+        "source": "~/.agents/skills/erp-architecture",
+        "source_type": "local-verified",
+        "dependencies": [],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "shared-agent-skills"
+        ],
+        "skill_path": "~/.agents/skills/erp-architecture/SKILL.md",
+        "install_command": "Verify active in ~/.agents/skills/erp-architecture/SKILL.md",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      },
+      {
+        "id": "erp-csharp",
+        "name": "ERP C# Engineering",
+        "version": "1.0.0",
+        "domain": "ERP & Backend",
+        "tags": [
+          "csharp",
+          "dotnet",
+          "async",
+          "nullable",
+          "di"
+        ],
+        "summary": "C# development standards for ERP services covering nullable reference types, async/await hygiene, dependency injection, domain models, and safe error handling.",
+        "license": "MIT",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free open-source MIT skill verified in local shared skills repository.",
+        "source": "~/.agents/skills/erp-csharp",
+        "source_type": "local-verified",
+        "dependencies": [],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "shared-agent-skills"
+        ],
+        "skill_path": "~/.agents/skills/erp-csharp/SKILL.md",
+        "install_command": "Verify active in ~/.agents/skills/erp-csharp/SKILL.md",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      },
+      {
+        "id": "erp-aspnet-core",
+        "name": "ERP ASP.NET Core APIs",
+        "version": "1.0.0",
+        "domain": "ERP & Backend",
+        "tags": [
+          "aspnet-core",
+          "middleware",
+          "auth",
+          "validation",
+          "observability"
+        ],
+        "summary": "ASP.NET Core API and web service patterns covering middleware, configuration, authentication, authorization, input validation, and observability.",
+        "license": "MIT",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free open-source MIT skill verified in local shared skills repository.",
+        "source": "~/.agents/skills/erp-aspnet-core",
+        "source_type": "local-verified",
+        "dependencies": [
+          "erp-csharp"
+        ],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "shared-agent-skills"
+        ],
+        "skill_path": "~/.agents/skills/erp-aspnet-core/SKILL.md",
+        "install_command": "Verify active in ~/.agents/skills/erp-aspnet-core/SKILL.md",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      },
+      {
+        "id": "performance-optimization",
+        "name": "Full-Stack Performance Optimization",
+        "version": "1.0.0",
+        "domain": "ERP & Backend",
+        "tags": [
+          "profiling",
+          "web-vitals",
+          "n-plus-one",
+          "latency",
+          "benchmarking"
+        ],
+        "summary": "Measurement-first performance optimization protocol across frontend rendering, API endpoints, N+1 query elimination, and database bottlenecks.",
+        "license": "Open Source Markdown Skill",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free open-source local skill.",
+        "source": "~/.agents/skills/performance-optimization",
+        "source_type": "local-verified",
+        "dependencies": [],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "shared-agent-skills"
+        ],
+        "skill_path": "~/.agents/skills/performance-optimization/SKILL.md",
+        "install_command": "Verify active in ~/.agents/skills/performance-optimization/SKILL.md",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      },
+      {
+        "id": "data-dashboard",
+        "name": "Data Dashboard & Analytics Console",
+        "version": "1.0.0",
+        "domain": "BI & Analytics",
+        "tags": [
+          "dashboard",
+          "telemetry",
+          "svg-charts",
+          "dark-mode",
+          "contrast"
+        ],
+        "summary": "Guidance for building dense analytical consoles and telemetry views with clear visual hierarchy, SVG charts, dark-mode contrast discipline, and accessibility.",
+        "license": "Open Source Markdown Skill",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free open-source guidance skill; runs in guidance-only mode without external paid kits.",
+        "source": "~/.agents/skills/data-dashboard",
+        "source_type": "local-verified",
+        "dependencies": [
+          "design-tokens"
+        ],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "shared-agent-skills"
+        ],
+        "skill_path": "~/.agents/skills/data-dashboard/SKILL.md",
+        "install_command": "Verify active in ~/.agents/skills/data-dashboard/SKILL.md",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      },
+      {
+        "id": "frontend-design",
+        "name": "Intentional Frontend Visual Design",
+        "version": "1.0.0",
+        "domain": "UI/UX & Motion",
+        "tags": [
+          "typography",
+          "palette",
+          "visual-identity",
+          "editorial-ui"
+        ],
+        "summary": "Design-lead direction for distinctive typography, deliberate color palettes, and bespoke layouts that avoid generic templated defaults.",
+        "license": "Apache-2.0",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free Apache-2.0 open-source skill verified with local LICENSE.txt.",
+        "source": "~/.agents/skills/frontend-design",
+        "source_type": "local-verified",
+        "dependencies": [],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "shared-agent-skills"
+        ],
+        "skill_path": "~/.agents/skills/frontend-design/SKILL.md",
+        "install_command": "Verify active in ~/.agents/skills/frontend-design/SKILL.md",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      },
+      {
+        "id": "frontend-ui-engineering",
+        "name": "Frontend UI Engineering",
+        "version": "1.0.0",
+        "domain": "UI/UX & Motion",
+        "tags": [
+          "react",
+          "responsive",
+          "wcag",
+          "components",
+          "state"
+        ],
+        "summary": "Production-grade user interface implementation covering responsive grids, component state hygiene, accessibility, and interactive polish.",
+        "license": "Open Source Markdown Skill",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free open-source local skill.",
+        "source": "~/.agents/skills/frontend-ui-engineering",
+        "source_type": "local-verified",
+        "dependencies": [],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "shared-agent-skills"
+        ],
+        "skill_path": "~/.agents/skills/frontend-ui-engineering/SKILL.md",
+        "install_command": "Verify active in ~/.agents/skills/frontend-ui-engineering/SKILL.md",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      },
+      {
+        "id": "threejs-scene-setup",
+        "name": "Three.js Scene & Renderer Setup",
+        "version": "1.0.0",
+        "domain": "UI/UX & Motion",
+        "tags": [
+          "threejs",
+          "webgl",
+          "camera",
+          "animation-loop",
+          "resize"
+        ],
+        "summary": "Structured Three.js Scene, PerspectiveCamera, WebGLRenderer, resize budgeting, and animation loop lifecycle management.",
+        "license": "Open Source Markdown Skill",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free open-source skill built for MIT-licensed Three.js.",
+        "source": "~/.agents/skills/threejs-scene-setup",
+        "source_type": "local-verified",
+        "dependencies": [],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "shared-agent-skills"
+        ],
+        "skill_path": "~/.agents/skills/threejs-scene-setup/SKILL.md",
+        "install_command": "Verify active in ~/.agents/skills/threejs-scene-setup/SKILL.md",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      },
+      {
+        "id": "threejs-materials-lighting",
+        "name": "Three.js Materials & Lighting",
+        "version": "1.0.0",
+        "domain": "UI/UX & Motion",
+        "tags": [
+          "threejs",
+          "lighting",
+          "materials",
+          "tone-mapping",
+          "pbr"
+        ],
+        "summary": "Physically calibrated Three.js material and lighting rig patterns ensuring crisp highlights and balanced dark-scene contrast.",
+        "license": "Open Source Markdown Skill",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free open-source skill built for MIT-licensed Three.js.",
+        "source": "~/.agents/skills/threejs-materials-lighting",
+        "source_type": "local-verified",
+        "dependencies": [
+          "threejs-scene-setup"
+        ],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "shared-agent-skills"
+        ],
+        "skill_path": "~/.agents/skills/threejs-materials-lighting/SKILL.md",
+        "install_command": "Verify active in ~/.agents/skills/threejs-materials-lighting/SKILL.md",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      },
+      {
+        "id": "design-tokens",
+        "name": "Design Tokens Architecture",
+        "version": "1.0.0",
+        "domain": "UI/UX & Motion",
+        "tags": [
+          "design-tokens",
+          "dtcg",
+          "theming",
+          "color-system",
+          "motion"
+        ],
+        "summary": "Three-tier design token architecture (primitive -> semantic -> component) for scalable palettes, typography scales, spacing, shadows, and motion.",
+        "license": "Open Source Markdown Skill",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free open-source guidance skill.",
+        "source": "~/.agents/skills/design-tokens",
+        "source_type": "local-verified",
+        "dependencies": [],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "shared-agent-skills"
+        ],
+        "skill_path": "~/.agents/skills/design-tokens/SKILL.md",
+        "install_command": "Verify active in ~/.agents/skills/design-tokens/SKILL.md",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      },
+      {
+        "id": "erp-database-security",
+        "name": "ERP SQL Server Database Security",
+        "version": "1.0.0",
+        "domain": "Security & Governance",
+        "tags": [
+          "sql-security",
+          "least-privilege",
+          "rls",
+          "parameterization",
+          "auditing"
+        ],
+        "summary": "SQL Server security baselines for ERP workloads: least-privilege roles, parameterized queries, encryption, row-level security, masking, and secret hygiene.",
+        "license": "MIT",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free open-source MIT skill verified in local shared skills repository.",
+        "source": "~/.agents/skills/erp-database-security",
+        "source_type": "local-verified",
+        "dependencies": [
+          "erp-sql-server"
+        ],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "shared-agent-skills"
+        ],
+        "skill_path": "~/.agents/skills/erp-database-security/SKILL.md",
+        "install_command": "Verify active in ~/.agents/skills/erp-database-security/SKILL.md",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      },
+      {
+        "id": "security-and-hardening",
+        "name": "Web Security & Hardening",
+        "version": "1.0.0",
+        "domain": "Security & Governance",
+        "tags": [
+          "owasp",
+          "input-validation",
+          "secrets",
+          "supply-chain",
+          "privacy"
+        ],
+        "summary": "Security-first practices for web platforms covering OWASP risk mitigation, dependency supply-chain checks, privacy hygiene, and strict secret boundaries.",
+        "license": "Open Source Markdown Skill",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free open-source local skill.",
+        "source": "~/.agents/skills/security-and-hardening",
+        "source_type": "local-verified",
+        "dependencies": [],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "shared-agent-skills"
+        ],
+        "skill_path": "~/.agents/skills/security-and-hardening/SKILL.md",
+        "install_command": "Verify active in ~/.agents/skills/security-and-hardening/SKILL.md",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      },
+      {
+        "id": "security-audit",
+        "name": "Source-First Security Audit",
+        "version": "1.0.0",
+        "domain": "Security & Governance",
+        "tags": [
+          "vulnerability-review",
+          "trust-boundaries",
+          "remediation",
+          "code-audit"
+        ],
+        "summary": "Defensive source-first security review identifying trust-boundary violations with verifiable evidence and minimal safe remediations.",
+        "license": "Open Source Markdown Skill",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free open-source local skill.",
+        "source": "~/.agents/skills/security-audit",
+        "source_type": "local-verified",
+        "dependencies": [],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "shared-agent-skills"
+        ],
+        "skill_path": "~/.agents/skills/security-audit/SKILL.md",
+        "install_command": "Verify active in ~/.agents/skills/security-audit/SKILL.md",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      },
+      {
+        "id": "erp-testing",
+        "name": "ERP Test Strategy & Execution",
+        "version": "1.0.0",
+        "domain": "Testing & QA",
+        "tags": [
+          "unit-tests",
+          "integration-tests",
+          "fixtures",
+          "ci-validation"
+        ],
+        "summary": "Deterministic unit, integration, and API test practices for ERP and data-driven platforms without flaky external dependencies.",
+        "license": "MIT",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free open-source MIT skill verified in local shared skills repository.",
+        "source": "~/.agents/skills/erp-testing",
+        "source_type": "local-verified",
+        "dependencies": [],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "shared-agent-skills"
+        ],
+        "skill_path": "~/.agents/skills/erp-testing/SKILL.md",
+        "install_command": "Verify active in ~/.agents/skills/erp-testing/SKILL.md",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      },
+      {
+        "id": "accessibility-engineering",
+        "name": "WCAG 2.2 Accessibility Engineering",
+        "version": "1.0.0",
+        "domain": "Testing & QA",
+        "tags": [
+          "wcag",
+          "a11y",
+          "keyboard-nav",
+          "contrast",
+          "screen-reader"
+        ],
+        "summary": "Audit and remediate interfaces for WCAG 2.2 AA conformance covering contrast ratios, focus visibility, keyboard navigation, and reduced motion.",
+        "license": "Open Source Markdown Skill",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free open-source local skill.",
+        "source": "~/.agents/skills/accessibility-engineering",
+        "source_type": "local-verified",
+        "dependencies": [],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "shared-agent-skills"
+        ],
+        "skill_path": "~/.agents/skills/accessibility-engineering/SKILL.md",
+        "install_command": "Verify active in ~/.agents/skills/accessibility-engineering/SKILL.md",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      },
+      {
+        "id": "code-review-and-quality",
+        "name": "Multi-Axis Code Review & Quality",
+        "version": "1.0.0",
+        "domain": "Testing & QA",
+        "tags": [
+          "code-review",
+          "audit",
+          "correctness",
+          "maintainability"
+        ],
+        "summary": "Five-axis code review rubric checking correctness, readability, architecture, security, and performance before merging changes.",
+        "license": "Open Source Markdown Skill",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free open-source local skill.",
+        "source": "~/.agents/skills/code-review-and-quality",
+        "source_type": "local-verified",
+        "dependencies": [],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "shared-agent-skills"
+        ],
+        "skill_path": "~/.agents/skills/code-review-and-quality/SKILL.md",
+        "install_command": "Verify active in ~/.agents/skills/code-review-and-quality/SKILL.md",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      },
+      {
+        "id": "browser-testing-with-devtools",
+        "name": "Real Browser DevTools Testing",
+        "version": "1.0.0",
+        "domain": "Testing & QA",
+        "tags": [
+          "devtools",
+          "dom-inspection",
+          "console-errors",
+          "visual-qa"
+        ],
+        "summary": "Verify live web applications in real headless/desktop browsers by inspecting rendered layout, console errors, network status, and interactive flows.",
+        "license": "Open Source Markdown Skill",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free open-source workflow using local Chromium/Chrome DevTools.",
+        "source": "~/.agents/skills/browser-testing-with-devtools",
+        "source_type": "local-verified",
+        "dependencies": [],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "shared-agent-skills"
+        ],
+        "skill_path": "~/.agents/skills/browser-testing-with-devtools/SKILL.md",
+        "install_command": "Verify active in ~/.agents/skills/browser-testing-with-devtools/SKILL.md",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      },
+      {
+        "id": "erp-git",
+        "name": "Safe Git & Branch Workflow",
+        "version": "1.0.0",
+        "domain": "DevOps & Automation",
+        "tags": [
+          "git",
+          "branching",
+          "diff-review",
+          "commit-hygiene"
+        ],
+        "summary": "Git delivery standards ensuring diff inspection, preservation of local work, safe feature branching, clean commit hygiene, and zero destructive history rewrites.",
+        "license": "MIT",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free open-source MIT skill verified in local shared skills repository.",
+        "source": "~/.agents/skills/erp-git",
+        "source_type": "local-verified",
+        "dependencies": [],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "shared-agent-skills"
+        ],
+        "skill_path": "~/.agents/skills/erp-git/SKILL.md",
+        "install_command": "Verify active in ~/.agents/skills/erp-git/SKILL.md",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      },
+      {
+        "id": "erp-documentation",
+        "name": "Versioned Technical Documentation",
+        "version": "1.0.0",
+        "domain": "Docs & Orchestration",
+        "tags": [
+          "documentation",
+          "architecture",
+          "adr",
+          "runbooks"
+        ],
+        "summary": "Standards for structured READMEs, architecture guides, operational runbooks, and versioned technical documentation synchronized with code.",
+        "license": "MIT",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free open-source MIT skill verified in local shared skills repository.",
+        "source": "~/.agents/skills/erp-documentation",
+        "source_type": "local-verified",
+        "dependencies": [],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "shared-agent-skills"
+        ],
+        "skill_path": "~/.agents/skills/erp-documentation/SKILL.md",
+        "install_command": "Verify active in ~/.agents/skills/erp-documentation/SKILL.md",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      },
+      {
+        "id": "writing-plans",
+        "name": "Structured Implementation Planning",
+        "version": "1.0.0",
+        "domain": "Docs & Orchestration",
+        "tags": [
+          "planning",
+          "specs",
+          "milestones",
+          "acceptance-criteria"
+        ],
+        "summary": "Decompose complex engineering deliverables into clear, sequenced tasks with concrete file interfaces and verification steps before editing code.",
+        "license": "Open Source Markdown Skill",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free open-source local skill.",
+        "source": "~/.agents/skills/writing-plans",
+        "source_type": "local-verified",
+        "dependencies": [],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "shared-agent-skills"
+        ],
+        "skill_path": "~/.agents/skills/writing-plans/SKILL.md",
+        "install_command": "Verify active in ~/.agents/skills/writing-plans/SKILL.md",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      },
+      {
+        "id": "verification-before-completion",
+        "name": "Evidence-First Verification Gate",
+        "version": "1.0.0",
+        "domain": "Docs & Orchestration",
+        "tags": [
+          "verification",
+          "testing",
+          "evidence",
+          "quality-gate"
+        ],
+        "summary": "Requires running actual validation commands, unit tests, builds, and visual checks before claiming any deliverable is complete or passing.",
+        "license": "Open Source Markdown Skill",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Completely free open-source local skill.",
+        "source": "~/.agents/skills/verification-before-completion",
+        "source_type": "local-verified",
+        "dependencies": [],
+        "compatible_agents": [
+          "antigravity",
+          "opencode-cli",
+          "shared-agent-skills"
+        ],
+        "skill_path": "~/.agents/skills/verification-before-completion/SKILL.md",
+        "install_command": "Verify active in ~/.agents/skills/verification-before-completion/SKILL.md",
+        "validated": true,
+        "validated_at": "2026-11-22",
+        "security_audit": "passed"
+      }
+    ]
+  },
+  "ai_agents": {
+    "schema_version": "1.0.0",
+    "updated_at": "2026-11-22",
+    "coordination_policy": "Single-writer file ownership managed by Senior AI Lead (Antigravity). Coding tasks are delegated sequentially or to disjoint files via OpenCode CLI free models and independently audited before integration.",
+    "agents": [
+      {
+        "id": "antigravity",
+        "name": "Google Antigravity",
+        "role": "Senior AI Manager, Architect, UI/UX Lead & Final Quality Auditor",
+        "status": "verified-active",
+        "pricing_tier": "free-tier-limited",
+        "pricing_notes": "Quota-governed platform session; delegates bounded coding tasks to free OpenCode/local models to conserve capacity.",
+        "executable": "Antigravity Agent Runtime + Subagents",
+        "supported_skill_paths": [
+          "ai-skills/library/",
+          ".agents/skills/",
+          "AGENTS.md"
+        ],
+        "primary_models": [
+          "Gemini 4 Neon (High)"
+        ],
+        "responsibilities": [
+          "System architecture and multi-agent task decomposition",
+          "LinkedIn source-of-truth verification and Identity Lock enforcement",
+          "Frontend UI/UX orchestration and browser visual QA",
+          "Independent code review, test verification, and git integration"
+        ]
+      },
+      {
+        "id": "opencode-cli",
+        "name": "OpenCode CLI",
+        "role": "Primary Automated Coding & Tooling Worker",
+        "status": "verified-active",
+        "pricing_tier": "free-tier-limited",
+        "pricing_notes": "Open-source CLI (MIT) v2.3.2 configured with genuinely free OpenCode models (deepseek-v4.1-flash-free, big-pickle, flint-40b-free) plus local Ollama.",
+        "executable": "C:\\Users\\ho.mis\\AppData\\Local\\Programs\\ai.opencode.desktop\\resources\\opencode-cli.exe",
+        "service_endpoint": "http://127.0.0.1:28894",
+        "supported_skill_paths": [
+          ".opencode/skills/",
+          "~/.agents/skills/",
+          "AGENTS.md"
+        ],
+        "primary_models": [
+          "opencode/deepseek-v4.1-flash-free",
+          "opencode/big-pickle",
+          "opencode/flint-40b-free"
+        ],
+        "responsibilities": [
+          "Drafting well-scoped Python scripts and TypeScript UI components",
+          "Executing bounded refactors under Senior AI Lead acceptance criteria",
+          "Preserving free-tier usage limits without unnecessary paid calls"
+        ]
+      },
+      {
+        "id": "ollama-local",
+        "name": "Ollama Local Runtime",
+        "role": "Offline Local Code-Model Fallback",
+        "status": "verified-installed",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "100% free local inference (MIT); zero external API calls. Daemon started on demand.",
+        "executable": "C:\\Users\\ho.mis\\AppData\\Local\\Programs\\Ollama\\ollama.exe",
+        "supported_skill_paths": [
+          "ai-skills/registry.json (via OpenCode provider)"
+        ],
+        "primary_models": [
+          "ollama/qwen2.5-coder:3b",
+          "ollama/qwen2.5-coder:3b-cpu4"
+        ],
+        "responsibilities": [
+          "Zero-cost offline fallback when remote free-tier providers are rate-limited",
+          "Local code completion and syntax checks via OpenCode"
+        ]
+      },
+      {
+        "id": "github-copilot",
+        "name": "GitHub Copilot",
+        "role": "IDE Coding Partner",
+        "status": "verified-configured",
+        "pricing_tier": "freemium",
+        "pricing_notes": "GitHub Copilot offers a limited Free tier and paid Pro subscription; configured as an available OpenCode/IDE provider.",
+        "executable": "VS Code / OpenCode Provider (github-copilot/*)",
+        "supported_skill_paths": [
+          "AGENTS.md",
+          "~/.agents/skills/"
+        ],
+        "primary_models": [
+          "github-copilot/gpt-5.4-nano",
+          "github-copilot/gemini-3.8-flash"
+        ],
+        "responsibilities": [
+          "Interactive IDE assistance and inline code completion",
+          "Secondary verification provider when explicitly authorized"
+        ]
+      },
+      {
+        "id": "shared-agent-skills",
+        "name": "Shared Agent Skills Ecosystem",
+        "role": "Cross-Agent Capability Registry & Sync Layer",
+        "status": "verified-active",
+        "pricing_tier": "free-open-source",
+        "pricing_notes": "Open Markdown SKILL.md specification; 62 local skills verified in ~/.agents/skills plus 8 repo-authored flagship skills synced to .opencode/skills.",
+        "executable": "scripts/skills_hub.py",
+        "supported_skill_paths": [
+          "ai-skills/library/",
+          ".opencode/skills/",
+          "~/.agents/skills/"
+        ],
+        "primary_models": [
+          "Model-agnostic Markdown instructions"
+        ],
+        "responsibilities": [
+          "Centralized skill catalog, versioning, and deduplication",
+          "Automated security auditing and pricing-tier classification",
+          "Cross-agent synchronization into .opencode/skills/"
+        ]
+      }
+    ]
+  }
+}

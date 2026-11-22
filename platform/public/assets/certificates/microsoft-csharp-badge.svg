@@ -1,0 +1,20 @@
+<svg width="336" height="112" viewBox="0 0 336 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .mc-issuer { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 9.5px; font-weight: 700; fill: #00ff9c; letter-spacing: 0.9px; }
+    .mc-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 15px; font-weight: 800; fill: #ecfdf5; }
+    .mc-sub { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13.5px; font-weight: 600; fill: #cbd5e1; }
+    .mc-status { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px; fill: #6ee7b7; font-weight: 600; }
+  </style>
+  <rect x="0.5" y="0.5" width="335" height="111" rx="10" fill="#060d12" stroke="#10b981" stroke-opacity="0.4" stroke-width="1" />
+  <rect x="18" y="20" width="72" height="72" rx="10" fill="#09151a" stroke="#10b981" stroke-opacity="0.3" stroke-width="1" />
+  <rect x="37" y="30" width="16" height="16" rx="2" fill="#F25022" />
+  <rect x="55" y="30" width="16" height="16" rx="2" fill="#7FBA00" />
+  <rect x="37" y="48" width="16" height="16" rx="2" fill="#00A4EF" />
+  <rect x="55" y="48" width="16" height="16" rx="2" fill="#FFB900" />
+  <text x="54" y="81" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="10.5" font-weight="800" fill="#A78BFA">C# · .NET</text>
+  <text x="106" y="34" class="mc-issuer">&gt; MICROSOFT &amp; FREECODECAMP</text>
+  <text x="106" y="55" class="mc-title">Foundational C#</text>
+  <text x="106" y="73" class="mc-sub">with Microsoft</text>
+  <circle cx="110" cy="87.5" r="3.5" fill="#00ff9c" />
+  <text x="119" y="91" class="mc-status">VERIFIED · February 2, 2025</text>
+</svg>
