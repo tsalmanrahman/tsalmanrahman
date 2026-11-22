@@ -409,14 +409,6 @@ export const KovalSections: React.FC<KovalSectionsProps> = ({
                   <span className="koval-chip-prefix">/</span>
                   <span className="koval-chip-label">linkedin</span>
                 </a>
-                <button
-                  type="button"
-                  onClick={onOpenVerificationModal}
-                  className="koval-chip"
-                >
-                  <span className="koval-chip-prefix">/</span>
-                  <span className="koval-chip-label">ledger</span>
-                </button>
               </div>
             </div>
           </div>
