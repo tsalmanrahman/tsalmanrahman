@@ -1118,6 +1118,358 @@ def render_readme_markdown(
 """
 
 
+def render_readme_markdown_website(
+    profile: dict[str, Any],
+    career: dict[str, Any],
+    experience: dict[str, Any],
+    skills: dict[str, list[dict[str, Any]]],
+    projects: list[dict[str, Any]],
+    certifications: list[dict[str, Any]],
+    education: list[dict[str, Any]],
+    achievements: list[dict[str, Any]],
+    github_metrics: dict[str, Any],
+    ai_skill_count: int,
+    asset_versions: dict[str, str] | None = None,
+) -> str:
+    """Assemble a website-matched GitHub Profile README strictly from verified data."""
+    username = profile["username"]
+    contact = profile["contact"]
+    live_url = f"https://{username}.github.io/{username}/"
+    location_short = profile["location"].split(",")[0].upper()
+
+    # Contact badges (never output broken '#' placeholders)
+    contact_badges: list[str] = []
+    for key, label in (("linkedin", "LinkedIn"), ("credly", "Credly")):
+        if contact.get(key):
+            src = _versioned_asset(CONTACT_PILL_SPECS[key]["filename"], asset_versions)
+            contact_badges.append(
+                f'<a href="{contact[key]}"><img src="{src}" alt="{label}" /></a>'
+            )
+    if contact.get("show_email") and contact.get("email"):
+        src = _versioned_asset(CONTACT_PILL_SPECS["email"]["filename"], asset_versions)
+        contact_badges.append(
+            f'<a href="mailto:{contact["email"]}"><img src="{src}" alt="Email" /></a>'
+        )
+    for key, label in (("github", "GitHub"), ("portfolio", "Portfolio")):
+        if contact.get(key):
+            src = _versioned_asset(CONTACT_PILL_SPECS[key]["filename"], asset_versions)
+            contact_badges.append(
+                f'<a href="{contact[key]}"><img src="{src}" alt="{label}" /></a>'
+            )
+    contact_html = "\n  &nbsp;\n  ".join(contact_badges)
+
+    contact_text: list[str] = []
+    for key, label in (("linkedin", "LinkedIn"), ("credly", "Credly")):
+        if contact.get(key):
+            contact_text.append(f"[{label}]({contact[key]})")
+    if contact.get("show_email") and contact.get("email"):
+        contact_text.append(f"[Email](mailto:{contact['email']})")
+    if contact.get("github"):
+        contact_text.append(f"[GitHub]({contact['github']})")
+    contact_text.append(f"[Live website]({live_url})")
+    contact_text_html = " · ".join(contact_text)
+
+    # Verified data selections
+    featured_projects = [p for p in projects if p.get("featured") and p.get("verified")]
+    verified_certs = [
+        c for c in certifications if c.get("verified") and c.get("category") == "certification"
+    ]
+    verified_courses = [
+        c for c in certifications if c.get("verified") and c.get("category") == "course"
+    ]
+    verified_edu = [e for e in education if e.get("verified")]
+    verified_achievements = [a for a in achievements if a.get("verified")]
+
+    total_bytes = sum((github_metrics.get("language_bytes") or {}).values())
+    codebase_mb = f"{total_bytes / (1024 * 1024):.2f} MB"
+
+    # Selected work cards
+    project_cells: list[str] = []
+    for idx, proj in enumerate(featured_projects, start=1):
+        stack = " · ".join(f"`{t}`" for t in proj.get("tech_stack", []))
+        image = ""
+        if proj.get("image_path"):
+            image = (
+                f'<a href="{proj["repo_url"]}"><img src="'
+                f'{_versioned_asset(proj["image_path"], asset_versions)}" '
+                f'alt="{proj["name"]} Preview" width="100%" /></a>'
+            )
+        project_cells.append(
+            f"""
+<td width="50%" valign="top">
+  <sub>{idx:02d} · {proj['category'].upper()}</sub><br/>
+  <b>{proj['name']}</b><br/>
+  {image}
+  <p>{proj['tagline']}</p>
+  <p><code>{stack}</code></p>
+  <a href="{proj['repo_url']}">/inspect</a> · <a href="{proj['repo_url']}">/github</a>
+</td>"""
+        )
+    projects_table = "\n".join(project_cells)
+
+    # Credential cards
+    cert_cells: list[str] = []
+    for cert in verified_certs:
+        badge = ""
+        badge_path = cert.get("badge_path", "")
+        if badge_path:
+            size_attr = "" if badge_path.lower().endswith(".svg") else ' height="112"'
+            img_tag = (
+                f'<img src="{_versioned_asset(badge_path, asset_versions)}" '
+                f'alt="{cert["name"]}"{size_attr} />'
+            )
+            badge = (
+                f'<a href="{cert["credential_url"]}">{img_tag}</a>'
+                if cert.get("credential_url")
+                else img_tag
+            )
+        verify = (
+            f'<a href="{cert["credential_url"]}">/verify</a>'
+            if cert.get("credential_url")
+            else ""
+        )
+        cert_cells.append(
+            f"""
+<td align="center" width="25%" valign="top">
+  {badge}<br/>
+  <sub>{cert['issuer'].upper()}</sub><br/>
+  <b>{cert['name']}</b><br/>
+  <sub>{cert['issue_date']}</sub><br/>
+  {verify}
+</td>"""
+        )
+
+    top_edu = verified_edu[0] if verified_edu else {}
+    cgpa = str(top_edu.get("cgpa", "")).split(" / ")[0]
+    cert_cells.append(
+        f"""
+<td align="center" width="25%" valign="top">
+  <b>{cgpa}</b><br/>
+  <sub>{top_edu.get('institution', '')}</sub><br/>
+  <b>{top_edu.get('degree', '')}</b><br/>
+  <sub>{top_edu.get('year', '')}</sub><br/>
+  <a href="{live_url}#credentials">/audit</a>
+</td>"""
+    )
+    credentials_table = "\n".join(cert_cells)
+
+    # Ledgers
+    experience_rows = "\n".join(
+        f"| **{p['organization']}** | {p['role']} | {p['period']} |"
+        for p in experience.get("positions", [])
+    )
+    education_rows = "\n".join(
+        f"| **{e['institution']}** | {e['degree']} | {e['year']} | {e.get('cgpa', '')} |"
+        for e in verified_edu
+    )
+    endorsement_rows = "\n".join(
+        f"> “{r['excerpt']}” — **{r['author']}**, {r['date']}"
+        for r in experience.get("recommendations", [])
+    )
+
+    skills_rows: list[str] = []
+    for cat in ("Database", "Programming", "Reporting", "IT Support", "Other"):
+        cat_items = skills.get(cat, [])
+        if not cat_items:
+            continue
+        techs_inline = " · ".join(f"`{s['name']}`" for s in cat_items)
+        focus_summary = " · ".join(f"**{s['name']}** ({s['focus']})" for s in cat_items)
+        skills_rows.append(f"| **{cat}** | {techs_inline} | {focus_summary} |")
+    skills_table = "\n".join(skills_rows)
+
+    course_rows = "\n".join(
+        f"- **{c['name']}** — *{c['issuer']}* ({c['status']})  \n  *Focus:* {', '.join(c['skills_covered'])}"
+        for c in verified_courses
+    )
+    achievement_rows = "\n".join(
+        f"- **[{a['category']}] {a['title']}**: {a['description']}"
+        for a in verified_achievements
+    )
+
+    target_roles = " · ".join(f"`{role}`" for role in career["career_interests"])
+    focus_items = "\n".join(f"- {item}" for item in career["current_focus"])
+    updates_rows = "\n".join(
+        f"| `{u['date']}` | **{u['category']}** | {u['title']} |"
+        for u in career["recent_updates"]
+    )
+
+    return f"""<!-- AUTO-GENERATED FILE: DO NOT EDIT MANUALLY.
+     Source of truth: profile-data/*.json
+     Generator: python scripts/generate_readme.py -->
+<!-- Website-matched profile README: {live_url} -->
+
+<div align="center">
+  <img src="assets/identity/web/salman-rahman-portrait.jpg" width="140" alt="{profile['name']}" />
+  <h1>{profile['name']}.</h1>
+  <p><b>SQL &amp; ERP ENGINEER</b><br/>AT {profile['organization']} · {location_short}</p>
+  <p>{profile['short_bio']}</p>
+  <p>
+  {contact_html}
+  </p>
+  <p>{contact_text_html}</p>
+</div>
+
+<table align="center" cellpadding="12">
+<tr>
+<td align="center"><b>{len(featured_projects):02d}</b><br/><sub>VERIFIED SYSTEMS</sub></td>
+<td align="center"><b>{len(verified_certs):02d}</b><br/><sub>BADGE CREDENTIALS</sub></td>
+<td align="center"><b>{ai_skill_count}</b><br/><sub>AI SKILLS HUB →</sub></td>
+<td align="center"><b>{codebase_mb}</b><br/><sub>GITHUB CODEBASE</sub></td>
+</tr>
+</table>
+
+---
+
+## About Me
+
+{summary_paragraphs}
+
+<br/>
+
+<div align="center">
+  <img src="{_versioned_asset('assets/profile/about-terminal.svg', asset_versions)}" alt="Engineering Pillars and Experience Terminal ({experience['years_of_experience']})" width="100%" />
+</div>
+
+---
+
+## Selected WORK.
+
+<table>
+<tr>
+{projects_table}
+</tr>
+</table>
+
+---
+
+## Verified CREDENTIALS.
+
+<table>
+<tr>
+{credentials_table}
+</tr>
+</table>
+
+---
+
+## Career &amp; EDUCATION.
+
+### EXPERIENCE
+
+| Organization | Role | Period |
+| :--- | :--- | :--- |
+{experience_rows}
+
+### EDUCATION
+
+| Institution | Qualification | Period | CGPA |
+| :--- | :--- | :--- | :--- |
+{education_rows}
+
+### ENDORSEMENTS
+
+{endorsement_rows}
+
+---
+
+## Technical Skills
+
+<div align="center">
+  <img src="{_versioned_asset('assets/profile/skills-matrix.svg', asset_versions)}" alt="Technical Skills Matrix" width="100%" />
+</div>
+
+<details>
+<summary><code>$ cat skills_index.md</code> — Structured Skill Reference</summary>
+
+| Category | Technologies | Core Focus |
+| :--- | :--- | :--- |
+{skills_table}
+
+</details>
+
+---
+
+## ECOSYSTEM HUB.
+
+Browse all **{ai_skill_count}** audited AI agent skills &amp; orchestrators.
+
+<a href="{live_url}#skills-hub">Open AI Skills Hub →</a>
+
+---
+
+## GitHub Activity
+
+<div align="center">
+  <img src="{_versioned_asset('assets/profile/github-telemetry.svg', asset_versions)}" alt="Verified GitHub Activity and Codebase Telemetry" width="100%" />
+</div>
+
+<br/>
+
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/{username}/{username}/output/github-contribution-grid-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/{username}/{username}/output/github-contribution-grid-snake.svg">
+    <img alt="GitHub Contribution Activity Snake" src="https://raw.githubusercontent.com/{username}/{username}/output/github-contribution-grid-snake.svg" width="100%" />
+  </picture>
+</div>
+
+<details>
+<summary><code>$ cat achievements.md</code> — Key Achievements</summary>
+
+{achievement_rows}
+
+</details>
+
+<details>
+<summary><code>$ cat continuous_learning.md</code> — Professional Courses</summary>
+
+{course_rows}
+
+</details>
+
+---
+
+## Career Status
+
+<p>
+  <img src="{_versioned_asset('assets/icons/career-status.svg', asset_versions)}" alt="Career Status: {career['status']}" />
+</p>
+
+- **Current Status:** {career['status']} ({profile['location']} · {profile['organization']})
+- **Target Roles:** {target_roles}
+
+**Current Focus:**
+{focus_items}
+
+**Recent Professional Updates:**
+
+| Period | Area | Update |
+| :--- | :--- | :--- |
+{updates_rows}
+
+---
+
+## Start with A MESSAGE.
+
+<a href="mailto:{contact['email']}">{contact['email']}</a> · [Send email](mailto:{contact['email']}) · {contact_text_html}
+
+---
+
+<details>
+<summary><code>$ cat profile_architecture_banner.svg</code> — Original Profile Banner</summary>
+
+<div align="center">
+  <img src="{_versioned_asset('assets/banner/hero-banner.svg', asset_versions)}" alt="{profile['name']} - {profile['headline']}" width="100%" />
+</div>
+
+</details>
+
+<div align="center">
+  <sub>Maintained through structured JSON data in <code>profile-data/</code> and automated via GitHub Actions • <a href="{live_url}">Live website</a> • <a href="ARCHITECTURE.md">Maintenance &amp; Automation Guide</a></sub>
+</div>
+"""
+
+
 def build_outputs(root_dir: Path) -> dict[Path, str]:
     """Compute all generated file paths and their exact UTF-8 contents."""
     data_dir = root_dir / "profile-data"
@@ -1130,6 +1482,7 @@ def build_outputs(root_dir: Path) -> dict[Path, str]:
     education = _load_json(data_dir / "education.json")
     achievements = _load_json(data_dir / "achievements.json")
     github_metrics = _load_json(data_dir / "github_metrics.json")
+    ai_registry = _load_json(root_dir / "ai-skills" / "registry.json")
 
     banner_svg = render_hero_banner_svg(profile, career)
     about_svg = render_about_terminal_svg(profile, experience)
@@ -1190,7 +1543,7 @@ def build_outputs(root_dir: Path) -> dict[Path, str]:
                             static_file.read_bytes()
                         ).hexdigest()[:8]
 
-    outputs[root_dir / "README.md"] = render_readme_markdown(
+    outputs[root_dir / "README.md"] = render_readme_markdown_website(
         profile=profile,
         career=career,
         experience=experience,
@@ -1199,6 +1552,8 @@ def build_outputs(root_dir: Path) -> dict[Path, str]:
         certifications=certifications,
         education=education,
         achievements=achievements,
+        github_metrics=github_metrics,
+        ai_skill_count=len(ai_registry.get("skills", [])),
         asset_versions=asset_versions,
     )
     return outputs
