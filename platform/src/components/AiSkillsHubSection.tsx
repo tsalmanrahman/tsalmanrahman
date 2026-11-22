@@ -158,28 +158,6 @@ export const AiSkillsHubSection: React.FC<AiSkillsHubSectionProps> = ({
         </div>
       </div>
 
-      {/* Pricing Transparency Policy */}
-      <div className="mt-8 border border-[#111110]/20 bg-[#F4F4F2] p-5">
-        <div className="mb-3 flex items-center gap-2 font-mono text-xs font-medium uppercase tracking-[0.08em] text-[#111110]">
-          <ShieldCheck className="h-4 w-4" />
-          <span>PRICING &amp; SECURITY CLASSIFICATION POLICY</span>
-        </div>
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {(Object.keys(registry.pricing_tiers_legend) as PricingTier[]).map((tier) => (
-            <div key={tier} className="border border-[#111110]/15 bg-white p-3.5">
-              <span
-                className={`inline-block border px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider ${PRICING_BADGE[tier].classes}`}
-              >
-                {PRICING_BADGE[tier].label}
-              </span>
-              <p className="mt-2 text-xs leading-relaxed text-[#3A3A38]">
-                {registry.pricing_tiers_legend[tier]}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* Filter Console Bar */}
       <div className="mt-6 space-y-4 border border-[#111110] bg-white p-5">
         <div className="grid grid-cols-1 gap-3 lg:grid-cols-12">

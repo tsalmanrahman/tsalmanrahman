@@ -15,7 +15,7 @@
   &nbsp;
   <a href="https://www.credly.com/users/salman_rahman"><img src="assets/icons/contact-credly.svg?v=3377c308" alt="Credly" /></a>
   &nbsp;
-  <a href="mailto:t.salmanrahman@gmail.com"><img src="assets/icons/contact-email.svg?v=9bc3d706" alt="Email" /></a>
+  <a href="mailto:t.salmanrahman02@gmail.com"><img src="assets/icons/contact-email.svg?v=9bc3d706" alt="Email" /></a>
   &nbsp;
   <a href="https://github.com/tsalmanrahman"><img src="assets/icons/contact-github.svg?v=5901df56" alt="GitHub" /></a>
 </p>
