@@ -115,14 +115,14 @@ export const AiSkillsHubSection: React.FC<AiSkillsHubSectionProps> = ({
   return (
     <section
       id="skills-hub"
-      className="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24"
+      className="relative z-10 mx-auto max-w-7xl scroll-mt-14 px-4 py-16 sm:px-6 lg:px-8 lg:py-24"
     >
       {/* Header */}
       <div className="mb-10 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
         <div>
-          <span className="inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.24em] text-amber-700">
+          <span className="inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.22em] text-amber-700">
             <Sparkles className="h-3.5 w-3.5 text-amber-600" />
-            04 // CENTRALIZED AI SKILLS HUB &amp; ORCHESTRATION
+            10 / ECOSYSTEM — CENTRALIZED AI SKILLS HUB &amp; ORCHESTRATION
           </span>
           <h2 className="mt-2 font-display text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
             Shared Free AI Skills Library &amp; Agent Ecosystem

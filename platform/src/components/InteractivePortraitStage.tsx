@@ -3,15 +3,21 @@ import * as THREE from 'three'
 import { RotateCcw, ShieldCheck } from 'lucide-react'
 import { buildPortraitMatte } from '../utils/portraitSegmentation'
 
+export type PortraitRenderMode = 'volumetric' | 'mosaic'
+
 interface InteractivePortraitStageProps {
   portraitSrc: string
   ownerName: string
   roleLabel: string
   identityShaPrefix: string
-  onOpenVerificationModal: () => void
+  onOpenVerificationModal?: () => void
+  variant?: 'card' | 'hero-stage'
+  renderMode?: PortraitRenderMode
+  onRenderModeChange?: (mode: PortraitRenderMode) => void
+  replayNonce?: number
 }
 
-type RenderMode = 'volumetric' | 'mosaic'
+type RenderMode = PortraitRenderMode
 
 const D0 = 10.0
 const PORTRAIT_WORLD_SIZE = 7.4
@@ -122,15 +128,26 @@ export const InteractivePortraitStage: React.FC<InteractivePortraitStageProps> =
   roleLabel,
   identityShaPrefix,
   onOpenVerificationModal,
+  variant = 'hero-stage',
+  renderMode: controlledRenderMode,
+  onRenderModeChange,
+  replayNonce: controlledReplayNonce,
 }) => {
   const stageRef = useRef<HTMLDivElement | null>(null)
   const sigRef = useRef<SVGSVGElement | null>(null)
 
-  const [renderMode, setRenderMode] = useState<RenderMode>('volumetric')
-  const [replayNonce, setReplayNonce] = useState(0)
+  const [internalRenderMode, setInternalRenderMode] = useState<RenderMode>('volumetric')
+  const [internalReplayNonce, setInternalReplayNonce] = useState(0)
   const [fallbackSrc, setFallbackSrc] = useState<string>(portraitSrc)
   const [useStaticFallback, setUseStaticFallback] = useState<boolean>(false)
   const [ready, setReady] = useState<boolean>(false)
+
+  const renderMode = controlledRenderMode ?? internalRenderMode
+  const replayNonce = controlledReplayNonce ?? internalReplayNonce
+  const setRenderMode = (next: RenderMode) => {
+    setInternalRenderMode(next)
+    onRenderModeChange?.(next)
+  }
 
   const targetMosaicRef = useRef<number>(0)
   const replayTriggerRef = useRef<number>(0)
@@ -366,30 +383,6 @@ export const InteractivePortraitStage: React.FC<InteractivePortraitStageProps> =
       instMesh.frustumCulled = false
       scene.add(instMesh)
 
-      // Subtle architectural cobalt floating motes around silhouette
-      const moteCount = 85
-      const motePositions = new Float32Array(moteCount * 3)
-      const moteSeeds = new Float32Array(moteCount * 2)
-      for (let i = 0; i < moteCount; i++) {
-        const ang = hashCell(i, 3) * Math.PI * 2
-        const rad = 2.6 + hashCell(i, 11) * 2.5
-        motePositions[i * 3] = Math.cos(ang) * rad
-        motePositions[i * 3 + 1] = (hashCell(i, 19) - 0.5) * 7.6
-        motePositions[i * 3 + 2] = -D0 + (hashCell(i, 29) - 0.5) * 2.6
-        moteSeeds[i * 2] = ang
-        moteSeeds[i * 2 + 1] = 0.4 + hashCell(i, 37) * 0.8
-      }
-      const moteGeo = new THREE.BufferGeometry()
-      moteGeo.setAttribute('position', new THREE.BufferAttribute(motePositions, 3))
-      const moteMat = new THREE.PointsMaterial({
-        color: 0x2563eb,
-        size: 0.055,
-        transparent: true,
-        opacity: 0.35,
-      })
-      const motes = new THREE.Points(moteGeo, moteMat)
-      scene.add(motes)
-
       const updateSize = () => {
         if (!renderer) return
         const rect = container.getBoundingClientRect()
@@ -425,8 +418,14 @@ export const InteractivePortraitStage: React.FC<InteractivePortraitStageProps> =
       }
 
       const onScroll = () => {
-        // Only activate scroll depth expansion once the portrait stage starts scrolling past the top edge,
-        // so scrolling down to view the portrait on tablet/mobile keeps it 100% locked and cohesive.
+        if (variant === 'hero-stage') {
+          targetScroll = Math.min(
+            1,
+            Math.max(0, window.scrollY - 24) / Math.max(window.innerHeight * 0.72, 360),
+          )
+          return
+        }
+        // Card mode fallback: activate scroll depth expansion only past top edge
         const rect = container.getBoundingClientRect()
         const pastTop = Math.max(0, 72 - rect.top)
         targetScroll = Math.min(1, pastTop / Math.max(rect.height * 0.9, 260))
@@ -479,16 +478,6 @@ export const InteractivePortraitStage: React.FC<InteractivePortraitStageProps> =
         shaderMat.uniforms.uScroll.value = smoothScroll
         shaderMat.uniforms.uMosaic.value = smoothMosaic
 
-        // Gentle mote drift
-        const posAttr = moteGeo.getAttribute('position') as THREE.BufferAttribute
-        for (let i = 0; i < moteCount; i++) {
-          const speed = moteSeeds[i * 2 + 1]
-          const angle = moteSeeds[i * 2] + totalTime * 0.14 * speed
-          const r = 2.6 + (i % 17) * 0.14 + Math.sin(totalTime * 0.6 + i) * 0.18
-          posAttr.setX(i, Math.cos(angle) * r)
-        }
-        posAttr.needsUpdate = true
-
         // 3D camera parallax & scroll depth push
         const driftX = smx * 0.42
         const driftY = -smy * 0.34
@@ -517,8 +506,6 @@ export const InteractivePortraitStage: React.FC<InteractivePortraitStageProps> =
         planeGeo.dispose()
         shaderMat.dispose()
         tex.dispose()
-        moteGeo.dispose()
-        moteMat.dispose()
         renderer?.dispose()
         if (renderer?.domElement && renderer.domElement.parentNode === container) {
           container.removeChild(renderer.domElement)
@@ -539,39 +526,71 @@ export const InteractivePortraitStage: React.FC<InteractivePortraitStageProps> =
       cancelled = true
       cleanupThree?.()
     }
-  }, [portraitSrc])
+  }, [portraitSrc, variant])
+
+  const isHeroStage = variant === 'hero-stage'
 
   return (
-    <div className="relative mx-auto flex w-full max-w-[520px] flex-col items-center">
+    <div
+      className={
+        isHeroStage
+          ? 'relative mx-auto flex w-full flex-col items-center'
+          : 'relative mx-auto flex w-full max-w-[520px] flex-col items-center'
+      }
+    >
       {/* Frameless Interactive 3D Stage */}
       <div
         ref={stageRef}
-        className="relative flex h-[390px] w-full items-center justify-center sm:h-[460px] lg:h-[510px]"
+        className={
+          isHeroStage
+            ? 'relative flex h-[38svh] min-h-[250px] max-h-[540px] w-full items-center justify-center sm:h-[50svh] lg:h-[58svh]'
+            : 'relative flex h-[390px] w-full items-center justify-center sm:h-[460px] lg:h-[510px]'
+        }
       >
         {/* Background Animated Calligraphic Signature Layer (vadimcarazan.com inspired) */}
         <svg
           ref={sigRef}
-          viewBox="0 0 640 260"
+          viewBox={isHeroStage ? '0 0 1200 280' : '0 0 640 260'}
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 top-1/2 -z-10 w-full -translate-y-1/2 opacity-80 transition-transform duration-150 ease-out"
+          className="pointer-events-none absolute inset-x-0 top-1/2 -z-10 w-full -translate-y-1/2 opacity-55 transition-transform duration-150 ease-out"
         >
-          <path
-            d="M28,158 C78,76 138,68 168,142 C188,192 222,102 262,118 C298,132 294,184 338,152 C384,118 416,86 452,138 C482,182 528,128 608,108"
-            fill="none"
-            stroke="#CBD5E1"
-            strokeWidth="2.4"
-            strokeLinecap="round"
-            strokeDasharray="920"
-            strokeDashoffset="920"
-          >
-            <animate
-              attributeName="stroke-dashoffset"
-              from="920"
-              to="0"
-              dur="1.5s"
-              fill="freeze"
-            />
-          </path>
+          {isHeroStage ? (
+            <path
+              d="M32,188 C118,86 218,74 268,158 C306,222 368,108 438,132 C496,152 486,216 564,170 C642,124 708,84 776,154 C828,208 914,148 986,120 C1048,96 1112,134 1168,112"
+              fill="none"
+              stroke="#94A3B8"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeDasharray="1550"
+              strokeDashoffset="1550"
+            >
+              <animate
+                attributeName="stroke-dashoffset"
+                from="1550"
+                to="0"
+                dur="1.65s"
+                fill="freeze"
+              />
+            </path>
+          ) : (
+            <path
+              d="M28,158 C78,76 138,68 168,142 C188,192 222,102 262,118 C298,132 294,184 338,152 C384,118 416,86 452,138 C482,182 528,128 608,108"
+              fill="none"
+              stroke="#CBD5E1"
+              strokeWidth="2.4"
+              strokeLinecap="round"
+              strokeDasharray="920"
+              strokeDashoffset="920"
+            >
+              <animate
+                attributeName="stroke-dashoffset"
+                from="920"
+                to="0"
+                dur="1.5s"
+                fill="freeze"
+              />
+            </path>
+          )}
         </svg>
 
         {/* Static / Reduced-Motion / Pre-Matte Fallback Image */}
@@ -584,61 +603,63 @@ export const InteractivePortraitStage: React.FC<InteractivePortraitStageProps> =
         )}
       </div>
 
-      {/* Minimal Flat Controls & Identity Lock Strip */}
-      <div className="mt-2 flex w-full flex-wrap items-center justify-between gap-2 rounded-2xl border border-slate-200/90 bg-white/90 px-3.5 py-2 shadow-xs backdrop-blur-md">
-        <button
-          type="button"
-          onClick={onOpenVerificationModal}
-          className="inline-flex items-center gap-1.5 font-mono text-[11px] font-medium text-emerald-700 hover:text-emerald-900 cursor-pointer"
-        >
-          <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
-          <span>LOCKED · {identityShaPrefix}</span>
-        </button>
+      {/* Minimal Flat Controls & Identity Lock Strip (Card Variant Only) */}
+      {!isHeroStage && (
+        <div className="mt-2 flex w-full flex-wrap items-center justify-between gap-2 rounded-2xl border border-slate-200/90 bg-white/90 px-3.5 py-2 shadow-xs backdrop-blur-md">
+          <button
+            type="button"
+            onClick={onOpenVerificationModal}
+            className="inline-flex items-center gap-1.5 font-mono text-[11px] font-medium text-emerald-700 hover:text-emerald-900 cursor-pointer"
+          >
+            <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
+            <span>LOCKED · {identityShaPrefix}</span>
+          </button>
 
-        {!useStaticFallback && (
-          <div className="flex items-center gap-1.5">
-            <div
-              role="group"
-              aria-label="Portrait 3D Render Style"
-              className="inline-flex rounded-full border border-slate-200 bg-slate-100 p-0.5"
-            >
+          {!useStaticFallback && (
+            <div className="flex items-center gap-1.5">
+              <div
+                role="group"
+                aria-label="Portrait 3D Render Style"
+                className="inline-flex rounded-full border border-slate-200 bg-slate-100 p-0.5"
+              >
+                <button
+                  type="button"
+                  onClick={() => setRenderMode('volumetric')}
+                  className={`rounded-full px-2.5 py-1 font-mono text-[10px] transition cursor-pointer ${
+                    renderMode === 'volumetric'
+                      ? 'bg-white font-semibold text-slate-950 shadow-2xs'
+                      : 'text-slate-600 hover:text-slate-950'
+                  }`}
+                >
+                  Volumetric
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setRenderMode('mosaic')}
+                  className={`rounded-full px-2.5 py-1 font-mono text-[10px] transition cursor-pointer ${
+                    renderMode === 'mosaic'
+                      ? 'bg-white font-semibold text-blue-700 shadow-2xs'
+                      : 'text-slate-600 hover:text-slate-950'
+                  }`}
+                >
+                  3D Mosaic
+                </button>
+              </div>
+
               <button
                 type="button"
-                onClick={() => setRenderMode('volumetric')}
-                className={`rounded-full px-2.5 py-1 font-mono text-[10px] transition cursor-pointer ${
-                  renderMode === 'volumetric'
-                    ? 'bg-white font-semibold text-slate-950 shadow-2xs'
-                    : 'text-slate-600 hover:text-slate-950'
-                }`}
+                onClick={() => setInternalReplayNonce((n) => n + 1)}
+                aria-label="Replay 3D Portrait Assembly"
+                title="Replay 3D Assembly"
+                className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-white px-2.5 py-1 font-mono text-[10px] font-medium text-slate-700 transition hover:border-blue-400 hover:text-blue-700 cursor-pointer"
               >
-                Volumetric
-              </button>
-              <button
-                type="button"
-                onClick={() => setRenderMode('mosaic')}
-                className={`rounded-full px-2.5 py-1 font-mono text-[10px] transition cursor-pointer ${
-                  renderMode === 'mosaic'
-                    ? 'bg-white font-semibold text-blue-700 shadow-2xs'
-                    : 'text-slate-600 hover:text-slate-950'
-                }`}
-              >
-                3D Mosaic
+                <RotateCcw className="h-3 w-3" />
+                <span className="hidden sm:inline">Replay</span>
               </button>
             </div>
-
-            <button
-              type="button"
-              onClick={() => setReplayNonce((n) => n + 1)}
-              aria-label="Replay 3D Portrait Assembly"
-              title="Replay 3D Assembly"
-              className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-white px-2.5 py-1 font-mono text-[10px] font-medium text-slate-700 transition hover:border-blue-400 hover:text-blue-700 cursor-pointer"
-            >
-              <RotateCcw className="h-3 w-3" />
-              <span className="hidden sm:inline">Replay</span>
-            </button>
-          </div>
-        )}
-      </div>
+          )}
+        </div>
+      )}
     </div>
   )
 }

@@ -1,72 +1,126 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import Lenis from 'lenis'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import rawBundle from './data/ecosystem.generated.json'
 import type { AiSkillEntry, EcosystemBundle, ProjectItem } from './types/ecosystem'
-import { CinematicPreloader } from './components/CinematicPreloader'
-import { SpatialWebGLCanvas } from './components/SpatialWebGLCanvas'
-import { CurvedTransitionOverlay } from './components/CurvedTransitionOverlay'
-import { NavigationDock, type ViewMode } from './components/NavigationDock'
-import { CommandPalette } from './components/CommandPalette'
-import { HeroSection } from './components/HeroSection'
-import { EngineeringShowcase } from './components/EngineeringShowcase'
-import { SkillsAndTelemetrySection } from './components/SkillsAndTelemetrySection'
-import { CareerCredentialsTimeline } from './components/CareerCredentialsTimeline'
+import { EditorialTopBar, STORY_CHAPTERS } from './components/EditorialTopBar'
+import { EditorialFlybar } from './components/EditorialFlybar'
+import { EditorialDrawer, type EditorialDrawerMode } from './components/EditorialDrawer'
+import { PortraitHeroStage } from './components/PortraitHeroStage'
+import { AboutChapter } from './components/AboutChapter'
+import { WorkChapter } from './components/WorkChapter'
+import { CredentialsChapter } from './components/CredentialsChapter'
+import { JourneyChapter } from './components/JourneyChapter'
+import { ProfilesChapter } from './components/ProfilesChapter'
+import { ContactChapter } from './components/ContactChapter'
 import { AiSkillsHubSection } from './components/AiSkillsHubSection'
+import { CommandPalette } from './components/CommandPalette'
 import { VerificationModal } from './components/VerificationModal'
-import { FooterSection } from './components/FooterSection'
 
 gsap.registerPlugin(ScrollTrigger)
 
 const bundle = rawBundle as unknown as EcosystemBundle
 
-const MODE_TITLES: Record<ViewMode, string> = {
-  unified: 'Unified Ecosystem',
-  portfolio: 'Executive Portfolio',
-  skills: 'Centralized AI Skills Hub',
-}
-
 export const App: React.FC = () => {
-  const [preloaderDone, setPreloaderDone] = useState(false)
-  const [viewMode, setViewMode] = useState<ViewMode>('unified')
-  const [transitionState, setTransitionState] = useState<{ active: boolean; label: string }>({
-    active: false,
-    label: '',
-  })
   const [commandOpen, setCommandOpen] = useState(false)
   const [verificationOpen, setVerificationOpen] = useState(false)
+  const [drawerMode, setDrawerMode] = useState<EditorialDrawerMode>('closed')
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null)
   const [selectedSkill, setSelectedSkill] = useState<AiSkillEntry | null>(null)
   const [scrollProgress, setScrollProgress] = useState(0)
+  const [showFlybar, setShowFlybar] = useState(false)
+  const [activeChapterId, setActiveChapterId] = useState<string>('about')
+  const lenisRef = useRef<Lenis | null>(null)
 
-  // Lenis inertia smooth scroll synced with GSAP ScrollTrigger
+  // Support deep linking via ?work=<project-id> (vadimcarazan.com convention)
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const workId = params.get('work')
+    if (!workId) return
+    const found = bundle.projects.find((p) => p.verified && p.id === workId)
+    if (found) {
+      setSelectedProject(found)
+      setDrawerMode('project')
+    }
+  }, [])
+
+  const updateUrlWorkParam = useCallback((projectId: string | null) => {
+    try {
+      const url = new URL(window.location.href)
+      if (projectId) {
+        url.searchParams.set('work', projectId)
+      } else {
+        url.searchParams.delete('work')
+      }
+      window.history.replaceState({}, '', url.toString())
+    } catch {
+      // Ignore history mutation errors in sandboxed contexts
+    }
+  }, [])
+
+  const openProjectDrawer = useCallback(
+    (project: ProjectItem) => {
+      setSelectedProject(project)
+      setDrawerMode('project')
+      updateUrlWorkParam(project.id)
+    },
+    [updateUrlWorkParam],
+  )
+
+  const openSelectedDrawer = useCallback(() => {
+    setSelectedProject(null)
+    setDrawerMode('selected')
+    updateUrlWorkParam(null)
+  }, [updateUrlWorkParam])
+
+  const closeDrawer = useCallback(() => {
+    setDrawerMode('closed')
+    setSelectedProject(null)
+    updateUrlWorkParam(null)
+  }, [updateUrlWorkParam])
+
+  // Smooth scrolling (Lenis) + subtle editorial reveal triggers + deterministic chapter tracking
   useEffect(() => {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const chapterIds = [...STORY_CHAPTERS.map((c) => c.id), 'skills-hub']
 
-    const updateProgress = () => {
+    const updateScrollState = () => {
       const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1)
       setScrollProgress(Math.min(Math.max(window.scrollY / maxScroll, 0), 1))
+      setShowFlybar(window.scrollY > Math.max(window.innerHeight * 0.52, 340))
+
+      const triggerY = Math.max(window.innerHeight * 0.42, 240)
+      let currentId = 'about'
+      for (const id of chapterIds) {
+        const el = document.getElementById(id)
+        if (!el) continue
+        if (el.getBoundingClientRect().top <= triggerY) {
+          currentId = id
+        }
+      }
+      setActiveChapterId(currentId)
     }
 
-    window.addEventListener('scroll', updateProgress, { passive: true })
-    updateProgress()
+    window.addEventListener('scroll', updateScrollState, { passive: true })
+    updateScrollState()
 
     if (reducedMotion) {
       return () => {
-        window.removeEventListener('scroll', updateProgress)
+        window.removeEventListener('scroll', updateScrollState)
       }
     }
 
     const lenis = new Lenis({
-      duration: 1.1,
+      duration: 1.0,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
     })
+    lenisRef.current = lenis
 
     const onLenisScroll = () => {
       ScrollTrigger.update()
-      updateProgress()
+      updateScrollState()
     }
     lenis.on('scroll', onLenisScroll)
 
@@ -76,14 +130,33 @@ export const App: React.FC = () => {
     gsap.ticker.add(tick)
     gsap.ticker.lagSmoothing(0)
 
+    const ctx = gsap.context(() => {
+      gsap.utils.toArray<HTMLElement>('.chapter-reveal').forEach((section) => {
+        gsap.from(section, {
+          opacity: 0,
+          y: 26,
+          duration: 0.72,
+          ease: 'power3.out',
+          clearProps: 'opacity,transform',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 86%',
+            once: true,
+          },
+        })
+      })
+    })
+
     return () => {
-      window.removeEventListener('scroll', updateProgress)
+      window.removeEventListener('scroll', updateScrollState)
+      ctx.revert()
       gsap.ticker.remove(tick)
       lenis.off('scroll', onLenisScroll)
       lenis.destroy()
+      lenisRef.current = null
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
     }
-  }, [viewMode])
+  }, [])
 
   // Global Ctrl+K / Cmd+K shortcut for Command Palette
   useEffect(() => {
@@ -97,162 +170,167 @@ export const App: React.FC = () => {
     return () => window.removeEventListener('keydown', onKeyDown)
   }, [])
 
-  const handleChangeViewMode = useCallback(
-    (nextMode: ViewMode, anchorId?: string) => {
-      const scrollToTarget = (id?: string) => {
-        if (!id) {
-          window.scrollTo({ top: 0, behavior: 'smooth' })
-          return
-        }
-        const el = document.getElementById(id)
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        }
+  const scrollToSection = useCallback((sectionId: string) => {
+    setActiveChapterId(sectionId === 'portrait-stage' ? 'about' : sectionId)
+    const lenis = lenisRef.current
+    if (sectionId === 'portrait-stage') {
+      if (lenis) {
+        lenis.scrollTo(0, { duration: 0.85 })
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
       }
-
-      if (nextMode === viewMode) {
-        scrollToTarget(anchorId)
-        return
-      }
-
-      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-      if (reducedMotion) {
-        setViewMode(nextMode)
-        window.setTimeout(() => scrollToTarget(anchorId), 40)
-        return
-      }
-
-      setTransitionState({ active: true, label: MODE_TITLES[nextMode] })
-      window.setTimeout(() => {
-        setViewMode(nextMode)
-        window.setTimeout(() => {
-          scrollToTarget(anchorId)
-          setTransitionState({ active: false, label: '' })
-        }, 120)
-      }, 320)
-    },
-    [viewMode],
-  )
-
-  const handleSelectProjectFromPalette = useCallback(
-    (project: ProjectItem) => {
-      if (viewMode === 'skills') {
-        setViewMode('unified')
-      }
-      setSelectedProject(project)
-    },
-    [viewMode],
-  )
+      return
+    }
+    const el = document.getElementById(sectionId)
+    if (!el) return
+    if (lenis) {
+      lenis.scrollTo(el, { offset: -64, duration: 0.85 })
+    } else {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }, [])
 
   const handleSelectSkillFromPalette = useCallback(
     (skill: AiSkillEntry) => {
-      if (viewMode === 'portfolio') {
-        setViewMode('unified')
-      }
       setSelectedSkill(skill)
+      scrollToSection('skills-hub')
     },
-    [viewMode],
+    [scrollToSection],
   )
 
-  const showPortfolio = viewMode === 'unified' || viewMode === 'portfolio'
-  const showSkillsHub = viewMode === 'unified' || viewMode === 'skills'
+  const activeChapter = useMemo(() => {
+    if (activeChapterId === 'skills-hub') {
+      return {
+        id: 'skills-hub',
+        index: '10',
+        label: 'Skills Hub',
+        title: 'Centralized AI Skills Hub',
+        subtitle: '32 Free AI Skills & Agent Roster',
+      }
+    }
+    return STORY_CHAPTERS.find((c) => c.id === activeChapterId) ?? STORY_CHAPTERS[0]
+  }, [activeChapterId])
 
   return (
     <div className="relative min-h-screen bg-[#F8FAFC] text-slate-900">
-      {!preloaderDone && (
-        <CinematicPreloader
-          onComplete={() => setPreloaderDone(true)}
-          sha256Prefix={bundle.identity_lock.sha256.slice(0, 12)}
-          skillCount={bundle.ai_skills_registry.skills.length}
-        />
-      )}
+      {/* Subtle flat grid paper texture */}
+      <div aria-hidden="true" className="hud-grid pointer-events-none fixed inset-0 z-0 opacity-75" />
 
-      <SpatialWebGLCanvas />
-
-      <CurvedTransitionOverlay active={transitionState.active} label={transitionState.label} />
-
-      <NavigationDock
-        viewMode={viewMode}
-        onChangeViewMode={handleChangeViewMode}
-        onOpenCommandPalette={() => setCommandOpen(true)}
-        scrollProgress={scrollProgress}
+      <EditorialTopBar
         profileName={bundle.profile.name}
-        availableForHire={bundle.career.available_for_hire}
+        organization={bundle.profile.organization}
+        location={bundle.profile.location}
+        activeChapterId={activeChapterId}
+        scrollProgress={scrollProgress}
+        selectedDrawerOpen={drawerMode !== 'closed'}
+        onNavigate={scrollToSection}
+        onOpenSelected={openSelectedDrawer}
+        onOpenCommandPalette={() => setCommandOpen(true)}
+      />
+
+      <main className="relative z-10 pb-24">
+        {/* Opening Full-Viewport Interactive Portrait Stage */}
+        <PortraitHeroStage
+          profile={bundle.profile}
+          career={bundle.career}
+          identityLock={bundle.identity_lock}
+          onExplore={() => scrollToSection('about')}
+          onOpenVerificationModal={() => setVerificationOpen(true)}
+        />
+
+        <div className="hairline-divider mx-auto max-w-[1440px]" />
+
+        {/* Section A: About Me & Technical Expertise */}
+        <AboutChapter
+          profile={bundle.profile}
+          career={bundle.career}
+          skills={bundle.skills}
+          onNavigateChapter={scrollToSection}
+        />
+
+        <div className="hairline-divider mx-auto max-w-[1440px]" />
+
+        {/* Section B: My Work & Projects */}
+        <WorkChapter projects={bundle.projects} onSelectProject={openProjectDrawer} />
+
+        <div className="hairline-divider mx-auto max-w-[1440px]" />
+
+        {/* Sections C & D: Certifications + Badges & Achievements */}
+        <CredentialsChapter
+          certifications={bundle.certifications}
+          achievements={bundle.achievements}
+          credlyUrl={bundle.profile.contact.credly}
+        />
+
+        <div className="hairline-divider mx-auto max-w-[1440px]" />
+
+        {/* Sections E & F: Professional Experience + Education */}
+        <JourneyChapter
+          positions={bundle.experience.positions}
+          education={bundle.education}
+          languages={bundle.experience.languages}
+          yearsSummary={bundle.experience.years_of_experience}
+        />
+
+        <div className="hairline-divider mx-auto max-w-[1440px]" />
+
+        {/* Sections G & H: LinkedIn & Endorsements + GitHub & Telemetry */}
+        <ProfilesChapter
+          profile={bundle.profile}
+          recommendations={bundle.experience.recommendations}
+          githubMetrics={bundle.github_metrics}
+          lastVerifiedDate={bundle.verification_status.last_verified_date}
+          onOpenVerificationModal={() => setVerificationOpen(true)}
+        />
+
+        <div className="hairline-divider mx-auto max-w-[1440px]" />
+
+        {/* Section I: Contact & Direct Channels */}
+        <ContactChapter
+          profile={bundle.profile}
+          identityLock={bundle.identity_lock}
+          verificationStatus={bundle.verification_status}
+          onOpenVerificationModal={() => setVerificationOpen(true)}
+        />
+
+        <div className="hairline-divider mx-auto max-w-[1440px]" />
+
+        {/* Unified Ecosystem Annex: Centralized Free AI Skills Hub */}
+        <AiSkillsHubSection
+          registry={bundle.ai_skills_registry}
+          agentsRoster={bundle.ai_agents}
+          selectedSkill={selectedSkill}
+          onSelectSkill={setSelectedSkill}
+        />
+      </main>
+
+      {/* Bottom Floating Chapter & Return HUD (vadimcarazan.com flybar inspiration) */}
+      <EditorialFlybar
+        visible={showFlybar && drawerMode === 'closed'}
+        activeChapter={activeChapter}
+        totalChapters={STORY_CHAPTERS.length}
+        onOpenIndex={openSelectedDrawer}
+        onBackToPortrait={() => scrollToSection('portrait-stage')}
+      />
+
+      {/* Left-Docked Glass Drawer (Selected Index & Project Case Study) */}
+      <EditorialDrawer
+        mode={drawerMode}
+        project={selectedProject}
+        projects={bundle.projects}
+        onClose={closeDrawer}
+        onSelectProject={openProjectDrawer}
+        onNavigateChapter={scrollToSection}
       />
 
       <CommandPalette
         open={commandOpen}
         onClose={() => setCommandOpen(false)}
         bundle={bundle}
-        onSelectProject={handleSelectProjectFromPalette}
+        onSelectProject={openProjectDrawer}
         onSelectSkill={handleSelectSkillFromPalette}
-        onSwitchMode={handleChangeViewMode}
-      />
-
-      <main className="relative z-10">
-        <HeroSection
-          profile={bundle.profile}
-          career={bundle.career}
-          githubMetrics={bundle.github_metrics}
-          identityLock={bundle.identity_lock}
-          certifications={bundle.certifications}
-          skillCount={bundle.ai_skills_registry.skills.length}
-          agentCount={bundle.ai_agents.agents.length}
-          onJump={handleChangeViewMode}
-          onOpenVerificationModal={() => setVerificationOpen(true)}
-        />
-
-        <div className="hairline-divider mx-auto max-w-7xl" />
-
-        {showPortfolio && (
-          <>
-            <EngineeringShowcase
-              projects={bundle.projects}
-              selectedProject={selectedProject}
-              onSelectProject={setSelectedProject}
-            />
-
-            <div className="hairline-divider mx-auto max-w-7xl" />
-
-            <SkillsAndTelemetrySection
-              skills={bundle.skills}
-              githubMetrics={bundle.github_metrics}
-              pillars={bundle.profile.problem_solving_approach}
-              recommendations={bundle.experience.recommendations}
-            />
-
-            <div className="hairline-divider mx-auto max-w-7xl" />
-
-            <CareerCredentialsTimeline
-              positions={bundle.experience.positions}
-              education={bundle.education}
-              certifications={bundle.certifications}
-              achievements={bundle.achievements}
-              languages={bundle.experience.languages}
-              onOpenVerificationModal={() => setVerificationOpen(true)}
-            />
-          </>
-        )}
-
-        {showPortfolio && showSkillsHub && (
-          <div className="hairline-divider mx-auto max-w-7xl" />
-        )}
-
-        {showSkillsHub && (
-          <AiSkillsHubSection
-            registry={bundle.ai_skills_registry}
-            agentsRoster={bundle.ai_agents}
-            selectedSkill={selectedSkill}
-            onSelectSkill={setSelectedSkill}
-          />
-        )}
-      </main>
-
-      <FooterSection
-        profile={bundle.profile}
-        identityLock={bundle.identity_lock}
-        verificationStatus={bundle.verification_status}
-        onOpenVerificationModal={() => setVerificationOpen(true)}
+        onNavigateSection={scrollToSection}
+        onOpenSelected={openSelectedDrawer}
       />
 
       <VerificationModal
