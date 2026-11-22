@@ -1,0 +1,18 @@
+<svg width="860" height="78" viewBox="0 0 860 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .kpi-num { font-family: "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 24px; font-weight: 700; fill: #111110; letter-spacing: -0.4px; }
+    .kpi-lbl { font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 10px; font-weight: 600; fill: #656561; letter-spacing: 0.9px; }
+  </style>
+  <rect x="0.5" y="0.5" width="859" height="77" rx="0" fill="#FFFFFF" stroke="#111110" stroke-opacity="0.24" stroke-width="1" />
+  <line x1="286" y1="0" x2="286" y2="78" stroke="#111110" stroke-opacity="0.24" stroke-width="1" />
+  <line x1="573" y1="0" x2="573" y2="78" stroke="#111110" stroke-opacity="0.24" stroke-width="1" />
+
+  <text x="143" y="36" text-anchor="middle" class="kpi-num">02</text>
+  <text x="143" y="57" text-anchor="middle" class="kpi-lbl">VERIFIED SYSTEMS</text>
+
+  <text x="430" y="36" text-anchor="middle" class="kpi-num">03</text>
+  <text x="430" y="57" text-anchor="middle" class="kpi-lbl">BADGE CREDENTIALS</text>
+
+  <text x="717" y="36" text-anchor="middle" class="kpi-num">5.36 MB</text>
+  <text x="717" y="57" text-anchor="middle" class="kpi-lbl">GITHUB CODEBASE</text>
+</svg>

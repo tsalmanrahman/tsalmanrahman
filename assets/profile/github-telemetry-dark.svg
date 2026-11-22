@@ -1,0 +1,74 @@
+<svg width="860" height="278" viewBox="0 0 860 278" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .panel-hdr { font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 10.5px; font-weight: 600; letter-spacing: 0.9px; fill: #F0F6FC; }
+    .stat-k { font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 9.5px; fill: #8B949E; }
+    .sub-label { font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 9.5px; font-weight: 700; letter-spacing: 0.8px; fill: #8B949E; }
+    .stat-v { font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11px; font-weight: 700; fill: #F0F6FC; }
+    .repo-name { font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 10.5px; font-weight: 600; fill: #F0F6FC; }
+    .repo-lang { font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 10px; fill: #C9D1D9; }
+    .metric-label { font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11px; font-weight: 600; fill: #F0F6FC; }
+    .metric-val { font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 10px; fill: #8B949E; }
+    .footnote { font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 9px; fill: #8B949E; }
+  </style>
+
+  <g transform="translate(0, 0)">
+    <rect x="0.5" y="0.5" width="417" height="277" rx="0" fill="#0D1117" stroke="#30363D" stroke-width="1" />
+    <rect x="0" y="0" width="418" height="32" rx="0" fill="#161B22" />
+    <text x="20" y="20" class="panel-hdr">01 // GITHUB PROFILE DAEMON</text>
+
+    <rect x="24.5" y="46.5" width="179" height="43" rx="0" fill="#161B22" stroke="#30363D" stroke-opacity="1" />
+    <text x="34" y="63" class="stat-k">HANDLE</text>
+    <text x="34" y="80" class="stat-v">@tsalmanrahman</text>
+
+    <rect x="214.5" y="46.5" width="179" height="43" rx="0" fill="#161B22" stroke="#30363D" stroke-opacity="1" />
+    <text x="224" y="63" class="stat-k">PUBLIC REPOS</text>
+    <text x="224" y="80" class="stat-v">4 · 2 Featured</text>
+
+    <rect x="24.5" y="98.5" width="179" height="35" rx="0" fill="#161B22" stroke="#30363D" stroke-opacity="1" />
+    <text x="34" y="120" class="stat-k">SINCE 2023 · FOLLOWERS: 2</text>
+
+    <rect x="214.5" y="98.5" width="179" height="35" rx="0" fill="#161B22" stroke="#30363D" stroke-opacity="1" />
+    <text x="224" y="120" class="stat-k">ORG: HATIM Group</text>
+
+    <text x="24" y="154" class="sub-label">ACTIVE REPOSITORIES</text>
+    <rect x="24.5" y="164.5" width="369" height="21" rx="0" fill="#161B22" stroke="#30363D" stroke-opacity="1" />
+    <text x="34" y="179" class="repo-name">ERP</text>
+    <text x="384" y="179" text-anchor="end" class="repo-lang">[C#]</text>
+    <rect x="24.5" y="191.5" width="369" height="21" rx="0" fill="#161B22" stroke="#30363D" stroke-opacity="1" />
+    <text x="34" y="206" class="repo-name">pyrix</text>
+    <text x="384" y="206" text-anchor="end" class="repo-lang">[HTML]</text>
+    <text x="24" y="260" class="footnote">SOURCE: GITHUB REST API (live_github_api)</text>
+  </g>
+
+  <g transform="translate(442, 0)">
+    <rect x="0.5" y="0.5" width="417" height="277" rx="0" fill="#0D1117" stroke="#30363D" stroke-width="1" />
+    <rect x="0" y="0" width="418" height="32" rx="0" fill="#161B22" />
+    <text x="20" y="20" class="panel-hdr">02 // CODEBASE LANGUAGE MIX</text>
+
+    <text x="24" y="64" class="metric-label">HTML</text>
+    <text x="394" y="64" text-anchor="end" class="metric-val">32.1% (1,761 KB)</text>
+    <rect x="24" y="71" width="370" height="6" rx="0" fill="#161B22" stroke="#30363D" stroke-opacity="1" stroke-width="1" />
+    <rect x="24" y="71" width="118" height="6" rx="0" fill="#F0F6FC" />
+    <text x="24" y="98" class="metric-label">C#</text>
+    <text x="394" y="98" text-anchor="end" class="metric-val">27.5% (1,506 KB)</text>
+    <rect x="24" y="105" width="370" height="6" rx="0" fill="#161B22" stroke="#30363D" stroke-opacity="1" stroke-width="1" />
+    <rect x="24" y="105" width="101" height="6" rx="0" fill="#C9D1D9" />
+    <text x="24" y="132" class="metric-label">Python</text>
+    <text x="394" y="132" text-anchor="end" class="metric-val">19.3% (1,056 KB)</text>
+    <rect x="24" y="139" width="370" height="6" rx="0" fill="#161B22" stroke="#30363D" stroke-opacity="1" stroke-width="1" />
+    <rect x="24" y="139" width="71" height="6" rx="0" fill="#8B949E" />
+    <text x="24" y="166" class="metric-label">JavaScript</text>
+    <text x="394" y="166" text-anchor="end" class="metric-val">12.6% (690 KB)</text>
+    <rect x="24" y="173" width="370" height="6" rx="0" fill="#161B22" stroke="#30363D" stroke-opacity="1" stroke-width="1" />
+    <rect x="24" y="173" width="46" height="6" rx="0" fill="#6E7681" />
+    <text x="24" y="200" class="metric-label">TSQL</text>
+    <text x="394" y="200" text-anchor="end" class="metric-val">6.5% (355 KB)</text>
+    <rect x="24" y="207" width="370" height="6" rx="0" fill="#161B22" stroke="#30363D" stroke-opacity="1" stroke-width="1" />
+    <rect x="24" y="207" width="23" height="6" rx="0" fill="#484F58" />
+    <text x="24" y="234" class="metric-label">Other</text>
+    <text x="394" y="234" text-anchor="end" class="metric-val">2.1% (113 KB)</text>
+    <rect x="24" y="241" width="370" height="6" rx="0" fill="#161B22" stroke="#30363D" stroke-opacity="1" stroke-width="1" />
+    <rect x="24" y="241" width="8" height="6" rx="0" fill="#8B949E" />
+    <text x="24" y="260" class="footnote">MEASURED BYTE COUNTS (NON-FORK REPOS)</text>
+  </g>
+</svg>

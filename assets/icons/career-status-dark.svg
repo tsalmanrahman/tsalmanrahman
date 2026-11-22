@@ -1,0 +1,6 @@
+<svg width="216" height="28" viewBox="0 0 216 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0.5" y="0.5" width="215" height="27" rx="0" fill="#0D1117" stroke="#30363D" stroke-width="1" />
+  <rect x="0" y="0" width="26" height="28" rx="0" fill="#21262D" />
+  <circle cx="13" cy="14" r="3.5" fill="#3FB950" />
+  <text x="36" y="18" font-family="IBM Plex Mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" font-weight="600" letter-spacing="0.6" fill="#F0F6FC">OPEN TO OPPORTUNITIES</text>
+</svg>
