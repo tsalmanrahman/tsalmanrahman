@@ -130,7 +130,7 @@ Previously served as Junior Software Engineer at Logic InfoTech Ltd building ent
 <p>
   <a href="https://www.credly.com/badges/d145c575-283d-482e-920f-8038d431ba43"><img src="assets/certificates/ibm-databases-sql-badge.png?v=23b9e34d" alt="Databases and SQL for Data Science" height="112" /></a>
   &nbsp;&nbsp;
-  <a href="https://www.credly.com/badges/0e52798c-e483-499b-ad1c-723ebf802f42"><img src="assets/certificates/google-it-support-badge.png?v=7b904d28" alt="Google IT Support Certificate" height="112" /></a>
+  <a href="https://www.credly.com/badges/0e52798c-e483-499b-ad1c-723ebf802f42"><img src="assets/certificates/google-it-support-badge.png?v=6b48885e" alt="Google IT Support Certificate" height="112" /></a>
   &nbsp;&nbsp;
   <a href="https://www.freecodecamp.org/certification/salman_rahman/foundational-c-sharp-with-microsoft"><img src="assets/certificates/microsoft-csharp-badge.svg?v=ea9c0f15" alt="Foundational C# with Microsoft" /></a>
 </p>

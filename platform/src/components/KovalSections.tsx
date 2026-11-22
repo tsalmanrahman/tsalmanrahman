@@ -228,12 +228,12 @@ export const KovalSections: React.FC<KovalSectionsProps> = ({
                 className="flex flex-col justify-between border-b border-[#111110]/15 p-6 sm:border-r lg:border-b-0"
               >
                 <div>
-                  <div className="flex h-24 w-full items-center justify-center border border-[#111110]/10 bg-[#F4F4F2] p-3">
+                  <div className="flex h-32 w-full items-center justify-center border border-[#111110]/10 bg-[#F4F4F2] p-4">
                     {badgeSrc && (
                       <img
                         src={badgeSrc}
                         alt={cert.name}
-                        className="h-16 w-16 object-contain"
+                        className="max-h-24 w-full object-contain"
                       />
                     )}
                   </div>
@@ -266,7 +266,7 @@ export const KovalSections: React.FC<KovalSectionsProps> = ({
           {/* UIU PGDDS Academic Cell */}
           <div className="flex flex-col justify-between p-6">
             <div>
-              <div className="flex h-24 w-full items-center justify-center border border-[#111110]/10 bg-[#111110] text-white">
+              <div className="flex h-32 w-full items-center justify-center border border-[#111110]/10 bg-[#111110] text-white">
                 <span className="font-display text-4xl font-bold tracking-tight">3.56</span>
               </div>
               <div className="mt-4 font-mono text-[11px] uppercase tracking-[0.08em] text-[#656561]">
