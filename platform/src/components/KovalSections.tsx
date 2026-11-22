@@ -24,10 +24,29 @@ interface KovalSectionsProps {
   onOpenVerificationModal: () => void
 }
 
-function resolveBadgeImg(path: string): string | null {
-  const name = path.trim().split('/').pop()
-  return name ? `./assets/certificates/${name}` : null
+const CREDENTIAL_STAMPS: Record<string, { issuerTag: string; stamp: string; index: string }> = {
+  'ibm-databases-sql': { issuerTag: 'ISSUER // IBM', stamp: 'IBM / SQL', index: '01' },
+  'google-it-support': { issuerTag: 'ISSUER // GOOGLE', stamp: 'G / IT-OPS', index: '02' },
+  'microsoft-freecodecamp-csharp': { issuerTag: 'ISSUER // MICROSOFT', stamp: 'MS / C#', index: '03' },
 }
+
+const TRANSPARENT_BADGES = [
+  {
+    id: 'ibm-databases-sql',
+    src: './assets/certificates/ibm-databases-sql-badge.png',
+    alt: 'Databases and SQL for Data Science badge',
+  },
+  {
+    id: 'google-it-support',
+    src: './assets/certificates/google-it-support-transparent.png',
+    alt: 'Google IT Support Certificate badge',
+  },
+  {
+    id: 'microsoft-freecodecamp-csharp',
+    src: './assets/certificates/microsoft-csharp-transparent.svg',
+    alt: 'Foundational C# with Microsoft badge',
+  },
+]
 
 export const KovalSections: React.FC<KovalSectionsProps> = ({
   profile,
@@ -199,25 +218,30 @@ export const KovalSections: React.FC<KovalSectionsProps> = ({
           </a>
         </div>
 
+        {/* Option 1: Uniform Monochrome Stamp Plates Grid */}
         <div className="grid grid-cols-1 border border-[#111110]/25 bg-white sm:grid-cols-2 lg:grid-cols-4">
-          {visibleCerts.map((cert) => {
-            const badgeSrc = resolveBadgeImg(cert.badge_path)
+          {visibleCerts.map((cert, idx) => {
+            const stampSpec = CREDENTIAL_STAMPS[cert.id] ?? {
+              issuerTag: cert.issuer.toUpperCase(),
+              stamp: cert.issuer.toUpperCase(),
+              index: `0${idx + 1}`,
+            }
             return (
               <div
                 key={cert.id}
                 className="flex flex-col justify-between border-b border-[#111110]/15 p-6 sm:border-r lg:border-b-0"
               >
                 <div>
-                  <div className="flex h-32 w-full items-center justify-center border border-[#111110]/10 bg-[#F4F4F2] p-4">
-                    {badgeSrc && (
-                      <img
-                        src={badgeSrc}
-                        alt={cert.name}
-                        className="max-h-24 w-full object-contain"
-                      />
-                    )}
+                  <div className="mb-4 border border-[#111110]/15 bg-[#F4F4F2] p-3">
+                    <div className="flex items-center justify-between font-mono text-[10px] tracking-[0.06em] text-[#656561]">
+                      <span>{stampSpec.issuerTag}</span>
+                      <span>{stampSpec.index}</span>
+                    </div>
+                    <div className="mt-2 font-mono text-2xl font-bold tracking-tight text-[#111110]">
+                      {stampSpec.stamp}
+                    </div>
                   </div>
-                  <div className="mt-4 font-mono text-[11px] uppercase tracking-[0.08em] text-[#656561]">
+                  <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-[#656561]">
                     {cert.issuer}
                   </div>
                   <h3 className="mt-1 font-display text-lg font-bold text-[#111110]">
@@ -246,29 +270,55 @@ export const KovalSections: React.FC<KovalSectionsProps> = ({
           {/* UIU PGDDS Academic Cell */}
           <div className="flex flex-col justify-between p-6">
             <div>
-              <div className="flex h-32 w-full items-center justify-center border border-[#111110]/10 bg-[#111110] text-white">
-                <span className="font-display text-4xl font-bold tracking-tight">3.56</span>
-              </div>
-              <div className="mt-4 font-mono text-[11px] uppercase tracking-[0.08em] text-[#656561]">
-                UIU &amp; BITM
+              <button
+                type="button"
+                onClick={onOpenVerificationModal}
+                aria-label="PGDDS Data Science — Inspect Verified Audit Ledger"
+                className="mb-4 block w-full border border-[#111110]/15 bg-[#F4F4F2] p-3 text-left transition-colors hover:border-[#111110] cursor-pointer"
+              >
+                <div className="flex items-center justify-between font-mono text-[10px] tracking-[0.06em] text-[#656561]">
+                  <span>UIU &amp; BITM</span>
+                  <span>04</span>
+                </div>
+                <div className="mt-2 font-mono text-2xl font-bold tracking-tight text-[#111110]">
+                  PGDDS · 3.56
+                </div>
+              </button>
+              <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-[#656561]">
+                UIU &amp; BITM · 2024
               </div>
               <h3 className="mt-1 font-display text-lg font-bold text-[#111110]">
                 PGDDS Data Science
               </h3>
-              <div className="mt-1 font-mono text-xs text-[#656561]">PGDDS 102 A · 103 A · 2024</div>
+              <div className="mt-1 font-mono text-xs text-[#656561]">May 2023 – Jan 2024</div>
             </div>
 
-            <div className="mt-5">
-              <button
-                type="button"
-                onClick={onOpenVerificationModal}
-                className="koval-chip"
-              >
-                <span className="koval-chip-prefix">/</span>
-                <span className="koval-chip-label">audit</span>
-              </button>
-            </div>
+            <div className="mt-5 font-mono text-xs text-[#656561]">PGDDS 102 A · 103 A</div>
           </div>
+        </div>
+
+        {/* Borderless Transparent Badges Row (no card frame, no border, no background) */}
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-10 border-0 bg-transparent sm:gap-16">
+          {TRANSPARENT_BADGES.map((badge) => {
+            const cert = visibleCerts.find((c) => c.id === badge.id)
+            const href = cert?.credential_url || profile.contact.credly
+            return (
+              <a
+                key={badge.id}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={badge.alt}
+                className="inline-block border-0 bg-transparent p-0 transition-transform duration-200 hover:scale-105"
+              >
+                <img
+                  src={badge.src}
+                  alt={badge.alt}
+                  className="h-24 w-auto border-0 bg-transparent object-contain sm:h-28"
+                />
+              </a>
+            )
+          })}
         </div>
       </section>
 
