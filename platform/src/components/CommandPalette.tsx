@@ -2,36 +2,44 @@ import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { ArrowRight, Code2, Database, Search, Sparkles, X } from 'lucide-react'
 import type { AiSkillEntry, EcosystemBundle, ProjectItem, SkillEntry } from '../types/ecosystem'
-import { STORY_CHAPTERS } from './EditorialTopBar'
 
 interface CommandPaletteProps {
   open: boolean
+  initialQuery?: string
   onClose: () => void
   bundle: EcosystemBundle
   onSelectProject: (project: ProjectItem) => void
   onSelectSkill: (skill: AiSkillEntry) => void
   onNavigateSection: (sectionId: string) => void
-  onOpenSelected: () => void
+  onOpenSkillsHub: () => void
 }
+
+const SECTION_LINKS = [
+  { id: 'work', title: 'Selected Work' },
+  { id: 'credentials', title: 'Verified Credentials' },
+  { id: 'journey', title: 'Career & Education' },
+  { id: 'contact', title: 'Contact' },
+]
 
 export const CommandPalette: React.FC<CommandPaletteProps> = ({
   open,
+  initialQuery = '',
   onClose,
   bundle,
   onSelectProject,
   onSelectSkill,
   onNavigateSection,
-  onOpenSelected,
+  onOpenSkillsHub,
 }) => {
-  const [query, setQuery] = useState('')
+  const [query, setQuery] = useState(initialQuery)
   const inputRef = useRef<HTMLInputElement | null>(null)
 
   useEffect(() => {
     if (open) {
-      setQuery('')
+      setQuery(initialQuery)
       window.setTimeout(() => inputRef.current?.focus(), 40)
     }
-  }, [open])
+  }, [open, initialQuery])
 
   useEffect(() => {
     if (!open) return
@@ -43,26 +51,6 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
   }, [open, onClose])
 
   const normalized = query.trim().toLowerCase()
-
-  const matchedChapters = useMemo(() => {
-    const allChapters = [
-      ...STORY_CHAPTERS,
-      {
-        id: 'skills-hub',
-        index: '10',
-        label: 'Skills Hub',
-        title: 'AI Skills Hub',
-        subtitle: '32 Free AI Skills & Agent Roster',
-      },
-    ]
-    if (!normalized) return allChapters.slice(0, 6)
-    return allChapters.filter(
-      (c) =>
-        c.title.toLowerCase().includes(normalized) ||
-        c.label.toLowerCase().includes(normalized) ||
-        c.subtitle.toLowerCase().includes(normalized),
-    )
-  }, [normalized])
 
   const matchedProjects = useMemo(() => {
     return bundle.projects
@@ -111,77 +99,67 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
     <div
       role="dialog"
       aria-modal="true"
-      aria-label="Global Command Search"
-      className="fixed inset-0 z-[90] flex items-start justify-center bg-slate-950/35 px-4 pt-20 backdrop-blur-md"
+      aria-label="Portal Search"
+      className="fixed inset-0 z-[90] flex items-start justify-center bg-[#111110]/40 px-4 pt-20"
       onClick={onClose}
     >
       <div
-        className="w-full max-w-2xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.18)]"
+        className="w-full max-w-2xl overflow-hidden border border-[#111110] bg-white"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center gap-3 border-b border-slate-200 px-4 py-3.5">
-          <Search className="h-4 w-4 text-blue-600" />
+        <div className="flex items-center gap-3 border-b border-[#111110]/20 px-4 py-3.5">
+          <Search className="h-4 w-4 text-[#111110]" />
           <input
             ref={inputRef}
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search chapters, projects, SQL Server stack, certifications, or 32 AI skills..."
-            className="w-full bg-transparent text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none"
+            placeholder="Search projects, SQL stack, credentials, or 32 AI skills..."
+            className="w-full bg-transparent text-sm text-[#111110] placeholder:text-[#656561] focus:outline-none"
           />
           <button
             type="button"
             onClick={onClose}
             aria-label="Close Search"
-            className="rounded-lg border border-slate-200 bg-slate-50 p-1 text-slate-500 hover:text-slate-950 cursor-pointer"
+            className="border border-[#111110] p-1 text-[#111110] hover:bg-[#111110] hover:text-white cursor-pointer"
           >
             <X className="h-4 w-4" />
           </button>
         </div>
 
-        <div className="max-h-[65vh] space-y-4 overflow-y-auto p-3">
-          {/* Quick Story Jumps */}
-          <div>
-            <div className="flex items-center justify-between px-2 pb-1.5">
-              <p className="font-mono text-[10px] uppercase tracking-widest text-slate-500">
-                Story Chapters &amp; Index
-              </p>
+        <div className="max-h-[65vh] space-y-4 overflow-y-auto p-4">
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+            {SECTION_LINKS.map((sec) => (
               <button
+                key={sec.id}
                 type="button"
                 onClick={() => {
                   onClose()
-                  onOpenSelected()
+                  onNavigateSection(sec.id)
                 }}
-                className="font-mono text-[10px] font-semibold text-blue-700 hover:underline cursor-pointer"
+                className="flex items-center justify-between border border-[#111110]/20 bg-[#F4F4F2] px-3 py-2 text-left text-xs font-medium text-[#111110] hover:border-[#111110] cursor-pointer"
               >
-                Open Selected Index Drawer
+                <span>{sec.title}</span>
+                <ArrowRight className="h-3.5 w-3.5" />
               </button>
-            </div>
-            <div className="grid grid-cols-1 gap-1.5 sm:grid-cols-3">
-              {matchedChapters.map((chap) => (
-                <button
-                  key={chap.id}
-                  type="button"
-                  onClick={() => {
-                    onClose()
-                    onNavigateSection(chap.id)
-                  }}
-                  className="flex items-center justify-between rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-left text-xs font-medium text-slate-800 hover:border-blue-300 hover:bg-blue-50/70 cursor-pointer"
-                >
-                  <span className="truncate">
-                    <span className="mr-1.5 font-mono text-[10px] text-blue-600">{chap.index}</span>
-                    {chap.title}
-                  </span>
-                  <ArrowRight className="h-3.5 w-3.5 shrink-0 text-blue-600" />
-                </button>
-              ))}
-            </div>
+            ))}
+            <button
+              type="button"
+              onClick={() => {
+                onClose()
+                onOpenSkillsHub()
+              }}
+              className="flex items-center justify-between border border-[#111110] bg-[#111110] px-3 py-2 text-left text-xs font-medium text-white hover:bg-white hover:text-[#111110] cursor-pointer"
+            >
+              <span>AI Skills Hub (32)</span>
+              <ArrowRight className="h-3.5 w-3.5" />
+            </button>
           </div>
 
           {matchedProjects.length > 0 && (
             <div>
-              <p className="px-2 pb-1.5 font-mono text-[10px] uppercase tracking-widest text-slate-500">
-                Verified Case Studies
+              <p className="pb-1.5 font-mono text-[10px] uppercase tracking-widest text-[#656561]">
+                Work
               </p>
               <div className="space-y-1">
                 {matchedProjects.map((project) => (
@@ -192,18 +170,15 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                       onClose()
                       onSelectProject(project)
                     }}
-                    className="flex w-full items-center justify-between gap-3 rounded-xl px-3 py-2.5 text-left transition hover:bg-blue-50 cursor-pointer"
+                    className="flex w-full items-center gap-3 px-3 py-2 text-left hover:bg-[#F4F4F2] cursor-pointer"
                   >
-                    <div className="flex min-w-0 items-center gap-3">
-                      <Code2 className="h-4 w-4 shrink-0 text-blue-600" />
-                      <div className="min-w-0">
-                        <p className="truncate text-sm font-medium text-slate-900">{project.name}</p>
-                        <p className="truncate text-xs text-slate-500">{project.tagline}</p>
-                      </div>
+                    <Code2 className="h-4 w-4 shrink-0 text-[#111110]" />
+                    <div className="min-w-0">
+                      <p className="truncate text-sm font-semibold text-[#111110]">
+                        {project.name}
+                      </p>
+                      <p className="truncate text-xs text-[#656561]">{project.tagline}</p>
                     </div>
-                    <span className="shrink-0 font-mono text-[10px] font-semibold text-blue-700">
-                      CASE STUDY
-                    </span>
                   </button>
                 ))}
               </div>
@@ -212,8 +187,8 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
 
           {matchedSkills.length > 0 && (
             <div>
-              <p className="px-2 pb-1.5 font-mono text-[10px] uppercase tracking-widest text-slate-500">
-                Centralized Free AI Skills
+              <p className="pb-1.5 font-mono text-[10px] uppercase tracking-widest text-[#656561]">
+                AI Skills
               </p>
               <div className="space-y-1">
                 {matchedSkills.map((skill) => (
@@ -224,20 +199,13 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                       onClose()
                       onSelectSkill(skill)
                     }}
-                    className="flex w-full items-center justify-between gap-3 rounded-xl px-3 py-2.5 text-left transition hover:bg-amber-50 cursor-pointer"
+                    className="flex w-full items-center gap-3 px-3 py-2 text-left hover:bg-[#F4F4F2] cursor-pointer"
                   >
-                    <div className="flex min-w-0 items-center gap-3">
-                      <Sparkles className="h-4 w-4 shrink-0 text-amber-600" />
-                      <div className="min-w-0">
-                        <p className="truncate text-sm font-medium text-slate-900">{skill.name}</p>
-                        <p className="truncate text-xs text-slate-500">
-                          {skill.domain} · {skill.source_type}
-                        </p>
-                      </div>
+                    <Sparkles className="h-4 w-4 shrink-0 text-[#111110]" />
+                    <div className="min-w-0">
+                      <p className="truncate text-sm font-medium text-[#111110]">{skill.name}</p>
+                      <p className="truncate font-mono text-xs text-[#656561]">{skill.domain}</p>
                     </div>
-                    <span className="shrink-0 rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 font-mono text-[10px] font-medium text-emerald-700">
-                      FREE / OSS
-                    </span>
                   </button>
                 ))}
               </div>
@@ -246,8 +214,8 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
 
           {matchedTech.length > 0 && (
             <div>
-              <p className="px-2 pb-1.5 font-mono text-[10px] uppercase tracking-widest text-slate-500">
-                Technical Capabilities
+              <p className="pb-1.5 font-mono text-[10px] uppercase tracking-widest text-[#656561]">
+                Technical Stack
               </p>
               <div className="grid grid-cols-1 gap-1.5 sm:grid-cols-2">
                 {matchedTech.map((tech) => (
@@ -256,15 +224,14 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                     type="button"
                     onClick={() => {
                       onClose()
-                      onNavigateSection('about')
+                      onNavigateSection('journey')
                     }}
-                    className="flex items-center gap-2.5 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-left hover:border-blue-300 hover:bg-blue-50/50 cursor-pointer"
+                    className="flex items-center gap-2.5 border border-[#111110]/20 bg-[#F4F4F2] px-3 py-2 text-left hover:border-[#111110] cursor-pointer"
                   >
-                    <Database className="h-3.5 w-3.5 shrink-0 text-blue-600" />
-                    <div className="min-w-0">
-                      <p className="truncate text-xs font-medium text-slate-900">{tech.name}</p>
-                      <p className="truncate text-[11px] text-slate-500">{tech.role}</p>
-                    </div>
+                    <Database className="h-3.5 w-3.5 shrink-0 text-[#111110]" />
+                    <span className="truncate text-xs font-medium text-[#111110]">
+                      {tech.name}
+                    </span>
                   </button>
                 ))}
               </div>

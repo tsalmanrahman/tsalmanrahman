@@ -1,39 +1,35 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import Lenis from 'lenis'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { X } from 'lucide-react'
 import rawBundle from './data/ecosystem.generated.json'
 import type { AiSkillEntry, EcosystemBundle, ProjectItem } from './types/ecosystem'
-import { EditorialTopBar, STORY_CHAPTERS } from './components/EditorialTopBar'
-import { EditorialFlybar } from './components/EditorialFlybar'
-import { EditorialDrawer, type EditorialDrawerMode } from './components/EditorialDrawer'
-import { PortraitHeroStage } from './components/PortraitHeroStage'
-import { AboutChapter } from './components/AboutChapter'
-import { WorkChapter } from './components/WorkChapter'
-import { CredentialsChapter } from './components/CredentialsChapter'
-import { JourneyChapter } from './components/JourneyChapter'
-import { ProfilesChapter } from './components/ProfilesChapter'
-import { ContactChapter } from './components/ContactChapter'
+import { KovalHeader } from './components/KovalHeader'
+import { KovalHero } from './components/KovalHero'
+import { KovalSections } from './components/KovalSections'
+import { KovalFooter } from './components/KovalFooter'
+import { KovalInspectorDrawer } from './components/KovalInspectorDrawer'
+import { KovalPageRail } from './components/KovalPageRail'
 import { AiSkillsHubSection } from './components/AiSkillsHubSection'
 import { CommandPalette } from './components/CommandPalette'
 import { VerificationModal } from './components/VerificationModal'
 
-gsap.registerPlugin(ScrollTrigger)
-
 const bundle = rawBundle as unknown as EcosystemBundle
+
+const TRACKED_SECTIONS = ['top', 'work', 'credentials', 'journey', 'contact']
 
 export const App: React.FC = () => {
   const [commandOpen, setCommandOpen] = useState(false)
+  const [paletteSeed, setPaletteSeed] = useState('')
   const [verificationOpen, setVerificationOpen] = useState(false)
-  const [drawerMode, setDrawerMode] = useState<EditorialDrawerMode>('closed')
+  const [skillsHubOpen, setSkillsHubOpen] = useState(false)
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null)
   const [selectedSkill, setSelectedSkill] = useState<AiSkillEntry | null>(null)
-  const [scrollProgress, setScrollProgress] = useState(0)
-  const [showFlybar, setShowFlybar] = useState(false)
-  const [activeChapterId, setActiveChapterId] = useState<string>('about')
+  const [activeSectionId, setActiveSectionId] = useState<string>('top')
+  const [overDarkFooter, setOverDarkFooter] = useState<boolean>(false)
   const lenisRef = useRef<Lenis | null>(null)
 
-  // Support deep linking via ?work=<project-id> (vadimcarazan.com convention)
+  // Deep link via ?work=<project-id>
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
     const workId = params.get('work')
@@ -41,7 +37,6 @@ export const App: React.FC = () => {
     const found = bundle.projects.find((p) => p.verified && p.id === workId)
     if (found) {
       setSelectedProject(found)
-      setDrawerMode('project')
     }
   }, [])
 
@@ -55,60 +50,60 @@ export const App: React.FC = () => {
       }
       window.history.replaceState({}, '', url.toString())
     } catch {
-      // Ignore history mutation errors in sandboxed contexts
+      // Ignore history mutation errors in restricted contexts
     }
   }, [])
 
-  const openProjectDrawer = useCallback(
+  const handleInspectProject = useCallback(
     (project: ProjectItem) => {
       setSelectedProject(project)
-      setDrawerMode('project')
       updateUrlWorkParam(project.id)
     },
     [updateUrlWorkParam],
   )
 
-  const openSelectedDrawer = useCallback(() => {
-    setSelectedProject(null)
-    setDrawerMode('selected')
-    updateUrlWorkParam(null)
-  }, [updateUrlWorkParam])
-
-  const closeDrawer = useCallback(() => {
-    setDrawerMode('closed')
+  const handleCloseProject = useCallback(() => {
     setSelectedProject(null)
     updateUrlWorkParam(null)
   }, [updateUrlWorkParam])
 
-  // Smooth scrolling (Lenis) + subtle editorial reveal triggers + deterministic chapter tracking
+  // Escape closes AI Skills Hub sheet
+  useEffect(() => {
+    if (!skillsHubOpen) return
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSkillsHubOpen(false)
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [skillsHubOpen])
+
+  // Lenis smooth scroll + deterministic active section & dark-footer contrast tracking
   useEffect(() => {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    const chapterIds = [...STORY_CHAPTERS.map((c) => c.id), 'skills-hub']
 
     const updateScrollState = () => {
-      const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1)
-      setScrollProgress(Math.min(Math.max(window.scrollY / maxScroll, 0), 1))
-      setShowFlybar(window.scrollY > Math.max(window.innerHeight * 0.52, 340))
-
       const triggerY = Math.max(window.innerHeight * 0.42, 240)
-      let currentId = 'about'
-      for (const id of chapterIds) {
+      let currentId = 'top'
+      for (const id of TRACKED_SECTIONS) {
         const el = document.getElementById(id)
         if (!el) continue
         if (el.getBoundingClientRect().top <= triggerY) {
           currentId = id
         }
       }
-      setActiveChapterId(currentId)
+      setActiveSectionId(currentId)
+
+      const contactEl = document.getElementById('contact')
+      if (contactEl) {
+        setOverDarkFooter(contactEl.getBoundingClientRect().top <= window.innerHeight * 0.55)
+      }
     }
 
     window.addEventListener('scroll', updateScrollState, { passive: true })
     updateScrollState()
 
     if (reducedMotion) {
-      return () => {
-        window.removeEventListener('scroll', updateScrollState)
-      }
+      return () => window.removeEventListener('scroll', updateScrollState)
     }
 
     const lenis = new Lenis({
@@ -118,51 +113,31 @@ export const App: React.FC = () => {
     })
     lenisRef.current = lenis
 
-    const onLenisScroll = () => {
-      ScrollTrigger.update()
-      updateScrollState()
-    }
+    const onLenisScroll = () => updateScrollState()
     lenis.on('scroll', onLenisScroll)
 
-    const tick = (time: number) => {
-      lenis.raf(time * 1000)
+    let rafId = 0
+    const loop = (time: number) => {
+      lenis.raf(time)
+      rafId = window.requestAnimationFrame(loop)
     }
-    gsap.ticker.add(tick)
-    gsap.ticker.lagSmoothing(0)
-
-    const ctx = gsap.context(() => {
-      gsap.utils.toArray<HTMLElement>('.chapter-reveal').forEach((section) => {
-        gsap.from(section, {
-          opacity: 0,
-          y: 26,
-          duration: 0.72,
-          ease: 'power3.out',
-          clearProps: 'opacity,transform',
-          scrollTrigger: {
-            trigger: section,
-            start: 'top 86%',
-            once: true,
-          },
-        })
-      })
-    })
+    rafId = window.requestAnimationFrame(loop)
 
     return () => {
       window.removeEventListener('scroll', updateScrollState)
-      ctx.revert()
-      gsap.ticker.remove(tick)
+      window.cancelAnimationFrame(rafId)
       lenis.off('scroll', onLenisScroll)
       lenis.destroy()
       lenisRef.current = null
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
     }
   }, [])
 
-  // Global Ctrl+K / Cmd+K shortcut for Command Palette
+  // Ctrl+K / Cmd+K shortcut
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault()
+        setPaletteSeed('')
         setCommandOpen((prev) => !prev)
       }
     }
@@ -171,9 +146,9 @@ export const App: React.FC = () => {
   }, [])
 
   const scrollToSection = useCallback((sectionId: string) => {
-    setActiveChapterId(sectionId === 'portrait-stage' ? 'about' : sectionId)
+    setActiveSectionId(sectionId)
     const lenis = lenisRef.current
-    if (sectionId === 'portrait-stage') {
+    if (sectionId === 'top') {
       if (lenis) {
         lenis.scrollTo(0, { duration: 0.85 })
       } else {
@@ -184,153 +159,117 @@ export const App: React.FC = () => {
     const el = document.getElementById(sectionId)
     if (!el) return
     if (lenis) {
-      lenis.scrollTo(el, { offset: -64, duration: 0.85 })
+      lenis.scrollTo(el, { offset: -72, duration: 0.85 })
     } else {
       el.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
   }, [])
 
-  const handleSelectSkillFromPalette = useCallback(
-    (skill: AiSkillEntry) => {
-      setSelectedSkill(skill)
-      scrollToSection('skills-hub')
-    },
-    [scrollToSection],
-  )
+  const handleHeroSearch = useCallback((query: string) => {
+    setPaletteSeed(query)
+    setCommandOpen(true)
+  }, [])
 
-  const activeChapter = useMemo(() => {
-    if (activeChapterId === 'skills-hub') {
-      return {
-        id: 'skills-hub',
-        index: '10',
-        label: 'Skills Hub',
-        title: 'Centralized AI Skills Hub',
-        subtitle: '32 Free AI Skills & Agent Roster',
-      }
-    }
-    return STORY_CHAPTERS.find((c) => c.id === activeChapterId) ?? STORY_CHAPTERS[0]
-  }, [activeChapterId])
+  const handleSelectSkillFromPalette = useCallback((skill: AiSkillEntry) => {
+    setSelectedSkill(skill)
+    setSkillsHubOpen(true)
+  }, [])
 
   return (
-    <div className="relative min-h-screen bg-[#F8FAFC] text-slate-900">
-      {/* Subtle flat grid paper texture */}
-      <div aria-hidden="true" className="hud-grid pointer-events-none fixed inset-0 z-0 opacity-75" />
-
-      <EditorialTopBar
-        profileName={bundle.profile.name}
-        organization={bundle.profile.organization}
-        location={bundle.profile.location}
-        activeChapterId={activeChapterId}
-        scrollProgress={scrollProgress}
-        selectedDrawerOpen={drawerMode !== 'closed'}
+    <div className="koval-dots relative min-h-screen bg-white text-[#111110]">
+      <KovalHeader
+        githubUrl={bundle.profile.contact.github}
+        linkedinUrl={bundle.profile.contact.linkedin}
+        activeSectionId={activeSectionId}
         onNavigate={scrollToSection}
-        onOpenSelected={openSelectedDrawer}
-        onOpenCommandPalette={() => setCommandOpen(true)}
+        onOpenSkillsHub={() => setSkillsHubOpen(true)}
       />
 
-      <main className="relative z-10 pb-24">
-        {/* Opening Full-Viewport Interactive Portrait Stage */}
-        <PortraitHeroStage
+      <main>
+        <KovalHero
           profile={bundle.profile}
-          career={bundle.career}
           identityLock={bundle.identity_lock}
-          onExplore={() => scrollToSection('about')}
+          onExploreWork={() => scrollToSection('work')}
+          onSearchPortal={handleHeroSearch}
           onOpenVerificationModal={() => setVerificationOpen(true)}
         />
 
-        <div className="hairline-divider mx-auto max-w-[1440px]" />
-
-        {/* Section A: About Me & Technical Expertise */}
-        <AboutChapter
+        <KovalSections
           profile={bundle.profile}
-          career={bundle.career}
-          skills={bundle.skills}
-          onNavigateChapter={scrollToSection}
-        />
-
-        <div className="hairline-divider mx-auto max-w-[1440px]" />
-
-        {/* Section B: My Work & Projects */}
-        <WorkChapter projects={bundle.projects} onSelectProject={openProjectDrawer} />
-
-        <div className="hairline-divider mx-auto max-w-[1440px]" />
-
-        {/* Sections C & D: Certifications + Badges & Achievements */}
-        <CredentialsChapter
+          projects={bundle.projects}
           certifications={bundle.certifications}
-          achievements={bundle.achievements}
-          credlyUrl={bundle.profile.contact.credly}
-        />
-
-        <div className="hairline-divider mx-auto max-w-[1440px]" />
-
-        {/* Sections E & F: Professional Experience + Education */}
-        <JourneyChapter
           positions={bundle.experience.positions}
           education={bundle.education}
-          languages={bundle.experience.languages}
-          yearsSummary={bundle.experience.years_of_experience}
-        />
-
-        <div className="hairline-divider mx-auto max-w-[1440px]" />
-
-        {/* Sections G & H: LinkedIn & Endorsements + GitHub & Telemetry */}
-        <ProfilesChapter
-          profile={bundle.profile}
           recommendations={bundle.experience.recommendations}
           githubMetrics={bundle.github_metrics}
-          lastVerifiedDate={bundle.verification_status.last_verified_date}
+          skillCount={bundle.ai_skills_registry.skills.length}
+          onInspectProject={handleInspectProject}
+          onOpenSkillsHub={() => setSkillsHubOpen(true)}
           onOpenVerificationModal={() => setVerificationOpen(true)}
-        />
-
-        <div className="hairline-divider mx-auto max-w-[1440px]" />
-
-        {/* Section I: Contact & Direct Channels */}
-        <ContactChapter
-          profile={bundle.profile}
-          identityLock={bundle.identity_lock}
-          verificationStatus={bundle.verification_status}
-          onOpenVerificationModal={() => setVerificationOpen(true)}
-        />
-
-        <div className="hairline-divider mx-auto max-w-[1440px]" />
-
-        {/* Unified Ecosystem Annex: Centralized Free AI Skills Hub */}
-        <AiSkillsHubSection
-          registry={bundle.ai_skills_registry}
-          agentsRoster={bundle.ai_agents}
-          selectedSkill={selectedSkill}
-          onSelectSkill={setSelectedSkill}
         />
       </main>
 
-      {/* Bottom Floating Chapter & Return HUD (vadimcarazan.com flybar inspiration) */}
-      <EditorialFlybar
-        visible={showFlybar && drawerMode === 'closed'}
-        activeChapter={activeChapter}
-        totalChapters={STORY_CHAPTERS.length}
-        onOpenIndex={openSelectedDrawer}
-        onBackToPortrait={() => scrollToSection('portrait-stage')}
+      <KovalFooter
+        profile={bundle.profile}
+        onOpenSkillsHub={() => setSkillsHubOpen(true)}
+        onOpenVerificationModal={() => setVerificationOpen(true)}
       />
 
-      {/* Left-Docked Glass Drawer (Selected Index & Project Case Study) */}
-      <EditorialDrawer
-        mode={drawerMode}
-        project={selectedProject}
-        projects={bundle.projects}
-        onClose={closeDrawer}
-        onSelectProject={openProjectDrawer}
-        onNavigateChapter={scrollToSection}
+      <KovalPageRail
+        activeSectionId={activeSectionId}
+        overDarkFooter={overDarkFooter}
+        onNavigate={scrollToSection}
       />
+
+      <KovalInspectorDrawer project={selectedProject} onClose={handleCloseProject} />
+
+      {/* On-Demand Sharp Monochrome AI Skills Hub Sheet */}
+      {skillsHubOpen &&
+        createPortal(
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Centralized AI Skills Hub"
+            className="fixed inset-0 z-[90] flex items-center justify-center bg-[#111110]/45 p-3 sm:p-6"
+            onClick={() => setSkillsHubOpen(false)}
+          >
+            <div
+              className="relative max-h-[90vh] w-full max-w-6xl overflow-y-auto border border-[#111110] bg-white"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="sticky top-0 z-20 flex items-center justify-between border-b border-[#111110]/15 bg-white px-6 py-4">
+                <span className="font-mono text-xs uppercase tracking-[0.12em] text-[#111110]">
+                  CENTRALIZED AI SKILLS HUB ({bundle.ai_skills_registry.skills.length})
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setSkillsHubOpen(false)}
+                  aria-label="Close AI Skills Hub"
+                  className="border border-[#111110] p-1.5 text-[#111110] hover:bg-[#111110] hover:text-white cursor-pointer"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              </div>
+              <AiSkillsHubSection
+                registry={bundle.ai_skills_registry}
+                agentsRoster={bundle.ai_agents}
+                selectedSkill={selectedSkill}
+                onSelectSkill={setSelectedSkill}
+              />
+            </div>
+          </div>,
+          document.body,
+        )}
 
       <CommandPalette
         open={commandOpen}
+        initialQuery={paletteSeed}
         onClose={() => setCommandOpen(false)}
         bundle={bundle}
-        onSelectProject={openProjectDrawer}
+        onSelectProject={handleInspectProject}
         onSelectSkill={handleSelectSkillFromPalette}
         onNavigateSection={scrollToSection}
-        onOpenSelected={openSelectedDrawer}
+        onOpenSkillsHub={() => setSkillsHubOpen(true)}
       />
 
       <VerificationModal

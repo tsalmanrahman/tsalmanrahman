@@ -1,32 +1,29 @@
 @import "tailwindcss";
 
 @theme {
-  --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
-  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-display: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
-  --color-canvas: #f8fafc;
-  --color-surface: #ffffff;
-  --color-ink: #0f172a;
-  --color-blue-antigravity: #2563eb;
-  --color-sky-antigravity: #0284c7;
-  --color-amber-executive: #d97706;
-  --color-emerald-verified: #059669;
+  --color-ground: #ffffff;
+  --color-ink: #111110;
+  --color-body: #3a3a38;
+  --color-quiet: #656561;
+  --color-light-accent: #f4f4f2;
 }
 
 @layer base {
   html {
-    background-color: #f8fafc;
-    color: #0f172a;
+    background-color: #ffffff;
+    color: #111110;
     font-family: var(--font-sans);
     scroll-behavior: auto;
   }
 
   body {
     overflow-x: hidden;
-    background-color: #f8fafc;
-    color: #1e293b;
+    background-color: #ffffff;
+    color: #3a3a38;
   }
 
   h1,
@@ -34,7 +31,7 @@
   h3,
   h4 {
     font-family: var(--font-display);
-    letter-spacing: -0.025em;
+    color: #111110;
   }
 
   code,
@@ -45,43 +42,177 @@
   }
 }
 
-.font-editorial {
-  font-family: var(--font-serif);
+/* Faint 16px SVG dot-matrix backdrop matching kovalseo.com (zero CSS gradients) */
+.koval-dots {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Ccircle cx='1' cy='1' r='0.9' fill='%23111110' fill-opacity='0.14'/%3E%3C/svg%3E");
+  background-size: 16px 16px;
 }
 
-.editorial-surface {
+/* Signature Koval 0px bordered chip ([prefix | label]) */
+.koval-chip {
+  display: inline-flex;
+  align-items: stretch;
+  height: 26px;
+  border: 1px solid #111110;
+  border-radius: 0;
   background-color: #ffffff;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.045);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  color: #111110;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1;
+  transition: background-color 0.18s ease, color 0.18s ease;
+  cursor: pointer;
 }
 
-.editorial-surface:hover {
-  border-color: rgba(37, 99, 235, 0.28);
-  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.06);
+.koval-chip-prefix {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 7px;
+  background-color: #111110;
+  color: #ffffff;
+  pointer-events: none;
 }
 
-.hud-grid {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M 48 0 L 0 0 0 48' fill='none' stroke='%230f172a' stroke-opacity='0.05' stroke-width='1'/%3E%3C/svg%3E");
-  background-size: 48px 48px;
+.koval-chip-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 9px;
+  pointer-events: none;
+}
+
+.koval-chip:hover,
+.koval-chip[data-active="true"] {
+  background-color: #111110;
+  color: #ffffff;
+}
+
+/* Dark-surface chip variant for #111110 footer */
+.koval-chip-dark {
+  display: inline-flex;
+  align-items: stretch;
+  height: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 0;
+  background-color: #111110;
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1;
+  transition: background-color 0.18s ease, color 0.18s ease;
+  cursor: pointer;
+}
+
+.koval-chip-dark-prefix {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 7px;
+  background-color: #ffffff;
+  color: #111110;
+}
+
+.koval-chip-dark:hover {
+  background-color: #ffffff;
+  color: #111110;
+}
+
+/* Signature two-piece Koval split rectangular button (slit bar + main CTA) */
+.koval-cut-btn {
+  display: inline-flex;
+  align-items: stretch;
+  gap: 5px;
+  height: 48px;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.koval-cut-btn-slit {
+  width: 8px;
+  background-color: #111110;
+  transition: transform 0.22s ease, background-color 0.22s ease;
+  pointer-events: none;
+}
+
+.koval-cut-btn-body {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 22px;
+  background-color: #111110;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  border: 1px solid #111110;
+  transition: background-color 0.22s ease, color 0.22s ease;
+  pointer-events: none;
+}
+
+.koval-cut-btn:hover .koval-cut-btn-slit {
+  transform: translateX(-2px);
+}
+
+.koval-cut-btn:hover .koval-cut-btn-body {
+  background-color: #ffffff;
+  color: #111110;
+}
+
+.koval-cut-btn-dark {
+  display: inline-flex;
+  align-items: stretch;
+  gap: 5px;
+  height: 48px;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.koval-cut-btn-dark-slit {
+  width: 8px;
+  background-color: #ffffff;
+  transition: transform 0.22s ease;
+  pointer-events: none;
+}
+
+.koval-cut-btn-dark-body {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 22px;
+  background-color: #ffffff;
+  color: #111110;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  border: 1px solid #ffffff;
+  transition: background-color 0.22s ease, color 0.22s ease;
+  pointer-events: none;
+}
+
+.koval-cut-btn-dark:hover .koval-cut-btn-dark-slit {
+  transform: translateX(-2px);
+}
+
+.koval-cut-btn-dark:hover .koval-cut-btn-dark-body {
+  background-color: #111110;
+  color: #ffffff;
 }
 
 .glass-panel {
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.045);
+  background-color: #ffffff;
+  border: 1px solid rgba(17, 17, 16, 0.22);
+  border-radius: 0;
 }
 
 .glass-panel:hover {
-  border-color: rgba(37, 99, 235, 0.28);
-  box-shadow: 0 18px 44px rgba(37, 99, 235, 0.08);
+  border-color: #111110;
 }
 
 .hairline-divider {
   height: 1px;
-  background-color: #e2e8f0;
+  background-color: rgba(17, 17, 16, 0.15);
 }
 
 ::-webkit-scrollbar {
@@ -90,16 +221,15 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #f4f4f2;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(100, 116, 139, 0.35);
-  border-radius: 9999px;
+  background: rgba(17, 17, 16, 0.35);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(37, 99, 235, 0.6);
+  background: #111110;
 }
 
 @media (prefers-reduced-motion: reduce) {
