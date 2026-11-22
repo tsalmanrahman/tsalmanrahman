@@ -1,16 +1,14 @@
 <!-- AUTO-GENERATED FILE: DO NOT EDIT MANUALLY.
      Source of truth: profile-data/*.json
      Generator: python scripts/generate_readme.py -->
+<!-- Website-matched profile README: https://tsalmanrahman.github.io/tsalmanrahman/ -->
 
 <div align="center">
-  <img src="assets/banner/hero-banner.svg?v=aa727902" alt="Salman Rahman - SQL Server & Database Engineer | T-SQL, Query Optimization & ERP Data Systems | C# (.NET) · Power BI · Python" width="100%" />
-</div>
-
-<br/>
-
-<div align="center">
-
-<p>
+  <img src="assets/identity/web/salman-rahman-portrait.jpg" width="140" alt="Salman Rahman" />
+  <h1>Salman Rahman.</h1>
+  <p><b>SQL &amp; ERP ENGINEER</b><br/>AT HATIM GROUP · DHAKA</p>
+  <p>SQL Server & ERP Database professional specializing in Microsoft SQL Server, T-SQL optimization, multi-outlet Web POS reconciliation, Crystal Reports, and enterprise software in C# (.NET) and Python.</p>
+  <p>
   <a href="https://www.linkedin.com/in/t-salmanrahman"><img src="assets/icons/contact-linkedin.svg?v=d849a91a" alt="LinkedIn" /></a>
   &nbsp;
   <a href="https://www.credly.com/users/salman_rahman"><img src="assets/icons/contact-credly.svg?v=3377c308" alt="Credly" /></a>
@@ -18,23 +16,18 @@
   <a href="mailto:t.salmanrahman02@gmail.com"><img src="assets/icons/contact-email.svg?v=9bc3d706" alt="Email" /></a>
   &nbsp;
   <a href="https://github.com/tsalmanrahman"><img src="assets/icons/contact-github.svg?v=5901df56" alt="GitHub" /></a>
-</p>
-
-<p>
-  <a href="#about-me"><img src="assets/icons/nav-about.svg?v=15ec1224" alt="About" /></a>
-  &nbsp;
-  <a href="#technical-skills"><img src="assets/icons/nav-skills.svg?v=0121030a" alt="Skills" /></a>
-  &nbsp;
-  <a href="#featured-projects"><img src="assets/icons/nav-projects.svg?v=19edd1a1" alt="Projects" /></a>
-  &nbsp;
-  <a href="#certifications--education"><img src="assets/icons/nav-credentials.svg?v=706eba40" alt="Credentials" /></a>
-  &nbsp;
-  <a href="#github-activity"><img src="assets/icons/nav-activity.svg?v=39b5deea" alt="Activity" /></a>
-  &nbsp;
-  <a href="#career-status"><img src="assets/icons/nav-career.svg?v=f3db6e30" alt="Career" /></a>
-</p>
-
+  </p>
+  <p>[LinkedIn](https://www.linkedin.com/in/t-salmanrahman) · [Credly](https://www.credly.com/users/salman_rahman) · [Email](mailto:t.salmanrahman02@gmail.com) · [GitHub](https://github.com/tsalmanrahman) · [Live website](https://tsalmanrahman.github.io/tsalmanrahman/)</p>
 </div>
+
+<table align="center" cellpadding="12">
+<tr>
+<td align="center"><b>02</b><br/><sub>VERIFIED SYSTEMS</sub></td>
+<td align="center"><b>03</b><br/><sub>BADGE CREDENTIALS</sub></td>
+<td align="center"><b>32</b><br/><sub>AI SKILLS HUB →</sub></td>
+<td align="center"><b>5.36 MB</b><br/><sub>GITHUB CODEBASE</sub></td>
+</tr>
+</table>
 
 ---
 
@@ -51,6 +44,97 @@ Previously served as Junior Software Engineer at Logic InfoTech Ltd building ent
 <div align="center">
   <img src="assets/profile/about-terminal.svg?v=1e08da75" alt="Engineering Pillars and Experience Terminal (4+ Years (Self-Driven & Enterprise Operations))" width="100%" />
 </div>
+
+---
+
+## Selected WORK.
+
+<table>
+<tr>
+
+<td width="50%" valign="top">
+  <sub>01 · ERP / BACKEND & DATABASE ARCHITECTURE</sub><br/>
+  <b>Enterprise Multi-Company ERP</b><br/>
+  <a href="https://github.com/tsalmanrahman/ERP"><img src="assets/projects/erp-preview.svg?v=a7237e81" alt="Enterprise Multi-Company ERP Preview" width="100%" /></a>
+  <p>Modular multi-company ERP backend & SQL Server architecture</p>
+  <p><code>`C#` · `.NET 10 / ASP.NET Core` · `Microsoft SQL Server (T-SQL)` · `EF Core + Dapper` · `QuestPDF` · `Docker`</code></p>
+  <a href="https://github.com/tsalmanrahman/ERP">/inspect</a> · <a href="https://github.com/tsalmanrahman/ERP">/github</a>
+</td>
+
+<td width="50%" valign="top">
+  <sub>02 · PYTHON BACKEND & SQL OPERATIONS</sub><br/>
+  <b>Pyrix — Multi-Company Operations & Settings Suite</b><br/>
+  <a href="https://github.com/tsalmanrahman/pyrix"><img src="assets/projects/pyrix-preview.svg?v=c01a5726" alt="Pyrix — Multi-Company Operations & Settings Suite Preview" width="100%" /></a>
+  <p>Python FastAPI & SQL Server operational diagnostics and schema management portal</p>
+  <p><code>`Python` · `FastAPI` · `Jinja2` · `Microsoft SQL Server` · `ODBC Driver 18` · `HTML / CSS / JS`</code></p>
+  <a href="https://github.com/tsalmanrahman/pyrix">/inspect</a> · <a href="https://github.com/tsalmanrahman/pyrix">/github</a>
+</td>
+</tr>
+</table>
+
+---
+
+## Verified CREDENTIALS.
+
+<table>
+<tr>
+
+<td align="center" width="25%" valign="top">
+  <a href="https://www.credly.com/badges/d145c575-283d-482e-920f-8038d431ba43"><img src="assets/certificates/ibm-databases-sql-badge.png?v=23b9e34d" alt="Databases and SQL for Data Science" height="112" /></a><br/>
+  <sub>IBM / COURSERA</sub><br/>
+  <b>Databases and SQL for Data Science</b><br/>
+  <sub>November 1, 2023</sub><br/>
+  <a href="https://www.credly.com/badges/d145c575-283d-482e-920f-8038d431ba43">/verify</a>
+</td>
+
+<td align="center" width="25%" valign="top">
+  <a href="https://www.credly.com/badges/0e52798c-e483-499b-ad1c-723ebf802f42"><img src="assets/certificates/google-it-support-badge.png?v=6b48885e" alt="Google IT Support Certificate" height="112" /></a><br/>
+  <sub>GOOGLE / COURSERA</sub><br/>
+  <b>Google IT Support Certificate</b><br/>
+  <sub>August 20, 2021</sub><br/>
+  <a href="https://www.credly.com/badges/0e52798c-e483-499b-ad1c-723ebf802f42">/verify</a>
+</td>
+
+<td align="center" width="25%" valign="top">
+  <a href="https://www.freecodecamp.org/certification/salman_rahman/foundational-c-sharp-with-microsoft"><img src="assets/certificates/microsoft-csharp-badge.svg?v=ea9c0f15" alt="Foundational C# with Microsoft" /></a><br/>
+  <sub>MICROSOFT & FREECODECAMP</sub><br/>
+  <b>Foundational C# with Microsoft</b><br/>
+  <sub>February 2, 2025</sub><br/>
+  <a href="https://www.freecodecamp.org/certification/salman_rahman/foundational-c-sharp-with-microsoft">/verify</a>
+</td>
+
+<td align="center" width="25%" valign="top">
+  <b>3.56</b><br/>
+  <sub>United International University (UIU) & BITM</sub><br/>
+  <b>Post Graduate Diploma in Data Science (PGDDS)</b><br/>
+  <sub>May 2023 – Jan 2024</sub><br/>
+  <a href="https://tsalmanrahman.github.io/tsalmanrahman/#credentials">/audit</a>
+</td>
+</tr>
+</table>
+
+---
+
+## Career &amp; EDUCATION.
+
+### EXPERIENCE
+
+| Organization | Role | Period |
+| :--- | :--- | :--- |
+| **HATIM GROUP** | Executive (IT & MIS) | SQL Developer & Data Analyst | Dec 2024 – Present |
+| **Logic InfoTech Ltd** | Junior Software Engineer | Jul 2022 – Oct 2023 (1 yr 4 mos) |
+
+### EDUCATION
+
+| Institution | Qualification | Period | CGPA |
+| :--- | :--- | :--- | :--- |
+| **United International University (UIU) & BITM** | Post Graduate Diploma in Data Science (PGDDS) | May 2023 – Jan 2024 | 3.56 / 4.00 |
+| **Varendra University (VU), Rajshahi** | Bachelor of Science (B.Sc.) in Computer Science & Engineering | Sep 2013 – Aug 2017 | 3.12 / 4.00 |
+
+### ENDORSEMENTS
+
+> “Endorsed Salman Rahman's strong SQL capabilities, database management fundamentals, analytical mindset, and disciplined problem-solving approach.” — **Mohammad Rafiqul Islam**, August 2025
+> “Highlighted Salman's grasp of ERP business dynamics, clear technical communication, and collaborative execution on software initiatives.” — **Mazharul Haque**, October 2022
 
 ---
 
@@ -75,96 +159,11 @@ Previously served as Junior Software Engineer at Logic InfoTech Ltd building ent
 
 ---
 
-## Featured Projects
+## ECOSYSTEM HUB.
 
-#### [Enterprise Multi-Company ERP](https://github.com/tsalmanrahman/ERP)
-*ERP / Backend & Database Architecture* — [GitHub Repository](https://github.com/tsalmanrahman/ERP)
+Browse all **32** audited AI agent skills &amp; orchestrators.
 
-<div align="center">
-  <a href="https://github.com/tsalmanrahman/ERP">
-    <img src="assets/projects/erp-preview.svg?v=a7237e81" alt="Enterprise Multi-Company ERP Preview" width="100%" />
-  </a>
-</div>
-
-> Full-featured multi-company ERP built on .NET 10 / ASP.NET Core, Entity Framework Core + Dapper, and Microsoft SQL Server with a unified static web portal and ordered SQL migration pipelines.
-
-**Technology Stack:** `C#` · `.NET 10 / ASP.NET Core` · `Microsoft SQL Server (T-SQL)` · `EF Core + Dapper` · `QuestPDF` · `Docker`
-
-**Key Features:**
-- Covers General Ledger & Banking, Inventory, Procure-to-Pay (AP), Order-to-Cash (AR), HR & Payroll, Fixed Assets, Real Estate, Manufacturing, and Data Migration/Cutover.
-- Multi-company data isolation enforced via company context middleware and global tenant query filters across domain services.
-- Ordered SQL Server schema migrations (80 tables), audit columns, and dual-layer soft-delete/cascade governance.
-- Clean layered architecture (Domain -> Application -> Infrastructure -> Web.Api) with xUnit tests and PowerShell E2E checks.
-
-**My Contribution:** Architected multi-company tenant scoping, SQL Server schema standardization, dual-layer deletion governance, facility/inventory modules, and API service implementations.
-
----
-
-#### [Pyrix — Multi-Company Operations & Settings Suite](https://github.com/tsalmanrahman/pyrix)
-*Python Backend & SQL Operations* — [GitHub Repository](https://github.com/tsalmanrahman/pyrix)
-
-<div align="center">
-  <a href="https://github.com/tsalmanrahman/pyrix">
-    <img src="assets/projects/pyrix-preview.svg?v=c01a5726" alt="Pyrix — Multi-Company Operations & Settings Suite Preview" width="100%" />
-  </a>
-</div>
-
-> Enterprise operations and settings web application engineered with Python (FastAPI), Jinja2 templates, and Microsoft SQL Server via ODBC Driver 18 for multi-company administration and SQL inspection.
-
-**Technology Stack:** `Python` · `FastAPI` · `Jinja2` · `Microsoft SQL Server` · `ODBC Driver 18` · `HTML / CSS / JS`
-
-**Key Features:**
-- Multi-Company Operations & Switcher for dynamically managing multiple companies and organizations.
-- SQL Inspector & Schema Management, Dynamic Form & Table Builder, and System Diagnostics.
-- Manufacturing Operations & Workflow Engine paired with Audit Logging and Session Inactivity Guard.
-- Thread-safe TTL in-memory query caching and cross-platform ODBC driver detection for resilient SQL Server connectivity.
-
-**My Contribution:** Built backend FastAPI routes, SQL Server query deduplication and TTL caching, cross-platform ODBC driver detection, and operational UI workflows.
-
----
-
-## Certifications & Education
-
-### Verified Certifications
-
-<p>
-  <a href="https://www.credly.com/badges/d145c575-283d-482e-920f-8038d431ba43"><img src="assets/certificates/ibm-databases-sql-badge.png?v=23b9e34d" alt="Databases and SQL for Data Science" height="112" /></a>
-  &nbsp;&nbsp;
-  <a href="https://www.credly.com/badges/0e52798c-e483-499b-ad1c-723ebf802f42"><img src="assets/certificates/google-it-support-badge.png?v=6b48885e" alt="Google IT Support Certificate" height="112" /></a>
-  &nbsp;&nbsp;
-  <a href="https://www.freecodecamp.org/certification/salman_rahman/foundational-c-sharp-with-microsoft"><img src="assets/certificates/microsoft-csharp-badge.svg?v=ea9c0f15" alt="Foundational C# with Microsoft" /></a>
-</p>
-
-- **Databases and SQL for Data Science** — *IBM / Coursera* (Certified · Nov 2023)  
-  *Skills Covered:* SQL Queries, Relational Databases, IBM Db2, Python & Jupyter Notebooks  
-  [View Credential](https://www.credly.com/badges/d145c575-283d-482e-920f-8038d431ba43)
-- **Google IT Support Certificate** — *Google / Coursera* (Certified · Aug 2021)  
-  *Skills Covered:* Troubleshooting & Customer Service, Computer Networking, Operating Systems & System Administration, IT Security & Hardware Fundamentals  
-  [View Credential](https://www.credly.com/badges/0e52798c-e483-499b-ad1c-723ebf802f42)
-- **Foundational C# with Microsoft** — *Microsoft & freeCodeCamp* (Certified · Feb 2025)  
-  *Skills Covered:* C# Programming, .NET Fundamentals, Object-Oriented Logic, Debugging & Console Applications  
-  [View Credential](https://www.freecodecamp.org/certification/salman_rahman/foundational-c-sharp-with-microsoft)
-
-### Academic Qualifications
-
-| Qualification | Institution | Year / Status | Core Focus |
-| :--- | :--- | :--- | :--- |
-| **Post Graduate Diploma in Data Science (PGDDS)** | United International University (UIU) & BITM | May 2023 – Jan 2024 | Data Analysis, SQL Database Design & Development, Python Analytics & Machine Learning |
-| **Bachelor of Science (B.Sc.) in Computer Science & Engineering** | Varendra University (VU), Rajshahi | Sep 2013 – Aug 2017 | Relational Databases (DBMS), Software Engineering, Data Structures, Algorithms & Systems |
-
-### Professional Courses & Continuous Learning
-
-- **Post Graduate Diploma in Data Science (PGDDS)** — *United International University (UIU) & BITM* (Completed (2024))  
-  *Focus:* Data Analysis, SQL Querying, Python for Data Science, Analytical Workflows
-- **Continuous Professional Training in SQL, C#, Python & ERP Architecture** — *Self-Directed & Professional Learning Platforms* (Ongoing)  
-  *Focus:* Microsoft SQL Server & T-SQL, PL/SQL, C# & .NET Architecture, Python & Data Engineering
-
-### Key Achievements
-
-- **[Certification] Google IT Support Certified Professional**: Earned the Google IT Support Certificate via Coursera, validating foundational operational expertise in troubleshooting, customer service, networking, operating systems, system administration, and IT security.
-- **[Engineering] Enterprise Multi-Company ERP Database & Backend Architecture**: Designed and standardized an 80-table Microsoft SQL Server schema and .NET 10 modular backend across General Ledger, Inventory, AP/AR, HR & Payroll, Fixed Assets, Real Estate, and Manufacturing.
-- **[Tooling] Multi-Company SQL Operations Suite (Pyrix)**: Built a Python FastAPI & SQL Server operational web portal featuring SQL schema inspection, dynamic form/table management, audit logging, and thread-safe TTL query caching.
-- **[Domain Expertise] 4+ Years of Self-Driven SQL, PL/SQL & Crystal Reports Practice**: Delivered structured relational queries, data integrity controls, and Crystal Reports templates bridging operational databases with clear reporting.
+<a href="https://tsalmanrahman.github.io/tsalmanrahman/#skills-hub">Open AI Skills Hub →</a>
 
 ---
 
@@ -183,6 +182,26 @@ Previously served as Junior Software Engineer at Logic InfoTech Ltd building ent
     <img alt="GitHub Contribution Activity Snake" src="https://raw.githubusercontent.com/tsalmanrahman/tsalmanrahman/output/github-contribution-grid-snake.svg" width="100%" />
   </picture>
 </div>
+
+<details>
+<summary><code>$ cat achievements.md</code> — Key Achievements</summary>
+
+- **[Certification] Google IT Support Certified Professional**: Earned the Google IT Support Certificate via Coursera, validating foundational operational expertise in troubleshooting, customer service, networking, operating systems, system administration, and IT security.
+- **[Engineering] Enterprise Multi-Company ERP Database & Backend Architecture**: Designed and standardized an 80-table Microsoft SQL Server schema and .NET 10 modular backend across General Ledger, Inventory, AP/AR, HR & Payroll, Fixed Assets, Real Estate, and Manufacturing.
+- **[Tooling] Multi-Company SQL Operations Suite (Pyrix)**: Built a Python FastAPI & SQL Server operational web portal featuring SQL schema inspection, dynamic form/table management, audit logging, and thread-safe TTL query caching.
+- **[Domain Expertise] 4+ Years of Self-Driven SQL, PL/SQL & Crystal Reports Practice**: Delivered structured relational queries, data integrity controls, and Crystal Reports templates bridging operational databases with clear reporting.
+
+</details>
+
+<details>
+<summary><code>$ cat continuous_learning.md</code> — Professional Courses</summary>
+
+- **Post Graduate Diploma in Data Science (PGDDS)** — *United International University (UIU) & BITM* (Completed (2024))  
+  *Focus:* Data Analysis, SQL Querying, Python for Data Science, Analytical Workflows
+- **Continuous Professional Training in SQL, C#, Python & ERP Architecture** — *Self-Directed & Professional Learning Platforms* (Ongoing)  
+  *Focus:* Microsoft SQL Server & T-SQL, PL/SQL, C# & .NET Architecture, Python & Data Engineering
+
+</details>
 
 ---
 
@@ -210,6 +229,21 @@ Previously served as Junior Software Engineer at Logic InfoTech Ltd building ent
 
 ---
 
+## Start with A MESSAGE.
+
+<a href="mailto:t.salmanrahman02@gmail.com">t.salmanrahman02@gmail.com</a> · [Send email](mailto:t.salmanrahman02@gmail.com) · [LinkedIn](https://www.linkedin.com/in/t-salmanrahman) · [Credly](https://www.credly.com/users/salman_rahman) · [Email](mailto:t.salmanrahman02@gmail.com) · [GitHub](https://github.com/tsalmanrahman) · [Live website](https://tsalmanrahman.github.io/tsalmanrahman/)
+
+---
+
+<details>
+<summary><code>$ cat profile_architecture_banner.svg</code> — Original Profile Banner</summary>
+
 <div align="center">
-  <sub>Maintained through structured JSON data in <code>profile-data/</code> and automated via GitHub Actions • <a href="ARCHITECTURE.md">Maintenance &amp; Automation Guide</a></sub>
+  <img src="assets/banner/hero-banner.svg?v=aa727902" alt="Salman Rahman - SQL Server & Database Engineer | T-SQL, Query Optimization & ERP Data Systems | C# (.NET) · Power BI · Python" width="100%" />
+</div>
+
+</details>
+
+<div align="center">
+  <sub>Maintained through structured JSON data in <code>profile-data/</code> and automated via GitHub Actions • <a href="https://tsalmanrahman.github.io/tsalmanrahman/">Live website</a> • <a href="ARCHITECTURE.md">Maintenance &amp; Automation Guide</a></sub>
 </div>
