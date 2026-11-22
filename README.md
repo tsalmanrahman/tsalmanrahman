@@ -7,7 +7,7 @@
   <img src="assets/identity/web/salman-rahman-portrait.jpg" width="140" alt="Salman Rahman" />
   <h1>Salman Rahman.</h1>
   <p><b>SQL &amp; ERP ENGINEER</b><br/>AT HATIM GROUP · DHAKA</p>
-  <p>SQL Server & ERP Database professional specializing in Microsoft SQL Server, T-SQL optimization, multi-outlet Web POS reconciliation, Crystal Reports, and enterprise software in C# (.NET) and Python.</p>
+  <p>SQL Server &amp; ERP Database professional specializing in Microsoft SQL Server, T-SQL optimization, multi-outlet Web POS reconciliation, Crystal Reports, and enterprise software in C# (.NET) and Python.</p>
   <p>
   <a href="https://www.linkedin.com/in/t-salmanrahman"><img src="assets/icons/contact-linkedin.svg?v=d849a91a" alt="LinkedIn" /></a>
   &nbsp;
@@ -17,7 +17,7 @@
   &nbsp;
   <a href="https://github.com/tsalmanrahman"><img src="assets/icons/contact-github.svg?v=5901df56" alt="GitHub" /></a>
   </p>
-  <p>[LinkedIn](https://www.linkedin.com/in/t-salmanrahman) · [Credly](https://www.credly.com/users/salman_rahman) · [Email](mailto:t.salmanrahman02@gmail.com) · [GitHub](https://github.com/tsalmanrahman) · [Live website](https://tsalmanrahman.github.io/tsalmanrahman/)</p>
+  <p><a href="https://www.linkedin.com/in/t-salmanrahman">LinkedIn</a> · <a href="https://www.credly.com/users/salman_rahman">Credly</a> · <a href="mailto:t.salmanrahman02@gmail.com">Email</a> · <a href="https://github.com/tsalmanrahman">GitHub</a> · <a href="https://tsalmanrahman.github.io/tsalmanrahman/">Live website</a></p>
 </div>
 
 <table align="center" cellpadding="12">
@@ -53,20 +53,20 @@ Previously served as Junior Software Engineer at Logic InfoTech Ltd building ent
 <tr>
 
 <td width="50%" valign="top">
-  <sub>01 · ERP / BACKEND & DATABASE ARCHITECTURE</sub><br/>
+  <sub>01 · ERP / BACKEND &amp; DATABASE ARCHITECTURE</sub><br/>
   <b>Enterprise Multi-Company ERP</b><br/>
   <a href="https://github.com/tsalmanrahman/ERP"><img src="assets/projects/erp-preview.svg?v=a7237e81" alt="Enterprise Multi-Company ERP Preview" width="100%" /></a>
   <p>Modular multi-company ERP backend & SQL Server architecture</p>
-  <p><code>`C#` · `.NET 10 / ASP.NET Core` · `Microsoft SQL Server (T-SQL)` · `EF Core + Dapper` · `QuestPDF` · `Docker`</code></p>
+  <p><sub>C# · .NET 10 / ASP.NET Core · Microsoft SQL Server (T-SQL) · EF Core + Dapper · QuestPDF · Docker</sub></p>
   <a href="https://github.com/tsalmanrahman/ERP">/inspect</a> · <a href="https://github.com/tsalmanrahman/ERP">/github</a>
 </td>
 
 <td width="50%" valign="top">
-  <sub>02 · PYTHON BACKEND & SQL OPERATIONS</sub><br/>
+  <sub>02 · PYTHON BACKEND &amp; SQL OPERATIONS</sub><br/>
   <b>Pyrix — Multi-Company Operations & Settings Suite</b><br/>
   <a href="https://github.com/tsalmanrahman/pyrix"><img src="assets/projects/pyrix-preview.svg?v=c01a5726" alt="Pyrix — Multi-Company Operations & Settings Suite Preview" width="100%" /></a>
   <p>Python FastAPI & SQL Server operational diagnostics and schema management portal</p>
-  <p><code>`Python` · `FastAPI` · `Jinja2` · `Microsoft SQL Server` · `ODBC Driver 18` · `HTML / CSS / JS`</code></p>
+  <p><sub>Python · FastAPI · Jinja2 · Microsoft SQL Server · ODBC Driver 18 · HTML / CSS / JS</sub></p>
   <a href="https://github.com/tsalmanrahman/pyrix">/inspect</a> · <a href="https://github.com/tsalmanrahman/pyrix">/github</a>
 </td>
 </tr>
@@ -97,7 +97,7 @@ Previously served as Junior Software Engineer at Logic InfoTech Ltd building ent
 
 <td align="center" width="25%" valign="top">
   <a href="https://www.freecodecamp.org/certification/salman_rahman/foundational-c-sharp-with-microsoft"><img src="assets/certificates/microsoft-csharp-badge.svg?v=ea9c0f15" alt="Foundational C# with Microsoft" /></a><br/>
-  <sub>MICROSOFT & FREECODECAMP</sub><br/>
+  <sub>MICROSOFT &amp; FREECODECAMP</sub><br/>
   <b>Foundational C# with Microsoft</b><br/>
   <sub>February 2, 2025</sub><br/>
   <a href="https://www.freecodecamp.org/certification/salman_rahman/foundational-c-sharp-with-microsoft">/verify</a>
@@ -121,7 +121,7 @@ Previously served as Junior Software Engineer at Logic InfoTech Ltd building ent
 
 | Organization | Role | Period |
 | :--- | :--- | :--- |
-| **HATIM GROUP** | Executive (IT & MIS) | SQL Developer & Data Analyst | Dec 2024 – Present |
+| **HATIM GROUP** | Executive (IT & MIS) \| SQL Developer & Data Analyst | Dec 2024 – Present |
 | **Logic InfoTech Ltd** | Junior Software Engineer | Jul 2022 – Oct 2023 (1 yr 4 mos) |
 
 ### EDUCATION
@@ -231,7 +231,7 @@ Browse all **32** audited AI agent skills &amp; orchestrators.
 
 ## Start with A MESSAGE.
 
-<a href="mailto:t.salmanrahman02@gmail.com">t.salmanrahman02@gmail.com</a> · [Send email](mailto:t.salmanrahman02@gmail.com) · [LinkedIn](https://www.linkedin.com/in/t-salmanrahman) · [Credly](https://www.credly.com/users/salman_rahman) · [Email](mailto:t.salmanrahman02@gmail.com) · [GitHub](https://github.com/tsalmanrahman) · [Live website](https://tsalmanrahman.github.io/tsalmanrahman/)
+<a href="mailto:t.salmanrahman02@gmail.com">t.salmanrahman02@gmail.com</a> · <a href="mailto:t.salmanrahman02@gmail.com">Send email</a> · <a href="https://www.linkedin.com/in/t-salmanrahman">LinkedIn</a> · <a href="https://www.credly.com/users/salman_rahman">Credly</a> · <a href="mailto:t.salmanrahman02@gmail.com">Email</a> · <a href="https://github.com/tsalmanrahman">GitHub</a> · <a href="https://tsalmanrahman.github.io/tsalmanrahman/">Live website</a>
 
 ---
 
